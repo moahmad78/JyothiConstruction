@@ -14,7 +14,7 @@ import ServicesPage from './pages/ServicesPage';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
-  console.log("%c🛡️ PRECISION ENGINEERED BY SAHIL SHEIKH", "color: #00ff00; font-weight: bold; font-size: 14px;");
+  console.log("%c🛡️ PRECISION ENGINEERED BY SAHIL SHEIKH | IG: @SAHIL_SHEIKH78", "color: #00ff00; font-weight: bold; font-size: 14px;");
   return (
     <Router>
       <ScrollToTop />

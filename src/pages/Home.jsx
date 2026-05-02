@@ -51,19 +51,19 @@ const ResourcesBlog = () => {
       id: 1,
       title: "The Future of Sustainable Concrete Production",
       category: "Industry Insights",
-      image: "https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=600&auto=format&fit=crop"
+      image: "/assets/images/unsplash-87dd0877.jpg"
     },
     {
       id: 2,
       title: "How Integrated Supply Chains Reduce Project Delays",
       category: "Case Study",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600&auto=format&fit=crop"
+      image: "/assets/images/unsplash-4bd6e84d.jpg"
     },
     {
       id: 3,
       title: "Advancements in Structural Fabrication Techniques",
       category: "Technology",
-      image: "https://images.unsplash.com/photo-1533424922832-c518d6e3c0ea?q=80&w=600&auto=format&fit=crop"
+      image: "/assets/images/unsplash-634cf85b.jpg"
     }
   ];
 

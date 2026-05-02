@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const slides = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop', // Modern skyscraper construction
+    image: '/assets/images/unsplash-27d7005c.jpg', // Modern skyscraper construction
     headline: (
       <>
         A Legacy of <span className="text-brand-secondary">Strength.</span><br />
@@ -22,7 +22,7 @@ const slides = [
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1542385311-6cdcb8ec9ce0?q=80&w=2000&auto=format&fit=crop', // Concrete batching plant or machinery
+    image: '/assets/images/unsplash-f7a7a789.jpg', // Concrete batching plant or machinery
     headline: (
       <>
         Integrated Construction.<br />
@@ -33,7 +33,7 @@ const slides = [
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop', // Modern residential luxury apartment
+    image: '/assets/images/unsplash-4955a12c.jpg', // Modern residential luxury apartment
     headline: (
       <>
         Building the Foundations<br />
@@ -59,6 +59,8 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden z-0">
+      {/* Eager load the first hero image to prevent black screen lag */}
+      <img src={slides[0].image} fetchpriority="high" loading="eager" className="hidden" alt="preload" />
       
       {/* Dedicated Hero Slider Background */}
       <div className="absolute inset-0 z-[-1]">

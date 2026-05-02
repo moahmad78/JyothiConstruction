@@ -7,35 +7,35 @@ const verticals = [
     title: 'Construction Services',
     description: 'End-to-end project execution with unmatched precision and quality.',
     icon: <HardHat className="w-10 h-10 text-brand-secondary" />,
-    image: 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=800&auto=format&fit=crop'
+    image: '/assets/images/unsplash-1079d6bc.jpg'
   },
   {
     id: 2,
     title: 'Ready Mix Concrete (RMC)',
     description: 'Precision-engineered concrete solutions for robust structural integrity.',
     icon: <Truck className="w-10 h-10 text-brand-secondary" />,
-    image: 'https://images.unsplash.com/photo-1588610534575-cf087e35b71c?q=80&w=800&auto=format&fit=crop'
+    image: '/assets/images/unsplash-ecfa7091.jpg'
   },
   {
     id: 3,
     title: 'Aggregates & Crushing',
     description: 'High-quality raw materials sourced and processed for optimal building performance.',
     icon: <Mountain className="w-10 h-10 text-brand-secondary" />,
-    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop'
+    image: '/assets/images/unsplash-7209bd41.jpg'
   },
   {
     id: 4,
     title: 'Concrete Blocks',
     description: 'Durable, efficient, and standardized building components for every scale.',
     icon: <LayoutGrid className="w-10 h-10 text-brand-secondary" />,
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop'
+    image: '/assets/images/unsplash-61576dea.jpg'
   },
   {
     id: 5,
     title: 'Fabrication Works',
     description: 'Structural and customized engineering solutions tailored to your requirements.',
     icon: <Wrench className="w-10 h-10 text-brand-secondary" />,
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop'
+    image: '/assets/images/unsplash-e783962b.jpg'
   }
 ];
 

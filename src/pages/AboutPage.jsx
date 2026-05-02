@@ -50,7 +50,7 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <Image 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" 
+                src="/assets/images/unsplash-9aaa201e.jpg" 
                 alt="Construction History" 
                 className="rounded-2xl shadow-2xl object-cover h-[500px] w-full sepia hover:sepia-0 transition-all duration-700"
               />
@@ -113,7 +113,7 @@ const AboutPage = () => {
             {/* Leadership Placeholder */}
             <div className="flex flex-col items-center">
               <div className="w-48 h-48 rounded-full overflow-hidden mb-6 bg-white/10 border-4 border-white/30 shadow-xl">
-                <Image src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop" alt="Leadership" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                <Image src="/assets/images/unsplash-61766d1b.jpg" alt="Leadership" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
               </div>
               <h5 className="text-2xl font-bold text-white font-heading">Founder / MD Name</h5>
               <p className="text-brand-secondary font-bold mb-4 uppercase tracking-widest text-sm">Managing Director</p>

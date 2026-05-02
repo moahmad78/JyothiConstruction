@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=1000&auto=format&fit=crop'; // Premium construction site
+const FALLBACK_IMAGE = '/assets/images/unsplash-891d92b0.jpg'; // Premium construction site
 
 const Image = ({ src, alt, className, priority = false, ...props }) => {
   const [imgSrc, setImgSrc] = useState(src || FALLBACK_IMAGE);

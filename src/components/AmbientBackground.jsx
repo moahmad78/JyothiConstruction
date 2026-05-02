@@ -4,54 +4,54 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const backgrounds = {
   '/': [
-    'https://images.unsplash.com/photo-1517646287270-a56b6378dbbb?q=80&w=2000&auto=format&fit=crop', // Subtle concrete/architecture texture
-    'https://images.unsplash.com/photo-1600607688969-a5bfcd64bd40?q=80&w=2000&auto=format&fit=crop', // Architectural details
-    'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop'  // Structural lines
+    '/assets/images/unsplash-6208b399.jpg', // Subtle concrete/architecture texture
+    '/assets/images/unsplash-01ed7a00.jpg', // Architectural details
+    '/assets/images/unsplash-ab23ff41.jpg'  // Structural lines
   ],
   '/about': [
-    'https://images.unsplash.com/photo-1517646287270-a56b6378dbbb?q=80&w=2000&auto=format&fit=crop', // Vintage architecture / blueprints
-    'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2000&auto=format&fit=crop', // Blueprint detail
-    'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop'  // Architect working
+    '/assets/images/unsplash-6208b399.jpg', // Vintage architecture / blueprints
+    '/assets/images/unsplash-3d9bb42c.jpg', // Blueprint detail
+    '/assets/images/unsplash-ab23ff41.jpg'  // Architect working
   ],
   '/projects': [
-    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop', // Glass skyscraper
-    'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2000&auto=format&fit=crop', // Luxury residential
-    'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2000&auto=format&fit=crop'  // Resort
+    '/assets/images/unsplash-27d7005c.jpg', // Glass skyscraper
+    '/assets/images/unsplash-4955a12c.jpg', // Luxury residential
+    '/assets/images/unsplash-34e86d0c.jpg'  // Resort
   ],
   '/why-jyothi': [
-    'https://images.unsplash.com/photo-1518640026210-910a3e813a35?q=80&w=2000&auto=format&fit=crop', // Architecture precision
-    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop', // Logistics warehouse
-    'https://images.unsplash.com/photo-1588610534575-cf087e35b71c?q=80&w=2000&auto=format&fit=crop'  // Quality/texture
+    '/assets/images/unsplash-f3fc22d9.jpg', // Architecture precision
+    '/assets/images/unsplash-1b16a726.jpg', // Logistics warehouse
+    '/assets/images/unsplash-b6b9f9eb.jpg'  // Quality/texture
   ],
   '/contact': [
-    'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop', // Modern office glass
-    'https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2000&auto=format&fit=crop', // City view
-    'https://images.unsplash.com/photo-1431540015161-0bf868a2d407?q=80&w=2000&auto=format&fit=crop'  // Corporate meeting
+    '/assets/images/unsplash-93aa798d.jpg', // Modern office glass
+    '/assets/images/unsplash-ad7b2321.jpg', // City view
+    '/assets/images/unsplash-4ec2ae05.jpg'  // Corporate meeting
   ],
   '/services': [
-    'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2000&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1588610534575-cf087e35b71c?q=80&w=2000&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop'
+    '/assets/images/unsplash-bece700b.jpg',
+    '/assets/images/unsplash-b6b9f9eb.jpg',
+    '/assets/images/unsplash-d6d9bb7f.jpg'
   ],
   '/services/construction': [
-    'https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2000&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?q=80&w=2000&auto=format&fit=crop'
+    '/assets/images/unsplash-bece700b.jpg',
+    '/assets/images/unsplash-5c4bd1a2.jpg'
   ],
   '/services/rmc': [
-    'https://images.unsplash.com/photo-1588610534575-cf087e35b71c?q=80&w=2000&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1565514020179-026b92b84bb6?q=80&w=2000&auto=format&fit=crop'
+    '/assets/images/unsplash-b6b9f9eb.jpg',
+    '/assets/images/unsplash-0a52a666.jpg'
   ],
   '/services/aggregates': [
-    'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2000&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1518640026210-910a3e813a35?q=80&w=2000&auto=format&fit=crop'
+    '/assets/images/unsplash-0d8d6eea.jpg',
+    '/assets/images/unsplash-f3fc22d9.jpg'
   ],
   '/services/blocks': [
-    'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2000&auto=format&fit=crop'
+    '/assets/images/unsplash-d6d9bb7f.jpg',
+    '/assets/images/unsplash-515791c6.jpg'
   ],
   '/services/fabrication': [
-    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop'
+    '/assets/images/unsplash-1b16a726.jpg',
+    '/assets/images/unsplash-27d7005c.jpg'
   ]
 };
 

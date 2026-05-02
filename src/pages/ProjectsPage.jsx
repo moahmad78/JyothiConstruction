@@ -11,7 +11,7 @@ const projectsData = [
     sector: 'IT Parks',
     subSector: 'Corporate Offices',
     location: 'Bangalore, Karnataka',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop'
+    image: '/assets/images/unsplash-9aaa201e.jpg'
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const projectsData = [
     sector: 'Industrial',
     subSector: 'Warehouses',
     location: 'Pune, Maharashtra',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop'
+    image: '/assets/images/unsplash-f56ee29e.jpg'
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const projectsData = [
     sector: 'Hospitality',
     subSector: 'Luxury Resorts',
     location: 'Goa',
-    image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1000&auto=format&fit=crop'
+    image: '/assets/images/unsplash-9a890cba.jpg'
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const projectsData = [
     sector: 'IT Parks',
     subSector: 'Data Centers',
     location: 'Hyderabad, Telangana',
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop'
+    image: '/assets/images/unsplash-2772f525.jpg'
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ const projectsData = [
     sector: 'Industrial',
     subSector: 'Manufacturing Units',
     location: 'Chennai, Tamil Nadu',
-    image: 'https://images.unsplash.com/photo-1565514020179-026b92b84bb6?q=80&w=1000&auto=format&fit=crop'
+    image: '/assets/images/unsplash-8885e333.jpg'
   },
   {
     id: 6,
@@ -56,7 +56,7 @@ const projectsData = [
     sector: 'Hospitality',
     subSector: 'Boutique Hotels',
     location: 'Jaipur, Rajasthan',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1000&auto=format&fit=crop'
+    image: '/assets/images/unsplash-a61062d8.jpg'
   },
   {
     id: 7,
@@ -65,7 +65,7 @@ const projectsData = [
     sector: 'Residential',
     subSector: 'Luxury Villas',
     location: 'Mumbai, Maharashtra',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1000&auto=format&fit=crop'
+    image: '/assets/images/unsplash-e551d6bb.jpg'
   },
   {
     id: 8,
@@ -74,7 +74,7 @@ const projectsData = [
     sector: 'Residential',
     subSector: 'Apartments',
     location: 'Noida, UP',
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1000&auto=format&fit=crop'
+    image: '/assets/images/unsplash-b78410a1.jpg'
   },
   {
     id: 9,
@@ -83,7 +83,7 @@ const projectsData = [
     sector: 'Residential',
     subSector: 'Gated Communities',
     location: 'Pune, Maharashtra',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000&auto=format&fit=crop'
+    image: '/assets/images/unsplash-9356d126.jpg'
   }
 ];
 
