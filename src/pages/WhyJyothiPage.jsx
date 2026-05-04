@@ -173,13 +173,13 @@ const WhyJyothiPage = () => {
             <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="absolute -inset-4 bg-brand-secondary/20 rounded-2xl transform -rotate-3"></div>
               <Image 
-                src="/assets/images/unsplash-16daff1e.jpg" 
-                alt="Concrete Blocks Manufacturing" 
+                src="/assets/images/blocks-expert.png" 
+                alt="High-durability solid cement blocks manufacturing" 
                 className="relative z-10 rounded-xl shadow-2xl object-cover h-[300px] sm:h-[500px] w-full"
               />
               <Image 
-                src="/assets/images/unsplash-5dbf3933.jpg" 
-                alt="Aggregates Manufacturing" 
+                src="/assets/images/aggregates-expert.png" 
+                alt="High-grade 20mm and 40mm crushed stone aggregates" 
                 className="relative z-10 rounded-xl shadow-2xl object-cover h-[300px] sm:h-[500px] w-full mt-0 sm:mt-12"
               />
             </div>

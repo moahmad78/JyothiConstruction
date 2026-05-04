@@ -11,7 +11,7 @@ const projectsData = [
     sector: 'IT Parks',
     subSector: 'Corporate Offices',
     location: 'Bangalore, Karnataka',
-    image: '/assets/images/unsplash-9aaa201e.jpg'
+    image: '/assets/images/Construction.jpeg'
   },
   {
     id: 2,

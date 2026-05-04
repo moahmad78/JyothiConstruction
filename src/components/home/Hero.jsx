@@ -11,14 +11,14 @@ import { Link } from 'react-router-dom';
 const slides = [
   {
     id: 1,
-    image: '/assets/images/unsplash-27d7005c.jpg', // Modern skyscraper construction
+    image: '/assets/images/Construction.jpeg', // Precision engineered construction site
     headline: (
       <>
         A Legacy of <span className="text-brand-secondary">Strength.</span><br />
         A Future of <span className="text-white">Possibilities.</span>
       </>
     ),
-    subtext: 'Five decades of trusted excellence in the construction value chain.'
+    subtext: '60+ Years of Legacy in delivering trusted excellence across the construction value chain.'
   },
   {
     id: 2,
@@ -60,7 +60,7 @@ const Hero = () => {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden z-0">
       {/* Eager load the first hero image to prevent black screen lag */}
-      <img src={slides[0].image} fetchpriority="high" loading="eager" className="hidden" alt="preload" />
+      <img src={slides[0].image} fetchPriority="high" loading="eager" className="hidden" alt="preload" />
       
       {/* Dedicated Hero Slider Background */}
       <div className="absolute inset-0 z-[-1]">

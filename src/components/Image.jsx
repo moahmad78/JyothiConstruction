@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const FALLBACK_IMAGE = '/assets/images/unsplash-891d92b0.jpg'; // Premium construction site
+const FALLBACK_IMAGE = '/assets/images/Construction.jpeg'; // Precision engineered construction site
 
 const Image = ({ src, alt, className, priority = false, ...props }) => {
   const [imgSrc, setImgSrc] = useState(src || FALLBACK_IMAGE);

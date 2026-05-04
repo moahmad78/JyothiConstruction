@@ -11,7 +11,7 @@ const WhyJyothi = () => {
           <div className="relative">
             <div className="absolute -inset-4 bg-brand-secondary/20 rounded-2xl transform rotate-3"></div>
             <Image 
-              src="/assets/images/unsplash-8d09d6bf.jpg" 
+              src="/assets/images/Construction.jpeg" 
               alt="Engineering Precision" 
               className="relative z-10 rounded-xl shadow-2xl object-cover h-[600px] w-full"
             />

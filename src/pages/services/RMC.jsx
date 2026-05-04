@@ -23,8 +23,8 @@ const RMC = () => {
   return (
     <ServiceTemplate 
       title="Ready Mix Concrete"
-      tagline="Unmatched Strength"
-      description="Premium-grade, highly durable concrete solutions tailored for exact structural requirements and delivered with precision."
+      tagline="Precision Manufacturing"
+      description="Experience Controlled Excellence with our high-capacity batching plants delivering premium-grade concrete with absolute Quality Assurance."
       features={features}
     />
   );

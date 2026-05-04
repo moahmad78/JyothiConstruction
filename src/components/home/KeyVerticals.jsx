@@ -7,28 +7,28 @@ const verticals = [
     title: 'Construction Services',
     description: 'End-to-end project execution with unmatched precision and quality.',
     icon: <HardHat className="w-10 h-10 text-brand-secondary" />,
-    image: '/assets/images/unsplash-1079d6bc.jpg'
+    image: '/assets/images/Construction.jpeg'
   },
   {
     id: 2,
     title: 'Ready Mix Concrete (RMC)',
-    description: 'Precision-engineered concrete solutions for robust structural integrity.',
+    description: 'Precision Manufacturing of high-strength concrete with absolute Quality Assurance.',
     icon: <Truck className="w-10 h-10 text-brand-secondary" />,
-    image: '/assets/images/unsplash-ecfa7091.jpg'
+    image: '/assets/images/rmc-expert.png'
   },
   {
     id: 3,
     title: 'Aggregates & Crushing',
-    description: 'High-quality raw materials sourced and processed for optimal building performance.',
+    description: 'Controlled Excellence in raw material extraction and stone crushing for foundation strength.',
     icon: <Mountain className="w-10 h-10 text-brand-secondary" />,
-    image: '/assets/images/unsplash-7209bd41.jpg'
+    image: '/assets/images/aggregates-expert.png'
   },
   {
     id: 4,
     title: 'Concrete Blocks',
     description: 'Durable, efficient, and standardized building components for every scale.',
     icon: <LayoutGrid className="w-10 h-10 text-brand-secondary" />,
-    image: '/assets/images/unsplash-61576dea.jpg'
+    image: '/assets/images/blocks-expert.png'
   },
   {
     id: 5,
@@ -66,7 +66,7 @@ const KeyVerticals = () => {
               <div className="absolute inset-0">
                 <Image 
                   src={vertical.image} 
-                  alt={vertical.title} 
+                  alt={vertical.title === 'Aggregates & Crushing' ? "High-grade 20mm Crushed Aggregates for construction" : vertical.title === 'Ready Mix Concrete (RMC)' ? "Industrial-grade RMC precision pouring machinery" : vertical.title === 'Concrete Blocks' ? "High-durability solid cement blocks on construction site" : vertical.title} 
                   className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20"></div>

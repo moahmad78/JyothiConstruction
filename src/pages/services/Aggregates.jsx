@@ -23,8 +23,8 @@ const Aggregates = () => {
   return (
     <ServiceTemplate 
       title="Aggregates & Crushing"
-      tagline="The Foundation of Quality"
-      description="Sourcing and refining premium aggregates that form the unbreakable backbone of modern infrastructure."
+      tagline="Controlled Excellence"
+      description="Precision Manufacturing of foundational raw materials through heavy-duty crushing plants, ensuring absolute Quality Assurance for every project."
       features={features}
     />
   );

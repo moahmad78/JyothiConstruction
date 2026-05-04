@@ -34,20 +34,16 @@ const backgrounds = {
     '/assets/images/unsplash-d6d9bb7f.jpg'
   ],
   '/services/construction': [
-    '/assets/images/unsplash-bece700b.jpg',
-    '/assets/images/unsplash-5c4bd1a2.jpg'
+    '/assets/images/Construction.jpeg'
   ],
   '/services/rmc': [
-    '/assets/images/unsplash-b6b9f9eb.jpg',
-    '/assets/images/unsplash-0a52a666.jpg'
+    '/assets/images/rmc-expert.png'
   ],
   '/services/aggregates': [
-    '/assets/images/unsplash-0d8d6eea.jpg',
-    '/assets/images/unsplash-f3fc22d9.jpg'
+    '/assets/images/aggregates-expert.png'
   ],
   '/services/blocks': [
-    '/assets/images/unsplash-d6d9bb7f.jpg',
-    '/assets/images/unsplash-515791c6.jpg'
+    '/assets/images/blocks-expert.png'
   ],
   '/services/fabrication': [
     '/assets/images/unsplash-1b16a726.jpg',

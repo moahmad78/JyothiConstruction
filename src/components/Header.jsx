@@ -11,7 +11,6 @@ import { Link, useLocation } from 'react-router-dom';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileAccordionOpen, setMobileAccordionOpen] = useState(false);
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
@@ -38,11 +37,11 @@ const Header = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white backdrop-blur-md shadow-md py-3' : 'bg-transparent py-6 border-transparent'}`}>
+    <header className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${isScrolled ? 'bg-black/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-6 border-transparent'}`}>
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 cursor-pointer">
-            <img src="/logo.png" alt="Jyothi Construction Logo" className="h-12 w-auto object-contain" />
+            <img src="/logo.png" alt="Jyothi Construction Logo" className="lg:h-16 h-12 w-auto object-contain" />
           </Link>
           
           {/* Desktop Nav */}
@@ -51,7 +50,7 @@ const Header = () => {
             <Link to="/about" className={getLinkClass('/about')}>About Us</Link>
             
             <div className="group relative">
-              <a href="#" className={`flex items-center gap-1 transition-colors text-sm font-medium py-2 ${isScrolled ? 'text-jyothi-green hover:text-brand-secondary' : 'text-white hover:text-brand-secondary'}`}>
+              <a href="#" className="flex items-center gap-1 transition-colors text-sm font-medium py-2 text-white hover:text-brand-secondary">
                 Key Verticals <ChevronDown size={16} />
               </a>
               {/* Mega Menu Dropdown */}
@@ -72,102 +71,58 @@ const Header = () => {
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button className={`lg:hidden hover:text-brand-secondary transition-colors ${isScrolled ? 'text-jyothi-green' : 'text-white'}`} onClick={() => setMobileMenuOpen(true)}>
+          <button className="lg:hidden text-white hover:text-brand-secondary transition-colors" onClick={() => setMobileMenuOpen(true)}>
             <Menu size={28} />
           </button>
         </div>
       </div>
 
-      {/* Mobile Nav Overlay & Sidebar */}
+      {/* Full-Screen Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <>
-            {/* Backdrop Overlay */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setMobileMenuOpen(false)}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
-            />
-            
-            {/* Sidebar Drawer */}
-            <motion.div 
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white border-l-[3px] border-brand-secondary shadow-2xl z-50 flex flex-col lg:hidden overflow-y-auto"
-            >
-              {/* Sidebar Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-100">
-                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3">
-                  <div className="bg-jyothi-green p-1.5 rounded shadow-sm">
-                    <img src="/logo.png" alt="Jyothi Construction Logo" className="h-8 w-auto object-contain filter brightness-0 invert" />
-                  </div>
-                  <span className="text-xl font-extrabold text-jyothi-green font-heading leading-none">Jyothi</span>
-                </Link>
-                <button onClick={() => setMobileMenuOpen(false)} className="text-gray-400 hover:text-brand-secondary bg-gray-50 rounded-full p-2 transition-colors">
-                  <X size={24} />
-                </button>
-              </div>
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 w-full h-screen bg-[#002B1B] z-[110] flex flex-col lg:hidden"
+          >
+            {/* Menu Header */}
+            <div className="flex items-center justify-between p-6 border-b border-white/10">
+              <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3">
+                <img src="/logo.png" alt="Jyothi Construction Logo" className="h-12 w-auto object-contain" />
+                <span className="text-xl font-extrabold text-white font-heading leading-none">Jyothi</span>
+              </Link>
+              <button onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-brand-secondary bg-white/10 rounded-full p-2 transition-colors">
+                <X size={28} />
+              </button>
+            </div>
 
-              {/* Sidebar Links */}
-              <div className="flex flex-col py-6 px-6 gap-2 flex-grow">
-                <Link to="/" className={`text-xl font-bold font-heading py-3 border-b border-gray-50 ${isActive('/') ? 'text-brand-secondary' : 'text-jyothi-green'}`} onClick={() => setMobileMenuOpen(false)}>Home</Link>
-                <Link to="/about" className={`text-xl font-bold font-heading py-3 border-b border-gray-50 ${isActive('/about') ? 'text-brand-secondary' : 'text-jyothi-green'}`} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-                
-                {/* Accordion for Key Verticals */}
-                <div className="border-b border-gray-50">
-                  <button 
-                    onClick={() => setMobileAccordionOpen(!mobileAccordionOpen)} 
-                    className="w-full flex items-center justify-between text-xl font-bold font-heading py-3 text-jyothi-green"
-                  >
-                    Key Verticals
-                    <ChevronDown size={20} className={`transform transition-transform duration-300 ${mobileAccordionOpen ? 'rotate-180' : ''}`} />
-                  </button>
-                  <AnimatePresence>
-                    {mobileAccordionOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden"
-                      >
-                        <ul className="flex flex-col gap-2 pb-4 pl-4 pt-2">
-                          <li><Link to="/services/construction" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2 text-brand-text hover:text-brand-secondary"><HardHat size={18} className="text-brand-secondary"/> Construction Services</Link></li>
-                          <li><Link to="/services/rmc" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2 text-brand-text hover:text-brand-secondary"><Truck size={18} className="text-brand-secondary"/> Ready Mix Concrete</Link></li>
-                          <li><Link to="/services/aggregates" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2 text-brand-text hover:text-brand-secondary"><Mountain size={18} className="text-brand-secondary"/> Aggregates & Crushing</Link></li>
-                          <li><Link to="/services/blocks" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2 text-brand-text hover:text-brand-secondary"><LayoutGrid size={18} className="text-brand-secondary"/> Concrete Blocks</Link></li>
-                          <li><Link to="/services/fabrication" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2 text-brand-text hover:text-brand-secondary"><Wrench size={18} className="text-brand-secondary"/> Fabrication Works</Link></li>
-                        </ul>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-                
-                <Link to="/projects" className={`text-xl font-bold font-heading py-3 border-b border-gray-50 ${isActive('/projects') ? 'text-brand-secondary' : 'text-jyothi-green'}`} onClick={() => setMobileMenuOpen(false)}>Projects</Link>
-                <Link to="/why-jyothi" className={`text-xl font-bold font-heading py-3 border-b border-gray-50 ${isActive('/why-jyothi') ? 'text-brand-secondary' : 'text-jyothi-green'}`} onClick={() => setMobileMenuOpen(false)}>Why Jyothi</Link>
-              </div>
-
-              {/* Sidebar Footer */}
-              <div className="p-6 bg-gray-50 mt-auto border-t border-gray-100">
-                <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="w-full py-4 mb-6 bg-jyothi-green text-white font-bold font-heading rounded-lg flex items-center justify-center gap-2 hover:bg-brand-secondary transition-colors shadow-md text-lg">
-                  Request a Quote
-                </Link>
-                <div className="flex items-center gap-4 text-jyothi-green bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                  <div className="bg-brand-light p-3 rounded-full">
-                    <PhoneCall size={24} className="text-brand-secondary" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">24/7 Support Line</p>
-                    <a href="tel:+918001234567" className="text-lg font-bold font-heading hover:text-brand-secondary transition-colors block">+91-800-123-4567</a>
-                  </div>
+            {/* Menu Content */}
+            <div className="flex flex-col items-center justify-center flex-grow px-6 py-12 gap-8 overflow-y-auto">
+              <Link to="/" className={`text-4xl font-bold font-heading ${isActive('/') ? 'text-brand-secondary' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>Home</Link>
+              <Link to="/about" className={`text-4xl font-bold font-heading ${isActive('/about') ? 'text-brand-secondary' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+              
+              {/* Verticals Group */}
+              <div className="flex flex-col items-center gap-4">
+                <span className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-2">Our Verticals</span>
+                <div className="flex flex-col items-center gap-4 text-center">
+                  <Link to="/services/construction" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-medium text-white/80 hover:text-white">Construction</Link>
+                  <Link to="/services/rmc" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-medium text-white/80 hover:text-white">Ready Mix Concrete</Link>
+                  <Link to="/services/aggregates" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-medium text-white/80 hover:text-white">Aggregates & Crushing</Link>
+                  <Link to="/services/blocks" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-medium text-white/80 hover:text-white">Concrete Blocks</Link>
+                  <Link to="/services/fabrication" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-medium text-white/80 hover:text-white">Fabrication</Link>
                 </div>
               </div>
-
-            </motion.div>
-          </>
+              
+              <Link to="/projects" className={`text-4xl font-bold font-heading ${isActive('/projects') ? 'text-brand-secondary' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>Projects</Link>
+              <Link to="/why-jyothi" className={`text-4xl font-bold font-heading ${isActive('/why-jyothi') ? 'text-brand-secondary' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>Why Jyothi</Link>
+              
+              <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="mt-4 px-12 py-4 bg-brand-secondary text-[#002B1B] font-extrabold font-heading rounded-lg shadow-lg text-xl uppercase tracking-wider">
+                Contact Us
+              </Link>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </header>

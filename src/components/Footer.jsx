@@ -21,7 +21,7 @@ const Footer = () => {
              
             </Link>
             <p className="text-white/80 text-sm leading-relaxed">
-              A legacy of strength and a future of possibilities. Serving the construction industry for over five decades with integrity and excellence.
+              Serving the construction industry with a legacy of over 60+ Years of Excellence, integrity, and architectural precision.
             </p>
             <div className="flex flex-col gap-3 mt-2">
               <div className="flex items-start gap-3">
@@ -107,7 +107,6 @@ const Footer = () => {
 
           <div className="text-center md:text-right flex flex-col gap-1 pb-16 md:pb-0 md:pr-20">
             <span className="text-white/80 text-sm">© 2026 Jyothi Construction. All rights reserved.</span>
-            <span className="text-white/60 text-xs">Developed by <a href="https://catalystdigisolutions.com/" target="_blank" rel="noreferrer" className="text-brand-secondary hover:text-white transition-colors relative z-10">Catalyst Digi Solutions</a></span>
           </div>
 
         </div>
