@@ -16,10 +16,10 @@ const WhyJyothi = () => {
               className="relative z-10 rounded-xl shadow-2xl object-cover h-[400px] md:h-[500px] w-full"
             />
             {/* Stats Card Overlay */}
-            <div className="absolute -bottom-8 -right-8 bg-brand-primary p-8 rounded-xl shadow-2xl border border-brand-primary/80 z-20 max-w-xs hidden md:block">
-              <p className="text-4xl font-bold text-brand-secondary mb-2 font-heading">60+</p>
-              <p className="text-white font-medium mb-1 font-heading">Years of Legacy</p>
-              <p className="text-sm text-gray-200 leading-tight">Delivering unmatched quality and timelines across generations.</p>
+            <div className="absolute -bottom-10 -right-10 bg-brand-primary p-10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 z-20 max-w-sm hidden md:block backdrop-blur-md">
+              <p className="text-5xl font-extrabold text-brand-secondary mb-3 font-heading">60+</p>
+              <p className="text-xl font-bold text-white mb-2 font-heading tracking-wide">Years of Excellence</p>
+              <p className="text-sm text-gray-300 leading-relaxed font-sans">Delivering unmatched quality and engineering precision across generations of structural mastery.</p>
             </div>
           </div>
 

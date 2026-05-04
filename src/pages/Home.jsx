@@ -31,9 +31,10 @@ const ClientsPartners = () => {
           {duplicatedPartners.map((partner, index) => (
             <div 
               key={index} 
-              className="flex-shrink-0 w-48 h-24 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl flex items-center justify-center cursor-pointer hover:bg-white/10 hover:border-brand-secondary hover:shadow-[0_0_30px_rgba(197,160,89,0.2)] transition-all duration-300 group/item"
+              className="flex-shrink-0 w-56 h-28 bg-white/5 backdrop-blur-md border border-white/5 rounded-2xl flex items-center justify-center cursor-pointer hover:bg-white/10 hover:border-brand-secondary/30 hover:shadow-[0_0_40px_rgba(197,160,89,0.1)] transition-all duration-500 group/item overflow-hidden relative"
             >
-              <span className="font-bold text-white/40 group-hover/item:text-brand-secondary font-heading text-xl tracking-tighter uppercase italic transition-colors">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity"></div>
+              <span className="font-extrabold text-white/20 group-hover/item:text-brand-secondary font-heading text-2xl tracking-tighter uppercase italic transition-all group-hover/item:scale-110 drop-shadow-sm">
                 {partner}
               </span>
             </div>

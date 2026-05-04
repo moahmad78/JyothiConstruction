@@ -43,7 +43,7 @@ const KeyVerticals = () => {
   return (
     <section className="py-10 md:py-16 bg-transparent">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="mb-10 md:mb-16 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-6">
+        <div className="mb-16 md:mb-24 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-10">
           <div className="max-w-2xl">
             <h2 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-3 font-heading">Our Core Expertise</h2>
             <h3 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight font-heading">
@@ -59,7 +59,7 @@ const KeyVerticals = () => {
           {verticals.map((vertical, index) => (
             <div 
               key={vertical.id}
-              className={`group relative overflow-hidden rounded-xl bg-white/10 backdrop-blur-md shadow-lg border border-white/20 hover:scale-105 hover:shadow-[0_20px_50px_rgba(197,160,89,0.3)] hover:border-brand-secondary transition-all duration-500 ${
+              className={`group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl shadow-2xl border border-white/10 hover:scale-[1.02] hover:shadow-[0_30px_60px_rgba(197,160,89,0.3)] hover:border-brand-secondary/50 transition-all duration-700 ${
                 index === 0 ? 'md:col-span-2 lg:col-span-2' : ''
               }`}
             >

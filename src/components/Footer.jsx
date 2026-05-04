@@ -30,7 +30,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={18} className="text-brand-secondary shrink-0" />
-                <span className="text-sm text-white/80 font-bold"><a href="tel:+918001234567" className="hover:text-brand-secondary transition-colors">+91-800-123-4567</a> <span className="font-normal text-xs text-brand-secondary ml-1">(24/7 Helpline)</span></span>
+                <span className="text-sm text-white/80 font-bold"><a href="tel:+919008777742" className="hover:text-brand-secondary transition-colors">+91 9008 777 742</a> <span className="font-normal text-xs text-brand-secondary ml-1">(24/7 Helpline)</span></span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={18} className="text-brand-secondary shrink-0" />
@@ -105,8 +105,9 @@ const Footer = () => {
             </a>
           </div>
 
-          <div className="text-center md:text-right flex flex-col gap-1 pb-16 md:pb-0 md:pr-20">
+          <div className="text-center md:text-right flex flex-col gap-1 pb-16 md:pb-0 md:pr-4 overflow-hidden">
             <span className="text-white/80 text-sm">© 2026 Jyothi Construction. All rights reserved.</span>
+            <span className="text-brand-secondary/60 text-[10px] uppercase tracking-widest font-bold">60+ Years of Excellence</span>
           </div>
 
         </div>

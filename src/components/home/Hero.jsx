@@ -58,7 +58,7 @@ const Hero = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative min-h-[80vh] md:h-[75vh] w-full flex items-center justify-center overflow-hidden z-0">
+    <section className="relative min-h-[85vh] md:min-h-screen w-full flex items-center justify-center overflow-hidden z-0">
       {/* Eager load the first hero image to prevent black screen lag */}
       <img src={slides[0].image} fetchPriority="high" loading="eager" className="hidden" alt="preload" />
       
@@ -88,7 +88,7 @@ const Hero = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl pointer-events-auto"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 tracking-tight font-serif italic drop-shadow-lg">
+            <h1 className="text-6xl md:text-8xl font-bold text-white leading-tight mb-8 tracking-tighter font-serif italic drop-shadow-2xl">
               {slides[currentSlide].headline}
             </h1>
             
@@ -96,11 +96,11 @@ const Hero = () => {
               {slides[currentSlide].subtext}
             </p>
             
-            <div className="flex flex-row gap-4 justify-center md:justify-start pointer-events-auto">
-              <Link to="/projects" className="px-4 py-3 md:px-8 md:py-4 bg-brand-primary text-white text-sm md:text-base font-bold rounded shadow-lg hover:bg-brand-secondary transition-colors font-heading tracking-wide text-center whitespace-nowrap">
+            <div className="flex flex-row gap-4 justify-center md:justify-start pointer-events-auto mt-10 md:mt-12">
+              <Link to="/projects" className="px-5 py-4 md:px-10 md:py-5 bg-brand-primary text-white text-sm md:text-lg font-bold rounded shadow-xl hover:bg-brand-secondary transition-all hover:scale-105 active:scale-95 font-heading tracking-wide text-center whitespace-nowrap">
                 Explore Projects
               </Link>
-              <Link to="/services" className="px-4 py-3 md:px-8 md:py-4 bg-transparent border-2 border-white text-white text-sm md:text-base font-bold rounded hover:bg-white/10 hover:border-brand-secondary hover:text-brand-secondary transition-colors font-heading tracking-wide backdrop-blur-sm text-center whitespace-nowrap">
+              <Link to="/services" className="px-5 py-4 md:px-10 md:py-5 bg-transparent border-2 border-white text-white text-sm md:text-lg font-bold rounded hover:bg-white/10 hover:border-brand-secondary hover:text-brand-secondary transition-all hover:scale-105 active:scale-95 font-heading tracking-wide backdrop-blur-md text-center whitespace-nowrap">
                 Our Verticals
               </Link>
             </div>
@@ -108,8 +108,8 @@ const Hero = () => {
         </AnimatePresence>
       </div>
 
-      {/* Slider Controls - Hidden on Mobile */}
-      <div className="absolute bottom-10 left-0 right-0 z-20 hidden md:flex justify-center items-center gap-6">
+      {/* Slider Controls - Absolute Bottom */}
+      <div className="absolute bottom-6 left-0 right-0 z-20 hidden md:flex justify-center items-center gap-8">
         <button 
           onClick={prevSlide}
           className="w-12 h-12 rounded-full border border-[#C5A059] text-[#C5A059] flex items-center justify-center hover:bg-[#C5A059] hover:text-white transition-colors backdrop-blur-sm"
