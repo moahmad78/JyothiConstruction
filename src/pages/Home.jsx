@@ -15,9 +15,9 @@ const ClientsPartners = () => {
   const duplicatedPartners = [...partners, ...partners];
 
   return (
-    <section className="py-20 bg-white/5 border-y border-white/10 overflow-hidden relative backdrop-blur-sm">
+    <section className="py-10 md:py-16 bg-white/5 border-y border-white/10 overflow-hidden relative backdrop-blur-sm">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-3 font-heading">Our Trusted Network</h2>
           <h3 className="text-3xl md:text-4xl font-extrabold text-white font-heading">Trusted by Industry Leaders</h3>
         </div>

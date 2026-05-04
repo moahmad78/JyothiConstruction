@@ -3,7 +3,7 @@ import Image from './../../components/Image';
 
 const WhyJyothi = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-transparent">
+    <section className="py-10 md:py-16 relative overflow-hidden bg-transparent">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -13,11 +13,11 @@ const WhyJyothi = () => {
             <Image 
               src="/assets/images/Construction.jpeg" 
               alt="Engineering Precision" 
-              className="relative z-10 rounded-xl shadow-2xl object-cover h-[600px] w-full"
+              className="relative z-10 rounded-xl shadow-2xl object-cover h-[400px] md:h-[500px] w-full"
             />
             {/* Stats Card Overlay */}
             <div className="absolute -bottom-8 -right-8 bg-brand-primary p-8 rounded-xl shadow-2xl border border-brand-primary/80 z-20 max-w-xs hidden md:block">
-              <p className="text-4xl font-bold text-brand-secondary mb-2 font-heading">50+</p>
+              <p className="text-4xl font-bold text-brand-secondary mb-2 font-heading">60+</p>
               <p className="text-white font-medium mb-1 font-heading">Years of Legacy</p>
               <p className="text-sm text-gray-200 leading-tight">Delivering unmatched quality and timelines across generations.</p>
             </div>
@@ -59,7 +59,7 @@ const WhyJyothi = () => {
             </ul>
 
             <button className="px-8 py-4 bg-brand-primary text-white font-bold rounded shadow-lg hover:bg-brand-secondary transition-colors font-heading tracking-wide">
-              Read Our 50-Year History
+              Read Our 60-Year History
             </button>
           </div>
 

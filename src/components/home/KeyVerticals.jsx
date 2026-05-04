@@ -41,9 +41,9 @@ const verticals = [
 
 const KeyVerticals = () => {
   return (
-    <section className="py-24 bg-transparent">
+    <section className="py-10 md:py-16 bg-transparent">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="mb-16 md:mb-24 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-6">
+        <div className="mb-10 md:mb-16 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-6">
           <div className="max-w-2xl">
             <h2 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-3 font-heading">Our Core Expertise</h2>
             <h3 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight font-heading">

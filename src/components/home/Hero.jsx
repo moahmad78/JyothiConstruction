@@ -58,7 +58,7 @@ const Hero = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden z-0">
+    <section className="relative h-[65vh] md:h-[75vh] w-full flex items-center justify-center overflow-hidden z-0">
       {/* Eager load the first hero image to prevent black screen lag */}
       <img src={slides[0].image} fetchPriority="high" loading="eager" className="hidden" alt="preload" />
       
@@ -96,11 +96,11 @@ const Hero = () => {
               {slides[currentSlide].subtext}
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-start md:justify-start justify-center pointer-events-auto">
-              <Link to="/projects" className="px-8 py-4 bg-brand-primary text-white font-bold rounded shadow-lg hover:bg-brand-secondary transition-colors font-heading tracking-wide text-center">
-                Explore Our Projects
+            <div className="flex flex-row gap-4 justify-center md:justify-start pointer-events-auto">
+              <Link to="/projects" className="px-4 py-3 md:px-8 md:py-4 bg-brand-primary text-white text-sm md:text-base font-bold rounded shadow-lg hover:bg-brand-secondary transition-colors font-heading tracking-wide text-center whitespace-nowrap">
+                Explore Projects
               </Link>
-              <Link to="/services" className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded hover:bg-white/10 hover:border-brand-secondary hover:text-brand-secondary transition-colors font-heading tracking-wide backdrop-blur-sm text-center">
+              <Link to="/services" className="px-4 py-3 md:px-8 md:py-4 bg-transparent border-2 border-white text-white text-sm md:text-base font-bold rounded hover:bg-white/10 hover:border-brand-secondary hover:text-brand-secondary transition-colors font-heading tracking-wide backdrop-blur-sm text-center whitespace-nowrap">
                 Our Verticals
               </Link>
             </div>
@@ -108,8 +108,8 @@ const Hero = () => {
         </AnimatePresence>
       </div>
 
-      {/* Slider Controls */}
-      <div className="absolute bottom-10 left-0 right-0 z-20 flex justify-center items-center gap-6">
+      {/* Slider Controls - Hidden on Mobile */}
+      <div className="absolute bottom-10 left-0 right-0 z-20 hidden md:flex justify-center items-center gap-6">
         <button 
           onClick={prevSlide}
           className="w-12 h-12 rounded-full border border-[#C5A059] text-[#C5A059] flex items-center justify-center hover:bg-[#C5A059] hover:text-white transition-colors backdrop-blur-sm"

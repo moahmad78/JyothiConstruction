@@ -43,11 +43,11 @@ const Header = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-[900] transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-6 border-transparent'}`}>
+    <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-6 border-transparent'}`}>
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 cursor-pointer">
-            <img src="/logo.png" alt="Jyothi Construction Logo" className="lg:h-16 h-12 w-auto object-contain" />
+            <img src="/logo.png" alt="Jyothi Construction Logo" className="lg:max-h-[60px] h-12 w-auto object-contain" />
           </Link>
           
           {/* Desktop Nav */}
@@ -73,7 +73,7 @@ const Header = () => {
 
             <Link to="/projects" className={getLinkClass('/projects')}>Projects</Link>
             <Link to="/why-jyothi" className={getLinkClass('/why-jyothi')}>Why Jyothi</Link>
-            <Link to="/contact" className="px-6 py-2.5 bg-white text-jyothi-green font-bold rounded hover:bg-brand-secondary hover:text-white transition-colors text-sm shadow-sm">Contact Us</Link>
+            <Link to="/contact" className={`px-6 py-2.5 font-bold rounded transition-all duration-300 text-sm shadow-sm hover:scale-105 active:scale-95 ${isScrolled ? 'bg-[#C5A059] text-white hover:bg-[#B38E48] hover:shadow-[0_0_15px_rgba(197,160,89,0.4)]' : 'bg-white text-jyothi-green hover:bg-brand-secondary hover:text-white'}`}>Contact Us</Link>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -93,7 +93,7 @@ const Header = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileMenuOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[950] lg:hidden"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[1950] lg:hidden"
             />
             
             {/* Sidebar Drawer */}
@@ -102,13 +102,14 @@ const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-[80%] max-w-[320px] bg-white z-[1000] flex flex-col lg:hidden shadow-[-10px_0_30px_rgba(0,0,0,0.2)]"
+              className="fixed top-0 right-0 h-screen w-[80%] max-w-[320px] bg-white opacity-100 z-[2000] flex flex-col justify-between lg:hidden shadow-[-10px_0_30px_rgba(0,0,0,0.2)]"
             >
+          
               {/* Sidebar Header */}
               <div className="flex items-center justify-between p-6 border-b border-gray-100">
                 <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2">
-                  <img src="/logo.png" alt="Jyothi Construction Logo" className="h-14 w-auto object-contain" />
-                  <span className="text-xl font-extrabold text-[#006837] font-heading leading-none">Jyothi</span>
+                  <img src="/logo.png" alt="Jyothi Construction Logo" className="max-h-[50px] w-auto object-contain" />
+                  <span className="text-xl font-extrabold text-[#006837] font-heading leading-none hidden md:block">Jyothi</span>
                 </Link>
                 <button onClick={() => setMobileMenuOpen(false)} className="text-gray-400 hover:text-brand-secondary bg-gray-50 rounded-full p-2 transition-colors">
                   <X size={24} />
@@ -155,12 +156,12 @@ const Header = () => {
               </div>
 
               {/* Sidebar Footer */}
-              <div className="p-8 bg-gray-50 border-t border-gray-100">
+              <div className="p-8 bg-gray-50 border-t border-gray-100 mt-auto">
                 <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="w-full py-4 bg-[#006837] text-white font-bold font-heading rounded flex items-center justify-center gap-2 hover:bg-brand-secondary transition-colors shadow-lg mb-6">
                   Get in Touch
                 </Link>
                 <div className="text-center">
-                  <span className="text-sm font-bold text-[#006837] tracking-widest uppercase">60+ Years of Legacy</span>
+                  <span className="text-sm font-bold text-[#006837] tracking-widest uppercase">60+ YEARS OF LEGACY</span>
                 </div>
               </div>
 
