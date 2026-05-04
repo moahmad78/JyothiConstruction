@@ -58,7 +58,7 @@ const Hero = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative h-[65vh] md:h-[75vh] w-full flex items-center justify-center overflow-hidden z-0">
+    <section className="relative min-h-[80vh] md:h-[75vh] w-full flex items-center justify-center overflow-hidden z-0">
       {/* Eager load the first hero image to prevent black screen lag */}
       <img src={slides[0].image} fetchPriority="high" loading="eager" className="hidden" alt="preload" />
       
@@ -78,7 +78,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center md:text-left pt-20 pointer-events-none">
+      <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center md:text-left pt-20 pb-12 pointer-events-none">
         <AnimatePresence mode="wait">
           <motion.div
             key={`content-${currentSlide}`}
