@@ -17,13 +17,13 @@ const slides = [
   },
   {
     id: 2,
-    image: '/assets/images/2.jpg',
+    image: '/assets/images/aggregates-expert.png',
     headline: 'Precision in Concrete',
     subtext: 'Delivering high-grade Ready Mix Concrete with unmatched quality control and on-time delivery across every project.'
   },
   {
     id: 3,
-    image: '/assets/images/3.jpg',
+    image: '/assets/images/unsplash-4955a12c.jpg',
     headline: 'Built for Durability',
     subtext: 'Standardized and custom Concrete Blocks engineered for high-load bearing capacity and architectural excellence.'
   },
@@ -52,7 +52,7 @@ const Hero = () => {
     <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden z-0">
       {/* Eager load the first hero image to prevent black screen lag */}
       <img src={slides[0].image} fetchPriority="high" loading="eager" className="hidden" alt="preload" />
-      
+
       {/* Dedicated Hero Slider Background */}
       <div className="absolute inset-0 z-[-1]">
         <AnimatePresence initial={false}>
@@ -82,11 +82,11 @@ const Hero = () => {
             <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-8 tracking-tighter font-serif italic drop-shadow-2xl">
               {slides[currentSlide].headline}
             </h1>
-            
+
             <p className="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed font-light max-w-2xl font-sans drop-shadow-md">
               {slides[currentSlide].subtext}
             </p>
-            
+
             <div className="flex flex-row gap-4 justify-center md:justify-start pointer-events-auto mt-10 md:mt-12">
               <Link to="/projects" className="px-5 py-4 md:px-10 md:py-5 bg-brand-primary text-white text-sm md:text-lg font-bold rounded shadow-xl hover:bg-brand-secondary transition-all hover:scale-105 active:scale-95 font-heading tracking-wide text-center whitespace-nowrap">
                 Explore Projects
@@ -101,13 +101,13 @@ const Hero = () => {
 
       {/* Slider Controls - Absolute Bottom */}
       <div className="absolute bottom-6 left-0 right-0 z-20 hidden md:flex justify-center items-center gap-8">
-        <button 
+        <button
           onClick={prevSlide}
           className="w-12 h-12 rounded-full border border-[#C5A059] text-[#C5A059] flex items-center justify-center hover:bg-[#C5A059] hover:text-white transition-colors backdrop-blur-sm"
         >
           <ChevronLeft size={24} />
         </button>
-        
+
         {/* Dots */}
         <div className="flex gap-3">
           {slides.map((_, index) => (
@@ -119,7 +119,7 @@ const Hero = () => {
           ))}
         </div>
 
-        <button 
+        <button
           onClick={nextSlide}
           className="w-12 h-12 rounded-full border border-[#C5A059] text-[#C5A059] flex items-center justify-center hover:bg-[#C5A059] hover:text-white transition-colors backdrop-blur-sm"
         >
