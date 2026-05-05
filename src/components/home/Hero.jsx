@@ -11,36 +11,27 @@ import { Link } from 'react-router-dom';
 const slides = [
   {
     id: 1,
-    image: '/assets/images/Construction.jpeg', // Precision engineered construction site
-    headline: (
-      <>
-        A Legacy of <span className="text-brand-secondary">Strength.</span><br />
-        A Future of <span className="text-white">Possibilities.</span>
-      </>
-    ),
-    subtext: '60+ Years of Legacy in delivering trusted excellence across the construction value chain.'
+    image: '/assets/images/homepageinner.jpeg',
+    headline: 'A Legacy of Strength',
+    subtext: 'A Future of Possibilities — building modern infrastructure with 60+ years of trusted excellence.'
   },
   {
     id: 2,
-    image: '/assets/images/unsplash-f7a7a789.jpg', // Concrete batching plant or machinery
-    headline: (
-      <>
-        Integrated Construction.<br />
-        <span className="text-brand-secondary">Controlled Excellence.</span>
-      </>
-    ),
-    subtext: 'Ensuring unmatched control over quality, timelines, and cost efficiency.'
+    image: '/assets/images/2.jpg',
+    headline: 'Precision in Concrete',
+    subtext: 'Delivering high-grade Ready Mix Concrete with unmatched quality control and on-time delivery across every project.'
   },
   {
     id: 3,
-    image: '/assets/images/unsplash-4955a12c.jpg', // Modern residential luxury apartment
-    headline: (
-      <>
-        Building the Foundations<br />
-        of <span className="text-brand-secondary">Tomorrow.</span>
-      </>
-    ),
-    subtext: 'Shaping infrastructure with strength, precision, and unwavering trust.'
+    image: '/assets/images/3.jpg',
+    headline: 'Built for Durability',
+    subtext: 'Standardized and custom Concrete Blocks engineered for high-load bearing capacity and architectural excellence.'
+  },
+  {
+    id: 4,
+    image: '/assets/images/fabricationbanner.png',
+    headline: 'Engineered to Perfection',
+    subtext: 'Expert Structural Fabrication and customized engineering solutions for complex industrial and commercial needs.'
   }
 ];
 
@@ -58,7 +49,7 @@ const Hero = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative min-h-[85vh] md:min-h-screen w-full flex items-center justify-center overflow-hidden z-0">
+    <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden z-0">
       {/* Eager load the first hero image to prevent black screen lag */}
       <img src={slides[0].image} fetchPriority="high" loading="eager" className="hidden" alt="preload" />
       
@@ -75,10 +66,10 @@ const Hero = () => {
             style={{ backgroundImage: `url('${slides[currentSlide].image}')` }}
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center md:text-left pt-20 pb-12 pointer-events-none">
+      <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center md:text-left flex flex-col justify-center py-28 pointer-events-none">
         <AnimatePresence mode="wait">
           <motion.div
             key={`content-${currentSlide}`}
@@ -88,7 +79,7 @@ const Hero = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="max-w-3xl pointer-events-auto"
           >
-            <h1 className="text-6xl md:text-8xl font-bold text-white leading-tight mb-8 tracking-tighter font-serif italic drop-shadow-2xl">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-8 tracking-tighter font-serif italic drop-shadow-2xl">
               {slides[currentSlide].headline}
             </h1>
             

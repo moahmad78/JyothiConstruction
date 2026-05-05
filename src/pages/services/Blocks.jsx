@@ -27,7 +27,7 @@ const Blocks = () => {
     {
       title: 'Logistics Efficiency',
       desc: 'Seamless palletized delivery ensuring minimal breakage during transit.',
-      img: '/assets/images/Construction.jpeg'
+      img: '/assets/images/construction.jpeg'
     }
   ];
 
@@ -36,16 +36,16 @@ const Blocks = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image 
-          src="/assets/images/blocks-expert.png" 
-          alt="Solid Cement Blocks Production" 
+          src="/assets/images/3.jpg" 
+          alt="Industrial Concrete Block Yard" 
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
         <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-4 font-heading"
+            className="text-4xl md:text-6xl font-extrabold text-white mb-4 font-heading"
           >
             Concrete Blocks
           </motion.h1>
@@ -121,7 +121,7 @@ const Blocks = () => {
               {/* Exceptional Service Benefits */}
               <div className="bg-[#006837] rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div className="md:w-1/2">
-                  <Image src="/assets/images/blocks-expert.png" alt="Blocks Inventory" className="w-full h-full object-cover min-h-[300px]" />
+                  <Image src="/assets/images/7.jpg" alt="Blocks Inventory" className="w-full h-full object-cover min-h-[300px]" />
                 </div>
                 <div className="md:w-1/2 p-8 md:p-12">
                   <h3 className="text-2xl font-bold text-white mb-6 font-heading">Quality Foundations</h3>
@@ -176,7 +176,11 @@ const Blocks = () => {
                 </div>
 
                 {/* Need Help Box */}
-                <div className="bg-[#002B1B] rounded-2xl p-8 relative overflow-hidden">
+                <div className="bg-[#002B1B] rounded-2xl p-8 relative overflow-hidden group/callback">
+                  <div className="absolute inset-0 opacity-20 group-hover/callback:scale-110 transition-transform duration-700">
+                    <img src="/assets/images/callback.jpg" alt="Support" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#002B1B] via-[#002B1B]/90 to-transparent"></div>
                   <div className="absolute top-0 right-0 w-32 h-32 bg-brand-secondary/10 rounded-full -mr-16 -mt-16"></div>
                   <h4 className="text-2xl font-bold text-white mb-4 relative z-10 font-heading">Bulk Orders?</h4>
                   <p className="text-gray-300 mb-8 relative z-10">Request customized supply quotes for large-scale infrastructure projects.</p>

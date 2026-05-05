@@ -4,50 +4,49 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const backgrounds = {
   '/': [
-    '/assets/images/unsplash-6208b399.jpg', // Subtle concrete/architecture texture
-    '/assets/images/unsplash-01ed7a00.jpg', // Architectural details
-    '/assets/images/unsplash-ab23ff41.jpg'  // Structural lines
+    '/assets/images/homepageinner.jpeg',
+    '/assets/images/construction.jpeg',
+    '/assets/images/Agregator and crushing.jpeg'
   ],
   '/about': [
-    '/assets/images/unsplash-6208b399.jpg', // Vintage architecture / blueprints
-    '/assets/images/unsplash-3d9bb42c.jpg', // Blueprint detail
-    '/assets/images/unsplash-ab23ff41.jpg'  // Architect working
+    '/assets/images/about_us.jpg',
+    '/assets/images/unsplash-3d9bb42c.jpg',
+    '/assets/images/JGROUP.jpg'
   ],
   '/projects': [
-    '/assets/images/unsplash-27d7005c.jpg', // Glass skyscraper
-    '/assets/images/unsplash-4955a12c.jpg', // Luxury residential
-    '/assets/images/unsplash-34e86d0c.jpg'  // Resort
+    '/assets/images/unsplash-27d7005c.jpg',
+    '/assets/images/unsplash-4955a12c.jpg',
+    '/assets/images/unsplash-34e86d0c.jpg'
   ],
   '/why-jyothi': [
-    '/assets/images/unsplash-f3fc22d9.jpg', // Architecture precision
-    '/assets/images/unsplash-1b16a726.jpg', // Logistics warehouse
-    '/assets/images/unsplash-b6b9f9eb.jpg'  // Quality/texture
+    '/assets/images/Q&S.jpg',
+    '/assets/images/unsplash-1b16a726.jpg',
+    '/assets/images/unsplash-b6b9f9eb.jpg'
   ],
   '/contact': [
-    '/assets/images/unsplash-93aa798d.jpg', // Modern office glass
-    '/assets/images/unsplash-ad7b2321.jpg', // City view
-    '/assets/images/unsplash-4ec2ae05.jpg'  // Corporate meeting
+    '/assets/images/9.jpg',
+    '/assets/images/unsplash-93aa798d.jpg',
+    '/assets/images/unsplash-4ec2ae05.jpg'
   ],
   '/services': [
-    '/assets/images/unsplash-bece700b.jpg',
+    '/assets/images/construction.jpeg',
     '/assets/images/unsplash-b6b9f9eb.jpg',
     '/assets/images/unsplash-d6d9bb7f.jpg'
   ],
   '/services/construction': [
-    '/assets/images/Construction.jpeg'
+    '/assets/images/construction.jpeg'
   ],
   '/services/rmc': [
-    '/assets/images/rmc-expert.png'
+    '/assets/images/concrete-batching.png'
   ],
   '/services/aggregates': [
-    '/assets/images/aggregates-expert.png'
+    '/assets/images/Agregator and crushing.jpeg'
   ],
   '/services/blocks': [
-    '/assets/images/blocks-expert.png'
+    '/assets/images/3.jpg'
   ],
   '/services/fabrication': [
-    '/assets/images/unsplash-1b16a726.jpg',
-    '/assets/images/unsplash-27d7005c.jpg'
+    '/assets/images/Fabrication images.jpeg'
   ]
 };
 

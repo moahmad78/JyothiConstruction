@@ -3,7 +3,7 @@ import Image from './../../components/Image';
 
 const WhyJyothi = () => {
   return (
-    <section className="py-10 md:py-16 relative overflow-hidden bg-transparent">
+    <section className="py-10 md:py-16 relative overflow-hidden bg-transparent min-h-[85vh] flex items-center">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -11,14 +11,14 @@ const WhyJyothi = () => {
           <div className="relative">
             <div className="absolute -inset-4 bg-brand-secondary/20 rounded-2xl transform rotate-3"></div>
             <Image 
-              src="/assets/images/Construction.jpeg" 
-              alt="Engineering Precision" 
+              src="/assets/images/Q&S.jpg" 
+              alt="Quality & Safety Compliance Standards" 
               className="relative z-10 rounded-xl shadow-2xl object-cover h-[400px] md:h-[500px] w-full"
             />
             {/* Stats Card Overlay */}
             <div className="absolute -bottom-10 -right-10 bg-brand-primary p-10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 z-20 max-w-sm hidden md:block backdrop-blur-md">
               <p className="text-5xl font-extrabold text-brand-secondary mb-3 font-heading">60+</p>
-              <p className="text-xl font-bold text-white mb-2 font-heading tracking-wide">Years of Excellence</p>
+              <p className="text-xl font-bold text-white mb-2 font-heading tracking-wide">Years of Legacy</p>
               <p className="text-sm text-gray-300 leading-relaxed font-sans">Delivering unmatched quality and engineering precision across generations of structural mastery.</p>
             </div>
           </div>
@@ -31,7 +31,7 @@ const WhyJyothi = () => {
             </h3>
             
             <p className="text-lg text-gray-200 mb-8 leading-relaxed">
-              We stand apart through our philosophy of <strong className="text-brand-secondary font-bold">Integrated Construction</strong>. By manufacturing and sourcing our own premium materials — from RMC and Aggregates to Concrete Blocks — we maintain total control over the supply chain. This translates to <strong className="text-brand-secondary font-bold">Controlled Excellence</strong>: unmatched quality, zero compromises, and strict adherence to project timelines.
+             We stand apart through our philosophy of <strong className="text-[#C5A059] font-extrabold">Integrated Construction</strong>. By manufacturing and sourcing our own premium materials — from <strong className="text-[#C5A059] font-extrabold">RMC</strong> and Aggregates to Concrete Blocks — we maintain total control over the supply chain. This translates to <strong className="text-[#C5A059] font-extrabold">Controlled Excellence</strong>: unmatched quality, zero compromises, and strict adherence to project timelines.
             </p>
 
             <ul className="space-y-6 mb-10">

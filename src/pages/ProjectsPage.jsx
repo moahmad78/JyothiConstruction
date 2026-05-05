@@ -11,7 +11,7 @@ const projectsData = [
     sector: 'IT Parks',
     subSector: 'Corporate Offices',
     location: 'Bangalore, Karnataka',
-    image: '/assets/images/Construction.jpeg'
+    image: '/assets/images/8.jpg'
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const projectsData = [
     sector: 'Industrial',
     subSector: 'Warehouses',
     location: 'Pune, Maharashtra',
-    image: '/assets/images/unsplash-f56ee29e.jpg'
+    image: '/assets/images/homepageinner.jpeg'
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const projectsData = [
     sector: 'IT Parks',
     subSector: 'Data Centers',
     location: 'Hyderabad, Telangana',
-    image: '/assets/images/unsplash-2772f525.jpg'
+    image: '/assets/images/construction.jpeg'
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ const projectsData = [
     sector: 'Industrial',
     subSector: 'Manufacturing Units',
     location: 'Chennai, Tamil Nadu',
-    image: '/assets/images/unsplash-8885e333.jpg'
+    image: '/assets/images/Fabrication images.jpeg'
   },
   {
     id: 6,

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const FALLBACK_IMAGE = '/assets/images/Construction.jpeg'; // Precision engineered construction site
+const FALLBACK_IMAGE = '/assets/images/construction.jpeg'; // Precision engineered construction site
 
 const Image = ({ src, alt, className, priority = false, ...props }) => {
   const [imgSrc, setImgSrc] = useState(src || FALLBACK_IMAGE);

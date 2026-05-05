@@ -36,16 +36,16 @@ const Aggregates = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image 
-          src="/assets/images/aggregates..jpeg" 
-          alt="Premium Aggregates Production" 
+          src="/assets/images/Agregator and crushing.jpeg" 
+          alt="Aggregates & Crushing Operations" 
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
         <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-4 font-heading"
+            className="text-4xl md:text-6xl font-extrabold text-white mb-4 font-heading"
           >
             Aggregates & Crushing
           </motion.h1>
@@ -121,7 +121,7 @@ const Aggregates = () => {
               {/* Exceptional Service Benefits */}
               <div className="bg-[#006837] rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div className="md:w-1/2">
-                  <Image src="/assets/images/aggregates-expert.png" alt="Industrial Quality" className="w-full h-full object-cover min-h-[300px]" />
+                  <Image src="/assets/images/6.jpg" alt="Industrial Quality" className="w-full h-full object-cover min-h-[300px]" />
                 </div>
                 <div className="md:w-1/2 p-8 md:p-12">
                   <h3 className="text-2xl font-bold text-white mb-6 font-heading">Exceptional Service Benefits</h3>
@@ -176,7 +176,11 @@ const Aggregates = () => {
                 </div>
 
                 {/* Need Help Box */}
-                <div className="bg-[#002B1B] rounded-2xl p-8 relative overflow-hidden">
+                <div className="bg-[#002B1B] rounded-2xl p-8 relative overflow-hidden group/callback">
+                  <div className="absolute inset-0 opacity-20 group-hover/callback:scale-110 transition-transform duration-700">
+                    <img src="/assets/images/callback.jpg" alt="Support" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#002B1B] via-[#002B1B]/90 to-transparent"></div>
                   <div className="absolute top-0 right-0 w-32 h-32 bg-brand-secondary/10 rounded-full -mr-16 -mt-16"></div>
                   <h4 className="text-2xl font-bold text-white mb-4 relative z-10 font-heading">Need Any Help?</h4>
                   <p className="text-gray-300 mb-8 relative z-10">Our experts are available to discuss your specific construction requirements.</p>

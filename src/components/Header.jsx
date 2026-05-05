@@ -47,7 +47,7 @@ const Header = () => {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 cursor-pointer">
-            <img src="/logo.png" alt="Jyothi Construction Logo" className="lg:max-h-[60px] h-12 w-auto object-contain" />
+            <img src="/logo.png" alt="Jyothi Construction Logo" className="h-12 md:h-24 lg:h-28 w-auto object-contain" />
           </Link>
           
           {/* Desktop Nav */}
@@ -105,11 +105,10 @@ const Header = () => {
               className="fixed top-0 right-0 h-screen w-[80%] max-w-[320px] bg-white opacity-100 z-[2000] flex flex-col justify-between lg:hidden shadow-[-10px_0_30px_rgba(0,0,0,0.2)]"
             >
           
-              {/* Sidebar Header */}
               <div className="flex items-center justify-between p-6 border-b border-gray-100">
                 <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2">
-                  <img src="/logo.png" alt="Jyothi Construction Logo" className="max-h-[50px] w-auto object-contain" />
-                  <span className="text-xl font-extrabold text-[#006837] font-heading leading-none hidden md:block">Jyothi</span>
+                  <img src="/logo.png" alt="Jyothi Construction Logo" className="h-20 w-auto object-contain" />
+                  <span className="hidden md:inline text-xl font-extrabold text-[#006837] font-heading leading-none">Jyothi</span>
                 </Link>
                 <button onClick={() => setMobileMenuOpen(false)} className="text-gray-400 hover:text-brand-secondary bg-gray-50 rounded-full p-2 transition-colors">
                   <X size={24} />

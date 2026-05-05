@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Col 1: Brand & Legacy */}
           <div className="flex flex-col gap-6">
             <Link to="/" className="flex items-center gap-3">
-              <img src="/logo.png" alt="Jyothi Construction Logo" className="h-14 w-auto object-contain bg-white/10 rounded p-1" />
+              <img src="/logo.png" alt="Jyothi Construction Logo" className="h-20 md:h-32 w-auto object-contain" />
              
             </Link>
             <p className="text-white/80 text-sm leading-relaxed">
@@ -107,7 +107,7 @@ const Footer = () => {
 
           <div className="text-center md:text-right flex flex-col gap-1 pb-16 md:pb-0 md:pr-4 overflow-hidden">
             <span className="text-white/80 text-sm">© 2026 Jyothi Construction. All rights reserved.</span>
-            <span className="text-brand-secondary/60 text-[10px] uppercase tracking-widest font-bold">60+ Years of Excellence</span>
+            <span className="text-brand-secondary/60 text-[10px] uppercase tracking-widest font-bold">60+ Years of Legacy</span>
           </div>
 
         </div>

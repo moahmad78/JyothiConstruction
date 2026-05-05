@@ -17,7 +17,7 @@ const AboutPage = () => {
           >
             <h1 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-4 font-heading">About Us</h1>
             <h2 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight font-heading mb-8">
-              Pioneering Construction for Over 60+ Years
+              Pioneering Construction with 60+ Years of Legacy
             </h2>
             <p className="text-xl text-gray-200 leading-relaxed font-light">
               From our humble beginnings to becoming an industry leader, Jyothi Construction has been synonymous with trust, quality, and architectural excellence across the nation.
@@ -50,14 +50,14 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <Image 
-                src="/assets/images/Construction.jpeg" 
-                alt="Construction History" 
-                className="rounded-2xl shadow-2xl object-cover h-[500px] w-full sepia hover:sepia-0 transition-all duration-700"
+                src="/assets/images/concrete-batching.png" 
+                alt="Our Infrastructure" 
+                className="rounded-2xl shadow-2xl object-cover h-[500px] w-full hover:scale-105 transition-all duration-700"
               />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-3 font-heading">Our Journey</h3>
-              <h4 className="text-4xl font-extrabold text-white mb-6 font-heading leading-tight">Build strong foundations today for a better tomorrow</h4>
+              <h3 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-3 font-heading">Our Infrastructure</h3>
+              <h4 className="text-4xl font-extrabold text-white mb-6 font-heading leading-tight">Advanced Manufacturing & Execution Hubs</h4>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Founded with a legacy of <strong>60+ years</strong>, Jyothi Construction started with a simple vision: to elevate the standard of building infrastructures. Over the decades, our group has evolved from a local contractor into a vertically integrated construction powerhouse.
               </p>
@@ -106,14 +106,14 @@ const AboutPage = () => {
       <section className="py-24">
         <div className="container mx-auto px-6 max-w-7xl text-center">
           <h3 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-3 font-heading">The Foundation</h3>
-          <h4 className="text-4xl font-extrabold text-white mb-16 font-heading">Leadership & Industry Certifications</h4>
+          <h4 className="text-4xl font-extrabold text-white mb-16 font-heading">Chairman's Message & Industry Standards</h4>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             
             {/* Leadership Placeholder */}
             <div className="flex flex-col items-center">
-              <div className="w-48 h-48 rounded-full overflow-hidden mb-6 bg-white/10 border-4 border-white/30 shadow-xl">
-                <Image src="/assets/images/Construction.jpeg" alt="Leadership" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+              <div className="w-56 h-72 rounded-lg overflow-hidden mb-6 bg-white/10 border-4 border-brand-secondary/50 shadow-2xl">
+                <Image src="/assets/images/Chairman-Photo.jpg" alt="Chairman Portrait" className="w-full h-full object-cover transition-all duration-500" />
               </div>
               <h5 className="text-2xl font-bold text-white font-heading">Founder / MD Name</h5>
               <p className="text-brand-secondary font-bold mb-4 uppercase tracking-widest text-sm">Managing Director</p>

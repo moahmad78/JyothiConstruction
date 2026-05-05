@@ -5,13 +5,36 @@ import WhyJyothi from '../components/home/WhyJyothi';
 import Image from '../components/Image';
 
 const ClientsPartners = () => {
-  // Using generic client placeholders with premium grayscale styling
   const partners = [
-    "Client 1", "Client 2", "Client 3", "Client 4", "Client 5", 
-    "Client 6", "Client 7", "Client 8", "Client 9"
+    '/assets/images/client/brigade.png',
+    '/assets/images/client/hiranandani.png',
+    '/assets/images/client/ds-max.png',
+    '/assets/images/client/bosch_logo.png',
+    '/assets/images/client/JMC-Projects.jpg',
+    '/assets/images/client/LW.png',
+    '/assets/images/client/mfar.png',
+    '/assets/images/client/pride.png',
+    '/assets/images/client/sowparnika.png',
+    '/assets/images/client/triveni.jpg',
+    '/assets/images/client/bhadra.jpg',
+    '/assets/images/new-2024/clients/1.png',
+    '/assets/images/new-2024/clients/2.png',
+    '/assets/images/new-2024/clients/3.png',
+    '/assets/images/new-2024/clients/4.png',
+    '/assets/images/new-2024/clients/5.png',
+    '/assets/images/new-2024/clients/6.png',
+    '/assets/images/new-2024/clients/7.png',
+    '/assets/images/new-2024/clients/8.png',
+    '/assets/images/new-2024/clients/9.png',
+    '/assets/images/new-2024/clients/10.png',
+    '/assets/images/new-2024/clients/11.png',
+    '/assets/images/new-2024/clients/12.png',
+    '/assets/images/new-2024/clients/13.png',
+    '/assets/images/new-2024/clients/14.png',
+    '/assets/images/new-2024/clients/15.png',
+    '/assets/images/new-2024/clients/16.png',
   ];
 
-  // Duplicate the array for a seamless loop
   const duplicatedPartners = [...partners, ...partners];
 
   return (
@@ -24,19 +47,21 @@ const ClientsPartners = () => {
       </div>
 
       <div className="relative w-full overflow-hidden group py-4">
-        <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-[#002B1B] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-[#002B1B] to-transparent z-10 pointer-events-none"></div>
+        {/* Gradients to mask the edges */}
+        <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-jyothi-green to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-jyothi-green to-transparent z-10 pointer-events-none"></div>
         
         <div className="animate-scroll whitespace-nowrap flex items-center gap-12 px-6">
-          {duplicatedPartners.map((partner, index) => (
+          {duplicatedPartners.map((logo, index) => (
             <div 
               key={index} 
-              className="flex-shrink-0 w-56 h-28 bg-white/5 backdrop-blur-md border border-white/5 rounded-2xl flex items-center justify-center cursor-pointer hover:bg-white/10 hover:border-brand-secondary/30 hover:shadow-[0_0_40px_rgba(197,160,89,0.1)] transition-all duration-500 group/item overflow-hidden relative"
+              className="flex-shrink-0 w-48 h-24 bg-white/5 backdrop-blur-md border border-white/5 rounded-xl flex items-center justify-center cursor-pointer hover:bg-white/10 hover:border-brand-secondary/30 transition-all duration-500 group/item overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity"></div>
-              <span className="font-extrabold text-white/20 group-hover/item:text-brand-secondary font-heading text-2xl tracking-tighter uppercase italic transition-all group-hover/item:scale-110 drop-shadow-sm">
-                {partner}
-              </span>
+              <img 
+                src={logo} 
+                alt={`Client ${index}`} 
+                className="w-32 h-16 object-contain grayscale opacity-60 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-500 transform group-hover/item:scale-110"
+              />
             </div>
           ))}
         </div>

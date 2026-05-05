@@ -7,7 +7,7 @@ const verticals = [
     title: 'Construction Services',
     description: 'End-to-end project execution with unmatched precision and quality.',
     icon: <HardHat className="w-10 h-10 text-brand-secondary" />,
-    image: '/assets/images/Construction.jpeg'
+    image: '/assets/images/construction.jpeg'
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const verticals = [
     title: 'Aggregates & Crushing',
     description: 'Controlled Excellence in raw material extraction and stone crushing for foundation strength.',
     icon: <Mountain className="w-10 h-10 text-brand-secondary" />,
-    image: '/assets/images/aggregates-expert.png'
+    image: '/assets/images/Agregator and crushing.jpeg'
   },
   {
     id: 4,
@@ -35,13 +35,13 @@ const verticals = [
     title: 'Fabrication Works',
     description: 'Structural and customized engineering solutions tailored to your requirements.',
     icon: <Wrench className="w-10 h-10 text-brand-secondary" />,
-    image: '/assets/images/unsplash-e783962b.jpg'
+    image: '/assets/images/fabrication-industrial.png'
   }
 ];
 
 const KeyVerticals = () => {
   return (
-    <section className="py-10 md:py-16 bg-transparent">
+    <section className="py-20 md:py-32 bg-transparent min-h-[85vh] flex items-center">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="mb-16 md:mb-24 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-10">
           <div className="max-w-2xl">

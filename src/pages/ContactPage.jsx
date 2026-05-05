@@ -140,7 +140,7 @@ const ContactPage = () => {
 
               {/* Google Maps Placeholder */}
               <div className="flex-grow w-full rounded-2xl overflow-hidden shadow-lg border border-white/20 min-h-[300px] relative flex items-center justify-center">
-                <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: "url('/assets/images/Construction.jpeg')"}}></div>
+                <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: "url('/assets/images/9.jpg')"}}></div>
                 <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
                 <div className="z-10 flex flex-col items-center">
                   <MapPin className="text-white w-12 h-12 mb-2 drop-shadow-md" />

@@ -17,17 +17,17 @@ const RMC = () => {
     {
       title: 'Precision Batching Control',
       desc: 'Real-time monitoring of raw materials and moisture content for optimal workability.',
-      img: '/assets/images/rmc-expert.png'
+      img: '/assets/images/concrete-batching.png'
     },
     {
       title: 'Structural QA Testing',
       desc: 'Rigorous 7-day and 28-day strength verification protocols for every batch.',
-      img: '/assets/images/unsplash-515791c6.jpg'
+      img: '/assets/images/2.jpg'
     },
     {
       title: 'Site Delivery Logistics',
       desc: 'Optimized routing and GPS tracking to ensure concrete reaches the site on time.',
-      img: '/assets/images/Construction.jpeg'
+      img: '/assets/images/2.jpg'
     }
   ];
 
@@ -36,16 +36,16 @@ const RMC = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image 
-          src="/assets/images/rmc-expert.png" 
-          alt="Ready Mix Concrete Production" 
+          src="/assets/images/concrete-batching.png" 
+          alt="Automated RMC Batching Plant - Jyothi Construction" 
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
         <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-4 font-heading"
+            className="text-4xl md:text-6xl font-extrabold text-white mb-4 font-heading"
           >
             Ready Mix Concrete (RMC)
           </motion.h1>
@@ -78,7 +78,7 @@ const RMC = () => {
                   High-Performance Concrete Solutions
                 </h2>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  With over <strong className="text-[#006837]">60+ Years of Legacy</strong>, Jyothi Construction delivers industrial-grade Ready Mix Concrete (RMC) designed for modern engineering challenges. Our fully automated batching plants provide absolute control over the mixing process, ensuring structural strength in every cubic meter.
+                   With over <strong className="text-[#C5A059] font-extrabold">60+ Years of Legacy</strong>, Jyothi Construction delivers industrial-grade <strong className="text-[#C5A059] font-extrabold">Ready Mix Concrete (RMC)</strong> designed for modern engineering challenges. Our fully automated batching plants provide absolute control over the mixing process, ensuring structural strength in every cubic meter.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   We specialize in high-strength formulations, fiber-reinforced concrete, and temperature-controlled mixes, providing a complete solution from the batching plant to the final structural pour.
@@ -121,7 +121,7 @@ const RMC = () => {
               {/* Exceptional Service Benefits */}
               <div className="bg-[#006837] rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div className="md:w-1/2">
-                  <Image src="/assets/images/unsplash-5c4bd1a2.jpg" alt="RMC Quality Control" className="w-full h-full object-cover min-h-[300px]" />
+                  <Image src="/assets/images/2.jpg" alt="RMC Quality Control" className="w-full h-full object-cover min-h-[300px]" />
                 </div>
                 <div className="md:w-1/2 p-8 md:p-12">
                   <h3 className="text-2xl font-bold text-white mb-6 font-heading">Why Choose Jyothi RMC?</h3>
