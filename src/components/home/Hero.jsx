@@ -11,25 +11,25 @@ import { Link } from 'react-router-dom';
 const slides = [
   {
     id: 1,
-    image: '/assets/images/homepageinner.jpeg',
+    image: '/assets/images/s1.jpeg',
     headline: 'A Legacy of Strength',
     subtext: 'A Future of Possibilities — building modern infrastructure with 60+ years of trusted excellence.'
   },
   {
     id: 2,
-    image: '/assets/images/aggregates-expert.png',
+    image: '/assets/images/s2.jpeg',
     headline: 'Precision in Concrete',
     subtext: 'Delivering high-grade Ready Mix Concrete with unmatched quality control and on-time delivery across every project.'
   },
   {
     id: 3,
-    image: '/assets/images/unsplash-4955a12c.jpg',
+    image: '/assets/images/s3.jpeg',
     headline: 'Built for Durability',
     subtext: 'Standardized and custom Concrete Blocks engineered for high-load bearing capacity and architectural excellence.'
   },
   {
     id: 4,
-    image: '/assets/images/fabricationbanner.png',
+    image: '/assets/images/s4.jpeg',
     headline: 'Engineered to Perfection',
     subtext: 'Expert Structural Fabrication and customized engineering solutions for complex industrial and commercial needs.'
   }
