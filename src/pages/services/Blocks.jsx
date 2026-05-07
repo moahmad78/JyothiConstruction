@@ -67,18 +67,18 @@ const Blocks = () => {
       </section>
 
       {/* Main Content Area */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             
             {/* Content Column (Left) */}
             <div className="lg:col-span-2">
               <div className="mb-12">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-[#006837] mb-6 font-heading">
+                <h2 className="text-3xl md:text-4xl font-bold text-jyothi-blue mb-6 font-heading">
                   High-Durability Building Components
                 </h2>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  With over <strong className="text-[#006837]">60+ Years of Legacy</strong>, Jyothi Construction manufactures premium Solid Cement Blocks that serve as the backbone of durable infrastructure. Our standardized production process ensures each block meets absolute quality benchmarks for strength and alignment.
+                  With over <strong className="text-jyothi-amber">60+ Years of Legacy</strong>, Jyothi Construction manufactures premium Solid Cement Blocks that serve as the backbone of durable infrastructure. Our standardized production process ensures each block meets absolute quality benchmarks for strength and alignment.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   We specialize in manufacturing various sizes of solid and hollow blocks, catering to both residential housing and large-scale industrial wall requirements with zero compromises.
@@ -88,12 +88,12 @@ const Blocks = () => {
               {/* Service Offerings Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                 {offerings.map((item, i) => (
-                  <div key={i} className="flex gap-4 p-6 rounded-xl border border-gray-100 bg-gray-50/50 hover:border-brand-secondary/30 transition-colors">
-                    <div className="shrink-0 w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-brand-secondary">
+                  <div key={i} className="flex gap-4 p-6 rounded-xl border border-gray-100 bg-gray-50/50 hover:border-jyothi-amber/30 transition-colors">
+                    <div className="shrink-0 w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center text-jyothi-amber">
                       {item.icon}
                     </div>
                     <div>
-                      <h4 className="font-bold text-[#006837] mb-1">{item.title}</h4>
+                      <h4 className="font-bold text-jyothi-blue mb-1">{item.title}</h4>
                       <p className="text-sm text-gray-600">{item.desc}</p>
                     </div>
                   </div>
@@ -102,7 +102,7 @@ const Blocks = () => {
 
               {/* Strategic Stages */}
               <div className="mb-16">
-                <h3 className="text-2xl font-bold text-[#006837] mb-8 font-heading">Manufacturing Excellence</h3>
+                <h3 className="text-2xl font-bold text-jyothi-blue mb-8 font-heading">Manufacturing Excellence</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {stages.map((stage, i) => (
                     <div key={i} className="group overflow-hidden rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all">
@@ -110,7 +110,7 @@ const Blocks = () => {
                         <Image src={stage.img} alt={stage.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                       </div>
                       <div className="p-5">
-                        <h5 className="font-bold text-[#006837] mb-2 text-sm uppercase tracking-wider">{stage.title}</h5>
+                        <h5 className="font-bold text-jyothi-blue mb-2 text-sm uppercase tracking-wider">{stage.title}</h5>
                         <p className="text-xs text-gray-600 leading-relaxed">{stage.desc}</p>
                       </div>
                     </div>
@@ -119,7 +119,7 @@ const Blocks = () => {
               </div>
 
               {/* Exceptional Service Benefits */}
-              <div className="bg-[#006837] rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+              <div className="bg-jyothi-blue rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div className="md:w-1/2">
                   <Image src="/assets/images/7.jpg" alt="Blocks Inventory" className="w-full h-full object-cover min-h-[300px]" />
                 </div>
@@ -133,7 +133,7 @@ const Blocks = () => {
                       'Scalable supply for large projects.'
                     ].map((text, i) => (
                       <li key={i} className="flex items-center gap-3 text-white/90">
-                        <CheckCircle2 size={20} className="text-brand-secondary shrink-0" />
+                        <CheckCircle2 size={20} className="text-jyothi-amber shrink-0" />
                         <span className="text-base">{text}</span>
                       </li>
                     ))}
@@ -148,13 +148,13 @@ const Blocks = () => {
                 
                 {/* Categories Widget */}
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8">
-                  <h4 className="text-xl font-bold text-[#006837] mb-6 font-heading">Product Range</h4>
+                  <h4 className="text-xl font-bold text-jyothi-blue mb-6 font-heading">Product Range</h4>
                   <ul className="space-y-3">
                     {['Solid Cement Blocks', 'Hollow Concrete Blocks', 'Interlocking Pavers', 'Boundary Wall Components'].map((cat, i) => (
                       <li key={i}>
-                        <Link to="#" className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 hover:border-brand-secondary hover:text-[#006837] transition-all group">
+                        <Link to="#" className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 hover:border-jyothi-amber hover:text-jyothi-blue transition-all group">
                           <span className="font-medium">{cat}</span>
-                          <ChevronRight size={18} className="text-gray-300 group-hover:text-brand-secondary" />
+                          <ChevronRight size={18} className="text-gray-300 group-hover:text-jyothi-amber" />
                         </Link>
                       </li>
                     ))}
@@ -163,31 +163,31 @@ const Blocks = () => {
 
                 {/* Download Brochure */}
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8">
-                  <h4 className="text-xl font-bold text-[#006837] mb-6 font-heading">Block Catalog</h4>
+                  <h4 className="text-xl font-bold text-jyothi-blue mb-6 font-heading">Block Catalog</h4>
                   <p className="text-sm text-gray-600 mb-6">Download our product specifications and load testing certificates.</p>
                   <div className="space-y-4">
-                    <button className="w-full py-4 bg-[#C5A059] text-white font-bold rounded-lg flex items-center justify-center gap-3 hover:bg-[#B38E48] transition-colors shadow-lg">
+                    <button className="w-full py-4 bg-jyothi-amber text-jyothi-blue font-bold rounded-lg flex items-center justify-center gap-3 hover:bg-jyothi-orange hover:text-white transition-colors shadow-lg">
                       <FileText size={20} /> Download PDF
                     </button>
-                    <button className="w-full py-4 bg-white border-2 border-[#C5A059] text-[#C5A059] font-bold rounded-lg flex items-center justify-center gap-3 hover:bg-[#C5A059] hover:text-white transition-colors">
+                    <button className="w-full py-4 bg-white border-2 border-jyothi-amber text-jyothi-amber font-bold rounded-lg flex items-center justify-center gap-3 hover:bg-jyothi-amber hover:text-white transition-colors">
                       <Download size={20} /> Dimension Guide
                     </button>
                   </div>
                 </div>
 
                 {/* Need Help Box */}
-                <div className="bg-[#002B1B] rounded-2xl p-8 relative overflow-hidden group/callback">
+                <div className="bg-jyothi-blue rounded-2xl p-8 relative overflow-hidden group/callback">
                   <div className="absolute inset-0 opacity-20 group-hover/callback:scale-110 transition-transform duration-700">
                     <img src="/assets/images/callback.jpg" alt="Support" className="w-full h-full object-cover" />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#002B1B] via-[#002B1B]/90 to-transparent"></div>
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-secondary/10 rounded-full -mr-16 -mt-16"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-jyothi-blue via-jyothi-blue/90 to-transparent"></div>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-jyothi-amber/10 rounded-full -mr-16 -mt-16"></div>
                   <h4 className="text-2xl font-bold text-white mb-4 relative z-10 font-heading">Bulk Orders?</h4>
                   <p className="text-gray-300 mb-8 relative z-10">Request customized supply quotes for large-scale infrastructure projects.</p>
                   
                   <div className="space-y-6 relative z-10">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-brand-secondary/20 rounded-full flex items-center justify-center text-brand-secondary">
+                      <div className="w-12 h-12 bg-jyothi-amber/20 rounded-full flex items-center justify-center text-jyothi-amber">
                         <Phone size={24} />
                       </div>
                       <div>
@@ -197,7 +197,7 @@ const Blocks = () => {
                     </div>
                     
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-brand-secondary/20 rounded-full flex items-center justify-center text-brand-secondary">
+                      <div className="w-12 h-12 bg-jyothi-amber/20 rounded-full flex items-center justify-center text-jyothi-amber">
                         <Mail size={24} />
                       </div>
                       <div>
@@ -206,7 +206,7 @@ const Blocks = () => {
                       </div>
                     </div>
 
-                    <Link to="/contact" className="block w-full py-4 bg-[#C5A059] text-white font-bold rounded-lg text-center hover:bg-[#B38E48] transition-colors shadow-xl mt-4">
+                    <Link to="/contact" className="block w-full py-4 bg-jyothi-amber text-jyothi-blue font-bold rounded-lg text-center hover:bg-jyothi-orange hover:text-white transition-all shadow-xl mt-4">
                       Get Bulk Quote
                     </Link>
                   </div>

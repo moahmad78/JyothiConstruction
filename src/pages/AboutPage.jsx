@@ -1,149 +1,117 @@
 import { motion } from 'framer-motion';
-import { Award, Target, Eye, Users } from 'lucide-react';
-import Image from '../components/Image';
+import { Award, Target, Eye, Users, ChevronRight } from 'lucide-react';
 
 const AboutPage = () => {
   return (
-    <div className="bg-transparent min-h-screen pt-20">
+    <div className="bg-jyothi-blue min-h-screen pt-24 md:pt-40">
       
-      {/* Hero Section */}
-      <section className="relative py-24 bg-transparent">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h1 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-4 font-heading">About Us</h1>
-            <h2 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight font-heading mb-8">
-              Pioneering Construction with 60+ Years of Legacy
-            </h2>
-            <p className="text-xl text-gray-200 leading-relaxed font-light">
-              From our humble beginnings to becoming an industry leader, Jyothi Construction has been synonymous with trust, quality, and architectural excellence across the nation.
-            </p>
-          </motion.div>
+      {/* Page Hero Banner */}
+      <section className="relative h-[30vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/assets/images/1.jpg" 
+            alt="About Our Legacy" 
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-jyothi-blue/80 to-jyothi-blue"></div>
         </div>
-      </section>
-
-      {/* Philosophy Pull Quote */}
-      <section className="py-20 text-center bg-transparent relative">
-        <div className="container mx-auto px-6 max-w-5xl relative z-10">
+        
+        <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-6xl font-serif text-brand-secondary leading-none">"</span>
-            <h3 className="text-3xl md:text-5xl font-serif italic text-white leading-tight mt-[-20px]">
-              Build strong foundations today <br className="hidden md:block"/> for a better tomorrow.
-            </h3>
-            <span className="text-6xl font-serif text-brand-secondary leading-none block rotate-180 mt-[-40px]">"</span>
+            <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-4 block">Our Story</span>
+            <h1 className="text-3xl md:text-7xl font-black text-white font-heading tracking-tighter">
+              About Our <span className="text-jyothi-amber">Legacy</span>
+            </h1>
           </motion.div>
         </div>
       </section>
 
-      {/* Legacy & Evolution */}
-      <section className="py-24">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-              <Image 
-                src="/assets/images/concrete-batching.png" 
-                alt="Our Infrastructure" 
-                className="rounded-2xl shadow-2xl object-cover h-[500px] w-full hover:scale-105 transition-all duration-700"
-              />
-            </div>
-            <div>
-              <h3 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-3 font-heading">Our Infrastructure</h3>
-              <h4 className="text-4xl font-extrabold text-white mb-6 font-heading leading-tight">Advanced Manufacturing & Execution Hubs</h4>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Founded with a legacy of <strong>60+ years</strong>, Jyothi Construction started with a simple vision: to elevate the standard of building infrastructures. Over the decades, our group has evolved from a local contractor into a vertically integrated construction powerhouse.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                Today, guided by a <strong>New Generation of Leadership</strong>, we are proud to combine our deep-rooted traditional values with cutting-edge contemporary practices. By manufacturing our own premium materials, we maintain total control over the supply chain, ensuring our legacy of trust and quality continues into the future.
-              </p>
-            </div>
+      {/* Core Content: Left Image | Right Text */}
+      <section className="py-10 md:py-12 relative overflow-hidden">
+        {/* Background Decor */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-jyothi-orange/5 rounded-full blur-[100px] -mr-48 -mt-48"></div>
+        
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Left side: High-quality site image */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative group"
+            >
+              <div className="absolute -inset-4 border-2 border-jyothi-amber/20 rounded-3xl group-hover:border-jyothi-amber/40 transition-colors duration-500"></div>
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <img 
+                  src="/assets/images/homepageinner.jpeg" 
+                  alt="Construction Site Excellence" 
+                  className="w-full h-64 md:h-[600px] aspect-video md:aspect-auto object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-jyothi-blue/10 group-hover:bg-transparent transition-all"></div>
+              </div>
+              {/* Badge */}
+              <div className="absolute -bottom-8 -right-8 bg-jyothi-amber p-8 rounded-2xl shadow-2xl hidden md:block">
+                <span className="text-jyothi-blue font-black text-4xl block leading-none">60+</span>
+                <span className="text-jyothi-blue font-bold text-xs uppercase tracking-widest">Years of Excellence</span>
+              </div>
+            </motion.div>
+
+            {/* Right side: Company Intro Text */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <span className="text-jyothi-amber text-xs font-black uppercase tracking-[0.3em] mb-4 block">Building the Future</span>
+              <h2 className="text-3xl md:text-6xl font-black text-white font-heading leading-[1.1] mb-8">
+                Technical Excellence in <br />
+                Every <span className="text-jyothi-amber">Structural</span> Foundation
+              </h2>
+              <div className="space-y-6 text-gray-400 text-base md:text-lg leading-relaxed font-medium">
+                <p>
+                  Founded with a deep-rooted commitment to structural integrity, Jyothi Construction has evolved into a premier vertically integrated construction powerhouse. Our legacy spans over six decades of delivering architectural masterpieces and industrial hubs.
+                </p>
+                <p>
+                  Today, we combine traditional engineering values with cutting-edge construction technology. By manufacturing our own high-grade materials—from Ready Mix Concrete to precision-engineered blocks—we ensure total quality control across every phase of development.
+                </p>
+              </div>
+
+              {/* Read More Button */}
+              {/* <button className="mt-12 px-12 py-5 bg-jyothi-amber text-jyothi-blue font-black rounded-xl shadow-xl hover:bg-jyothi-orange hover:text-white transition-all hover:scale-105 active:scale-95 uppercase tracking-widest text-xs flex items-center gap-3">
+                Read More <ChevronRight size={18} />
+              </button> */}
+            </motion.div>
+
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-24 bg-transparent">
+      {/* Mission & Values Grid */}
+      <section className="py-10 md:py-12 border-t border-white/5">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <motion.div 
-              whileHover={{ y: -10 }}
-              className="bg-white/10 backdrop-blur-md p-12 rounded-2xl shadow-lg border border-white/20"
-            >
-              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-8">
-                <Target className="w-8 h-8 text-brand-secondary" />
-              </div>
-              <h3 className="text-3xl font-extrabold text-white mb-4 font-heading">Our Mission</h3>
-              <p className="text-gray-300 leading-relaxed text-lg">
-                To deliver integrated construction solutions with unmatched precision, ensuring absolute quality control across every phase of development while adhering to the highest standards of safety and sustainability.
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              whileHover={{ y: -10 }}
-              className="bg-jyothi-green/80 backdrop-blur-md p-12 rounded-2xl shadow-lg border border-jyothi-green/50"
-            >
-              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-8">
-                <Eye className="w-8 h-8 text-brand-secondary" />
-              </div>
-              <h3 className="text-3xl font-extrabold text-white mb-4 font-heading">Our Vision</h3>
-              <p className="text-white/90 leading-relaxed text-lg">
-                To be the most trusted and vertically integrated construction group in the nation, continuously innovating the way we build the future and shaping landscapes that stand the test of time.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership & Certifications */}
-      <section className="py-24">
-        <div className="container mx-auto px-6 max-w-7xl text-center">
-          <h3 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-3 font-heading">The Foundation</h3>
-          <h4 className="text-4xl font-extrabold text-white mb-16 font-heading">Chairman's Message & Industry Standards</h4>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            
-            {/* Leadership Placeholder */}
-            <div className="flex flex-col items-center">
-              <div className="w-56 h-72 rounded-lg overflow-hidden mb-6 bg-white/10 border-4 border-brand-secondary/50 shadow-2xl">
-                <Image src="/assets/images/Chairman-Photo.jpg" alt="Chairman Portrait" className="w-full h-full object-cover transition-all duration-500" />
-              </div>
-              <h5 className="text-2xl font-bold text-white font-heading">Founder / MD Name</h5>
-              <p className="text-brand-secondary font-bold mb-4 uppercase tracking-widest text-sm">Managing Director</p>
-              <p className="text-gray-300 max-w-md">
-                Guiding the company with decades of hands-on experience and an unyielding commitment to engineering perfection.
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10 hover:border-jyothi-amber/30 transition-all group">
+              <Target className="text-jyothi-amber w-10 md:w-12 h-10 md:h-12 mb-8 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl md:text-2xl font-black text-white font-heading mb-4">Our Mission</h3>
+              <p className="text-gray-400 leading-relaxed font-medium text-sm md:text-base">To deliver integrated construction solutions with unmatched precision and sustainability.</p>
             </div>
-
-            {/* Certifications Placeholder */}
-            <div className="flex flex-col items-center justify-center bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
-              <div className="grid grid-cols-2 gap-6 w-full">
-                <div className="flex flex-col items-center gap-3 p-4 bg-white/10 rounded-xl border border-white/20 hover:bg-white/20 transition-colors">
-                  <Award className="w-10 h-10 text-brand-secondary" />
-                  <span className="font-bold text-white text-sm font-heading">ISO 9001:2015</span>
-                </div>
-                <div className="flex flex-col items-center gap-3 p-4 bg-white/10 rounded-xl border border-white/20 hover:bg-white/20 transition-colors">
-                  <Award className="w-10 h-10 text-brand-secondary" />
-                  <span className="font-bold text-white text-sm font-heading">Safety Excellence</span>
-                </div>
-                <div className="flex flex-col items-center gap-3 p-4 bg-white/10 rounded-xl border border-white/20 hover:bg-white/20 transition-colors">
-                  <Award className="w-10 h-10 text-brand-secondary" />
-                  <span className="font-bold text-white text-sm font-heading">Green Building</span>
-                </div>
-                <div className="flex flex-col items-center gap-3 p-4 bg-white/10 rounded-xl border border-white/20 hover:bg-white/20 transition-colors">
-                  <Users className="w-10 h-10 text-brand-secondary" />
-                  <span className="font-bold text-white text-sm font-heading">IGBC Member</span>
-                </div>
-              </div>
+            <div className="bg-jyothi-amber p-8 md:p-12 rounded-3xl shadow-2xl">
+              <Eye className="text-jyothi-blue w-10 md:w-12 h-10 md:h-12 mb-8" />
+              <h3 className="text-xl md:text-2xl font-black text-jyothi-blue font-heading mb-4">Our Vision</h3>
+              <p className="text-jyothi-blue/80 leading-relaxed font-bold text-sm md:text-base">To be the most trusted and innovative vertically integrated construction group in the nation.</p>
             </div>
-
+            <div className="bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10 hover:border-jyothi-amber/30 transition-all group">
+              <Users className="text-jyothi-amber w-10 md:w-12 h-10 md:h-12 mb-8 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl md:text-2xl font-black text-white font-heading mb-4">Core Values</h3>
+              <p className="text-gray-400 leading-relaxed font-medium text-sm md:text-base">Integrity, Quality, Safety, and Innovation drive every foundation we build.</p>
+            </div>
           </div>
         </div>
       </section>

@@ -68,7 +68,7 @@ const AmbientBackground = () => {
   }, [images.length]);
 
   return (
-    <div className="fixed inset-0 z-[-1] overflow-hidden bg-jyothi-green">
+    <div className="fixed inset-0 z-[-1] overflow-hidden bg-jyothi-blue">
       <AnimatePresence initial={false}>
         <motion.div
           key={`${location.pathname}-${currentIndex}`}

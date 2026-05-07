@@ -29,7 +29,7 @@ const ServiceTemplate = ({ title, description, features, tagline }) => {
       {/* Core Philosophy Section */}
       <section className="py-16 bg-white/5 backdrop-blur-md border-y border-white/10">
         <div className="container mx-auto px-6 max-w-7xl text-center">
-          <h3 className="text-2xl md:text-3xl font-extrabold text-jyothi-green font-heading mb-4">
+          <h3 className="text-2xl md:text-3xl font-bold text-jyothi-amber font-heading mb-4 uppercase tracking-widest">
             Controlled Excellence
           </h3>
           <p className="text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -43,7 +43,7 @@ const ServiceTemplate = ({ title, description, features, tagline }) => {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <h3 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-3 font-heading">Capabilities</h3>
-            <h4 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight font-heading">
+            <h4 className="text-4xl md:text-5xl font-bold text-white tracking-tight font-heading">
               Why Choose Our {title}?
             </h4>
           </div>
@@ -70,7 +70,7 @@ const ServiceTemplate = ({ title, description, features, tagline }) => {
           </div>
           
           <div className="mt-16 text-center">
-            <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-jyothi-green font-bold rounded-lg hover:bg-brand-secondary hover:text-white transition-colors font-heading tracking-wide">
+            <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-jyothi-amber text-jyothi-blue font-bold rounded-lg hover:bg-jyothi-orange hover:text-white transition-colors font-heading tracking-wide uppercase text-sm">
               Request a Consultation <ArrowRight size={18} />
             </Link>
           </div>

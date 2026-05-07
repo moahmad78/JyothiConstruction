@@ -1,152 +1,173 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, CheckCircle, Send, Globe } from 'lucide-react';
 
 const ContactPage = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSuccessModalOpen(true);
+  };
+
   return (
-    <div className="bg-transparent min-h-screen pt-20">
+    <div className="bg-jyothi-blue min-h-screen pt-24 md:pt-40">
       
-      {/* Hero Section */}
-      <section className="relative py-24 bg-transparent">
-        <div className="container mx-auto px-6 max-w-7xl">
+      {/* Page Header Banner */}
+      <section className="relative h-[30vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/assets/images/fabricationbanner.png" 
+            alt="Contact Us Banner" 
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-jyothi-blue/90 to-jyothi-blue"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto"
+            transition={{ duration: 0.8 }}
           >
-            <h1 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-4 font-heading">Get in Touch</h1>
-            <h2 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight font-heading mb-8">
-              Let's Build the Future Together
-            </h2>
-            <p className="text-xl text-gray-200 leading-relaxed font-light">
-              Whether you are planning a massive industrial hub or require high-grade raw materials, our team is ready to deliver unmatched quality and controlled excellence.
-            </p>
+            <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-4 block">Get in Touch</span>
+            <h1 className="text-4xl md:text-7xl font-black text-white font-heading tracking-tighter">
+              Contact <span className="text-jyothi-amber">Us</span>
+            </h1>
           </motion.div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-24">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      {/* Main Contact Section */}
+      <section className="py-8 md:py-12 relative">
+        {/* Background Accents */}
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-jyothi-amber/5 rounded-full blur-[150px] -ml-300 -mb-300"></div>
+        
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
-            {/* Contact Form */}
-            <div className="bg-white/10 backdrop-blur-md p-10 rounded-2xl shadow-2xl border border-white/20">
-              <h3 className="text-3xl font-extrabold text-white mb-8 font-heading">Request a Quote</h3>
-              <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setIsModalOpen(true); }}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-bold text-white mb-2">Full Name</label>
-                    <input type="text" className="w-full px-4 py-3 rounded-lg border border-transparent focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-colors bg-white/10 text-white placeholder-white/50" placeholder="John Doe" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-white mb-2">Company Name</label>
-                    <input type="text" className="w-full px-4 py-3 rounded-lg border border-transparent focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-colors bg-white/10 text-white placeholder-white/50" placeholder="Your Company" />
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-bold text-white mb-2">Email Address</label>
-                    <input type="email" className="w-full px-4 py-3 rounded-lg border border-transparent focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-colors bg-white/10 text-white placeholder-white/50" placeholder="john@example.com" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-white mb-2">Phone Number</label>
-                    <input type="tel" className="w-full px-4 py-3 rounded-lg border border-transparent focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-colors bg-white/10 text-white placeholder-white/50" placeholder="+91 98765 43210" />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-bold text-white mb-2">Sector / Project Type</label>
-                  <select defaultValue="" className="w-full px-4 py-3 rounded-lg border border-transparent focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-colors bg-white/10 text-white appearance-none">
-                    <option value="" disabled className="text-gray-900">Select a project type</option>
-                    <option value="Residential Projects" className="text-gray-900">Residential Projects</option>
-                    <option value="IT Parks" className="text-gray-900">IT Parks</option>
-                    <option value="Industrial" className="text-gray-900">Industrial</option>
-                    <option value="Hospitality" className="text-gray-900">Hospitality</option>
-                    <option value="Construction Services" className="text-gray-900">Construction Services</option>
-                    <option value="Ready Mix Concrete" className="text-gray-900">Ready Mix Concrete (RMC)</option>
-                    <option value="Aggregates & Crushing" className="text-gray-900">Aggregates & Crushing</option>
-                    <option value="Concrete Blocks" className="text-gray-900">Concrete Blocks</option>
-                    <option value="Fabrication Works" className="text-gray-900">Fabrication Works</option>
-                  </select>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-bold text-white mb-2">Project Area</label>
-                    <select defaultValue="" className="w-full px-4 py-3 rounded-lg border border-transparent focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-colors bg-white/10 text-white appearance-none">
-                      <option value="" disabled className="text-gray-900">Select project area</option>
-                      <option value="Below 5,000 sq ft" className="text-gray-900">Below 5,000 sq ft</option>
-                      <option value="5,000 - 20,000 sq ft" className="text-gray-900">5,000 - 20,000 sq ft</option>
-                      <option value="Above 20,000 sq ft" className="text-gray-900">Above 20,000 sq ft</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-white mb-2">Budget Range</label>
-                    <select defaultValue="" className="w-full px-4 py-3 rounded-lg border border-transparent focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-colors bg-white/10 text-white appearance-none">
-                      <option value="" disabled className="text-gray-900">Select budget range</option>
-                      <option value="Below ₹50 Lakhs" className="text-gray-900">Below ₹50 Lakhs</option>
-                      <option value="₹50 Lakhs - ₹2 Crores" className="text-gray-900">₹50 Lakhs - ₹2 Crores</option>
-                      <option value="₹2 Crores+" className="text-gray-900">₹2 Crores+</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-bold text-white mb-2">Message Details</label>
-                  <textarea rows="4" className="w-full px-4 py-3 rounded-lg border border-transparent focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary transition-colors bg-white/10 text-white placeholder-white/50" placeholder="Tell us about your project requirements..."></textarea>
-                </div>
-
-                <button type="submit" className="w-full px-8 py-4 bg-white text-jyothi-green font-bold rounded-lg shadow-lg hover:bg-brand-secondary hover:text-white transition-all duration-300 font-heading tracking-wide">
-                  Submit Request
-                </button>
-              </form>
-            </div>
-
-            {/* Contact Info & Map */}
-            <div className="flex flex-col gap-10">
+            {/* Contact Form - Dark Tech Design */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white/5 border border-white/10 p-10 md:p-14 rounded-[2.5rem] shadow-2xl relative overflow-hidden group hover:border-jyothi-amber/30 transition-all duration-500"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-jyothi-amber/5 rounded-full blur-[80px] -mr-32 -mt-32"></div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex flex-col gap-4">
-                  <div className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20">
-                    <MapPin className="text-brand-secondary w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-white font-heading mb-2">Head Office</h4>
-                    <p className="text-gray-300 leading-relaxed">
-                      123 Corporate Avenue,<br />
-                      Tech Park Phase II,<br />
-                      Bangalore, Karnataka 560001
-                    </p>
-                  </div>
+              <div className="relative z-10">
+                <div className="mb-10">
+                  <h2 className="text-3xl md:text-4xl font-black text-white font-heading mb-4">Send a Message</h2>
+                  <p className="text-gray-400 font-medium">Our technical consultants are ready to assist with your inquiries.</p>
                 </div>
 
-                <div className="flex flex-col gap-4">
-                  <div className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20">
-                    <Phone className="text-brand-secondary w-6 h-6" />
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 ml-1">Full Name</label>
+                      <input 
+                        required
+                        type="text" 
+                        placeholder="Jane Doe"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:border-jyothi-amber focus:ring-1 focus:ring-jyothi-amber outline-none transition-all placeholder:text-gray-600"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 ml-1">Email Address</label>
+                      <input 
+                        required
+                        type="email" 
+                        placeholder="jane@example.com"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:border-jyothi-amber focus:ring-1 focus:ring-jyothi-amber outline-none transition-all placeholder:text-gray-600"
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-white font-heading mb-2">Contact</h4>
-                    <p className="text-gray-300 leading-relaxed">
-                      +91 800 123 4567<br />
-                      info@jyothiconstruction.com
-                    </p>
-                  </div>
-                </div>
-              </div>
 
-              {/* Google Maps Placeholder */}
-              <div className="flex-grow w-full rounded-2xl overflow-hidden shadow-lg border border-white/20 min-h-[300px] relative flex items-center justify-center">
-                <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: "url('/assets/images/9.jpg')"}}></div>
-                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-                <div className="z-10 flex flex-col items-center">
-                  <MapPin className="text-white w-12 h-12 mb-2 drop-shadow-md" />
-                  <span className="text-white font-bold font-heading drop-shadow-sm">Interactive Map Placeholder</span>
-                </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 ml-1">Subject</label>
+                    <select className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:border-jyothi-amber focus:ring-1 focus:ring-jyothi-amber outline-none transition-all cursor-pointer appearance-none">
+                      <option className="bg-jyothi-blue">General Inquiry</option>
+                      <option className="bg-jyothi-blue">Project Consultation</option>
+                      <option className="bg-jyothi-blue">Material Supply (RMC/Blocks)</option>
+                      <option className="bg-jyothi-blue">Partnership Opportunities</option>
+                    </select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 ml-1">Message Details</label>
+                    <textarea 
+                      required
+                      rows="5"
+                      placeholder="Describe your project or inquiry..."
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:border-jyothi-amber focus:ring-1 focus:ring-jyothi-amber outline-none transition-all placeholder:text-gray-600 resize-none"
+                    ></textarea>
+                  </div>
+
+                  <button 
+                    type="submit"
+                    className="w-full py-5 bg-jyothi-amber text-jyothi-blue font-black rounded-xl hover:bg-jyothi-orange hover:text-white transition-all shadow-xl hover:shadow-jyothi-amber/20 uppercase tracking-[0.2em] flex items-center justify-center gap-3 group mt-4"
+                  >
+                    Send Message <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </button>
+                </form>
               </div>
+            </motion.div>
+
+            {/* Information Grid & Map */}
+            <div className="flex flex-col gap-12">
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-8"
+              >
+                {/* Office Info */}
+                <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 group hover:border-jyothi-amber/30 transition-all">
+                  <div className="w-12 h-12 bg-jyothi-amber/10 rounded-xl flex items-center justify-center text-jyothi-amber mb-6 group-hover:bg-jyothi-amber group-hover:text-jyothi-blue transition-all">
+                    <MapPin size={24} />
+                  </div>
+                  <h4 className="text-xl font-bold text-white font-heading mb-3 tracking-tight">Main Office</h4>
+                  <p className="text-gray-400 text-sm leading-relaxed font-medium">
+                    123 Corporate Avenue, Tech Park Phase II, Bangalore, Karnataka 560001
+                  </p>
+                </div>
+
+                {/* Direct Contact */}
+                <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 group hover:border-jyothi-amber/30 transition-all">
+                  <div className="w-12 h-12 bg-jyothi-amber/10 rounded-xl flex items-center justify-center text-jyothi-amber mb-6 group-hover:bg-jyothi-amber group-hover:text-jyothi-blue transition-all">
+                    <Phone size={24} />
+                  </div>
+                  <h4 className="text-xl font-bold text-white font-heading mb-3 tracking-tight">Technical Support</h4>
+                  <p className="text-gray-400 text-sm leading-relaxed font-medium">
+                    +91 9008 777 742<br />
+                    info@jyothiconstruction.com
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Interactive Map Integration Placeholder */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="flex-grow min-h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl relative group"
+              >
+                <div className="absolute inset-0 z-0">
+                  <img src="/assets/images/9.jpg" alt="Map View" className="w-full h-full object-cover grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000" />
+                  <div className="absolute inset-0 bg-jyothi-blue/40"></div>
+                </div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center p-8">
+                  <div className="w-20 h-20 bg-jyothi-amber/20 backdrop-blur-md rounded-full flex items-center justify-center mb-4 border border-jyothi-amber/30 group-hover:scale-110 transition-transform">
+                    <MapPin size={40} className="text-jyothi-amber" />
+                  </div>
+                  <h5 className="text-white font-black font-heading uppercase tracking-widest text-sm mb-2">Locate Our Headquarters</h5>
+                  <p className="text-gray-300 text-xs font-bold uppercase tracking-[0.2em]">Open in Google Maps</p>
+                </div>
+              </motion.div>
 
             </div>
 
@@ -156,43 +177,35 @@ const ContactPage = () => {
 
       {/* Success Modal */}
       <AnimatePresence>
-        {isModalOpen && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+        {isSuccessModalOpen && (
+          <div className="fixed inset-0 z-[10000] flex items-center justify-center p-6">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsSuccessModalOpen(false)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            ></motion.div>
+            
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              className="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden text-center"
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              className="relative bg-jyothi-blue border border-white/10 rounded-[2.5rem] p-12 max-w-md w-full text-center shadow-2xl"
             >
-              {/* Top Jyothi Green Bar */}
-              <div className="bg-jyothi-green py-8 px-6 flex justify-center">
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg">
-                  <CheckCircle className="w-10 h-10 text-jyothi-green" />
-                </div>
+              <div className="w-24 h-24 bg-jyothi-amber/10 rounded-full flex items-center justify-center mx-auto mb-8 border border-jyothi-amber/20">
+                <CheckCircle size={48} className="text-jyothi-amber" />
               </div>
-              
-              <div className="p-8 pb-10">
-                <h3 className="text-3xl font-extrabold text-jyothi-green mb-3 font-heading">Thank You for Reaching Out!</h3>
-                <p className="text-brand-text mb-6">
-                  Your request has been successfully submitted. We appreciate your interest in Jyothi Construction.
-                </p>
-                <div className="bg-brand-light p-4 rounded-lg mb-6 border border-gray-100">
-                  <p className="text-sm font-bold text-jyothi-green">
-                    One of our dedicated project executives will contact you within 1 hour to discuss your requirements.
-                  </p>
-                </div>
-                <p className="text-sm text-gray-500 mb-8 border-t border-gray-100 pt-6">
-                  For urgent inquiries, our 24x7 Support Line is always available:<br/>
-                  <span className="font-bold text-brand-secondary mt-1 block">+91-800-123-4567</span>
-                </p>
-                
-                <button 
-                  onClick={() => setIsModalOpen(false)}
-                  className="px-8 py-3 bg-brand-secondary text-white font-bold rounded-lg shadow-lg hover:bg-jyothi-green transition-colors font-heading tracking-wide w-full"
-                >
-                  Return to Home
-                </button>
-              </div>
+              <h3 className="text-3xl font-black text-white font-heading mb-4 tracking-tighter">SUCCESS!</h3>
+              <p className="text-gray-400 font-medium mb-10 leading-relaxed">
+                Your message has been successfully encrypted and sent. Our technical team will reach out within 24 business hours.
+              </p>
+              <button 
+                onClick={() => setIsSuccessModalOpen(false)}
+                className="w-full py-4 bg-jyothi-amber text-jyothi-blue font-black rounded-xl uppercase tracking-widest text-xs hover:bg-jyothi-orange hover:text-white transition-all shadow-xl"
+              >
+                Close Portal
+              </button>
             </motion.div>
           </div>
         )}

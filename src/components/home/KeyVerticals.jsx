@@ -1,89 +1,106 @@
-import { HardHat, Truck, Mountain, LayoutGrid, Wrench } from 'lucide-react';
+import { Home, Building2, Factory, ShieldCheck, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Image from '../Image';
 
 const verticals = [
   {
     id: 1,
-    title: 'Construction Services',
-    description: 'End-to-end project execution with unmatched precision and quality.',
-    icon: <HardHat className="w-10 h-10 text-brand-secondary" />,
-    image: '/assets/images/construction.jpeg'
+    title: 'Residential',
+    description: 'Bespoke luxury villas and modern apartments designed for elevated living.',
+    icon: <Home className="w-10 h-10 text-jyothi-amber" />,
+    image: '/assets/images/unsplash-e551d6bb.jpg',
+    link: '/services/residential'
   },
   {
     id: 2,
-    title: 'Ready Mix Concrete (RMC)',
-    description: 'Precision Manufacturing of high-strength concrete with absolute Quality Assurance.',
-    icon: <Truck className="w-10 h-10 text-brand-secondary" />,
-    image: '/assets/images/rmc-expert.png'
+    title: 'Commercial',
+    description: 'State-of-the-art office complexes and retail spaces built for business growth.',
+    icon: <Building2 className="w-10 h-10 text-jyothi-amber" />,
+    image: '/assets/images/8.jpg',
+    link: '/services/commercial'
   },
   {
     id: 3,
-    title: 'Aggregates & Crushing',
-    description: 'Controlled Excellence in raw material extraction and stone crushing for foundation strength.',
-    icon: <Mountain className="w-10 h-10 text-brand-secondary" />,
-    image: '/assets/images/Agregator and crushing.jpeg'
+    title: 'Industrial',
+    description: 'High-performance manufacturing units and heavy-duty industrial infrastructure.',
+    icon: <Factory className="w-10 h-10 text-jyothi-amber" />,
+    image: '/assets/images/Fabrication images.jpeg',
+    link: '/services/industrial'
   },
   {
     id: 4,
-    title: 'Concrete Blocks',
-    description: 'Durable, efficient, and standardized building components for every scale.',
-    icon: <LayoutGrid className="w-10 h-10 text-brand-secondary" />,
-    image: '/assets/images/blocks-expert.png'
-  },
-  {
-    id: 5,
-    title: 'Fabrication Works',
-    description: 'Structural and customized engineering solutions tailored to your requirements.',
-    icon: <Wrench className="w-10 h-10 text-brand-secondary" />,
-    image: '/assets/images/fabrication-industrial.png'
+    title: 'Turnkey',
+    description: 'End-to-end design and build solutions with absolute precision and quality control.',
+    icon: <ShieldCheck className="w-10 h-10 text-jyothi-amber" />,
+    image: '/assets/images/construction.jpeg',
+    link: '/services/turnkey'
   }
 ];
 
 const KeyVerticals = () => {
   return (
-    <section className="py-20 md:py-32 bg-transparent min-h-[85vh] flex items-center">
+    <section className="py-10 md:py-24 bg-jyothi-blue relative">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="mb-16 md:mb-24 text-center md:text-left flex flex-col md:flex-row justify-between items-end gap-10">
-          <div className="max-w-2xl">
-            <h2 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-3 font-heading">Our Core Expertise</h2>
-            <h3 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight font-heading">
-              Integrated Construction <br className="hidden md:block" /> Solutions
-            </h3>
-          </div>
-          <p className="text-gray-300 max-w-md text-right hidden md:block text-lg">
-            From raw material extraction to final structural finishing, our integrated approach ensures quality control at every stage.
-          </p>
+        <div className="flex flex-col md:flex-row justify-between items-end gap-10 mb-8 md:mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl"
+          >
+            <span className="text-jyothi-amber font-black uppercase tracking-[0.3em] text-sm mb-4 block">Our Expertise</span>
+            <h2 className="text-3xl md:text-6xl font-black text-white leading-tight font-heading">
+              Vertical Integrated <br /> Solutions
+            </h2>
+          </motion.div>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-gray-400 max-w-md text-base md:text-lg leading-relaxed"
+          >
+            From conceptual design to structural execution, we deliver excellence across diverse sectors with uncompromising quality.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {verticals.map((vertical, index) => (
-            <div 
+            <motion.div 
               key={vertical.id}
-              className={`group relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-xl shadow-2xl border border-white/10 hover:scale-[1.02] hover:shadow-[0_30px_60px_rgba(197,160,89,0.3)] hover:border-brand-secondary/50 transition-all duration-700 ${
-                index === 0 ? 'md:col-span-2 lg:col-span-2' : ''
-              }`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-jyothi-amber/50 transition-all duration-500 h-[300px] md:h-[500px]"
             >
-              <div className="absolute inset-0">
+              <div className="absolute inset-0 z-0">
                 <Image 
                   src={vertical.image} 
-                  alt={vertical.title === 'Aggregates & Crushing' ? "High-grade 20mm Crushed Aggregates for construction" : vertical.title === 'Ready Mix Concrete (RMC)' ? "Industrial-grade RMC precision pouring machinery" : vertical.title === 'Concrete Blocks' ? "High-durability solid cement blocks on construction site" : vertical.title} 
-                  className="w-full h-full object-cover opacity-100 group-hover:scale-110 transition-transform duration-700"
+                  alt={vertical.title} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-40"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-jyothi-blue/60 to-transparent"></div>
               </div>
               
-              <div className="relative p-8 h-full flex flex-col justify-end min-h-[320px] z-10">
-                <div className="mb-4 bg-white/10 backdrop-blur-md border border-white/20 w-16 h-16 rounded-full flex items-center justify-center text-brand-secondary shadow-lg">
-                  {vertical.icon}
+              <div className="relative p-6 md:p-8 h-full flex flex-col justify-end z-10">
+                <div className="mb-4 md:mb-6 w-14 h-14 md:w-20 md:h-20 bg-jyothi-amber/10 border border-jyothi-amber/20 rounded-2xl flex items-center justify-center group-hover:bg-jyothi-amber group-hover:text-jyothi-blue transition-all duration-500 group-hover:-translate-y-2">
+                  <div className="group-hover:scale-110 transition-transform duration-500 scale-65 md:scale-100">
+                    {vertical.icon}
+                  </div>
                 </div>
-                <h4 className="text-2xl font-bold text-white mb-2 font-heading">
+                <h4 className="text-xl md:text-2xl font-black text-white mb-2 md:mb-4 font-heading group-hover:text-jyothi-amber transition-colors">
                   {vertical.title}
                 </h4>
-                <p className="text-white font-medium text-base">
+                <p className="text-gray-400 text-[10px] md:text-sm leading-relaxed mb-6 md:mb-8 line-clamp-2 md:line-clamp-none">
                   {vertical.description}
                 </p>
+                <Link to={vertical.link} className="flex items-center gap-2 text-white font-bold text-xs md:text-sm group/btn">
+                  Learn More <ArrowRight size={14} className="text-jyothi-amber group-hover/btn:translate-x-2 transition-transform md:w-4 md:h-4" />
+                </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

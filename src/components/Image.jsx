@@ -13,7 +13,7 @@ const Image = ({ src, alt, className, priority = false, ...props }) => {
   };
 
   return (
-    <div className={`relative overflow-hidden ${className} bg-jyothi-green/20`}>
+    <div className={`relative overflow-hidden ${className} bg-jyothi-blue/20`}>
       {/* Low-res blurred placeholder can be added here if needed in the future */}
       <img
         src={imgSrc}

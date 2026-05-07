@@ -87,10 +87,10 @@ const WhyJyothiPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative z-10">
               {processSteps.map((step, index) => (
                 <div key={step.id} className="flex flex-col items-center text-center group">
-                  <div className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-lg transition-transform duration-300 group-hover:scale-110 border-4 border-white/20 backdrop-blur-md ${index === 3 ? 'bg-jyothi-green' : 'bg-white/10'}`}>
+                  <div className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-lg transition-transform duration-300 group-hover:scale-110 border-4 border-white/20 backdrop-blur-md ${index === 3 ? 'bg-jyothi-amber' : 'bg-white/10'}`}>
                     {step.icon}
                   </div>
-                  <h4 className={`text-xl font-bold mb-3 font-heading ${index === 3 ? 'text-jyothi-green' : 'text-white'}`}>
+                  <h4 className={`text-xl font-bold mb-3 font-heading ${index === 3 ? 'text-jyothi-amber' : 'text-white'}`}>
                     {step.title}
                   </h4>
                   <p className="text-gray-300 text-sm leading-relaxed px-4">
