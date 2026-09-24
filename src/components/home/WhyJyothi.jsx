@@ -85,11 +85,11 @@ const WhyJyothi = () => {
             <div className="absolute -inset-6 border border-jyothi-orange/20 rounded-3xl transform rotate-3 z-0"></div>
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
               <Image 
-                src="/assets/images/Q&S.jpg" 
-                alt="Quality and Safety Standards" 
+                src="/assets/images/why_choose_us.jpg" 
+                alt="Quality and Safety Standards - Jyothi Construction Engineering Excellence" 
                 className="w-full h-[300px] md:h-[700px] aspect-video md:aspect-auto object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue/80 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue/60 via-transparent to-transparent"></div>
             </div>
 
             {/* Floating Achievement */}

@@ -6,31 +6,31 @@ import Image from '../Image';
 const projects = [
   {
     id: 1,
-    title: 'Tech Horizon IT Park',
-    location: 'Bangalore, KA',
-    type: 'Commercial',
-    image: '/assets/images/8.jpg'
+    title: 'Jyothi Conmix RMC Hub',
+    location: 'Plant Operations, Karnataka',
+    type: 'Ready Mix',
+    image: '/Jyothi/IMG_0361.JPG'
   },
   {
     id: 2,
-    title: 'Aura Luxury Villas',
-    location: 'Mumbai, MH',
-    type: 'Residential',
-    image: '/assets/images/unsplash-e551d6bb.jpg'
+    title: 'Automated Blocks Facility',
+    location: 'Manufacturing Yard',
+    type: 'Concrete Blocks',
+    image: '/Jyothi/IMG_9715.JPG'
   },
   {
     id: 3,
-    title: 'Apex Manufacturing',
-    location: 'Chennai, TN',
-    type: 'Industrial',
-    image: '/assets/images/Fabrication images.jpeg'
+    title: 'Granite Quarry & Mining',
+    location: 'Quarry Face',
+    type: 'Aggregates',
+    image: '/Jyothi/IMG_9528.JPG'
   },
   {
     id: 4,
-    title: 'Cyber Nexus Center',
-    location: 'Hyderabad, TS',
-    type: 'Commercial',
-    image: '/assets/images/construction.jpeg'
+    title: 'Crane Fleet & Logistics',
+    location: 'Regional Distribution',
+    type: 'Fleet Supply',
+    image: '/Jyothi/IMG_9824.JPG'
   }
 ];
 

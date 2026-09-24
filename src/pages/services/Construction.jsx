@@ -17,17 +17,17 @@ const Construction = () => {
     {
       title: 'Structural Integrity First',
       desc: 'Focusing on deep foundations and load-bearing strength using premium in-house materials.',
-      img: '/assets/images/construction.jpeg'
+      img: '/Jyothi/IMG_9715.JPG'
     },
     {
       title: 'Precision Site Execution',
       desc: 'Real-time project tracking and modular construction techniques for faster delivery.',
-      img: '/assets/images/rmc-expert.png'
+      img: '/Jyothi/IMG_0361.JPG'
     },
     {
       title: 'Integrated Supply Chain',
       desc: 'Reducing project delays through immediate access to our RMC and aggregate plants.',
-      img: '/assets/images/aggregates-expert.png'
+      img: '/Jyothi/IMG_9528.JPG'
     }
   ];
 
@@ -36,7 +36,7 @@ const Construction = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image 
-          src="/assets/images/construction.jpeg" 
+          src="/Jyothi/IMG_9715.JPG" 
           alt="Active Construction Site Execution" 
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -121,7 +121,7 @@ const Construction = () => {
               {/* Exceptional Service Benefits */}
               <div className="bg-jyothi-blue rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div className="md:w-1/2">
-                  <Image src="/assets/images/8.jpg" alt="Construction Site" className="w-full h-full object-cover min-h-[300px]" />
+                  <Image src="/Jyothi/IMG_0361.JPG" alt="Construction Site" className="w-full h-full object-cover min-h-[300px]" />
                 </div>
                 <div className="md:w-1/2 p-8 md:p-12">
                   <h3 className="text-2xl font-bold text-white mb-6 font-heading">Why Choose Jyothi?</h3>
@@ -152,9 +152,9 @@ const Construction = () => {
                   <ul className="space-y-3">
                     {['Residential Construction', 'Commercial Infrastructure', 'Industrial Engineering', 'Infrastructure Projects'].map((cat, i) => (
                       <li key={i}>
-                        <Link to="#" className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 hover:border-jyothi-amber hover:text-jyothi-blue transition-all group">
-                          <span className="font-medium">{cat}</span>
-                          <ChevronRight size={18} className="text-gray-300 group-hover:text-jyothi-amber" />
+                        <Link to="#" className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 hover:border-jyothi-amber hover:text-jyothi-blue transition-all group shadow-sm">
+                          <span className="font-semibold text-gray-800 group-hover:text-jyothi-blue">{cat}</span>
+                          <ChevronRight size={18} className="text-gray-400 group-hover:text-jyothi-amber" />
                         </Link>
                       </li>
                     ))}

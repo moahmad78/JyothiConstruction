@@ -6,35 +6,35 @@ import Image from '../Image';
 const verticals = [
   {
     id: 1,
-    title: 'Residential',
-    description: 'Bespoke luxury villas and modern apartments designed for elevated living.',
-    icon: <Home className="w-10 h-10 text-jyothi-amber" />,
-    image: '/assets/images/unsplash-e551d6bb.jpg',
-    link: '/services/residential'
+    title: 'Ready Mix Concrete (RMC)',
+    description: 'Fully automated computerized batching plant delivering high-grade concrete with zero compromise.',
+    icon: <Factory className="w-10 h-10 text-jyothi-amber" />,
+    image: '/Jyothi/IMG_0361.JPG',
+    link: '/services/rmc'
   },
   {
     id: 2,
-    title: 'Commercial',
-    description: 'State-of-the-art office complexes and retail spaces built for business growth.',
+    title: 'Solid Concrete Blocks',
+    description: 'Precision molded high-density cement blocks and pavers manufactured on high-capacity curing yards.',
     icon: <Building2 className="w-10 h-10 text-jyothi-amber" />,
-    image: '/assets/images/8.jpg',
-    link: '/services/commercial'
+    image: '/Jyothi/IMG_9715.JPG',
+    link: '/services/blocks'
   },
   {
     id: 3,
-    title: 'Industrial',
-    description: 'High-performance manufacturing units and heavy-duty industrial infrastructure.',
+    title: 'Aggregates & Crushing',
+    description: 'Heavy-duty crushing and screening plants producing graded aggregates, M-Sand, and P-Sand.',
     icon: <Factory className="w-10 h-10 text-jyothi-amber" />,
-    image: '/assets/images/Fabrication images.jpeg',
-    link: '/services/industrial'
+    image: '/Jyothi/IMG_9632.JPG',
+    link: '/services/aggregates'
   },
   {
     id: 4,
-    title: 'Turnkey',
-    description: 'End-to-end design and build solutions with absolute precision and quality control.',
+    title: 'Quarry & Logistics Fleet',
+    description: 'Direct quarry extraction and self-loading boom crane fleet for swift regional delivery.',
     icon: <ShieldCheck className="w-10 h-10 text-jyothi-amber" />,
-    image: '/assets/images/construction.jpeg',
-    link: '/services/turnkey'
+    image: '/Jyothi/IMG_9824.JPG',
+    link: '/why-jyothi'
   }
 ];
 

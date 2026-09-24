@@ -43,26 +43,26 @@ const CareerForm = ({ job, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 md:p-6">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-6 overflow-y-auto">
       {/* Backdrop */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={onClose}
-        className="absolute inset-0 bg-black/80 backdrop-blur-md"
+        className="fixed inset-0 bg-black/85 backdrop-blur-md"
       />
 
       {/* Modal Container */}
       <motion.div
-        initial={{ y: 100, opacity: 0, scale: 0.95 }}
+        initial={{ y: 60, opacity: 0, scale: 0.95 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
-        exit={{ y: 100, opacity: 0, scale: 0.95 }}
-        transition={{ type: "spring", damping: 30, stiffness: 300 }}
-        className="relative w-full max-w-2xl bg-jyothi-blue border border-white/10 rounded-[2.5rem] shadow-2xl overflow-hidden max-h-[85vh] overflow-y-auto custom-scrollbar"
+        exit={{ y: 60, opacity: 0, scale: 0.95 }}
+        transition={{ type: "spring", damping: 28, stiffness: 320 }}
+        className="relative w-full max-w-2xl bg-jyothi-blue border border-white/15 rounded-[2rem] shadow-2xl overflow-hidden max-h-[88vh] overflow-y-auto my-auto z-10"
       >
         {/* Glow Effect */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-jyothi-amber/5 rounded-full blur-[80px] -ml-32 -mt-32"></div>
+        <div className="absolute top-0 left-0 w-64 h-64 bg-jyothi-amber/10 rounded-full blur-[80px] -ml-32 -mt-32 pointer-events-none"></div>
 
         <div className="relative p-6 md:p-12">
           {/* Header */}

@@ -4,49 +4,46 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const backgrounds = {
   '/': [
-    '/assets/images/homepageinner.jpeg',
-    '/assets/images/construction.jpeg',
-    '/assets/images/Agregator and crushing.jpeg'
+    '/Jyothi/IMG_9715.JPG',
+    '/Jyothi/IMG_0361.JPG',
+    '/Jyothi/IMG_9528.JPG'
   ],
   '/about': [
-    '/assets/images/about_us.jpg',
-    '/assets/images/unsplash-3d9bb42c.jpg',
-    '/assets/images/JGROUP.jpg'
+    '/Jyothi/IMG_0229.JPG',
+    '/Jyothi/IMG_0361.JPG'
   ],
   '/projects': [
-    '/assets/images/unsplash-27d7005c.jpg',
-    '/assets/images/unsplash-4955a12c.jpg',
-    '/assets/images/unsplash-34e86d0c.jpg'
+    '/Jyothi/IMG_9715.JPG',
+    '/Jyothi/IMG_9528.JPG',
+    '/Jyothi/IMG_9632.JPG'
   ],
   '/why-jyothi': [
-    '/assets/images/Q&S.jpg',
-    '/assets/images/unsplash-1b16a726.jpg',
-    '/assets/images/unsplash-b6b9f9eb.jpg'
+    '/Jyothi/IMG_0361.JPG',
+    '/Jyothi/IMG_9824.JPG'
   ],
   '/contact': [
-    '/assets/images/9.jpg',
-    '/assets/images/unsplash-93aa798d.jpg',
-    '/assets/images/unsplash-4ec2ae05.jpg'
+    '/Jyothi/IMG_0229.JPG',
+    '/Jyothi/IMG_9715.JPG'
   ],
   '/services': [
-    '/assets/images/construction.jpeg',
-    '/assets/images/unsplash-b6b9f9eb.jpg',
-    '/assets/images/unsplash-d6d9bb7f.jpg'
+    '/Jyothi/IMG_0361.JPG',
+    '/Jyothi/IMG_9715.JPG',
+    '/Jyothi/IMG_9528.JPG'
   ],
   '/services/construction': [
-    '/assets/images/construction.jpeg'
+    '/Jyothi/IMG_9715.JPG'
   ],
   '/services/rmc': [
-    '/assets/images/concrete-batching.png'
+    '/Jyothi/IMG_0361.JPG'
   ],
   '/services/aggregates': [
-    '/assets/images/Agregator and crushing.jpeg'
+    '/Jyothi/IMG_9528.JPG'
   ],
   '/services/blocks': [
-    '/assets/images/3.jpg'
+    '/Jyothi/IMG_9749.JPG'
   ],
   '/services/fabrication': [
-    '/assets/images/Fabrication images.jpeg'
+    '/Jyothi/IMG_9632.JPG'
   ]
 };
 

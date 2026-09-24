@@ -15,19 +15,19 @@ const Aggregates = () => {
 
   const stages = [
     {
-      title: 'Strategic Material Integration',
-      desc: 'Focusing on premium raw materials and sustainable sourcing for maximum structural integrity.',
-      img: '/assets/images/aggregates..jpeg'
+      title: 'Quarry Extraction & Loading',
+      desc: 'Heavy-duty Hyundai & Tata excavators extract pure granite boulders from our certified quarry.',
+      img: '/Jyothi/IMG_9528.JPG'
     },
     {
-      title: 'Precision Batching Operations',
-      desc: 'Utilizing real-time quality control systems to ensure every cubic meter meets design specifications.',
-      img: '/assets/images/rmc-expert.png'
+      title: 'VSI & Cone Crushing Operations',
+      desc: 'Multi-stage crushing producing perfectly cubical aggregates and premium manufactured sand (M-Sand).',
+      img: '/Jyothi/IMG_9578.JPG'
     },
     {
-      title: 'Performance Quality Assurance',
-      desc: 'Adhering to strict lab testing protocols and IS standards for durability and safety.',
-      img: '/assets/images/blocks-expert.png'
+      title: 'Precision Rock Breaking & Grading',
+      desc: 'Hydraulic rock breakers and vibrating screens ensuring consistent aggregate grading as per IS specifications.',
+      img: '/Jyothi/IMG_9520.JPG'
     }
   ];
 
@@ -36,11 +36,11 @@ const Aggregates = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image 
-          src="/assets/images/Agregator and crushing.jpeg" 
-          alt="Aggregates & Crushing Operations" 
+          src="/Jyothi/IMG_9528.JPG" 
+          alt="Quarry Mining & Aggregates Operations" 
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/55"></div>
         <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
@@ -121,7 +121,7 @@ const Aggregates = () => {
               {/* Exceptional Service Benefits */}
               <div className="bg-jyothi-blue rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div className="md:w-1/2">
-                  <Image src="/assets/images/6.jpg" alt="Industrial Quality" className="w-full h-full object-cover min-h-[300px]" />
+                  <Image src="/Jyothi/IMG_9632.JPG" alt="High Capacity Crushing Plant" className="w-full h-full object-cover min-h-[300px]" />
                 </div>
                 <div className="md:w-1/2 p-8 md:p-12">
                   <h3 className="text-2xl font-bold text-white mb-6 font-heading">Exceptional Service Benefits</h3>
@@ -152,9 +152,9 @@ const Aggregates = () => {
                   <ul className="space-y-3">
                     {['M-Sand (Manufactured Sand)', 'P-Sand (Plastering Sand)', 'Robo Sand', 'Crushed Aggregates'].map((cat, i) => (
                       <li key={i}>
-                        <Link to="#" className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 hover:border-jyothi-amber hover:text-jyothi-blue transition-all group">
-                          <span className="font-medium">{cat}</span>
-                          <ChevronRight size={18} className="text-gray-300 group-hover:text-jyothi-amber" />
+                        <Link to="#" className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 hover:border-jyothi-amber hover:text-jyothi-blue transition-all group shadow-sm">
+                          <span className="font-semibold text-gray-800 group-hover:text-jyothi-blue">{cat}</span>
+                          <ChevronRight size={18} className="text-gray-400 group-hover:text-jyothi-amber" />
                         </Link>
                       </li>
                     ))}

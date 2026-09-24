@@ -15,19 +15,19 @@ const Blocks = () => {
 
   const stages = [
     {
-      title: 'Precision Mold Casting',
-      desc: 'Utilizing industrial-grade molds for absolute dimensional accuracy.',
-      img: '/assets/images/blocks-expert.png'
+      title: 'Automated Hydraulic Casting',
+      desc: 'High-density automated block making machinery ensuring strict dimensional tolerances.',
+      img: '/Jyothi/IMG_9749.JPG'
     },
     {
-      title: 'Structural Integrity QA',
-      desc: 'Adhering to IS standards for compressive strength and curing cycles.',
-      img: '/assets/images/rmc-expert.png'
+      title: 'Extensive Yard Curing & QA',
+      desc: 'Scientific water curing and compressive strength testing across high-capacity curing beds.',
+      img: '/Jyothi/IMG_9715.JPG'
     },
     {
-      title: 'Logistics Efficiency',
-      desc: 'Seamless palletized delivery ensuring minimal breakage during transit.',
-      img: '/assets/images/construction.jpeg'
+      title: 'Crane Fleet Logistics',
+      desc: 'Dedicated self-loading hydraulic crane trucks ensuring zero breakage and direct on-site placement.',
+      img: '/Jyothi/IMG_9824.JPG'
     }
   ];
 
@@ -36,11 +36,11 @@ const Blocks = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image 
-          src="/assets/images/3.jpg" 
-          alt="Industrial Concrete Block Yard" 
+          src="/Jyothi/IMG_9715.JPG" 
+          alt="Industrial Concrete Block Yard & Silos" 
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/55"></div>
         <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
@@ -121,7 +121,7 @@ const Blocks = () => {
               {/* Exceptional Service Benefits */}
               <div className="bg-jyothi-blue rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div className="md:w-1/2">
-                  <Image src="/assets/images/7.jpg" alt="Blocks Inventory" className="w-full h-full object-cover min-h-[300px]" />
+                  <Image src="/Jyothi/IMG_9749.JPG" alt="Automated Block Casting" className="w-full h-full object-cover min-h-[300px]" />
                 </div>
                 <div className="md:w-1/2 p-8 md:p-12">
                   <h3 className="text-2xl font-bold text-white mb-6 font-heading">Quality Foundations</h3>
@@ -152,9 +152,9 @@ const Blocks = () => {
                   <ul className="space-y-3">
                     {['Solid Cement Blocks', 'Hollow Concrete Blocks', 'Interlocking Pavers', 'Boundary Wall Components'].map((cat, i) => (
                       <li key={i}>
-                        <Link to="#" className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 hover:border-jyothi-amber hover:text-jyothi-blue transition-all group">
-                          <span className="font-medium">{cat}</span>
-                          <ChevronRight size={18} className="text-gray-300 group-hover:text-jyothi-amber" />
+                        <Link to="#" className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 hover:border-jyothi-amber hover:text-jyothi-blue transition-all group shadow-sm">
+                          <span className="font-semibold text-gray-800 group-hover:text-jyothi-blue">{cat}</span>
+                          <ChevronRight size={18} className="text-gray-400 group-hover:text-jyothi-amber" />
                         </Link>
                       </li>
                     ))}

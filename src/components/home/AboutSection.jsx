@@ -19,8 +19,8 @@ const AboutSection = () => {
             <div className="absolute -inset-4 border border-jyothi-amber/30 rounded-2xl transform -rotate-3 z-0"></div>
             <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl">
               <Image 
-                src="/assets/images/homepageinner.jpeg" 
-                alt="Jyothi Construction Excellence" 
+                src="/Jyothi/IMG_0229.JPG" 
+                alt="Jyothi Construction Leadership & Team" 
                 className="w-full h-[300px] md:h-[600px] aspect-video md:aspect-auto object-cover object-center hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue/60 to-transparent"></div>

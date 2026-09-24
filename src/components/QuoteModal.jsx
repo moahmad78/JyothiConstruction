@@ -48,14 +48,14 @@ const QuoteModal = () => {
   return (
     <AnimatePresence>
       {isModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-6 overflow-y-auto">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={closeModal}
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/85 backdrop-blur-md"
           />
 
           {/* Modal Content */}
@@ -64,7 +64,7 @@ const QuoteModal = () => {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-2xl bg-jyothi-blue border border-white/10 rounded-[2.5rem] overflow-hidden shadow-2xl max-h-[85vh] overflow-y-auto custom-scrollbar"
+            className="relative w-full max-w-2xl bg-jyothi-blue border border-white/15 rounded-[2rem] overflow-hidden shadow-2xl max-h-[88vh] overflow-y-auto my-auto z-10"
           >
             {/* Header Decorations */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-jyothi-amber/5 rounded-full blur-[80px] -mr-32 -mt-32"></div>

@@ -27,7 +27,7 @@ const Fabrication = () => {
     {
       title: 'On-Site Integration',
       desc: 'Efficient logistics and expert installation for zero project delays.',
-      img: '/assets/images/rmc-expert.png'
+      img: '/Jyothi/IMG_9824.JPG'
     }
   ];
 
@@ -152,9 +152,9 @@ const Fabrication = () => {
                   <ul className="space-y-3">
                     {['Industrial Sheds', 'Steel Structural Trusses', 'Architectural Metal Works', 'Custom Engineering Parts'].map((cat, i) => (
                       <li key={i}>
-                        <Link to="#" className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 hover:border-jyothi-amber hover:text-jyothi-blue transition-all group">
-                          <span className="font-medium">{cat}</span>
-                          <ChevronRight size={18} className="text-gray-300 group-hover:text-jyothi-amber" />
+                        <Link to="#" className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 hover:border-jyothi-amber hover:text-jyothi-blue transition-all group shadow-sm">
+                          <span className="font-semibold text-gray-800 group-hover:text-jyothi-blue">{cat}</span>
+                          <ChevronRight size={18} className="text-gray-400 group-hover:text-jyothi-amber" />
                         </Link>
                       </li>
                     ))}

@@ -15,19 +15,19 @@ const RMC = () => {
 
   const stages = [
     {
-      title: 'Precision Batching Control',
-      desc: 'Real-time monitoring of raw materials and moisture content for optimal workability.',
-      img: '/assets/images/concrete-batching.png'
+      title: 'Automated Conmix Batching',
+      desc: 'Computerized batching plant with twin-shaft mixers for exact water-cement ratio and slump consistency.',
+      img: '/Jyothi/IMG_0361.JPG'
     },
     {
-      title: 'Structural QA Testing',
-      desc: 'Rigorous 7-day and 28-day strength verification protocols for every batch.',
-      img: '/assets/images/2.jpg'
+      title: 'Rigorous On-Site & Lab QA',
+      desc: 'Precision testing for compressive strength and workability before dispatch.',
+      img: '/Jyothi/IMG_9715.JPG'
     },
     {
-      title: 'Site Delivery Logistics',
-      desc: 'Optimized routing and GPS tracking to ensure concrete reaches the site on time.',
-      img: '/assets/images/2.jpg'
+      title: 'Transit Mixer Fleet Logistics',
+      desc: 'High-capacity transit mixers deployed with GPS dispatch for punctual delivery to casting sites.',
+      img: '/Jyothi/IMG_0361.JPG'
     }
   ];
 
@@ -36,11 +36,11 @@ const RMC = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <Image 
-          src="/assets/images/concrete-batching.png" 
-          alt="Automated RMC Batching Plant - Jyothi Construction" 
+          src="/Jyothi/IMG_0361.JPG" 
+          alt="Automated RMC Conmix Batching Plant - Jyothi Construction" 
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/55"></div>
         <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
@@ -121,7 +121,7 @@ const RMC = () => {
               {/* Exceptional Service Benefits */}
               <div className="bg-jyothi-blue rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div className="md:w-1/2">
-                  <Image src="/assets/images/2.jpg" alt="RMC Quality Control" className="w-full h-full object-cover min-h-[300px]" />
+                  <Image src="/Jyothi/IMG_0361.JPG" alt="Jyothi Conmix Ready Mix Concrete Plant" className="w-full h-full object-cover min-h-[300px]" />
                 </div>
                 <div className="md:w-1/2 p-8 md:p-12">
                   <h3 className="text-2xl font-bold text-white mb-6 font-heading">Why Choose Jyothi RMC?</h3>
@@ -152,9 +152,9 @@ const RMC = () => {
                   <ul className="space-y-3">
                     {['Standard Grade Concrete', 'High Strength Mixes', 'Fiber Reinforced Concrete', 'Special Application Mixes'].map((cat, i) => (
                       <li key={i}>
-                        <Link to="#" className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 hover:border-jyothi-amber hover:text-jyothi-blue transition-all group">
-                          <span className="font-medium">{cat}</span>
-                          <ChevronRight size={18} className="text-gray-300 group-hover:text-jyothi-amber" />
+                        <Link to="#" className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 hover:border-jyothi-amber hover:text-jyothi-blue transition-all group shadow-sm">
+                          <span className="font-semibold text-gray-800 group-hover:text-jyothi-blue">{cat}</span>
+                          <ChevronRight size={18} className="text-gray-400 group-hover:text-jyothi-amber" />
                         </Link>
                       </li>
                     ))}

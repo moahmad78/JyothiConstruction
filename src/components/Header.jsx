@@ -46,7 +46,7 @@ const Header = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 ${isScrolled ? 'bg-jyothi-blue/95 backdrop-blur-xl shadow-2xl py-3 border-b border-white/10' : 'bg-transparent py-6'}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-jyothi-blue/95 backdrop-blur-xl shadow-2xl py-3 border-b border-white/10' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex items-center justify-between">
           {/* Logo - Left Aligned */}

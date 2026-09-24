@@ -6,14 +6,14 @@ const AboutPage = () => {
     <div className="bg-jyothi-blue min-h-screen pt-24 md:pt-40">
       
       {/* Page Hero Banner */}
-      <section className="relative h-[30vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[35vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/assets/images/1.jpg" 
-            alt="About Our Legacy" 
+            src="/Jyothi/IMG_0361.JPG" 
+            alt="About Jyothi Infrastructure & Legacy" 
             className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-jyothi-blue/80 to-jyothi-blue"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-jyothi-blue/85 via-jyothi-blue/70 to-jyothi-blue"></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -30,15 +30,15 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Core Content: Left Image | Right Text */}
-      <section className="py-10 md:py-12 relative overflow-hidden">
+      {/* Core Content: Left Image (Team) | Right Text */}
+      <section className="py-10 md:py-16 relative overflow-hidden">
         {/* Background Decor */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-jyothi-orange/5 rounded-full blur-[100px] -mr-48 -mt-48"></div>
         
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
-            {/* Left side: High-quality site image */}
+            {/* Left side: Authentic Jyothi Team Image */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -49,9 +49,9 @@ const AboutPage = () => {
               <div className="absolute -inset-4 border-2 border-jyothi-amber/20 rounded-3xl group-hover:border-jyothi-amber/40 transition-colors duration-500"></div>
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img 
-                  src="/assets/images/homepageinner.jpeg" 
-                  alt="Construction Site Excellence" 
-                  className="w-full h-64 md:h-[600px] aspect-video md:aspect-auto object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  src="/Jyothi/IMG_0229.JPG" 
+                  alt="Jyothi Construction Leadership & Team" 
+                  className="w-full h-72 md:h-[550px] object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-jyothi-blue/10 group-hover:bg-transparent transition-all"></div>
               </div>
@@ -82,19 +82,48 @@ const AboutPage = () => {
                   Today, we combine traditional engineering values with cutting-edge construction technology. By manufacturing our own high-grade materials—from Ready Mix Concrete to precision-engineered blocks—we ensure total quality control across every phase of development.
                 </p>
               </div>
-
-              {/* Read More Button */}
-              {/* <button className="mt-12 px-12 py-5 bg-jyothi-amber text-jyothi-blue font-black rounded-xl shadow-xl hover:bg-jyothi-orange hover:text-white transition-all hover:scale-105 active:scale-95 uppercase tracking-widest text-xs flex items-center gap-3">
-                Read More <ChevronRight size={18} />
-              </button> */}
             </motion.div>
 
           </div>
         </div>
       </section>
 
+      {/* On-Site Engineering & Operations Showcase */}
+      <section className="py-12 bg-white/5 border-y border-white/10">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-jyothi-amber text-xs font-black uppercase tracking-[0.3em] mb-3 block">Field Excellence</span>
+              <h3 className="text-2xl md:text-4xl font-black text-white font-heading mb-6">
+                On-Site Engineering & <span className="text-jyothi-amber">Plant Operations</span>
+              </h3>
+              <p className="text-gray-300 leading-relaxed font-medium mb-6">
+                Our certified engineers, plant operators, and quality-control specialists work seamlessly at our automated batching and manufacturing facilities to guarantee punctual delivery and top-grade mix performance.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-jyothi-blue/80 p-4 rounded-xl border border-white/10">
+                  <div className="text-2xl font-black text-jyothi-amber">100%</div>
+                  <div className="text-xs text-gray-400 font-bold uppercase mt-1">In-House Quality Control</div>
+                </div>
+                <div className="bg-jyothi-blue/80 p-4 rounded-xl border border-white/10">
+                  <div className="text-2xl font-black text-jyothi-amber">24/7</div>
+                  <div className="text-xs text-gray-400 font-bold uppercase mt-1">Operational Fleet</div>
+                </div>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-white/15 shadow-2xl group">
+              <img 
+                src="/Jyothi/IMG_0361.JPG" 
+                alt="Jyothi Conmix Ready Mix Concrete Plant & Team" 
+                className="w-full h-80 md:h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission & Values Grid */}
-      <section className="py-10 md:py-12 border-t border-white/5">
+      <section className="py-10 md:py-16">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10 hover:border-jyothi-amber/30 transition-all group">

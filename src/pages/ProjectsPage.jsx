@@ -5,70 +5,79 @@ import { MapPin, ArrowRight, LayoutGrid, Home, Building2, Factory, Zap } from 'l
 const projectsData = [
   {
     id: 1,
-    name: 'Jyothi Residency',
-    location: 'Gorakhpur, UP',
-    type: 'Residential',
-    image: '/assets/images/8.jpg'
+    name: 'Jyothi Conmix RMC Batching Plant',
+    location: 'Karnataka',
+    type: 'Industrial',
+    desc: 'Automated computerized high-capacity batching plant supplying custom grade concrete.',
+    image: '/Jyothi/IMG_0361.JPG'
   },
   {
     id: 2,
-    name: 'Pinnacle Corporate Hub',
-    location: 'Bengaluru, KA',
-    type: 'Commercial',
-    image: '/assets/images/homepageinner.jpeg'
+    name: 'Automated Concrete Block Manufacturing Yard',
+    location: 'Main Yard Facility',
+    type: 'Industrial',
+    desc: 'Massive automated curing yard producing precision solid blocks with superior compressive strength.',
+    image: '/Jyothi/IMG_9715.JPG'
   },
   {
     id: 3,
-    name: 'Industrial Excellence Park',
-    location: 'Pune, MH',
-    type: 'Industrial',
-    image: '/assets/images/1.jpg'
+    name: 'Turnkey EPC Commercial Landmark',
+    location: 'Regional Hub',
+    type: 'Turnkey',
+    desc: 'End-to-end design and build solutions with absolute precision and quality control.',
+    image: '/Jyothi/IMG_9824.JPG'
   },
   {
     id: 4,
     name: 'Cyber Nexus Center',
-    location: 'Hyderabad, TS',
+    location: 'Tech Corridor',
     type: 'Commercial',
-    image: '/assets/images/construction.jpeg'
+    desc: 'State-of-the-art commercial tech hub constructed with in-house structural components.',
+    image: '/Jyothi/IMG_0361.JPG'
   },
   {
     id: 5,
-    name: 'Apex Manufacturing Unit',
-    location: 'Chennai, TN',
+    name: 'Granite Quarry Extraction & Mining Zone',
+    location: 'Quarry Face',
     type: 'Industrial',
-    image: '/assets/images/Fabrication images.jpeg'
+    desc: 'Self-owned heavy granite mining zone supplying aggregate raw materials across Karnataka.',
+    image: '/Jyothi/IMG_9528.JPG'
   },
   {
     id: 6,
-    name: 'Heritage Turnkey Project',
-    location: 'Jaipur, RJ',
-    type: 'Turnkey',
-    image: '/assets/images/unsplash-a61062d8.jpg'
+    name: 'Precision Block Casting Machine (Egg Layer)',
+    location: 'Curing Bay',
+    type: 'Industrial',
+    desc: 'High-speed automated block casting technology ensuring zero dimension variation.',
+    image: '/Jyothi/IMG_9749.JPG'
   },
   {
     id: 7,
-    name: 'Elite Sky Villas',
-    location: 'Mumbai, MH',
-    type: 'Residential',
-    image: '/assets/images/unsplash-e551d6bb.jpg'
+    name: 'Self-Loading Boom Crane Delivery Fleet',
+    location: 'Logistics Division',
+    type: 'Turnkey',
+    desc: 'Specialized hydraulic crane-mounted trucks for on-site direct placement and zero breakage.',
+    image: '/Jyothi/IMG_9824.JPG'
   },
   {
     id: 8,
-    name: 'Green Field Township',
-    location: 'Noida, UP',
-    type: 'Turnkey',
-    image: '/assets/images/unsplash-b78410a1.jpg'
+    name: 'VSI & High-Capacity Crushing Plant',
+    location: 'Crushing Division',
+    type: 'Industrial',
+    desc: 'Advanced cone crushers producing cubic M-Sand and precision-graded aggregates.',
+    image: '/Jyothi/IMG_9632.JPG'
   },
   {
     id: 9,
-    name: 'Urban Edge Plaza',
-    location: 'Kolkata, WB',
+    name: 'Jyothi Corporate Office & Leadership Team',
+    location: 'Headquarters',
     type: 'Commercial',
-    image: '/assets/images/unsplash-9356d126.jpg'
+    desc: 'Core executive management and senior engineering leadership driving project execution.',
+    image: '/Jyothi/IMG_0229.JPG'
   }
 ];
 
-const categories = ["All", "Residential", "Commercial", "Industrial", "Turnkey"];
+const categories = ["All", "Industrial", "Commercial", "Turnkey"];
 
 const ProjectsPage = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -81,12 +90,12 @@ const ProjectsPage = () => {
     <div className="bg-jyothi-blue min-h-screen pt-24 md:pt-40">
       
       {/* Page Header Banner */}
-      <section className="relative h-[30vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[35vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/assets/images/2.jpg" 
-            alt="Our Projects" 
-            className="w-full h-full object-cover opacity-20"
+            src="/Jyothi/IMG_9715.JPG" 
+            alt="Our Projects & Infrastructure" 
+            className="w-full h-full object-cover opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-jyothi-blue/90 to-jyothi-blue"></div>
         </div>
@@ -162,12 +171,17 @@ const ProjectsPage = () => {
                     <div className="flex items-center gap-2 text-jyothi-amber text-[10px] font-black uppercase tracking-[0.2em] mb-2">
                       <Zap size={12} /> Featured Project
                     </div>
-                    <h3 className="text-2xl font-black text-white font-heading mb-3 group-hover:text-jyothi-amber transition-colors">
+                    <h3 className="text-2xl font-black text-white font-heading mb-2 group-hover:text-jyothi-amber transition-colors">
                       {project.name}
                     </h3>
-                    <div className="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase tracking-widest">
+                    <div className="flex items-center gap-2 text-gray-400 text-xs font-bold uppercase tracking-widest mb-3">
                       <MapPin size={14} className="text-jyothi-amber" /> {project.location}
                     </div>
+                    {project.desc && (
+                      <p className="text-gray-300 text-xs leading-relaxed mb-4 line-clamp-2">
+                        {project.desc}
+                      </p>
+                    )}
 
                     {/* Hover Pop-up Button */}
                     <div className="mt-auto opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">

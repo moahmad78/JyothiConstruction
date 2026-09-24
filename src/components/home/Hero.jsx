@@ -9,11 +9,11 @@ import { Link } from 'react-router-dom';
 import { useModal } from '../../context/ModalContext';
 
 const slides = [
-  { id: 1, image: '/assets/images/2865.jpg' },
-  { id: 2, image: '/assets/images/21.jpg' },
-  { id: 3, image: '/assets/images/74095.jpg' },
-  { id: 4, image: '/assets/images/14735.jpg' },
-  { id: 5, image: '/assets/images/74054.jpg' }
+  { id: 1, image: '/Jyothi/IMG_9715.JPG', title: 'Automated Concrete Blocks Facility' },
+  { id: 2, image: '/Jyothi/IMG_0361.JPG', title: 'Jyothi Conmix Ready Mix Plant' },
+  { id: 3, image: '/Jyothi/IMG_9528.JPG', title: 'Heavy Granite Quarry & Mining' },
+  { id: 4, image: '/Jyothi/IMG_9824.JPG', title: 'Self-Loading Crane Delivery Fleet' },
+  { id: 5, image: '/Jyothi/IMG_9632.JPG', title: 'High-Capacity Crushing & Screening Plant' }
 ];
 
 const Hero = () => {
