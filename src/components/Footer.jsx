@@ -9,9 +9,9 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="bg-jyothi-blue pt-20 pb-8 mt-auto text-white border-t border-white/10 relative overflow-hidden">
-      {/* Background Accents */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-jyothi-amber/5 rounded-full blur-[120px] -mr-48 -mt-48"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-jyothi-orange/5 rounded-full blur-[120px] -ml-48 -mb-48"></div>
+      {/* Background Accents in Logo Gold and Green */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-jyothi-amber/10 rounded-full blur-[120px] -mr-48 -mt-48 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-jyothi-green/10 rounded-full blur-[120px] -ml-48 -mb-48 pointer-events-none"></div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         
@@ -20,8 +20,10 @@ const Footer = () => {
           
           {/* Col 1: Brand & Legacy */}
           <div className="flex flex-col gap-6">
-            <Link to="/" className="flex items-center gap-3">
-              <img src="/logo.png" alt="Jyothi Construction Logo" className="h-20 md:h-24 w-auto object-contain" />
+            <Link to="/" className="flex items-center gap-3 w-fit">
+              <div className="p-2.5 bg-white rounded-xl shadow-md">
+                <img src="/logo.png" alt="Jyothi Construction Logo" className="h-12 md:h-14 w-auto object-contain" />
+              </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               Serving the construction industry with a legacy of over 60+ Years of Excellence, integrity, and architectural precision. Building the future with integrated solutions.
@@ -71,7 +73,7 @@ const Footer = () => {
                 <div className="w-10 h-10 bg-jyothi-amber/10 rounded-lg flex items-center justify-center text-jyothi-amber shrink-0 border border-jyothi-amber/20">
                   <MapPin size={20} />
                 </div>
-                <span className="text-sm text-gray-400 leading-relaxed pt-1">123 Corporate Avenue, Tech Park Phase II, Bangalore, 560001</span>
+                <span className="text-sm text-gray-400 leading-relaxed pt-1">Bangalore, Karnataka, India</span>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-jyothi-amber/10 rounded-lg flex items-center justify-center text-jyothi-amber shrink-0 border border-jyothi-amber/20">

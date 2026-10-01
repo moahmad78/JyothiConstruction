@@ -9,7 +9,7 @@ const projectsData = [
     location: 'Karnataka',
     type: 'Industrial',
     desc: 'Automated computerized high-capacity batching plant supplying custom grade concrete.',
-    image: '/Jyothi/IMG_0361.JPG'
+    image: '/Jyothi/IMG_0038.JPG'
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const projectsData = [
     location: 'Main Yard Facility',
     type: 'Industrial',
     desc: 'Massive automated curing yard producing precision solid blocks with superior compressive strength.',
-    image: '/Jyothi/IMG_9715.JPG'
+    image: '/Jyothi/IMG_9734.JPG'
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const projectsData = [
     location: 'Tech Corridor',
     type: 'Commercial',
     desc: 'State-of-the-art commercial tech hub constructed with in-house structural components.',
-    image: '/Jyothi/IMG_0361.JPG'
+    image: '/Jyothi/IMG_0257.JPG'
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const projectsData = [
     location: 'Logistics Division',
     type: 'Turnkey',
     desc: 'Specialized hydraulic crane-mounted trucks for on-site direct placement and zero breakage.',
-    image: '/Jyothi/IMG_9824.JPG'
+    image: '/Jyothi/IMG_0452.JPG'
   },
   {
     id: 8,
@@ -87,17 +87,18 @@ const ProjectsPage = () => {
     : projectsData.filter(project => project.type === activeFilter);
 
   return (
-    <div className="bg-jyothi-blue min-h-screen pt-24 md:pt-40">
+    <div className="bg-jyothi-blue min-h-screen">
       
       {/* Page Header Banner */}
-      <section className="relative h-[35vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[48vh] md:h-[58vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/Jyothi/IMG_9715.JPG" 
-            alt="Our Projects & Infrastructure" 
-            className="w-full h-full object-cover opacity-25"
+            src="/Jyothi/IMG_9644.JPG" 
+            alt="Our Featured Infrastructure Projects - Jyothi Construction" 
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-jyothi-blue/90 to-jyothi-blue"></div>
+          <div className="absolute inset-0 bg-jyothi-blue/75 backdrop-blur-[1px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-transparent to-jyothi-blue/60"></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -106,10 +107,16 @@ const ProjectsPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-4 block">Portfolio</span>
-            <h1 className="text-3xl md:text-7xl font-black text-white font-heading tracking-tighter">
+            <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-3 block">
+              Portfolio & Engineering Showcase
+            </span>
+            <h1 className="text-4xl md:text-7xl font-black text-white font-heading tracking-tighter">
               Our Featured <span className="text-jyothi-amber">Projects</span>
             </h1>
+            <div className="w-24 h-1.5 bg-jyothi-amber mx-auto my-4 rounded-full"></div>
+            <p className="text-gray-200 text-sm md:text-lg max-w-2xl mx-auto font-sans font-medium">
+              Monumental civil engineering, ready-mix infrastructure, and industrial landmarks delivered across Karnataka.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -121,10 +128,10 @@ const ProjectsPage = () => {
             <button
               key={cat}
               onClick={() => setActiveFilter(cat)}
-              className={`px-6 md:px-8 py-3 rounded-xl font-bold uppercase tracking-widest text-[10px] transition-all duration-300 border shrink-0 ${
+              className={`px-6 md:px-8 py-3 rounded-xl font-black uppercase tracking-wider text-xs md:text-sm transition-all duration-300 border shrink-0 ${
                 activeFilter === cat 
-                ? 'bg-jyothi-amber border-jyothi-amber text-jyothi-blue shadow-lg' 
-                : 'bg-white/5 border-white/10 text-white hover:border-jyothi-amber/50'
+                ? 'bg-jyothi-amber border-jyothi-amber text-jyothi-blue shadow-xl scale-105' 
+                : 'bg-white/5 border-white/10 text-white hover:border-jyothi-amber/50 hover:text-jyothi-amber'
               }`}
             >
               {cat}
@@ -161,7 +168,8 @@ const ProjectsPage = () => {
                     <div className="absolute inset-0 bg-jyothi-blue/20 group-hover:bg-transparent transition-all"></div>
                     
                     {/* Floating Type Badge */}
-                    <div className="absolute top-6 left-6 px-4 py-1.5 bg-jyothi-amber/90 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest text-jyothi-blue">
+                    <div className="absolute top-5 left-5 px-5 py-2 bg-jyothi-amber text-jyothi-blue rounded-full text-xs md:text-sm font-black uppercase tracking-wider shadow-2xl border border-amber-200/50 flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-jyothi-blue"></span>
                       {project.type}
                     </div>
                   </div>

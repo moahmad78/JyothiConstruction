@@ -9,7 +9,7 @@ const verticals = [
     title: 'Ready Mix Concrete (RMC)',
     description: 'Fully automated computerized batching plant delivering high-grade concrete with zero compromise.',
     icon: <Factory className="w-10 h-10 text-jyothi-amber" />,
-    image: '/Jyothi/IMG_0361.JPG',
+    image: '/Jyothi/IMG_0038.JPG',
     link: '/services/rmc'
   },
   {
@@ -17,7 +17,7 @@ const verticals = [
     title: 'Solid Concrete Blocks',
     description: 'Precision molded high-density cement blocks and pavers manufactured on high-capacity curing yards.',
     icon: <Building2 className="w-10 h-10 text-jyothi-amber" />,
-    image: '/Jyothi/IMG_9715.JPG',
+    image: '/Jyothi/IMG_9734.JPG',
     link: '/services/blocks'
   },
   {
@@ -25,7 +25,7 @@ const verticals = [
     title: 'Aggregates & Crushing',
     description: 'Heavy-duty crushing and screening plants producing graded aggregates, M-Sand, and P-Sand.',
     icon: <Factory className="w-10 h-10 text-jyothi-amber" />,
-    image: '/Jyothi/IMG_9632.JPG',
+    image: '/Jyothi/IMG_9641.JPG',
     link: '/services/aggregates'
   },
   {
@@ -33,7 +33,7 @@ const verticals = [
     title: 'Quarry & Logistics Fleet',
     description: 'Direct quarry extraction and self-loading boom crane fleet for swift regional delivery.',
     icon: <ShieldCheck className="w-10 h-10 text-jyothi-amber" />,
-    image: '/Jyothi/IMG_9824.JPG',
+    image: '/Jyothi/IMG_9490.JPG',
     link: '/why-jyothi'
   }
 ];
@@ -73,32 +73,44 @@ const KeyVerticals = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-jyothi-amber/50 transition-all duration-500 h-[300px] md:h-[500px]"
+              className="group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-jyothi-amber/50 transition-all duration-500 h-[380px] md:h-[520px]"
             >
               <div className="absolute inset-0 z-0">
                 <Image 
                   src={vertical.image} 
                   alt={vertical.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-40"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-50"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-jyothi-blue/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-jyothi-blue/70 to-transparent"></div>
               </div>
               
               <div className="relative p-6 md:p-8 h-full flex flex-col justify-end z-10">
-                <div className="mb-4 md:mb-6 w-14 h-14 md:w-20 md:h-20 bg-jyothi-amber/10 border border-jyothi-amber/20 rounded-2xl flex items-center justify-center group-hover:bg-jyothi-amber group-hover:text-jyothi-blue transition-all duration-500 group-hover:-translate-y-2">
-                  <div className="group-hover:scale-110 transition-transform duration-500 scale-65 md:scale-100">
+                <div className="mb-4 md:mb-6 w-14 h-14 md:w-20 md:h-20 bg-jyothi-amber/10 border border-jyothi-amber/20 rounded-2xl flex items-center justify-center group-hover:bg-jyothi-amber group-hover:text-jyothi-blue transition-all duration-500 group-hover:-translate-y-2 flex-shrink-0">
+                  <div className="group-hover:scale-110 transition-transform duration-500 scale-75 md:scale-100">
                     {vertical.icon}
                   </div>
                 </div>
-                <h4 className="text-xl md:text-2xl font-black text-white mb-2 md:mb-4 font-heading group-hover:text-jyothi-amber transition-colors">
-                  {vertical.title}
-                </h4>
-                <p className="text-gray-400 text-[10px] md:text-sm leading-relaxed mb-6 md:mb-8 line-clamp-2 md:line-clamp-none">
-                  {vertical.description}
-                </p>
-                <Link to={vertical.link} className="flex items-center gap-2 text-white font-bold text-xs md:text-sm group/btn">
-                  Learn More <ArrowRight size={14} className="text-jyothi-amber group-hover/btn:translate-x-2 transition-transform md:w-4 md:h-4" />
-                </Link>
+
+                {/* Fixed height container for Title to ensure perfect horizontal alignment */}
+                <div className="h-14 md:h-16 flex items-end mb-2 md:mb-3">
+                  <h4 className="text-xl md:text-2xl font-black text-white font-heading group-hover:text-jyothi-amber transition-colors leading-tight">
+                    {vertical.title}
+                  </h4>
+                </div>
+
+                {/* Fixed height container for Description to ensure identical text baseline */}
+                <div className="h-16 md:h-20 flex items-start mb-4 md:mb-6">
+                  <p className="text-gray-300 text-xs md:text-sm leading-relaxed line-clamp-3">
+                    {vertical.description}
+                  </p>
+                </div>
+
+                {/* Fixed bottom Learn More button */}
+                <div className="pt-2">
+                  <Link to={vertical.link} className="inline-flex items-center gap-2 text-white font-bold text-xs md:text-sm group/btn hover:text-jyothi-amber transition-colors">
+                    Learn More <ArrowRight size={14} className="text-jyothi-amber group-hover/btn:translate-x-2 transition-transform md:w-4 md:h-4" />
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}

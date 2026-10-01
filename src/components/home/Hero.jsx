@@ -3,98 +3,77 @@
  * @project Jyothi Construction
  * @link https://www.instagram.com/sahil_sheikh78/
  */
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useModal } from '../../context/ModalContext';
-
-const slides = [
-  { id: 1, image: '/Jyothi/IMG_9715.JPG', title: 'Automated Concrete Blocks Facility' },
-  { id: 2, image: '/Jyothi/IMG_0361.JPG', title: 'Jyothi Conmix Ready Mix Plant' },
-  { id: 3, image: '/Jyothi/IMG_9528.JPG', title: 'Heavy Granite Quarry & Mining' },
-  { id: 4, image: '/Jyothi/IMG_9824.JPG', title: 'Self-Loading Crane Delivery Fleet' },
-  { id: 5, image: '/Jyothi/IMG_9632.JPG', title: 'High-Capacity Crushing & Screening Plant' }
-];
+import { ShieldCheck } from 'lucide-react';
 
 const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const { openModal } = useModal();
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <section className="relative h-[75vh] md:h-screen w-full flex flex-col items-center justify-center overflow-hidden z-0">
-      {/* Background Slider - Sirf Image Change Hogi */}
-      <div className="absolute inset-0 z-[-1]">
-        <AnimatePresence initial={false}>
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url('${slides[currentSlide].image}')` }}
-          />
-        </AnimatePresence>
-        {/* Client's Dark Blue Overlay */}
-        <div className="absolute inset-0 bg-jyothi-blue/60 backdrop-blur-[1px]"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-transparent to-jyothi-blue/40"></div>
+    <section className="relative h-[80vh] md:h-screen w-full flex flex-col items-center justify-center overflow-hidden z-0">
+      {/* Background Video (Retaining natural picture/video without full mask) */}
+      <div className="absolute inset-0 z-[-1] overflow-hidden bg-jyothi-blue">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/Jyothi/IMG_9715.JPG"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        >
+          <source src="/Jyothi/hero_bg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Top cinematic dark fade for seamless navbar contrast */}
+        <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-jyothi-blue via-jyothi-blue/70 to-transparent pointer-events-none z-[1]"></div>
+
+        {/* Subtle bottom fade only to seamlessly blend into next section */}
+        <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-jyothi-blue to-transparent pointer-events-none"></div>
       </div>
 
-      {/* Static Content Overlay - Ye Ruka Rahega */}
-      <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center md:text-left flex flex-col justify-center py-12 md:py-28">
+      {/* Static Content Overlay with slight darker background only for the texts */}
+      <div className="container relative z-10 px-6 max-w-7xl mx-auto flex flex-col justify-center pt-24 sm:pt-28 md:pt-36 pb-12 md:pb-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl"
+          className="max-w-3xl bg-jyothi-blue/70 backdrop-blur-md p-6 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-white/15 shadow-[0_20px_60px_rgba(0,0,0,0.4)] mt-4 md:mt-8"
         >
-          {/* Static Heading as per PDF */}
-          <h1 className="text-4xl md:text-7xl font-black text-white leading-[1.1] mb-6 tracking-tighter font-heading drop-shadow-2xl">
+          {/* Badge with Logo Green + Gold Harmony */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-jyothi-amber text-[11px] md:text-xs font-black uppercase tracking-[0.25em] mb-4 md:mb-6 shadow-sm">
+            <ShieldCheck size={14} className="text-jyothi-green-light" />
+            <span>Official Plant & Infrastructure Footage</span>
+          </div>
+
+          {/* Heading */}
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-white leading-[1.15] mb-4 md:mb-6 tracking-tighter font-heading drop-shadow-lg">
             Building Strong <br />
             <span className="text-jyothi-amber">Foundations</span> for <br />
             Tomorrow
           </h1>
 
-          {/* Static Sub-text */}
-          <p className="text-base md:text-2xl text-gray-300 mb-8 leading-relaxed font-medium max-w-2xl font-sans drop-shadow-md">
+          {/* Sub-text */}
+          <p className="text-sm sm:text-base md:text-xl text-gray-200 mb-6 md:mb-8 leading-relaxed font-normal max-w-2xl font-sans drop-shadow-sm">
             Delivering technical excellence and structural integrity with a legacy of 60+ years in modern infrastructure.
           </p>
 
-          {/* Static CTA Buttons */}
-          <div className="flex flex-row items-center justify-center md:justify-start gap-4 mt-8 md:mt-10 flex-wrap">
+          {/* CTA Buttons */}
+          <div className="flex flex-row items-center justify-start gap-4 flex-wrap">
             <button 
               onClick={openModal}
-              className="px-6 md:px-12 py-4 md:py-5 bg-jyothi-amber text-jyothi-blue font-black rounded-xl shadow-[0_20px_50px_rgba(245,158,11,0.3)] hover:bg-jyothi-orange hover:text-white transition-all hover:scale-105 active:scale-95 font-heading tracking-widest text-center whitespace-nowrap uppercase text-xs md:text-sm"
+              className="px-6 md:px-10 py-3.5 md:py-4 bg-jyothi-amber text-jyothi-blue font-black rounded-xl shadow-[0_20px_50px_rgba(245,158,11,0.3)] hover:bg-jyothi-orange hover:text-white transition-all hover:scale-105 active:scale-95 font-heading tracking-widest text-center whitespace-nowrap uppercase text-xs md:text-sm"
             >
               Get a Quote
             </button>
-            <Link to="/services" className="px-6 md:px-12 py-4 md:py-5 bg-white/5 border border-white/20 text-white font-black rounded-xl hover:bg-white/10 hover:border-jyothi-amber hover:text-jyothi-amber transition-all hover:scale-105 active:scale-95 font-heading tracking-widest backdrop-blur-md text-center whitespace-nowrap uppercase text-xs md:text-sm">
+            <Link to="/services" className="px-6 md:px-10 py-3.5 md:py-4 bg-white/10 border border-white/20 text-white font-black rounded-xl hover:bg-white/20 hover:border-jyothi-amber hover:text-jyothi-amber transition-all hover:scale-105 active:scale-95 font-heading tracking-widest backdrop-blur-md text-center whitespace-nowrap uppercase text-xs md:text-sm">
               Our Services
             </Link>
           </div>
         </motion.div>
-      </div>
-
-      {/* Side Progress Bar Logic - Intact rakha hai for premium feel */}
-      <div className="absolute right-12 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-8 items-center z-20">
-        <span className="text-white/20 font-black text-4xl rotate-90 tracking-[0.2em]">0{currentSlide + 1}</span>
-        <div className="w-[2px] h-32 bg-white/10 relative overflow-hidden">
-          <motion.div
-            key={currentSlide}
-            initial={{ height: 0 }}
-            animate={{ height: '100%' }}
-            transition={{ duration: 5, ease: "linear" }}
-            className="absolute top-0 left-0 w-full bg-jyothi-amber"
-          />
-        </div>
-        <span className="text-white/20 font-black text-4xl rotate-90 tracking-[0.2em]">0{slides.length}</span>
       </div>
     </section>
   );

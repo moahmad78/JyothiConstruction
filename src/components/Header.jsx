@@ -19,7 +19,7 @@ const Header = () => {
   const isActive = (path) => location.pathname === path;
   
   const getLinkClass = (path) => {
-    return `transition-colors text-sm font-semibold uppercase tracking-wider ${
+    return `transition-colors text-sm font-bold uppercase tracking-wider ${
       isActive(path) ? 'text-jyothi-amber' : 'text-white hover:text-jyothi-amber'
     }`;
   };
@@ -46,31 +46,60 @@ const Header = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-jyothi-blue/95 backdrop-blur-xl shadow-2xl py-3 border-b border-white/10' : 'bg-transparent py-6'}`}>
-      <div className="container mx-auto px-6 max-w-7xl">
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-white/10 ${
+      isScrolled 
+        ? 'py-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.6)]' 
+        : 'py-3 md:py-4 shadow-[0_4px_25px_rgba(0,0,0,0.45)]'
+    }`}>
+      {/* Single seamless continuous gradient: Pure white over logo, smoothly transitioning through logo forest-green and slate undertones into charcoal grey before the menu */}
+      <div 
+        className="absolute inset-0 pointer-events-none -z-10 backdrop-blur-xl"
+        style={{
+          background: 'linear-gradient(90deg, #ffffff 0%, #ffffff 26%, #f2f6f4 28%, #dce8e2 30%, #a9c6b8 32%, #6f9d8a 34%, #3f6e5a 36%, #214336 38%, #162a22 39%, #121820 41%, #121820 100%)'
+        }}
+      />
+
+      {/* Top subtle golden hairline in logo gold */}
+      <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-jyothi-amber/70 to-transparent pointer-events-none" />
+
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl relative">
         <div className="flex items-center justify-between">
-          {/* Logo - Left Aligned */}
-          <Link to="/" className="flex items-center gap-3 cursor-pointer">
-            <img src="/logo.png" alt="Jyothi Construction Logo" className="h-10 md:h-16 lg:h-20 w-auto object-contain" />
+          
+          {/* Logo - Completely clean without any box, card or patch */}
+          <Link to="/" className="flex items-center gap-3 cursor-pointer group">
+            <img 
+              src="/logo.png" 
+              alt="Jyothi Construction Logo" 
+              className="h-10 md:h-14 lg:h-16 w-auto object-contain filter drop-shadow-sm transition-transform duration-300 group-hover:scale-105" 
+            />
           </Link>
           
-          {/* Desktop Nav - Right Aligned */}
-          <nav className="hidden lg:flex items-center gap-10">
+          {/* Desktop Nav - Clean links without glossy pill dock */}
+          <nav className="hidden lg:flex items-center gap-8">
             <Link to="/" className={getLinkClass('/')}>Home</Link>
             <Link to="/about" className={getLinkClass('/about')}>About Us</Link>
             
+            {/* Services Dropdown */}
             <div className="group relative">
-              <a href="#" className="flex items-center gap-1 transition-colors text-sm font-semibold uppercase tracking-wider text-white hover:text-jyothi-amber py-2">
-                Services <ChevronDown size={14} />
-              </a>
+              <button className={`flex items-center gap-1.5 transition-colors text-sm font-bold uppercase tracking-wider py-2 ${
+                location.pathname.startsWith('/services') 
+                  ? 'text-jyothi-amber' 
+                  : 'text-white hover:text-jyothi-amber'
+              }`}>
+                Services <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />
+              </button>
+              
               {/* Mega Menu Dropdown */}
-              <div className="absolute top-full right-0 mt-2 w-72 bg-jyothi-blue border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden backdrop-blur-xl">
-                <ul className="flex flex-col py-3">
-                  <li><Link to="/services/construction" className="flex items-center gap-3 px-6 py-4 hover:bg-white/5 text-sm text-white font-medium transition-colors border-b border-white/5 last:border-0"><HardHat size={18} className="text-jyothi-amber" /> Construction Services</Link></li>
-                  <li><Link to="/services/rmc" className="flex items-center gap-3 px-6 py-4 hover:bg-white/5 text-sm text-white font-medium transition-colors border-b border-white/5 last:border-0"><Truck size={18} className="text-jyothi-amber" /> Ready Mix Concrete</Link></li>
-                  <li><Link to="/services/aggregates" className="flex items-center gap-3 px-6 py-4 hover:bg-white/5 text-sm text-white font-medium transition-colors border-b border-white/5 last:border-0"><Mountain size={18} className="text-jyothi-amber" /> Aggregates & Crushing</Link></li>
-                  <li><Link to="/services/blocks" className="flex items-center gap-3 px-6 py-4 hover:bg-white/5 text-sm text-white font-medium transition-colors border-b border-white/5 last:border-0"><LayoutGrid size={18} className="text-jyothi-amber" /> Concrete Blocks</Link></li>
-                  <li><Link to="/services/fabrication" className="flex items-center gap-3 px-6 py-4 hover:bg-white/5 text-sm text-white font-medium transition-colors border-b border-white/5 last:border-0"><Wrench size={18} className="text-jyothi-amber" /> Fabrication Works</Link></li>
+              <div className="absolute top-full right-0 mt-3 w-72 bg-jyothi-blue/98 border border-white/15 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden backdrop-blur-2xl">
+                <div className="p-2 border-b border-white/5 bg-white/[0.02]">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-jyothi-amber px-3">Our Core Verticals</span>
+                </div>
+                <ul className="flex flex-col py-2">
+                  <li><Link to="/services/construction" className="flex items-center gap-3 px-5 py-3 hover:bg-white/5 text-sm text-white font-medium transition-colors border-b border-white/5 last:border-0"><HardHat size={17} className="text-jyothi-amber" /> Construction Services</Link></li>
+                  <li><Link to="/services/rmc" className="flex items-center gap-3 px-5 py-3 hover:bg-white/5 text-sm text-white font-medium transition-colors border-b border-white/5 last:border-0"><Truck size={17} className="text-jyothi-amber" /> Ready Mix Concrete</Link></li>
+                  <li><Link to="/services/aggregates" className="flex items-center gap-3 px-5 py-3 hover:bg-white/5 text-sm text-white font-medium transition-colors border-b border-white/5 last:border-0"><Mountain size={17} className="text-jyothi-amber" /> Aggregates & Crushing</Link></li>
+                  <li><Link to="/services/blocks" className="flex items-center gap-3 px-5 py-3 hover:bg-white/5 text-sm text-white font-medium transition-colors border-b border-white/5 last:border-0"><LayoutGrid size={17} className="text-jyothi-amber" /> Concrete Blocks</Link></li>
+                  <li><Link to="/services/fabrication" className="flex items-center gap-3 px-5 py-3 hover:bg-white/5 text-sm text-white font-medium transition-colors"><Wrench size={17} className="text-jyothi-amber" /> Fabrication Works</Link></li>
                 </ul>
               </div>
             </div>
@@ -78,19 +107,35 @@ const Header = () => {
             <Link to="/projects" className={getLinkClass('/projects')}>Projects</Link>
             <Link to="/careers" className={getLinkClass('/careers')}>Careers</Link>
             <Link to="/contact" className={getLinkClass('/contact')}>Contact</Link>
-            
-            <button 
-              onClick={openModal}
-              className="px-8 py-3 bg-jyothi-amber text-jyothi-blue font-bold rounded-lg transition-all duration-300 text-sm shadow-xl hover:bg-jyothi-orange hover:text-white hover:scale-105 active:scale-95 uppercase tracking-wider"
-            >
-              Get a Quote
-            </button>
           </nav>
 
+          {/* Right Action CTA */}
+          <div className="hidden lg:flex items-center">
+            <button 
+              onClick={openModal}
+              className="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-jyothi-amber to-amber-500 text-jyothi-blue font-black rounded-full transition-all duration-300 text-xs shadow-[0_4px_20px_rgba(245,158,11,0.35)] hover:shadow-[0_6px_25px_rgba(245,158,11,0.5)] hover:scale-105 active:scale-95 uppercase tracking-wider font-heading border border-amber-300/40"
+            >
+              <PhoneCall size={14} className="text-jyothi-blue stroke-[2.5]" />
+              <span>Get a Quote</span>
+            </button>
+          </div>
+
           {/* Mobile Menu Toggle */}
-          <button className="lg:hidden p-2 text-white hover:text-jyothi-amber transition-colors" onClick={() => setMobileMenuOpen(true)}>
-            <Menu size={32} />
-          </button>
+          <div className="flex items-center gap-3 lg:hidden">
+            <button 
+              onClick={openModal}
+              className="px-3.5 py-1.5 bg-jyothi-amber text-jyothi-blue font-bold rounded-lg text-xs uppercase tracking-wider shadow-md"
+            >
+              Quote
+            </button>
+            <button 
+              className="p-2 text-white hover:text-jyothi-amber transition-colors" 
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Toggle Navigation"
+            >
+              <Menu size={28} />
+            </button>
+          </div>
         </div>
       </div>
 

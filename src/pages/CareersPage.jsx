@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Clock, ArrowRight, Search, Filter, Briefcase } from 'lucide-react';
+import { MapPin, ArrowRight, Briefcase, Plus, Edit2, Trash2, Lock, Unlock, RotateCcw, CheckCircle2 } from 'lucide-react';
 import CareerForm from '../components/CareerForm';
+import JobAdminModal from '../components/JobAdminModal';
 
-const jobCategories = ["All Roles", "Civil Engineering", "Project Management", "Site Supervision", "Administrative"];
+const STORAGE_KEY = 'jyothi_careers_jobs';
 
-const initialJobs = [
+const defaultJobs = [
   {
     id: 1,
     title: 'Senior Civil Engineer',
@@ -57,12 +58,102 @@ const initialJobs = [
 ];
 
 const CareersPage = () => {
+  // Load jobs from localStorage or fallback to defaultJobs
+  const [jobs, setJobs] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch (e) {
+      console.error('Error loading jobs from localStorage:', e);
+    }
+    return defaultJobs;
+  });
+
   const [activeCategory, setActiveCategory] = useState("All Roles");
   const [selectedJob, setSelectedJob] = useState(null);
+  const [toastMessage, setToastMessage] = useState('');
+
+  // Admin state
+  const [isAdmin, setIsAdmin] = useState(() => {
+    return sessionStorage.getItem('jyothi_admin_logged_in') === 'true';
+  });
+
+  const [adminModal, setAdminModal] = useState({
+    isOpen: false,
+    mode: 'login', // 'login' | 'create' | 'edit'
+    job: null
+  });
+
+  // Save jobs to localStorage whenever changed
+  const saveJobsToStorage = (updatedJobs) => {
+    setJobs(updatedJobs);
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedJobs));
+    } catch (e) {
+      console.error('Error saving jobs to localStorage:', e);
+    }
+  };
+
+  const showToast = (msg) => {
+    setToastMessage(msg);
+    setTimeout(() => {
+      setToastMessage('');
+    }, 4000);
+  };
+
+  // Admin Login / Logout Handlers
+  const handleLoginSuccess = () => {
+    sessionStorage.setItem('jyothi_admin_logged_in', 'true');
+    setIsAdmin(true);
+    showToast('Admin Mode Activated! You can now create, edit, or delete job roles.');
+  };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('jyothi_admin_logged_in');
+    setIsAdmin(false);
+    showToast('Admin logged out.');
+  };
+
+  // Add or Edit Job
+  const handleSaveJob = (jobData) => {
+    if (adminModal.mode === 'edit') {
+      const updated = jobs.map(j => j.id === jobData.id ? { ...j, ...jobData } : j);
+      saveJobsToStorage(updated);
+      showToast(`Job "${jobData.title}" updated successfully!`);
+    } else {
+      const newJob = { ...jobData, id: Date.now() };
+      const updated = [newJob, ...jobs];
+      saveJobsToStorage(updated);
+      showToast(`New job "${jobData.title}" published!`);
+    }
+  };
+
+  // Delete Job
+  const handleDeleteJob = (jobId, jobTitle) => {
+    if (window.confirm(`Are you sure you want to delete the job role: "${jobTitle}"?`)) {
+      const updated = jobs.filter(j => j.id !== jobId);
+      saveJobsToStorage(updated);
+      showToast(`Job "${jobTitle}" has been removed.`);
+    }
+  };
+
+  // Reset to Defaults
+  const handleResetDefaults = () => {
+    if (window.confirm('Reset all job roles back to system defaults? Any custom roles will be replaced.')) {
+      saveJobsToStorage(defaultJobs);
+      showToast('All jobs reset to default listings.');
+    }
+  };
+
+  // Dynamic Categories derived from current jobs list
+  const dynamicCategories = ["All Roles", ...Array.from(new Set(jobs.map(j => j.category))).filter(Boolean)];
 
   const filteredJobs = activeCategory === "All Roles" 
-    ? initialJobs 
-    : initialJobs.filter(job => job.category === activeCategory);
+    ? jobs 
+    : jobs.filter(job => job.category === activeCategory);
 
   return (
     <>
@@ -71,13 +162,28 @@ const CareersPage = () => {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-jyothi-amber/5 rounded-full blur-[120px] -mr-64 -mt-64"></div>
         
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          
           {/* Header Section */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-8 md:mb-12"
           >
-            <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-4 block">Careers Portal</span>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs block">Careers Portal</span>
+              
+              {/* Discreet Admin Lock Button */}
+              {!isAdmin ? (
+                <button
+                  onClick={() => setAdminModal({ isOpen: true, mode: 'login', job: null })}
+                  title="HR Admin Login"
+                  className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 hover:border-jyothi-amber/50 text-gray-400 hover:text-jyothi-amber transition-colors flex items-center gap-1.5 text-[10px] font-bold tracking-wider"
+                >
+                  <Lock size={12} /> HR Admin
+                </button>
+              ) : null}
+            </div>
+
             <h1 className="text-4xl md:text-7xl font-black text-white font-heading mb-6 tracking-tighter">
               Join Our <span className="text-jyothi-amber">Legacy</span>
             </h1>
@@ -86,9 +192,72 @@ const CareersPage = () => {
             </p>
           </motion.div>
 
+          {/* Admin Management Toolbar (Visible When Logged In) */}
+          <AnimatePresence>
+            {isAdmin && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="mb-8 p-4 md:p-6 rounded-2xl bg-gradient-to-r from-jyothi-amber/20 via-jyothi-amber/10 to-transparent border border-jyothi-amber/40 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-jyothi-amber text-jyothi-blue flex items-center justify-center font-bold shadow-md">
+                    <Unlock size={20} />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-black text-sm md:text-base font-heading">
+                      HR Job Management Mode Active
+                    </h4>
+                    <p className="text-gray-300 text-xs">
+                      You can add new roles, edit requirements, or remove listed positions in real-time.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+                  <button
+                    onClick={() => setAdminModal({ isOpen: true, mode: 'create', job: null })}
+                    className="flex-1 md:flex-none px-5 py-2.5 bg-jyothi-amber text-jyothi-blue rounded-xl font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-jyothi-orange hover:text-white transition-colors shadow-lg"
+                  >
+                    <Plus size={16} /> Post New Role
+                  </button>
+                  <button
+                    onClick={handleResetDefaults}
+                    title="Reset to default listings"
+                    className="px-4 py-2.5 bg-white/5 border border-white/20 text-gray-300 hover:text-white rounded-xl font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 hover:bg-white/10 transition-colors"
+                  >
+                    <RotateCcw size={14} /> Reset
+                  </button>
+                  <button
+                    onClick={handleLogout}
+                    className="px-4 py-2.5 bg-red-500/10 border border-red-500/30 text-red-400 hover:bg-red-500 hover:text-white rounded-xl font-bold text-xs uppercase tracking-wider transition-colors"
+                  >
+                    Exit Admin
+                  </button>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Toast Notification */}
+          <AnimatePresence>
+            {toastMessage && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="fixed top-24 right-6 z-50 px-5 py-3 rounded-2xl bg-jyothi-blue border border-jyothi-amber shadow-2xl text-white text-xs font-bold flex items-center gap-3"
+              >
+                <CheckCircle2 size={18} className="text-jyothi-amber shrink-0" />
+                <span>{toastMessage}</span>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           {/* Filter Bar - Horizontal Scroll on Mobile */}
           <div className="flex flex-row overflow-x-auto whitespace-nowrap gap-3 mb-10 pb-4 scrollbar-hide md:flex-wrap md:justify-center">
-            {jobCategories.map((cat) => (
+            {dynamicCategories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
@@ -116,24 +285,53 @@ const CareersPage = () => {
                   transition={{ duration: 0.3 }}
                   className="bg-white/5 border border-white/10 rounded-3xl p-6 hover:border-jyothi-amber/50 transition-all duration-500 group relative flex flex-col h-full shadow-xl"
                 >
+                  {/* Card Header with Icons and Admin Quick-Actions */}
                   <div className="flex justify-between items-start mb-4">
                     <div className="bg-jyothi-amber/10 p-3 rounded-2xl border border-jyothi-amber/20 group-hover:bg-jyothi-amber group-hover:text-jyothi-blue transition-all duration-500">
                       <Briefcase size={24} className="text-jyothi-amber group-hover:text-jyothi-blue" />
                     </div>
-                    <span className="px-4 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest text-gray-400 group-hover:text-white transition-colors">
-                      {job.type}
-                    </span>
+
+                    <div className="flex items-center gap-2">
+                      <span className="px-3.5 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-black uppercase tracking-widest text-gray-300">
+                        {job.type}
+                      </span>
+
+                      {/* Admin Edit & Delete Buttons */}
+                      {isAdmin && (
+                        <div className="flex items-center gap-1.5 ml-1">
+                          <button
+                            onClick={() => setAdminModal({ isOpen: true, mode: 'edit', job })}
+                            title="Edit Job"
+                            className="p-1.5 rounded-lg bg-blue-500/20 text-blue-400 hover:bg-blue-500 hover:text-white transition-colors"
+                          >
+                            <Edit2 size={14} />
+                          </button>
+                          <button
+                            onClick={() => handleDeleteJob(job.id, job.title)}
+                            title="Delete Job"
+                            className="p-1.5 rounded-lg bg-red-500/20 text-red-400 hover:bg-red-500 hover:text-white transition-colors"
+                          >
+                            <Trash2 size={14} />
+                          </button>
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   <h3 className="text-2xl font-black text-white font-heading mb-2 group-hover:text-jyothi-amber transition-colors">
                     {job.title}
                   </h3>
                   
-                  <div className="flex items-center gap-4 text-gray-500 text-[10px] font-black uppercase tracking-widest mb-4">
-                    <span className="flex items-center gap-1.5"><MapPin size={12} className="text-jyothi-amber" /> {job.location}</span>
+                  <div className="flex items-center gap-4 text-gray-400 text-xs font-bold uppercase tracking-wider mb-4">
+                    <span className="flex items-center gap-1.5">
+                      <MapPin size={13} className="text-jyothi-amber" /> {job.location}
+                    </span>
+                    <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[10px] text-gray-400">
+                      {job.category}
+                    </span>
                   </div>
 
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                  <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
                     {job.description}
                   </p>
 
@@ -155,13 +353,22 @@ const CareersPage = () => {
               animate={{ opacity: 1 }}
               className="text-center py-20 bg-white/5 rounded-[2.5rem] border border-dashed border-white/10"
             >
-              <Filter size={48} className="mx-auto text-gray-600 mb-4" />
-              <p className="text-gray-400 font-medium">No positions found in this category. Try another filter.</p>
+              <Briefcase size={48} className="mx-auto text-gray-600 mb-4" />
+              <p className="text-gray-400 font-medium mb-3">No positions found in this category.</p>
+              {isAdmin && (
+                <button
+                  onClick={() => setAdminModal({ isOpen: true, mode: 'create', job: null })}
+                  className="px-6 py-3 bg-jyothi-amber text-jyothi-blue font-black rounded-xl text-xs uppercase tracking-wider hover:bg-jyothi-orange hover:text-white transition-colors"
+                >
+                  + Post a Role Now
+                </button>
+              )}
             </motion.div>
           )}
         </div>
       </div>
       
+      {/* Candidate Application Modal */}
       <AnimatePresence>
         {selectedJob && (
           <CareerForm 
@@ -170,6 +377,16 @@ const CareersPage = () => {
           />
         )}
       </AnimatePresence>
+
+      {/* HR Admin Modal (Login / Create / Edit) */}
+      <JobAdminModal
+        isOpen={adminModal.isOpen}
+        mode={adminModal.mode}
+        jobToEdit={adminModal.job}
+        onClose={() => setAdminModal({ isOpen: false, mode: 'login', job: null })}
+        onLoginSuccess={handleLoginSuccess}
+        onSaveJob={handleSaveJob}
+      />
     </>
   );
 };

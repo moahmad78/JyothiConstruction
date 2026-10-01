@@ -7,25 +7,25 @@ const whyChooseUsData = [
     id: 1,
     title: 'Unmatched Quality',
     description: 'We source and manufacture our own premium materials to ensure structural perfection.',
-    icon: <Award className="w-8 h-8 text-jyothi-amber" />
+    Icon: Award
   },
   {
     id: 2,
     title: 'Decades of Experience',
     description: 'Over 60 years of building trust and delivering excellence across diverse projects.',
-    icon: <Users className="w-8 h-8 text-jyothi-amber" />
+    Icon: Users
   },
   {
     id: 3,
     title: 'Safety First',
     description: 'Strict adherence to international safety standards protecting our workforce and clients.',
-    icon: <ShieldCheck className="w-8 h-8 text-jyothi-amber" />
+    Icon: ShieldCheck
   },
   {
     id: 4,
     title: 'Timely Delivery',
     description: 'Precision planning and integrated supply chain management for on-schedule completion.',
-    icon: <Clock className="w-8 h-8 text-jyothi-amber" />
+    Icon: Clock
   }
 ];
 
@@ -59,11 +59,9 @@ const WhyJyothi = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
               {whyChooseUsData.map((item) => (
-                <div key={item.id} className="flex flex-col gap-3 group">
-                  <div className="w-14 h-14 md:w-16 md:h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center group-hover:bg-jyothi-amber transition-all duration-300">
-                    <div className="group-hover:text-jyothi-blue group-hover:scale-110 transition-all duration-300 scale-75 md:scale-100">
-                      {item.icon}
-                    </div>
+                <div key={item.id} className="flex flex-col gap-3 group cursor-pointer">
+                  <div className="w-14 h-14 md:w-16 md:h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center group-hover:bg-jyothi-amber group-hover:border-jyothi-amber transition-all duration-300 shadow-sm group-hover:shadow-[0_10px_25px_rgba(243,156,18,0.25)]">
+                    <item.Icon className="w-7 h-7 md:w-8 md:h-8 text-jyothi-amber group-hover:text-black transition-colors duration-300 transform group-hover:scale-110" />
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-white mb-1 font-heading group-hover:text-jyothi-amber transition-colors">{item.title}</h4>
@@ -85,9 +83,9 @@ const WhyJyothi = () => {
             <div className="absolute -inset-6 border border-jyothi-orange/20 rounded-3xl transform rotate-3 z-0"></div>
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
               <Image 
-                src="/assets/images/why_choose_us.jpg" 
+                src="/Jyothi/IMG_0271.JPG" 
                 alt="Quality and Safety Standards - Jyothi Construction Engineering Excellence" 
-                className="w-full h-[300px] md:h-[700px] aspect-video md:aspect-auto object-cover object-center"
+                className="w-full h-[320px] md:h-[650px] aspect-video md:aspect-auto object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue/60 via-transparent to-transparent"></div>
             </div>

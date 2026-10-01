@@ -17,20 +17,20 @@ const AboutSection = () => {
             className="relative"
           >
             <div className="absolute -inset-4 border border-jyothi-amber/30 rounded-2xl transform -rotate-3 z-0"></div>
-            <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl">
+            <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl bg-jyothi-blue/40 border border-white/10">
               <Image 
                 src="/Jyothi/IMG_0229.JPG" 
                 alt="Jyothi Construction Leadership & Team" 
-                className="w-full h-[300px] md:h-[600px] aspect-video md:aspect-auto object-cover object-center hover:scale-105 transition-transform duration-700"
+                className="w-full aspect-[3/2]"
+                objectFit="object-contain"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue/60 to-transparent"></div>
             </div>
             
             {/* Experience Badge */}
-            <div className="absolute -bottom-10 -right-10 bg-jyothi-amber p-8 rounded-2xl shadow-2xl z-20 hidden md:block">
+            <div className="absolute -bottom-6 -right-2 md:-bottom-8 md:-right-4 bg-jyothi-amber px-6 py-4 md:px-8 md:py-5 rounded-2xl shadow-2xl z-20 hidden sm:block border-2 border-jyothi-blue">
               <div className="text-center">
-                <span className="block text-6xl font-black text-jyothi-blue font-heading leading-none">60+</span>
-                <span className="block text-sm font-bold text-jyothi-blue uppercase tracking-widest mt-2">Years of <br /> Legacy</span>
+                <span className="block text-4xl md:text-5xl font-black text-jyothi-blue font-heading leading-none">60+</span>
+                <span className="block text-xs md:text-sm font-black text-jyothi-blue uppercase tracking-widest mt-1">Years of <br /> Legacy</span>
               </div>
             </div>
           </motion.div>

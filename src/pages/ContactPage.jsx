@@ -11,17 +11,18 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="bg-jyothi-blue min-h-screen pt-24 md:pt-40">
+    <div className="bg-jyothi-blue min-h-screen">
       
       {/* Page Header Banner */}
-      <section className="relative h-[30vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[45vh] md:h-[54vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/assets/images/fabricationbanner.png" 
-            alt="Contact Us Banner" 
-            className="w-full h-full object-cover opacity-20"
+            src="/Jyothi/IMG_0257.JPG" 
+            alt="Contact Jyothi Construction Leadership" 
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-jyothi-blue/90 to-jyothi-blue"></div>
+          <div className="absolute inset-0 bg-jyothi-blue/75 backdrop-blur-[1px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-transparent to-jyothi-blue/60"></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -30,10 +31,14 @@ const ContactPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-4 block">Get in Touch</span>
+            <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-3 block">Direct Consultation</span>
             <h1 className="text-4xl md:text-7xl font-black text-white font-heading tracking-tighter">
               Contact <span className="text-jyothi-amber">Us</span>
             </h1>
+            <div className="w-24 h-1.5 bg-jyothi-amber mx-auto my-4 rounded-full"></div>
+            <p className="text-gray-200 text-sm md:text-lg max-w-2xl mx-auto font-sans font-medium">
+              Connect directly with our engineering leadership and senior project consultants.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -131,7 +136,7 @@ const ContactPage = () => {
                   </div>
                   <h4 className="text-xl font-bold text-white font-heading mb-3 tracking-tight">Main Office</h4>
                   <p className="text-gray-400 text-sm leading-relaxed font-medium">
-                    123 Corporate Avenue, Tech Park Phase II, Bangalore, Karnataka 560001
+                    Bangalore, Karnataka, India
                   </p>
                 </div>
 
@@ -148,26 +153,35 @@ const ContactPage = () => {
                 </div>
               </motion.div>
 
-              {/* Interactive Map Integration Placeholder */}
-              <motion.div 
+              {/* Interactive Map Integration */}
+              <motion.a 
+                href="https://maps.google.com/?q=Jyothi+Construction+Bangalore"
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex-grow min-h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl relative group"
+                className="flex-grow min-h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl relative group block cursor-pointer"
               >
                 <div className="absolute inset-0 z-0">
-                  <img src="/assets/images/9.jpg" alt="Map View" className="w-full h-full object-cover grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000" />
-                  <div className="absolute inset-0 bg-jyothi-blue/40"></div>
+                  <img 
+                    src="/Jyothi/IMG_0478.JPG" 
+                    alt="Jyothi Groups Headquarters & Facility" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" 
+                  />
+                  <div className="absolute inset-0 bg-jyothi-blue/50 group-hover:bg-jyothi-blue/30 transition-colors"></div>
                 </div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center p-8">
                   <div className="w-20 h-20 bg-jyothi-amber/20 backdrop-blur-md rounded-full flex items-center justify-center mb-4 border border-jyothi-amber/30 group-hover:scale-110 transition-transform">
                     <MapPin size={40} className="text-jyothi-amber" />
                   </div>
-                  <h5 className="text-white font-black font-heading uppercase tracking-widest text-sm mb-2">Locate Our Headquarters</h5>
-                  <p className="text-gray-300 text-xs font-bold uppercase tracking-[0.2em]">Open in Google Maps</p>
+                  <h5 className="text-white font-black font-heading uppercase tracking-widest text-base mb-2">Locate Our Headquarters</h5>
+                  <p className="text-jyothi-amber text-xs font-bold uppercase tracking-[0.2em] flex items-center gap-1.5 bg-black/40 px-4 py-1.5 rounded-full border border-jyothi-amber/30">
+                    Open in Google Maps →
+                  </p>
                 </div>
-              </motion.div>
+              </motion.a>
 
             </div>
 

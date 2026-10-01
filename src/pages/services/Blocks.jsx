@@ -17,52 +17,50 @@ const Blocks = () => {
     {
       title: 'Automated Hydraulic Casting',
       desc: 'High-density automated block making machinery ensuring strict dimensional tolerances.',
-      img: '/Jyothi/IMG_9749.JPG'
+      img: '/Jyothi/IMG_9761.JPG'
     },
     {
       title: 'Extensive Yard Curing & QA',
       desc: 'Scientific water curing and compressive strength testing across high-capacity curing beds.',
-      img: '/Jyothi/IMG_9715.JPG'
+      img: '/Jyothi/IMG_9716.JPG'
     },
     {
       title: 'Crane Fleet Logistics',
       desc: 'Dedicated self-loading hydraulic crane trucks ensuring zero breakage and direct on-site placement.',
-      img: '/Jyothi/IMG_9824.JPG'
+      img: '/Jyothi/IMG_9818.JPG'
     }
   ];
 
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <Image 
-          src="/Jyothi/IMG_9715.JPG" 
-          alt="Industrial Concrete Block Yard & Silos" 
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/55"></div>
+      <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/Jyothi/concrete_blocks_hero.jpg" 
+            alt="Panoramic High-Angle View of Industrial Concrete Blocks Facility - Jyothi Construction" 
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-jyothi-blue/75 backdrop-blur-[1px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-transparent to-jyothi-blue/60"></div>
+        </div>
         <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center">
-          <motion.h1 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-extrabold text-white mb-4 font-heading"
+            transition={{ duration: 0.8 }}
           >
-            Concrete Blocks
-          </motion.h1>
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="w-24 h-1 bg-brand-secondary mx-auto mb-6"
-          ></motion.div>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-xl text-gray-200 max-w-2xl mx-auto font-sans"
-          >
-            Engineered Strength for the foundations of every structure.
-          </motion.p>
+            <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-3 block">
+              High-Density Building Components
+            </span>
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-4 font-heading tracking-tight">
+              Concrete <span className="text-jyothi-amber">Blocks</span>
+            </h1>
+            <div className="w-24 h-1.5 bg-jyothi-amber mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg md:text-2xl text-gray-200 max-w-2xl mx-auto font-sans font-medium">
+              Engineered Strength for the foundations of every structure.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -121,7 +119,7 @@ const Blocks = () => {
               {/* Exceptional Service Benefits */}
               <div className="bg-jyothi-blue rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div className="md:w-1/2">
-                  <Image src="/Jyothi/IMG_9749.JPG" alt="Automated Block Casting" className="w-full h-full object-cover min-h-[300px]" />
+                  <Image src="/Jyothi/IMG_9734.JPG" alt="Palletized High-Density Concrete Blocks - Jyothi Construction" className="w-full h-full object-cover min-h-[300px]" />
                 </div>
                 <div className="md:w-1/2 p-8 md:p-12">
                   <h3 className="text-2xl font-bold text-white mb-6 font-heading">Quality Foundations</h3>

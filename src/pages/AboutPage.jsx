@@ -6,85 +6,117 @@ const AboutPage = () => {
     <div className="bg-jyothi-blue min-h-screen pt-24 md:pt-40">
       
       {/* Page Hero Banner */}
-      <section className="relative h-[35vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[40vh] md:h-[45vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/Jyothi/IMG_0361.JPG" 
-            alt="About Jyothi Infrastructure & Legacy" 
-            className="w-full h-full object-cover opacity-30"
+            src="/Jyothi/IMG_9578.JPG" 
+            alt="Jyothi Heavy Infrastructure & Granite Extraction" 
+            className="w-full h-full object-cover opacity-35 scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-jyothi-blue/85 via-jyothi-blue/70 to-jyothi-blue"></div>
         </div>
         
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-4 block">Our Story</span>
-            <h1 className="text-3xl md:text-7xl font-black text-white font-heading tracking-tighter">
-              About Our <span className="text-jyothi-amber">Legacy</span>
+            <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-4 block">
+              60+ Years of Engineering & Trust
+            </span>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-white font-heading tracking-tight mb-4">
+              Six Decades of Infrastructure <span className="text-jyothi-amber">Leadership</span>
             </h1>
+            <p className="text-sm md:text-lg text-gray-300 max-w-2xl mx-auto font-medium">
+              Delivering architectural integrity, self-reliant manufacturing, and structural excellence across South India since 1965.
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Core Content: Left Image (Team) | Right Text */}
-      <section className="py-10 md:py-16 relative overflow-hidden">
+      {/* Core Content: Narrative & Full-Width Staff Team Showcase */}
+      <section className="py-12 md:py-20 relative overflow-hidden">
         {/* Background Decor */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-jyothi-orange/5 rounded-full blur-[100px] -mr-48 -mt-48"></div>
         
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
-            {/* Left side: Authentic Jyothi Team Image */}
+          {/* Header Narrative */}
+          <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative group"
+              transition={{ duration: 0.7 }}
             >
-              <div className="absolute -inset-4 border-2 border-jyothi-amber/20 rounded-3xl group-hover:border-jyothi-amber/40 transition-colors duration-500"></div>
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <img 
-                  src="/Jyothi/IMG_0229.JPG" 
-                  alt="Jyothi Construction Leadership & Team" 
-                  className="w-full h-72 md:h-[550px] object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-jyothi-blue/10 group-hover:bg-transparent transition-all"></div>
-              </div>
-              {/* Badge */}
-              <div className="absolute -bottom-8 -right-8 bg-jyothi-amber p-8 rounded-2xl shadow-2xl hidden md:block">
-                <span className="text-jyothi-blue font-black text-4xl block leading-none">60+</span>
-                <span className="text-jyothi-blue font-bold text-xs uppercase tracking-widest">Years of Excellence</span>
-              </div>
-            </motion.div>
-
-            {/* Right side: Company Intro Text */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <span className="text-jyothi-amber text-xs font-black uppercase tracking-[0.3em] mb-4 block">Building the Future</span>
-              <h2 className="text-3xl md:text-6xl font-black text-white font-heading leading-[1.1] mb-8">
-                Technical Excellence in <br />
-                Every <span className="text-jyothi-amber">Structural</span> Foundation
+              <span className="text-jyothi-amber text-xs font-black uppercase tracking-[0.3em] mb-4 block">
+                Building the Future
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black text-white font-heading leading-tight mb-6">
+                Technical Excellence in Every <span className="text-jyothi-amber">Structural</span> Foundation
               </h2>
-              <div className="space-y-6 text-gray-400 text-base md:text-lg leading-relaxed font-medium">
-                <p>
-                  Founded with a deep-rooted commitment to structural integrity, Jyothi Construction has evolved into a premier vertically integrated construction powerhouse. Our legacy spans over six decades of delivering architectural masterpieces and industrial hubs.
-                </p>
-                <p>
-                  Today, we combine traditional engineering values with cutting-edge construction technology. By manufacturing our own high-grade materials—from Ready Mix Concrete to precision-engineered blocks—we ensure total quality control across every phase of development.
-                </p>
+              <p className="text-gray-300 text-base md:text-xl leading-relaxed font-medium max-w-3xl mx-auto mb-8">
+                Founded with a deep-rooted commitment to structural integrity, Jyothi Construction has evolved into a premier vertically integrated construction powerhouse. From raw granite extraction and high-capacity batching to turnkey execution, we ensure total quality control.
+              </p>
+
+              {/* Key Highlights Metrics */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+                  <span className="block text-2xl md:text-3xl font-black text-jyothi-amber font-heading">60+</span>
+                  <span className="text-[11px] text-gray-400 font-bold uppercase tracking-wider">Years of Trust</span>
+                </div>
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+                  <span className="block text-2xl md:text-3xl font-black text-white font-heading">100%</span>
+                  <span className="text-[11px] text-gray-400 font-bold uppercase tracking-wider">In-House Supply</span>
+                </div>
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+                  <span className="block text-2xl md:text-3xl font-black text-jyothi-amber font-heading">500+</span>
+                  <span className="text-[11px] text-gray-400 font-bold uppercase tracking-wider">Major Projects</span>
+                </div>
+                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-center">
+                  <span className="block text-2xl md:text-3xl font-black text-white font-heading">4</span>
+                  <span className="text-[11px] text-gray-400 font-bold uppercase tracking-wider">Integrated Plants</span>
+                </div>
               </div>
             </motion.div>
-
           </div>
+
+          {/* Full-Width Authentic Team & Leadership Showcase */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative w-full max-w-7xl mx-auto"
+          >
+            {/* Outer Accent Frame */}
+            <div className="absolute -inset-2 md:-inset-4 border-2 border-jyothi-amber/25 rounded-3xl z-0 pointer-events-none"></div>
+
+            {/* Panoramic Staff Card */}
+            <div className="relative z-10 overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl bg-jyothi-blue/60 border border-white/15">
+              <img 
+                src="/Jyothi/IMG_0229.JPG" 
+                alt="Jyothi Construction Leadership and Core Staff Team" 
+                className="w-full h-auto object-contain block"
+              />
+              
+              {/* Bottom Caption Bar */}
+              <div className="p-4 md:p-6 bg-gradient-to-r from-jyothi-blue via-[#0d1c30] to-jyothi-blue border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                  <h4 className="text-white font-black text-base md:text-xl font-heading flex items-center gap-2">
+                    Jyothi Construction Leadership & Core Team
+                  </h4>
+                  <p className="text-gray-400 text-xs md:text-sm font-medium mt-0.5">
+                    The engineers, directors, and technical workforce driving our engineering excellence across South India.
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-jyothi-amber/15 border border-jyothi-amber/30 text-jyothi-amber text-xs font-bold uppercase tracking-wider whitespace-nowrap">
+                  <span className="w-2 h-2 rounded-full bg-jyothi-amber animate-pulse"></span>
+                  Corporate Headquarters
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -113,9 +145,9 @@ const AboutPage = () => {
             </div>
             <div className="overflow-hidden rounded-2xl border border-white/15 shadow-2xl group">
               <img 
-                src="/Jyothi/IMG_0361.JPG" 
-                alt="Jyothi Conmix Ready Mix Concrete Plant & Team" 
-                className="w-full h-80 md:h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
+                src="/Jyothi/IMG_0369.JPG" 
+                alt="Jyothi Construction On-Site Technical Engineering & Quality Testing" 
+                className="w-full h-80 md:h-[420px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
             </div>
           </div>

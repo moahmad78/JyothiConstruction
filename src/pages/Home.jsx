@@ -39,10 +39,14 @@ const ClientsPartners = () => {
     '/assets/images/new-2024/clients/16.png',
   ];
 
-  const duplicatedPartners = [...partners, ...partners];
+  const row1 = partners.filter((_, i) => i % 2 === 0);
+  const row2 = partners.filter((_, i) => i % 2 !== 0);
+
+  const duplicatedRow1 = [...row1, ...row1];
+  const duplicatedRow2 = [...row2, ...row2];
 
   return (
-    <section className="py-10 md:py-24 bg-jyothi-blue border-t border-white/5 overflow-hidden relative">
+    <section className="py-12 md:py-24 bg-jyothi-blue border-t border-white/5 overflow-hidden relative">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-10 md:mb-16">
           <span className="text-jyothi-amber font-black uppercase tracking-[0.3em] text-sm mb-4 block">Our Network</span>
@@ -50,20 +54,45 @@ const ClientsPartners = () => {
         </div>
       </div>
 
-      <div className="relative w-full overflow-hidden group py-4">
-        <div className="animate-scroll whitespace-nowrap flex items-center gap-6 md:gap-8 px-6">
-          {duplicatedPartners.map((logo, index) => (
-            <div 
-              key={index} 
-              className="flex-shrink-0 w-36 h-20 md:w-48 md:h-24 bg-white rounded-2xl p-3 flex items-center justify-center cursor-pointer shadow-lg hover:shadow-2xl hover:border-jyothi-amber border border-white/20 transition-all duration-300 group/item overflow-hidden"
-            >
-              <img 
-                src={logo} 
-                alt={`Client ${index}`} 
-                className="w-full h-full object-contain filter-none opacity-100 transition-all duration-300 transform group-hover/item:scale-105"
-              />
-            </div>
-          ))}
+      <div className="relative w-full overflow-hidden space-y-4 md:space-y-6">
+        {/* Soft edge gradient fades */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-36 bg-gradient-to-r from-jyothi-blue to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-36 bg-gradient-to-l from-jyothi-blue to-transparent z-10" />
+
+        {/* Row 1: Leftward scroll */}
+        <div className="relative w-full overflow-hidden group py-1">
+          <div className="animate-scroll whitespace-nowrap flex items-center gap-4 md:gap-6 px-4">
+            {duplicatedRow1.map((logo, index) => (
+              <div 
+                key={`r1-${index}`} 
+                className="flex-shrink-0 w-36 h-20 md:w-48 md:h-24 bg-white rounded-2xl p-3 flex items-center justify-center cursor-pointer shadow-lg hover:shadow-2xl hover:border-jyothi-amber border border-white/20 transition-all duration-300 group/item overflow-hidden"
+              >
+                <img 
+                  src={logo} 
+                  alt={`Client row 1 - ${index}`} 
+                  className="w-full h-full object-contain filter-none opacity-100 transition-all duration-300 transform group-hover/item:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Row 2: Rightward scroll */}
+        <div className="relative w-full overflow-hidden group py-1">
+          <div className="animate-scroll-reverse whitespace-nowrap flex items-center gap-4 md:gap-6 px-4">
+            {duplicatedRow2.map((logo, index) => (
+              <div 
+                key={`r2-${index}`} 
+                className="flex-shrink-0 w-36 h-20 md:w-48 md:h-24 bg-white rounded-2xl p-3 flex items-center justify-center cursor-pointer shadow-lg hover:shadow-2xl hover:border-jyothi-amber border border-white/20 transition-all duration-300 group/item overflow-hidden"
+              >
+                <img 
+                  src={logo} 
+                  alt={`Client row 2 - ${index}`} 
+                  className="w-full h-full object-contain filter-none opacity-100 transition-all duration-300 transform group-hover/item:scale-105"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

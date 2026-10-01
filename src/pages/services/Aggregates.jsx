@@ -15,9 +15,9 @@ const Aggregates = () => {
 
   const stages = [
     {
-      title: 'Quarry Extraction & Loading',
-      desc: 'Heavy-duty Hyundai & Tata excavators extract pure granite boulders from our certified quarry.',
-      img: '/Jyothi/IMG_9528.JPG'
+      title: 'High-Capacity Crushing Plant',
+      desc: 'State-of-the-art automated crushing infrastructure processing raw materials into high-grade aggregates.',
+      img: '/Jyothi/IMG_9632.JPG'
     },
     {
       title: 'VSI & Cone Crushing Operations',
@@ -25,44 +25,42 @@ const Aggregates = () => {
       img: '/Jyothi/IMG_9578.JPG'
     },
     {
-      title: 'Precision Rock Breaking & Grading',
-      desc: 'Hydraulic rock breakers and vibrating screens ensuring consistent aggregate grading as per IS specifications.',
-      img: '/Jyothi/IMG_9520.JPG'
+      title: 'Graded Aggregate Stockpiles',
+      desc: 'Automated conveyor sorting and dust-controlled stockpiles ensuring consistent grading for 10mm, 20mm, 40mm and M-Sand.',
+      img: '/Jyothi/IMG_9641.JPG'
     }
   ];
 
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <Image 
-          src="/Jyothi/IMG_9528.JPG" 
-          alt="Quarry Mining & Aggregates Operations" 
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/55"></div>
+      <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/Jyothi/crushing_plant_hero.jpg" 
+            alt="Panoramic View of High-Grade Aggregates and Crushing Unit - Jyothi Construction" 
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-jyothi-blue/75 backdrop-blur-[1px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-transparent to-jyothi-blue/60"></div>
+        </div>
         <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center">
-          <motion.h1 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-extrabold text-white mb-4 font-heading"
+            transition={{ duration: 0.8 }}
           >
-            Aggregates & Crushing
-          </motion.h1>
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="w-24 h-1 bg-brand-secondary mx-auto mb-6"
-          ></motion.div>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-xl text-gray-200 max-w-2xl mx-auto font-sans"
-          >
-            Controlled Excellence in foundational raw material manufacturing.
-          </motion.p>
+            <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-3 block">
+              High-Grade Stone Crushing & Screening
+            </span>
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-4 font-heading tracking-tight">
+              Aggregates & <span className="text-jyothi-amber">Crushing</span>
+            </h1>
+            <div className="w-24 h-1.5 bg-jyothi-amber mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg md:text-2xl text-gray-200 max-w-2xl mx-auto font-sans font-medium">
+              Controlled Excellence in foundational raw material manufacturing.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -121,7 +119,7 @@ const Aggregates = () => {
               {/* Exceptional Service Benefits */}
               <div className="bg-jyothi-blue rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div className="md:w-1/2">
-                  <Image src="/Jyothi/IMG_9632.JPG" alt="High Capacity Crushing Plant" className="w-full h-full object-cover min-h-[300px]" />
+                  <Image src="/Jyothi/IMG_9644.JPG" alt="Dedicated Aggregates Tipper Fleet - Jyothi Construction" className="w-full h-full object-cover min-h-[300px]" />
                 </div>
                 <div className="md:w-1/2 p-8 md:p-12">
                   <h3 className="text-2xl font-bold text-white mb-6 font-heading">Exceptional Service Benefits</h3>

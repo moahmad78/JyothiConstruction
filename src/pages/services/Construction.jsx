@@ -22,7 +22,7 @@ const Construction = () => {
     {
       title: 'Precision Site Execution',
       desc: 'Real-time project tracking and modular construction techniques for faster delivery.',
-      img: '/Jyothi/IMG_0361.JPG'
+      img: '/Jyothi/IMG_0369.JPG'
     },
     {
       title: 'Integrated Supply Chain',
@@ -34,35 +34,33 @@ const Construction = () => {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <Image 
-          src="/Jyothi/IMG_9715.JPG" 
-          alt="Active Construction Site Execution" 
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50"></div>
+      <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/Jyothi/IMG_9644.JPG" 
+            alt="Active Construction Service Fleet - Jyothi Construction" 
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-jyothi-blue/75 backdrop-blur-[1px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-transparent to-jyothi-blue/60"></div>
+        </div>
         <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center">
-          <motion.h1 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-extrabold text-white mb-4 font-heading"
+            transition={{ duration: 0.8 }}
           >
-            Construction Services
-          </motion.h1>
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="w-24 h-1 bg-brand-secondary mx-auto mb-6"
-          ></motion.div>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-xl text-gray-200 max-w-2xl mx-auto font-sans"
-          >
-            Controlled Excellence from foundation to final finish.
-          </motion.p>
+            <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-3 block">
+              Turnkey & Civil Engineering
+            </span>
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-4 font-heading tracking-tight">
+              Construction <span className="text-jyothi-amber">Services</span>
+            </h1>
+            <div className="w-24 h-1.5 bg-jyothi-amber mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg md:text-2xl text-gray-200 max-w-2xl mx-auto font-sans font-medium">
+              Controlled Excellence from foundation to final finish.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -121,7 +119,7 @@ const Construction = () => {
               {/* Exceptional Service Benefits */}
               <div className="bg-jyothi-blue rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div className="md:w-1/2">
-                  <Image src="/Jyothi/IMG_0361.JPG" alt="Construction Site" className="w-full h-full object-cover min-h-[300px]" />
+                  <Image src="/Jyothi/IMG_0257.JPG" alt="Jyothi Corporate Leadership" className="w-full h-full object-cover min-h-[300px]" />
                 </div>
                 <div className="md:w-1/2 p-8 md:p-12">
                   <h3 className="text-2xl font-bold text-white mb-6 font-heading">Why Choose Jyothi?</h3>

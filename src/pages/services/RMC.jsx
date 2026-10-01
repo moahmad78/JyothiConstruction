@@ -17,52 +17,50 @@ const RMC = () => {
     {
       title: 'Automated Conmix Batching',
       desc: 'Computerized batching plant with twin-shaft mixers for exact water-cement ratio and slump consistency.',
-      img: '/Jyothi/IMG_0361.JPG'
+      img: '/Jyothi/IMG_0433.JPG'
     },
     {
       title: 'Rigorous On-Site & Lab QA',
       desc: 'Precision testing for compressive strength and workability before dispatch.',
-      img: '/Jyothi/IMG_9715.JPG'
+      img: '/Jyothi/IMG_0079.JPG'
     },
     {
       title: 'Transit Mixer Fleet Logistics',
       desc: 'High-capacity transit mixers deployed with GPS dispatch for punctual delivery to casting sites.',
-      img: '/Jyothi/IMG_0361.JPG'
+      img: '/Jyothi/IMG_0061.JPG'
     }
   ];
 
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <Image 
-          src="/Jyothi/IMG_0361.JPG" 
-          alt="Automated RMC Conmix Batching Plant - Jyothi Construction" 
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/55"></div>
+      <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/Jyothi/rmc_plant_hero.jpg" 
+            alt="Panoramic High-Angle View of Automated RMC Conmix Batching Plant - Jyothi Construction" 
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-jyothi-blue/75 backdrop-blur-[1px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-transparent to-jyothi-blue/60"></div>
+        </div>
         <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center">
-          <motion.h1 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-extrabold text-white mb-4 font-heading"
+            transition={{ duration: 0.8 }}
           >
-            Ready Mix Concrete (RMC)
-          </motion.h1>
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="w-24 h-1 bg-brand-secondary mx-auto mb-6"
-          ></motion.div>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-xl text-gray-200 max-w-2xl mx-auto font-sans"
-          >
-            Precision Manufacturing for unmatched structural durability.
-          </motion.p>
+            <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-3 block">
+              High-Performance Batching
+            </span>
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-4 font-heading tracking-tight">
+              Ready Mix <span className="text-jyothi-amber">Concrete (RMC)</span>
+            </h1>
+            <div className="w-24 h-1.5 bg-jyothi-amber mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg md:text-2xl text-gray-200 max-w-2xl mx-auto font-sans font-medium">
+              Precision Manufacturing for unmatched structural durability.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -121,7 +119,7 @@ const RMC = () => {
               {/* Exceptional Service Benefits */}
               <div className="bg-jyothi-blue rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div className="md:w-1/2">
-                  <Image src="/Jyothi/IMG_0361.JPG" alt="Jyothi Conmix Ready Mix Concrete Plant" className="w-full h-full object-cover min-h-[300px]" />
+                  <Image src="/Jyothi/IMG_9578.JPG" alt="In-House Aggregates & Crushing Plant - Jyothi Construction" className="w-full h-full object-cover min-h-[300px]" />
                 </div>
                 <div className="md:w-1/2 p-8 md:p-12">
                   <h3 className="text-2xl font-bold text-white mb-6 font-heading">Why Choose Jyothi RMC?</h3>
