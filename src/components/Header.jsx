@@ -46,26 +46,26 @@ const Header = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-white/10 ${
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-black/15 ${
       isScrolled 
         ? 'py-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.6)]' 
-        : 'py-3 md:py-4 shadow-[0_4px_25px_rgba(0,0,0,0.45)]'
+        : 'py-3 md:py-4 shadow-[0_4px_25px_rgba(0,0,0,0.4)]'
     }`}>
-      {/* Single seamless continuous gradient: Pure white over logo, smoothly transitioning through logo forest-green and slate undertones into charcoal grey before the menu */}
+      {/* Exact continuous gradient matching user reference */}
       <div 
         className="absolute inset-0 pointer-events-none -z-10 backdrop-blur-xl"
         style={{
-          background: 'linear-gradient(90deg, #ffffff 0%, #ffffff 26%, #f2f6f4 28%, #dce8e2 30%, #a9c6b8 32%, #6f9d8a 34%, #3f6e5a 36%, #214336 38%, #162a22 39%, #121820 41%, #121820 100%)'
+          background: 'linear-gradient(90deg, #ffffff 0%, #ffffff 18%, #fcfdfd 20%, #eeeff0 22%, #daddde 24%, #b3b6bb 26%, #888c94 28%, #696f78 30%, #50565f 32%, #3c424a 34%, #30373f 36%, #282f38 38%, #202831 40%, #1b222b 42%, #151d25 44%, #131b24 46%, #121820 100%)'
         }}
       />
 
-      {/* Top subtle golden hairline in logo gold */}
-      <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-jyothi-amber/70 to-transparent pointer-events-none" />
+      {/* Top subtle 1px border line matching the reference */}
+      <div className="absolute top-0 inset-x-0 h-[1px] bg-black/10 pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 max-w-7xl relative">
         <div className="flex items-center justify-between">
           
-          {/* Logo - Completely clean without any box, card or patch */}
+          {/* Logo - Completely clean on white background */}
           <Link to="/" className="flex items-center gap-3 cursor-pointer group">
             <img 
               src="/logo.png" 
@@ -74,19 +74,32 @@ const Header = () => {
             />
           </Link>
           
-          {/* Desktop Nav - Clean links without glossy pill dock */}
+          {/* Desktop Nav - Clean links with active indicator */}
           <nav className="hidden lg:flex items-center gap-8">
-            <Link to="/" className={getLinkClass('/')}>Home</Link>
-            <Link to="/about" className={getLinkClass('/about')}>About Us</Link>
+            <Link to="/" className={`${getLinkClass('/')} relative py-1`}>
+              Home
+              {isActive('/') && (
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-jyothi-amber rounded-full" />
+              )}
+            </Link>
+            <Link to="/about" className={`${getLinkClass('/about')} relative py-1`}>
+              About Us
+              {isActive('/about') && (
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-jyothi-amber rounded-full" />
+              )}
+            </Link>
             
             {/* Services Dropdown */}
             <div className="group relative">
-              <button className={`flex items-center gap-1.5 transition-colors text-sm font-bold uppercase tracking-wider py-2 ${
+              <button className={`flex items-center gap-1.5 transition-colors text-sm font-bold uppercase tracking-wider py-2 relative ${
                 location.pathname.startsWith('/services') 
                   ? 'text-jyothi-amber' 
                   : 'text-white hover:text-jyothi-amber'
               }`}>
                 Services <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />
+                {location.pathname.startsWith('/services') && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-jyothi-amber rounded-full" />
+                )}
               </button>
               
               {/* Mega Menu Dropdown */}
@@ -104,16 +117,31 @@ const Header = () => {
               </div>
             </div>
 
-            <Link to="/projects" className={getLinkClass('/projects')}>Projects</Link>
-            <Link to="/careers" className={getLinkClass('/careers')}>Careers</Link>
-            <Link to="/contact" className={getLinkClass('/contact')}>Contact</Link>
+            <Link to="/projects" className={`${getLinkClass('/projects')} relative py-1`}>
+              Projects
+              {isActive('/projects') && (
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-jyothi-amber rounded-full" />
+              )}
+            </Link>
+            <Link to="/careers" className={`${getLinkClass('/careers')} relative py-1`}>
+              Careers
+              {isActive('/careers') && (
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-jyothi-amber rounded-full" />
+              )}
+            </Link>
+            <Link to="/contact" className={`${getLinkClass('/contact')} relative py-1`}>
+              Contact
+              {isActive('/contact') && (
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-jyothi-amber rounded-full" />
+              )}
+            </Link>
           </nav>
 
           {/* Right Action CTA */}
           <div className="hidden lg:flex items-center">
             <button 
               onClick={openModal}
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-jyothi-amber to-amber-500 text-jyothi-blue font-black rounded-full transition-all duration-300 text-xs shadow-[0_4px_20px_rgba(245,158,11,0.35)] hover:shadow-[0_6px_25px_rgba(245,158,11,0.5)] hover:scale-105 active:scale-95 uppercase tracking-wider font-heading border border-amber-300/40"
+              className="inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-jyothi-amber via-[#f9b83f] to-amber-500 text-jyothi-blue font-black rounded-full transition-all duration-300 text-xs shadow-[0_0_22px_rgba(245,158,11,0.45)] hover:shadow-[0_0_30px_rgba(245,158,11,0.65)] hover:scale-105 active:scale-95 uppercase tracking-wider font-heading border border-amber-300/40"
             >
               <PhoneCall size={14} className="text-jyothi-blue stroke-[2.5]" />
               <span>Get a Quote</span>
