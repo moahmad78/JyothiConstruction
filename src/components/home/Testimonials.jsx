@@ -85,7 +85,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-10 md:py-24 bg-jyothi-blue relative overflow-hidden">
-      <div className="container mx-auto px-6 max-w-[1400px]">
+      <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-10 md:mb-16">
           <span className="text-jyothi-amber font-black uppercase tracking-[0.3em] text-xs md:text-sm mb-3 block">Testimonials</span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight font-heading">What Our Partners Say</h2>

@@ -78,7 +78,7 @@ const WhyJyothiPage = () => {
             </p>
           </div>
 
-          <div className="relative max-w-5xl mx-auto">
+          <div className="relative w-full mx-auto">
             <div className="hidden md:block absolute top-[40px] left-0 w-full h-1 bg-white/20 z-0"></div>
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative z-10">

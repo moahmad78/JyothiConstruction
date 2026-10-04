@@ -107,9 +107,9 @@ const DroneShowcase = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative rounded-2xl md:rounded-3xl overflow-hidden border border-white/15 bg-black/60 shadow-2xl group max-w-5xl mx-auto"
+          className="relative rounded-2xl md:rounded-3xl overflow-hidden border border-white/15 bg-black/60 shadow-2xl group w-full"
         >
-          <div className="relative aspect-[16/9] md:aspect-[21/9] max-h-[280px] md:max-h-[420px] w-full flex items-center justify-center overflow-hidden bg-black">
+          <div className="relative aspect-[16/9] md:aspect-[21/9] max-h-[300px] md:max-h-[460px] w-full flex items-center justify-center overflow-hidden bg-black">
             <video
               ref={videoRef}
               key={currentVideo.src}
