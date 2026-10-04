@@ -63,21 +63,21 @@ const DroneShowcase = () => {
   };
 
   return (
-    <section className="py-12 md:py-24 bg-gradient-to-b from-jyothi-blue via-[#06172d] to-jyothi-blue relative overflow-hidden border-t border-white/10">
+    <section className="py-8 md:py-14 bg-gradient-to-b from-jyothi-blue via-[#06172d] to-jyothi-blue relative overflow-hidden border-t border-white/10">
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-jyothi-amber/10 rounded-full blur-[140px] pointer-events-none"></div>
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-[140px] pointer-events-none"></div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-6 mb-8 md:mb-12 text-center md:text-left">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-5 mb-5 md:mb-8 text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="max-w-2xl flex flex-col items-center md:items-start"
           >
-            <div className="flex items-center justify-center md:justify-start gap-2 text-jyothi-amber text-xs font-black uppercase tracking-[0.3em] mb-2 md:mb-3">
-              <Sparkles size={16} /> Live Infrastructure Tour
+            <div className="flex items-center justify-center md:justify-start gap-2 text-jyothi-amber text-xs font-black uppercase tracking-[0.3em] mb-1.5 md:mb-2">
+              <Sparkles size={15} /> Live Infrastructure Tour
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight font-heading">
               Aerial Drone <span className="text-jyothi-amber">Site Tour</span>
@@ -107,9 +107,9 @@ const DroneShowcase = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative rounded-3xl overflow-hidden border border-white/15 bg-black/60 shadow-2xl group"
+          className="relative rounded-2xl md:rounded-3xl overflow-hidden border border-white/15 bg-black/60 shadow-2xl group max-w-5xl mx-auto"
         >
-          <div className="relative aspect-video max-h-[600px] w-full flex items-center justify-center overflow-hidden bg-black">
+          <div className="relative aspect-[16/9] md:aspect-[21/9] max-h-[280px] md:max-h-[420px] w-full flex items-center justify-center overflow-hidden bg-black">
             <video
               ref={videoRef}
               key={currentVideo.src}
@@ -125,15 +125,15 @@ const DroneShowcase = () => {
             {!isPlaying && (
               <div 
                 onClick={handleTogglePlay}
-                className="absolute inset-0 bg-jyothi-blue/40 backdrop-blur-[2px] flex flex-col items-center justify-center cursor-pointer transition-all hover:bg-jyothi-blue/30"
+                className="absolute inset-0 bg-jyothi-blue/40 backdrop-blur-[2px] flex flex-col items-center justify-center cursor-pointer transition-all hover:bg-jyothi-blue/30 p-4"
               >
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-jyothi-amber text-jyothi-blue flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300 pl-1">
-                  <Play size={36} fill="currentColor" />
+                <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-jyothi-amber text-jyothi-blue flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300 pl-1">
+                  <Play size={26} className="md:w-8 md:h-8" fill="currentColor" />
                 </div>
-                <p className="mt-4 text-white font-bold text-sm md:text-base uppercase tracking-widest drop-shadow-md">
+                <p className="mt-3 text-white font-bold text-xs md:text-sm uppercase tracking-widest drop-shadow-md">
                   Click to Watch Drone Tour
                 </p>
-                <p className="text-gray-300 text-xs md:text-sm mt-1 max-w-md text-center px-4">
+                <p className="text-gray-300 text-[11px] md:text-xs mt-0.5 max-w-md text-center px-4 line-clamp-1 md:line-clamp-none">
                   {currentVideo.subtitle}
                 </p>
               </div>
