@@ -84,19 +84,19 @@ const DroneShowcase = () => {
             </h2>
           </motion.div>
 
-          <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+          <div className="flex flex-row items-center justify-center md:justify-start gap-2.5 sm:gap-3 w-full sm:w-auto">
             {videos.map((vid, idx) => (
               <button
                 key={vid.id}
                 onClick={() => handleSwitchVideo(idx)}
-                className={`px-4 md:px-6 py-2.5 rounded-xl font-bold uppercase tracking-wider text-xs transition-all duration-300 flex items-center gap-2 border ${
+                className={`flex-1 sm:flex-initial px-3 sm:px-5 md:px-6 py-2.5 rounded-xl font-bold uppercase tracking-wider text-[11px] sm:text-xs transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 border whitespace-nowrap ${
                   activeVideoIndex === idx
-                    ? 'bg-jyothi-amber text-jyothi-blue border-jyothi-amber shadow-lg shadow-jyothi-amber/20 scale-105'
+                    ? 'bg-jyothi-amber text-jyothi-blue border-jyothi-amber shadow-lg shadow-jyothi-amber/20 scale-[1.02] sm:scale-105'
                     : 'bg-white/5 text-gray-300 border-white/10 hover:border-jyothi-amber/40 hover:text-white'
                 }`}
               >
-                <Video size={14} />
-                {vid.tag}
+                <Video size={13} className="shrink-0" />
+                <span>{vid.tag}</span>
               </button>
             ))}
           </div>
