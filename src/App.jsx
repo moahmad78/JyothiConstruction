@@ -16,13 +16,9 @@ import Fabrication from './pages/services/Fabrication';
 import CareersPage from './pages/CareersPage';
 import ServicesPage from './pages/ServicesPage';
 import ScrollToTop from './components/ScrollToTop';
-import { RuntimeProvider, useRuntimeContext } from './context/RuntimeCore';
 
 const AppContent = () => {
   const { toast, hideToast } = useModal();
-  const { verified } = useRuntimeContext();
-
-  if (!verified) return null;
 
   return (
     <Router>
@@ -55,11 +51,9 @@ const AppContent = () => {
 
 function App() {
   return (
-    <RuntimeProvider>
-      <ModalProvider>
-        <AppContent />
-      </ModalProvider>
-    </RuntimeProvider>
+    <ModalProvider>
+      <AppContent />
+    </ModalProvider>
   );
 }
 
