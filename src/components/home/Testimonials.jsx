@@ -96,30 +96,30 @@ const Testimonials = () => {
             <motion.div 
               animate={{ x: `-${safeIndex * (100 / visibleCards)}%` }}
               transition={{ type: "spring", damping: 25, stiffness: 120 }}
-              className="flex gap-6"
+              className="flex items-stretch gap-6"
             >
               {testimonials.map((t) => (
                 <div 
                   key={t.id}
                   style={{ minWidth: `calc(${(100 / visibleCards)}% - ${(visibleCards - 1) * 24 / visibleCards}px)` }}
-                  className="h-full"
+                  className="flex flex-col self-stretch"
                 >
-                  <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-[2rem] relative group/card hover:border-jyothi-amber/50 transition-all duration-500 h-full flex flex-col min-h-[280px]">
-                    <Quote className="text-jyothi-amber/10 w-12 h-12 absolute top-6 right-6" />
+                  <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 md:p-7 rounded-[1.75rem] relative group/card hover:border-jyothi-amber/50 transition-all duration-500 flex-1 flex flex-col justify-between h-full min-h-[250px] shadow-lg">
+                    <Quote className="text-jyothi-amber/10 w-9 h-9 absolute top-5 right-5 pointer-events-none" />
                     
-                    <div className="relative z-10 flex flex-col h-full">
-                      <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-8 italic font-medium flex-grow">
+                    <div className="relative z-10 flex-1 flex flex-col justify-start">
+                      <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6 italic font-medium flex-grow">
                         "{t.content}"
                       </p>
-                      
-                      <div className="flex items-center gap-4 mt-auto pt-6 border-t border-white/5">
-                        <div className="w-12 h-12 bg-jyothi-amber rounded-xl flex items-center justify-center font-black text-jyothi-blue shadow-lg shadow-jyothi-amber/20">
-                          {t.name.charAt(0)}
-                        </div>
-                        <div>
-                          <h4 className="text-white font-bold font-heading text-sm md:text-base">{t.name}</h4>
-                          <span className="text-jyothi-amber text-[10px] md:text-xs font-bold uppercase tracking-widest">{t.role}</span>
-                        </div>
+                    </div>
+                    
+                    <div className="relative z-10 flex items-center gap-3.5 pt-4 border-t border-white/10 mt-auto">
+                      <div className="w-10 h-10 bg-jyothi-amber rounded-xl flex items-center justify-center font-black text-jyothi-blue shadow-md shadow-jyothi-amber/20 shrink-0 text-sm">
+                        {t.name.charAt(0)}
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="text-white font-bold font-heading text-xs sm:text-sm truncate">{t.name}</h4>
+                        <span className="text-jyothi-amber text-[10px] font-bold uppercase tracking-wider block truncate">{t.role}</span>
                       </div>
                     </div>
                   </div>

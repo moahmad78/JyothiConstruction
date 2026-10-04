@@ -97,16 +97,52 @@ const Header = () => {
                 )}
               </button>
               
-              <div className="absolute top-full right-0 mt-3 w-72 bg-jyothi-blue/98 border border-white/15 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden backdrop-blur-2xl">
-                <div className="p-2 border-b border-white/5 bg-white/[0.02]">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-jyothi-amber px-3">Our Core Verticals</span>
+              <div className="absolute top-full left-0 mt-2 w-72 bg-[#121820] border border-white/15 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden z-50 before:absolute before:-top-3 before:left-0 before:right-0 before:h-3 before:content-['']">
+                <div className="px-4 py-2.5 border-b border-white/10 bg-white/[0.03] flex items-center justify-between">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-jyothi-amber">Our Core Verticals</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-jyothi-amber animate-pulse"></span>
                 </div>
-                <ul className="flex flex-col py-2">
-                  <li><Link to="/services/construction" className="flex items-center gap-3 px-5 py-3 hover:bg-white/5 text-sm text-white font-medium transition-colors border-b border-white/5 last:border-0"><HardHat size={17} className="text-jyothi-amber" /> Construction Services</Link></li>
-                  <li><Link to="/services/rmc" className="flex items-center gap-3 px-5 py-3 hover:bg-white/5 text-sm text-white font-medium transition-colors border-b border-white/5 last:border-0"><Truck size={17} className="text-jyothi-amber" /> Ready Mix Concrete</Link></li>
-                  <li><Link to="/services/aggregates" className="flex items-center gap-3 px-5 py-3 hover:bg-white/5 text-sm text-white font-medium transition-colors border-b border-white/5 last:border-0"><Mountain size={17} className="text-jyothi-amber" /> Aggregates & Crushing</Link></li>
-                  <li><Link to="/services/blocks" className="flex items-center gap-3 px-5 py-3 hover:bg-white/5 text-sm text-white font-medium transition-colors border-b border-white/5 last:border-0"><LayoutGrid size={17} className="text-jyothi-amber" /> Concrete Blocks</Link></li>
-                  <li><Link to="/services/fabrication" className="flex items-center gap-3 px-5 py-3 hover:bg-white/5 text-sm text-white font-medium transition-colors"><Wrench size={17} className="text-jyothi-amber" /> Fabrication Works</Link></li>
+                <ul className="flex flex-col py-1.5">
+                  <li>
+                    <Link to="/services/construction" className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/10 text-sm text-gray-100 hover:text-jyothi-amber font-medium transition-colors border-b border-white/5 last:border-0 group/item">
+                      <div className="w-7 h-7 rounded-lg bg-jyothi-amber/15 group-hover/item:bg-jyothi-amber flex items-center justify-center text-jyothi-amber group-hover/item:text-jyothi-blue transition-colors shrink-0">
+                        <HardHat size={15} />
+                      </div>
+                      <span>Construction Services</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/rmc" className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/10 text-sm text-gray-100 hover:text-jyothi-amber font-medium transition-colors border-b border-white/5 last:border-0 group/item">
+                      <div className="w-7 h-7 rounded-lg bg-jyothi-amber/15 group-hover/item:bg-jyothi-amber flex items-center justify-center text-jyothi-amber group-hover/item:text-jyothi-blue transition-colors shrink-0">
+                        <Truck size={15} />
+                      </div>
+                      <span>Ready Mix Concrete</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/aggregates" className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/10 text-sm text-gray-100 hover:text-jyothi-amber font-medium transition-colors border-b border-white/5 last:border-0 group/item">
+                      <div className="w-7 h-7 rounded-lg bg-jyothi-amber/15 group-hover/item:bg-jyothi-amber flex items-center justify-center text-jyothi-amber group-hover/item:text-jyothi-blue transition-colors shrink-0">
+                        <Mountain size={15} />
+                      </div>
+                      <span>Aggregates & Crushing</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/blocks" className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/10 text-sm text-gray-100 hover:text-jyothi-amber font-medium transition-colors border-b border-white/5 last:border-0 group/item">
+                      <div className="w-7 h-7 rounded-lg bg-jyothi-amber/15 group-hover/item:bg-jyothi-amber flex items-center justify-center text-jyothi-amber group-hover/item:text-jyothi-blue transition-colors shrink-0">
+                        <LayoutGrid size={15} />
+                      </div>
+                      <span>Concrete Blocks</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services/fabrication" className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/10 text-sm text-gray-100 hover:text-jyothi-amber font-medium transition-colors group/item">
+                      <div className="w-7 h-7 rounded-lg bg-jyothi-amber/15 group-hover/item:bg-jyothi-amber flex items-center justify-center text-jyothi-amber group-hover/item:text-jyothi-blue transition-colors shrink-0">
+                        <Wrench size={15} />
+                      </div>
+                      <span>Fabrication Works</span>
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>
