@@ -14,10 +14,8 @@ const WhatsAppCTA = () => {
       className="fixed bottom-8 right-8 z-[100] w-14 h-14 bg-[#25D366] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer group"
       aria-label="Contact us on WhatsApp"
     >
-      {/* Ripple Animation */}
       <span className="absolute inset-0 rounded-full animate-ping bg-[#25D366] opacity-30"></span>
       
-      {/* Official WhatsApp SVG */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

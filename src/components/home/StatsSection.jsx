@@ -35,7 +35,6 @@ const stats = [
 const StatsSection = () => {
   return (
     <section className="py-20 bg-jyothi-blue border-y border-white/5 relative overflow-hidden">
-      {/* Background patterns */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:40px_40px]"></div>
       </div>

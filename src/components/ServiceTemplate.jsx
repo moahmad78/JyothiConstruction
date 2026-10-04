@@ -6,7 +6,6 @@ const ServiceTemplate = ({ title, description, features, tagline }) => {
   return (
     <div className="bg-transparent min-h-screen pt-20">
       
-      {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center">
         <div className="container mx-auto px-6 max-w-7xl">
           <motion.div
@@ -16,7 +15,7 @@ const ServiceTemplate = ({ title, description, features, tagline }) => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-4 font-heading">{tagline}</h1>
-            <h2 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight font-heading mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight font-heading mb-6 leading-tight">
               {title}
             </h2>
             <p className="text-xl text-gray-200 leading-relaxed font-light">
@@ -26,7 +25,6 @@ const ServiceTemplate = ({ title, description, features, tagline }) => {
         </div>
       </section>
 
-      {/* Core Philosophy Section */}
       <section className="py-16 bg-white/5 backdrop-blur-md border-y border-white/10">
         <div className="container mx-auto px-6 max-w-7xl text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-jyothi-amber font-heading mb-4 uppercase tracking-widest">
@@ -38,12 +36,11 @@ const ServiceTemplate = ({ title, description, features, tagline }) => {
         </div>
       </section>
 
-      {/* Features Grid */}
       <section className="py-24 bg-transparent">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <h3 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-3 font-heading">Capabilities</h3>
-            <h4 className="text-4xl md:text-5xl font-bold text-white tracking-tight font-heading">
+            <h4 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight font-heading mb-6">
               Why Choose Our {title}?
             </h4>
           </div>

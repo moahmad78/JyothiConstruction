@@ -9,16 +9,13 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="bg-jyothi-blue pt-20 pb-8 mt-auto text-white border-t border-white/10 relative overflow-hidden">
-      {/* Background Accents in Logo Gold and Green */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-jyothi-amber/10 rounded-full blur-[120px] -mr-48 -mt-48 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-jyothi-green/10 rounded-full blur-[120px] -ml-48 -mb-48 pointer-events-none"></div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         
-        {/* Top 4 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           
-          {/* Col 1: Brand & Legacy */}
           <div className="flex flex-col gap-6">
             <Link to="/" className="flex items-center gap-3 w-fit">
               <div className="p-2.5 bg-white rounded-xl shadow-md">
@@ -41,7 +38,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Col 2: Quick Links */}
           <div className="flex flex-col gap-8">
             <h4 className="text-xl font-bold text-white font-heading relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-jyothi-amber">Quick Links</h4>
             <nav className="flex flex-col gap-4">
@@ -53,7 +49,6 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Col 3: Services */}
           <div className="flex flex-col gap-8">
             <h4 className="text-xl font-bold text-white font-heading relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-jyothi-amber">Core Services</h4>
             <nav className="flex flex-col gap-4">
@@ -65,15 +60,16 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Col 4: Contact Details */}
           <div className="flex flex-col gap-8">
             <h4 className="text-xl font-bold text-white font-heading relative pb-3 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-1 after:bg-jyothi-amber">Contact Us</h4>
             <div className="flex flex-col gap-5">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-jyothi-amber/10 rounded-lg flex items-center justify-center text-jyothi-amber shrink-0 border border-jyothi-amber/20">
+                <div className="w-10 h-10 bg-jyothi-amber/10 rounded-lg flex items-center justify-center text-jyothi-amber shrink-0 border border-jyothi-amber/20 mt-0.5">
                   <MapPin size={20} />
                 </div>
-                <span className="text-sm text-gray-400 leading-relaxed pt-1">Bangalore, Karnataka, India</span>
+                <span className="text-sm text-gray-400 leading-relaxed">
+                  #19, 1st Cross, Veerannapalya, Near SBI Bank, AC Post, Bangalore - 560045
+                </span>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-jyothi-amber/10 rounded-lg flex items-center justify-center text-jyothi-amber shrink-0 border border-jyothi-amber/20">
@@ -95,7 +91,6 @@ const Footer = () => {
 
         </div>
 
-        {/* Bottom Bar: Copyright */}
         <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
             <span className="text-gray-500 text-sm">© 2026 Jyothi Construction. All rights reserved.</span>

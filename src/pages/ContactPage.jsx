@@ -13,7 +13,6 @@ const ContactPage = () => {
   return (
     <div className="bg-jyothi-blue min-h-screen">
       
-      {/* Page Header Banner */}
       <section className="relative h-[45vh] md:h-[54vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <img 
@@ -21,8 +20,9 @@ const ContactPage = () => {
             alt="Contact Jyothi Construction Leadership" 
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-jyothi-blue/75 backdrop-blur-[1px]"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-transparent to-jyothi-blue/60"></div>
+          {/* Subtle top & bottom edge gradients for smooth contrast transition */}
+          <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-jyothi-blue/80 to-transparent pointer-events-none"></div>
+          <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-jyothi-blue to-transparent pointer-events-none"></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -30,28 +30,26 @@ const ContactPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="inline-block bg-jyothi-blue/45 backdrop-blur-md px-6 py-6 sm:px-10 sm:py-8 rounded-2xl md:rounded-3xl border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.4)] max-w-3xl"
           >
             <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-3 block">Direct Consultation</span>
-            <h1 className="text-4xl md:text-7xl font-black text-white font-heading tracking-tighter">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-white font-heading tracking-tighter drop-shadow-md">
               Contact <span className="text-jyothi-amber">Us</span>
             </h1>
-            <div className="w-24 h-1.5 bg-jyothi-amber mx-auto my-4 rounded-full"></div>
-            <p className="text-gray-200 text-sm md:text-lg max-w-2xl mx-auto font-sans font-medium">
+            <div className="w-20 h-1 bg-jyothi-amber mx-auto my-3 rounded-full"></div>
+            <p className="text-gray-100 text-sm md:text-base max-w-2xl mx-auto font-sans font-normal leading-relaxed drop-shadow-sm">
               Connect directly with our engineering leadership and senior project consultants.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Main Contact Section */}
       <section className="py-8 md:py-12 relative">
-        {/* Background Accents */}
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-jyothi-amber/5 rounded-full blur-[150px] -ml-300 -mb-300"></div>
         
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
-            {/* Contact Form - Dark Tech Design */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -119,7 +117,6 @@ const ContactPage = () => {
               </div>
             </motion.div>
 
-            {/* Information Grid & Map */}
             <div className="flex flex-col gap-12">
               
               <motion.div 
@@ -129,18 +126,18 @@ const ContactPage = () => {
                 transition={{ duration: 0.6 }}
                 className="grid grid-cols-1 md:grid-cols-2 gap-8"
               >
-                {/* Office Info */}
                 <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 group hover:border-jyothi-amber/30 transition-all">
                   <div className="w-12 h-12 bg-jyothi-amber/10 rounded-xl flex items-center justify-center text-jyothi-amber mb-6 group-hover:bg-jyothi-amber group-hover:text-jyothi-blue transition-all">
                     <MapPin size={24} />
                   </div>
                   <h4 className="text-xl font-bold text-white font-heading mb-3 tracking-tight">Main Office</h4>
                   <p className="text-gray-400 text-sm leading-relaxed font-medium">
-                    Bangalore, Karnataka, India
+                    #19, 1st Cross, Veerannapalya,<br />
+                    Near SBI Bank, AC Post,<br />
+                    Bangalore - 560045
                   </p>
                 </div>
 
-                {/* Direct Contact */}
                 <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 group hover:border-jyothi-amber/30 transition-all">
                   <div className="w-12 h-12 bg-jyothi-amber/10 rounded-xl flex items-center justify-center text-jyothi-amber mb-6 group-hover:bg-jyothi-amber group-hover:text-jyothi-blue transition-all">
                     <Phone size={24} />
@@ -153,7 +150,6 @@ const ContactPage = () => {
                 </div>
               </motion.div>
 
-              {/* Interactive Map Integration */}
               <motion.a 
                 href="https://maps.google.com/?q=Jyothi+Construction+Bangalore"
                 target="_blank"
@@ -189,7 +185,6 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Success Modal */}
       <AnimatePresence>
         {isSuccessModalOpen && (
           <div className="fixed inset-0 z-[10000] flex items-center justify-center p-6">

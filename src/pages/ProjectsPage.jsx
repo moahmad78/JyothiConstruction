@@ -3,40 +3,75 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, ArrowRight, LayoutGrid, Home, Building2, Factory, Zap } from 'lucide-react';
 
 const projectsData = [
+  // Commercial Projects
   {
     id: 1,
-    name: 'Jyothi Conmix RMC Batching Plant',
+    name: 'High-Rise Commercial & Residential Towers',
+    location: 'Bangalore, Karnataka',
+    type: 'Commercial',
+    desc: 'Multi-storey structural execution featuring high-performance concrete pumping and precision batching.',
+    image: '/assets/images/our_works/2.jpg'
+  },
+  {
+    id: 2,
+    name: 'Corporate Tech Park & Campus Infrastructure',
+    location: 'Bangalore, Karnataka',
+    type: 'Commercial',
+    desc: 'Extensive heavy-duty interlocking paver installation and architectural landscaping for commercial IT campus.',
+    image: '/assets/images/our_works/14.jpg'
+  },
+  {
+    id: 3,
+    name: 'Commercial Automobile Showroom & Service Hub',
+    location: 'Karnataka',
+    type: 'Commercial',
+    desc: 'Comprehensive commercial facility development including service workshops, high-load paving, and administrative blocks.',
+    image: '/assets/images/our_works/13.jpg'
+  },
+  {
+    id: 4,
+    name: 'Commercial Sports & Multipurpose Arena',
+    location: 'Karnataka',
+    type: 'Commercial',
+    desc: 'Large-scale institutional structure execution with high-volume continuous concrete pumping and heavy structural blocks.',
+    image: '/assets/images/our_works/21.jpg'
+  },
+  {
+    id: 5,
+    name: 'Structural Steel Cantilever Framework',
+    location: 'Bangalore, Karnataka',
+    type: 'Commercial',
+    desc: 'Custom fabricated structural steel cantilever parking framework with high-durability coated roofing.',
+    image: '/assets/images/our_works/8.jpg'
+  },
+
+  // Industrial Projects
+  {
+    id: 6,
+    name: 'Innomac Engineering Industrial Facility',
+    location: 'Industrial Corridor, Karnataka',
+    type: 'Industrial',
+    desc: 'Engineered pre-engineered steel building (PEB) shed fabrication and high-strength industrial concrete flooring.',
+    image: '/assets/images/our_works/9.jpg'
+  },
+  {
+    id: 7,
+    name: 'Multi-Bay Industrial Logistics & Warehousing Hub',
+    location: 'Karnataka',
+    type: 'Industrial',
+    desc: 'Large-span industrial distribution facility with specialized heavy vehicle paving and load-bearing loading bays.',
+    image: '/assets/images/our_works/18.jpg'
+  },
+  {
+    id: 8,
+    name: 'Jyothi Conmix RMC Automated Batching Plant',
     location: 'Karnataka',
     type: 'Industrial',
     desc: 'Automated computerized high-capacity batching plant supplying custom grade concrete.',
     image: '/Jyothi/IMG_0038.JPG'
   },
   {
-    id: 2,
-    name: 'Automated Concrete Block Manufacturing Yard',
-    location: 'Main Yard Facility',
-    type: 'Industrial',
-    desc: 'Massive automated curing yard producing precision solid blocks with superior compressive strength.',
-    image: '/Jyothi/IMG_9734.JPG'
-  },
-  {
-    id: 3,
-    name: 'Turnkey EPC Commercial Landmark',
-    location: 'Regional Hub',
-    type: 'Turnkey',
-    desc: 'End-to-end design and build solutions with absolute precision and quality control.',
-    image: '/Jyothi/IMG_9824.JPG'
-  },
-  {
-    id: 4,
-    name: 'Cyber Nexus Center',
-    location: 'Tech Corridor',
-    type: 'Commercial',
-    desc: 'State-of-the-art commercial tech hub constructed with in-house structural components.',
-    image: '/Jyothi/IMG_0257.JPG'
-  },
-  {
-    id: 5,
+    id: 9,
     name: 'Granite Quarry Extraction & Mining Zone',
     location: 'Quarry Face',
     type: 'Industrial',
@@ -44,23 +79,7 @@ const projectsData = [
     image: '/Jyothi/IMG_9528.JPG'
   },
   {
-    id: 6,
-    name: 'Precision Block Casting Machine (Egg Layer)',
-    location: 'Curing Bay',
-    type: 'Industrial',
-    desc: 'High-speed automated block casting technology ensuring zero dimension variation.',
-    image: '/Jyothi/IMG_9749.JPG'
-  },
-  {
-    id: 7,
-    name: 'Self-Loading Boom Crane Delivery Fleet',
-    location: 'Logistics Division',
-    type: 'Turnkey',
-    desc: 'Specialized hydraulic crane-mounted trucks for on-site direct placement and zero breakage.',
-    image: '/Jyothi/IMG_0452.JPG'
-  },
-  {
-    id: 8,
+    id: 10,
     name: 'VSI & High-Capacity Crushing Plant',
     location: 'Crushing Division',
     type: 'Industrial',
@@ -68,12 +87,38 @@ const projectsData = [
     image: '/Jyothi/IMG_9632.JPG'
   },
   {
-    id: 9,
-    name: 'Jyothi Corporate Office & Leadership Team',
-    location: 'Headquarters',
-    type: 'Commercial',
-    desc: 'Core executive management and senior engineering leadership driving project execution.',
-    image: '/Jyothi/IMG_0229.JPG'
+    id: 11,
+    name: 'Automated Concrete Block Manufacturing Yard',
+    location: 'Main Yard Facility',
+    type: 'Industrial',
+    desc: 'Massive automated curing yard producing precision solid blocks with superior compressive strength.',
+    image: '/Jyothi/IMG_9734.JPG'
+  },
+
+  // Turnkey Projects
+  {
+    id: 12,
+    name: 'Urban Metro Rail Viaduct & Transit Infrastructure',
+    location: 'Bangalore, Karnataka',
+    type: 'Turnkey',
+    desc: 'High-grade specialized concrete supply and on-site pumping for elevated metro viaduct and station framework.',
+    image: '/assets/images/our_works/20.jpg'
+  },
+  {
+    id: 13,
+    name: 'State Highway Corridor & Kerb Infrastructure',
+    location: 'Karnataka',
+    type: 'Turnkey',
+    desc: 'Direct mechanized placement of high-density concrete kerb stones and edge barriers with specialized crane trucks.',
+    image: '/assets/images/our_works/19.jpg'
+  },
+  {
+    id: 14,
+    name: 'Deep Basement & High-Volume Foundation Concreting',
+    location: 'Bangalore, Karnataka',
+    type: 'Turnkey',
+    desc: 'Complex deep foundation excavation and monolithic concrete raft foundation casting using mobile boom pumps.',
+    image: '/assets/images/our_works/3a.jpg'
   }
 ];
 
@@ -89,16 +134,16 @@ const ProjectsPage = () => {
   return (
     <div className="bg-jyothi-blue min-h-screen">
       
-      {/* Page Header Banner */}
-      <section className="relative h-[48vh] md:h-[58vh] flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative h-[48vh] md:h-[56vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <img 
             src="/Jyothi/IMG_9644.JPG" 
             alt="Our Featured Infrastructure Projects - Jyothi Construction" 
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-jyothi-blue/75 backdrop-blur-[1px]"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-transparent to-jyothi-blue/60"></div>
+          {/* Subtle top & bottom edge gradients for smooth contrast transition */}
+          <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-jyothi-blue/80 to-transparent pointer-events-none"></div>
+          <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-jyothi-blue to-transparent pointer-events-none"></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -106,22 +151,22 @@ const ProjectsPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="inline-block bg-jyothi-blue/45 backdrop-blur-md px-6 py-6 sm:px-10 sm:py-8 rounded-2xl md:rounded-3xl border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.4)] max-w-3xl"
           >
             <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-3 block">
               Portfolio & Engineering Showcase
             </span>
-            <h1 className="text-4xl md:text-7xl font-black text-white font-heading tracking-tighter">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-white font-heading tracking-tighter drop-shadow-md">
               Our Featured <span className="text-jyothi-amber">Projects</span>
             </h1>
-            <div className="w-24 h-1.5 bg-jyothi-amber mx-auto my-4 rounded-full"></div>
-            <p className="text-gray-200 text-sm md:text-lg max-w-2xl mx-auto font-sans font-medium">
+            <div className="w-20 h-1 bg-jyothi-amber mx-auto my-3 rounded-full"></div>
+            <p className="text-gray-100 text-sm md:text-base max-w-2xl mx-auto font-sans font-normal leading-relaxed drop-shadow-sm">
               Monumental civil engineering, ready-mix infrastructure, and industrial landmarks delivered across Karnataka.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Filter Bar - Horizontal Scroll on Mobile */}
       <section className="sticky top-20 z-50 bg-jyothi-blue/80 backdrop-blur-xl border-y border-white/5 py-3 md:py-4">
         <div className="container mx-auto px-6 max-w-7xl flex flex-row overflow-x-auto whitespace-nowrap gap-3 scrollbar-hide md:flex-wrap md:justify-center">
           {categories.map((cat) => (
@@ -140,7 +185,6 @@ const ProjectsPage = () => {
         </div>
       </section>
 
-      {/* Projects Grid */}
       <section className="py-10 md:py-12 relative">
         <div className="container mx-auto px-6 max-w-7xl">
           <motion.div 
@@ -158,7 +202,6 @@ const ProjectsPage = () => {
                   transition={{ duration: 0.4 }}
                   className="group relative bg-white/5 rounded-[2.5rem] overflow-hidden border border-white/10 hover:border-jyothi-amber/50 transition-all duration-500 shadow-2xl h-auto flex flex-col"
                 >
-                  {/* Image Container */}
                   <div className="relative h-48 md:h-[60%] aspect-video md:aspect-auto overflow-hidden">
                     <img 
                       src={project.image} 
@@ -167,14 +210,12 @@ const ProjectsPage = () => {
                     />
                     <div className="absolute inset-0 bg-jyothi-blue/20 group-hover:bg-transparent transition-all"></div>
                     
-                    {/* Floating Type Badge */}
                     <div className="absolute top-5 left-5 px-5 py-2 bg-jyothi-amber text-jyothi-blue rounded-full text-xs md:text-sm font-black uppercase tracking-wider shadow-2xl border border-amber-200/50 flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-jyothi-blue"></span>
                       {project.type}
                     </div>
                   </div>
 
-                  {/* Content Container */}
                   <div className="relative p-6 flex flex-col flex-grow bg-gradient-to-b from-transparent to-black/20">
                     <div className="flex items-center gap-2 text-jyothi-amber text-[10px] font-black uppercase tracking-[0.2em] mb-2">
                       <Zap size={12} /> Featured Project
@@ -191,7 +232,6 @@ const ProjectsPage = () => {
                       </p>
                     )}
 
-                    {/* Hover Pop-up Button */}
                     <div className="mt-auto opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                       <button className="w-full py-4 bg-jyothi-amber text-jyothi-blue font-black rounded-xl hover:bg-jyothi-orange hover:text-white transition-all uppercase tracking-widest text-[10px] flex items-center justify-center gap-2 shadow-xl">
                         View Details <ArrowRight size={16} />
@@ -203,7 +243,6 @@ const ProjectsPage = () => {
             </AnimatePresence>
           </motion.div>
 
-          {/* Empty State */}
           {filteredProjects.length === 0 && (
             <div className="text-center py-40 bg-white/5 rounded-[2.5rem] border border-dashed border-white/10">
               <LayoutGrid size={48} className="mx-auto text-gray-600 mb-4" />

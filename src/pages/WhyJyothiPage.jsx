@@ -48,7 +48,6 @@ const WhyJyothiPage = () => {
   return (
     <div className="bg-transparent min-h-screen pt-20">
       
-      {/* Hero Section */}
       <section className="relative py-24 bg-transparent">
         <div className="container mx-auto px-6 max-w-7xl">
           <motion.div
@@ -58,7 +57,7 @@ const WhyJyothiPage = () => {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-4 font-heading">The Jyothi Advantage</h1>
-            <h2 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight font-heading mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight font-heading mb-6 leading-tight">
               Integrated Construction. <br /> Controlled Excellence.
             </h2>
             <p className="text-xl text-gray-200 leading-relaxed font-light">
@@ -68,7 +67,6 @@ const WhyJyothiPage = () => {
         </div>
       </section>
 
-      {/* The Integration Flowchart */}
       <section className="py-24">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
@@ -81,7 +79,6 @@ const WhyJyothiPage = () => {
           </div>
 
           <div className="relative max-w-5xl mx-auto">
-            {/* Desktop Connecting Line */}
             <div className="hidden md:block absolute top-[40px] left-0 w-full h-1 bg-white/20 z-0"></div>
             
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative z-10">
@@ -97,7 +94,6 @@ const WhyJyothiPage = () => {
                     {step.description}
                   </p>
                   
-                  {/* Mobile Connecting Arrow */}
                   {index !== 3 && (
                     <div className="md:hidden mt-8 text-gray-300">
                       <ArrowDown className="w-8 h-8" />
@@ -110,7 +106,6 @@ const WhyJyothiPage = () => {
         </div>
       </section>
 
-      {/* The Three Pillars of Control */}
       <section className="py-24 bg-transparent">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -143,14 +138,13 @@ const WhyJyothiPage = () => {
         </div>
       </section>
 
-      {/* Strength in Capability */}
       <section className="py-24 bg-transparent">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
             <div>
               <h3 className="text-sm font-bold text-brand-secondary tracking-widest uppercase mb-3 font-heading">Our Resources</h3>
-              <h4 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-8 font-heading">
+              <h4 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight mb-6 font-heading">
                 Strength in Capability
               </h4>
               <p className="text-gray-300 mb-10 leading-relaxed text-lg">

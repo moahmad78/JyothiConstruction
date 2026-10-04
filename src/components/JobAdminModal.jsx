@@ -13,12 +13,12 @@ export const JobAdminModal = ({
   onSaveJob,
   onLoginSuccess 
 }) => {
-  // Login State
+  // Admin credential verification state
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState('');
 
-  // Job Form State
+  // Job listing input form state
   const [formData, setFormData] = useState({
     title: '',
     category: 'Civil Engineering',
@@ -96,10 +96,8 @@ export const JobAdminModal = ({
         exit={{ opacity: 0, scale: 0.95, y: 20 }}
         className="relative w-full max-w-lg bg-jyothi-blue border border-white/20 rounded-[2rem] p-6 md:p-8 shadow-2xl overflow-hidden"
       >
-        {/* Glow decoration */}
         <div className="absolute top-0 right-0 w-48 h-48 bg-jyothi-amber/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
 
-        {/* Close Button */}
         <button 
           onClick={onClose}
           className="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors"

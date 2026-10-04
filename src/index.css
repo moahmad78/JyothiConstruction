@@ -69,3 +69,12 @@
 .group:hover .animate-scroll-reverse {
   animation-play-state: paused;
 }
+
+/* Hide scrollbar for Chrome, Safari, Opera and mobile browsers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

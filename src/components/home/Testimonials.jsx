@@ -79,7 +79,7 @@ const Testimonials = () => {
     setCurrentIndex((prev) => (prev - 1 + (testimonials.length - visibleCards + 1)) % (testimonials.length - visibleCards + 1));
   };
 
-  // Safe Index logic to prevent empty space at the end
+  // Keep carousel index safely bounded within slide count
   const maxIndex = testimonials.length - visibleCards;
   const safeIndex = Math.min(currentIndex, maxIndex);
 
@@ -87,8 +87,8 @@ const Testimonials = () => {
     <section className="py-10 md:py-24 bg-jyothi-blue relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1400px]">
         <div className="text-center mb-10 md:mb-16">
-          <span className="text-jyothi-amber font-black uppercase tracking-[0.3em] text-sm mb-4 block">Testimonials</span>
-          <h2 className="text-3xl md:text-5xl font-black text-white font-heading">What Our Partners Say</h2>
+          <span className="text-jyothi-amber font-black uppercase tracking-[0.3em] text-xs md:text-sm mb-3 block">Testimonials</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight font-heading">What Our Partners Say</h2>
         </div>
 
         <div className="relative group">
@@ -128,7 +128,6 @@ const Testimonials = () => {
             </motion.div>
           </div>
 
-          {/* Navigation Controls - Desktop Only */}
           <div className="hidden md:block">
             <button 
               onClick={prev}
@@ -146,7 +145,6 @@ const Testimonials = () => {
             </button>
           </div>
 
-          {/* Pagination Dots */}
           <div className="flex justify-center items-center gap-3 mt-10 md:mt-12">
             {Array.from({ length: testimonials.length - visibleCards + 1 }).map((_, i) => (
               <button

@@ -33,7 +33,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent background scrolling when mobile menu is open
+  // Lock viewport scroll while mobile drawer is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -51,7 +51,6 @@ const Header = () => {
         ? 'py-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.6)]' 
         : 'py-3 md:py-4 shadow-[0_4px_25px_rgba(0,0,0,0.4)]'
     }`}>
-      {/* Exact continuous gradient matching user reference */}
       <div 
         className="absolute inset-0 pointer-events-none -z-10 backdrop-blur-xl"
         style={{
@@ -59,13 +58,11 @@ const Header = () => {
         }}
       />
 
-      {/* Top subtle 1px border line matching the reference */}
       <div className="absolute top-0 inset-x-0 h-[1px] bg-black/10 pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 max-w-7xl relative">
         <div className="flex items-center justify-between">
           
-          {/* Logo - Completely clean on white background */}
           <Link to="/" className="flex items-center gap-3 cursor-pointer group">
             <img 
               src="/logo.png" 
@@ -74,7 +71,6 @@ const Header = () => {
             />
           </Link>
           
-          {/* Desktop Nav - Clean links with active indicator */}
           <nav className="hidden lg:flex items-center gap-8">
             <Link to="/" className={`${getLinkClass('/')} relative py-1`}>
               Home
@@ -89,7 +85,6 @@ const Header = () => {
               )}
             </Link>
             
-            {/* Services Dropdown */}
             <div className="group relative">
               <button className={`flex items-center gap-1.5 transition-colors text-sm font-bold uppercase tracking-wider py-2 relative ${
                 location.pathname.startsWith('/services') 
@@ -102,7 +97,6 @@ const Header = () => {
                 )}
               </button>
               
-              {/* Mega Menu Dropdown */}
               <div className="absolute top-full right-0 mt-3 w-72 bg-jyothi-blue/98 border border-white/15 rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden backdrop-blur-2xl">
                 <div className="p-2 border-b border-white/5 bg-white/[0.02]">
                   <span className="text-[10px] font-black uppercase tracking-widest text-jyothi-amber px-3">Our Core Verticals</span>
@@ -137,7 +131,6 @@ const Header = () => {
             </Link>
           </nav>
 
-          {/* Right Action CTA */}
           <div className="hidden lg:flex items-center">
             <button 
               onClick={openModal}
@@ -148,7 +141,6 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Toggle */}
           <div className="flex items-center gap-3 lg:hidden">
             <button 
               onClick={openModal}
@@ -167,11 +159,9 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Nav Sidebar Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
-            {/* Backdrop Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -180,7 +170,6 @@ const Header = () => {
               className="fixed inset-0 bg-black/80 backdrop-blur-md z-[1950] lg:hidden"
             />
             
-            {/* Sidebar Drawer */}
             <motion.div 
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
@@ -198,12 +187,10 @@ const Header = () => {
                 </button>
               </div>
 
-              {/* Sidebar Links */}
               <div className="flex flex-col py-4 px-6 gap-0.5 flex-grow overflow-y-auto">
                 <Link to="/" className={`text-lg font-bold font-heading py-3 border-b border-white/5 ${isActive('/') ? 'text-jyothi-amber' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>Home</Link>
                 <Link to="/about" className={`text-lg font-bold font-heading py-3 border-b border-white/5 ${isActive('/about') ? 'text-jyothi-amber' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
                 
-                {/* Collapsible Services */}
                 <div className="border-b border-white/5">
                   <button 
                     onClick={() => setMobileAccordionOpen(!mobileAccordionOpen)} 
@@ -237,7 +224,6 @@ const Header = () => {
                 <Link to="/contact" className={`text-lg font-bold font-heading py-3 ${isActive('/contact') ? 'text-jyothi-amber' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
               </div>
 
-              {/* Sidebar Footer */}
               <div className="p-6 bg-white/5 border-t border-white/10 mt-auto">
                 <button 
                   onClick={() => {

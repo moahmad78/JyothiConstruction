@@ -24,8 +24,7 @@ const QuoteModal = () => {
     setIsSending(true);
 
     try {
-      // Configuration for info@jyothiconstruction.com
-      // Replace with actual IDs from EmailJS Dashboard
+      // EmailJS routing credentials (service ID, template ID, public key)
       await emailjs.sendForm(
         'YOUR_SERVICE_ID', 
         'YOUR_QUOTE_TEMPLATE_ID', 
@@ -37,7 +36,7 @@ const QuoteModal = () => {
       closeModal();
     } catch (error) {
       console.error('EmailJS Error:', error);
-      // Fallback for demo if keys are not set
+      // Fallback notice if production EmailJS keys are not provided yet
       showToast("Request processed! (EmailJS Keys Required for Live Routing)");
       closeModal();
     } finally {
@@ -49,7 +48,6 @@ const QuoteModal = () => {
     <AnimatePresence>
       {isModalOpen && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-6 overflow-y-auto">
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -58,7 +56,6 @@ const QuoteModal = () => {
             className="fixed inset-0 bg-black/85 backdrop-blur-md"
           />
 
-          {/* Modal Content */}
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -66,11 +63,9 @@ const QuoteModal = () => {
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
             className="relative w-full max-w-2xl bg-jyothi-blue border border-white/15 rounded-[2rem] overflow-hidden shadow-2xl max-h-[88vh] overflow-y-auto my-auto z-10"
           >
-            {/* Header Decorations */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-jyothi-amber/5 rounded-full blur-[80px] -mr-32 -mt-32"></div>
             
             <div className="relative p-6 md:p-12">
-              {/* Close Button */}
               <button 
                 onClick={closeModal}
                 className="absolute top-6 right-6 text-white/50 hover:text-jyothi-amber transition-colors p-2 hover:bg-white/5 rounded-full"
@@ -83,7 +78,7 @@ const QuoteModal = () => {
                   <ShieldCheck size={20} />
                   <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em]">Direct Consultation</span>
                 </div>
-                <h2 className="text-2xl md:text-5xl font-black text-white font-heading leading-tight mb-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white font-heading leading-tight mb-3">
                   Get a <span className="text-jyothi-amber">Quote</span>
                 </h2>
                 <div className="flex items-center gap-2 text-gray-400">

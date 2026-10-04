@@ -1,0 +1,15 @@
+{
+  "name": "site-remote-control-api",
+  "version": "1.0.0",
+  "description": "Remote Killswitch, Domain Protection & Status API with Developer Management Dashboard",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

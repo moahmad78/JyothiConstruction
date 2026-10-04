@@ -42,16 +42,16 @@ const KeyVerticals = () => {
   return (
     <section className="py-10 md:py-24 bg-jyothi-blue relative">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-10 mb-8 md:mb-20">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-6 md:gap-10 mb-8 md:mb-20 text-center md:text-left">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <span className="text-jyothi-amber font-black uppercase tracking-[0.3em] text-sm mb-4 block">Our Expertise</span>
-            <h2 className="text-3xl md:text-6xl font-black text-white leading-tight font-heading">
-              Vertical Integrated <br /> Solutions
+            <span className="text-jyothi-amber font-black uppercase tracking-[0.3em] text-xs md:text-sm mb-3 block">Our Expertise</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight font-heading">
+              Vertical Integrated <br className="hidden sm:inline" /> Solutions
             </h2>
           </motion.div>
           <motion.p 
@@ -59,13 +59,13 @@ const KeyVerticals = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 max-w-md text-base md:text-lg leading-relaxed"
+            className="text-gray-400 max-w-md text-xs sm:text-sm leading-relaxed mx-auto md:mx-0"
           >
             From conceptual design to structural execution, we deliver excellence across diverse sectors with uncompromising quality.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="flex overflow-x-auto pb-4 pt-1 gap-4 snap-x snap-mandatory no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 md:overflow-visible md:pb-0">
           {verticals.map((vertical, index) => (
             <motion.div 
               key={vertical.id}
@@ -73,46 +73,50 @@ const KeyVerticals = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-jyothi-amber/50 transition-all duration-500 h-[380px] md:h-[520px]"
+              className="group relative overflow-hidden rounded-2xl md:rounded-3xl bg-white/5 border border-white/10 hover:border-jyothi-amber/50 transition-all duration-500 min-h-[320px] h-[320px] md:h-[400px] w-[80vw] max-w-[300px] sm:w-[320px] md:w-auto md:max-w-none shrink-0 snap-center md:shrink"
             >
               <div className="absolute inset-0 z-0">
                 <Image 
                   src={vertical.image} 
                   alt={vertical.title} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-50"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-jyothi-blue/70 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-jyothi-blue/40 to-transparent transition-opacity duration-500 opacity-90 group-hover:opacity-80"></div>
               </div>
               
-              <div className="relative p-6 md:p-8 h-full flex flex-col justify-end z-10">
-                <div className="mb-4 md:mb-6 w-14 h-14 md:w-20 md:h-20 bg-jyothi-amber/10 border border-jyothi-amber/20 rounded-2xl flex items-center justify-center group-hover:bg-jyothi-amber group-hover:text-jyothi-blue transition-all duration-500 group-hover:-translate-y-2 flex-shrink-0">
-                  <div className="group-hover:scale-110 transition-transform duration-500 scale-75 md:scale-100">
+              <div className="relative p-5 md:p-6 h-full flex flex-col justify-end z-10">
+                <div className="mb-3 md:mb-4 w-11 h-11 md:w-14 md:h-14 bg-black/40 backdrop-blur-md border border-white/20 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:bg-jyothi-amber group-hover:text-jyothi-blue transition-all duration-500 group-hover:-translate-y-1 flex-shrink-0 shadow-lg">
+                  <div className="group-hover:scale-110 transition-transform duration-500 scale-75 md:scale-90">
                     {vertical.icon}
                   </div>
                 </div>
 
-                {/* Fixed height container for Title to ensure perfect horizontal alignment */}
-                <div className="h-14 md:h-16 flex items-end mb-2 md:mb-3">
-                  <h4 className="text-xl md:text-2xl font-black text-white font-heading group-hover:text-jyothi-amber transition-colors leading-tight">
+                <div className="min-h-[2.5rem] md:min-h-[2.75rem] flex items-end mb-1.5 md:mb-2">
+                  <h4 className="text-base md:text-lg font-black text-white font-heading group-hover:text-jyothi-amber transition-colors leading-snug drop-shadow-md">
                     {vertical.title}
                   </h4>
                 </div>
 
-                {/* Fixed height container for Description to ensure identical text baseline */}
-                <div className="h-16 md:h-20 flex items-start mb-4 md:mb-6">
-                  <p className="text-gray-300 text-xs md:text-sm leading-relaxed line-clamp-3">
+                <div className="min-h-[2.5rem] md:min-h-[3rem] flex items-start mb-3 md:mb-4">
+                  <p className="text-gray-200 text-xs leading-snug line-clamp-3 drop-shadow-sm font-medium">
                     {vertical.description}
                   </p>
                 </div>
 
-                {/* Fixed bottom Learn More button */}
-                <div className="pt-2">
-                  <Link to={vertical.link} className="inline-flex items-center gap-2 text-white font-bold text-xs md:text-sm group/btn hover:text-jyothi-amber transition-colors">
-                    Learn More <ArrowRight size={14} className="text-jyothi-amber group-hover/btn:translate-x-2 transition-transform md:w-4 md:h-4" />
+                <div className="pt-1">
+                  <Link to={vertical.link} className="inline-flex items-center gap-1.5 text-white font-bold text-xs group/btn hover:text-jyothi-amber transition-colors drop-shadow">
+                    Learn More <ArrowRight size={13} className="text-jyothi-amber group-hover/btn:translate-x-1.5 transition-transform" />
                   </Link>
                 </div>
               </div>
             </motion.div>
+          ))}
+        </div>
+
+        {/* Mobile Swipe Hint Dots */}
+        <div className="flex justify-center items-center gap-1.5 mt-2 md:hidden">
+          {verticals.map((v) => (
+            <div key={v.id} className="w-1.5 h-1.5 rounded-full bg-white/30" />
           ))}
         </div>
       </div>

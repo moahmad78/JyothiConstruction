@@ -1,0 +1,21 @@
+{
+  "project": "jyothi-construction",
+  "isBlocked": false,
+  "status": "active",
+  "reason": "payment_pending",
+  "title": "Website Temporarily Suspended",
+  "message": "Access to this website has been temporarily suspended by the administrator.",
+  "noticeType": "warning",
+  "allowedDomains": [
+    "*"
+  ],
+  "redirectUrl": "",
+  "showContact": true,
+  "developerContact": {
+    "name": "Sahil Sheikh",
+    "contact": "@sahil_sheikh78",
+    "phone": "+91 9008 777 742",
+    "instagram": "https://www.instagram.com/sahil_sheikh78/"
+  },
+  "updatedAt": "2026-10-03T03:51:43.219Z"
+}

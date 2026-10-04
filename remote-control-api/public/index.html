@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Control Dashboard | Site Remote Killswitch</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0b0f17;
+      color: #f3f4f6;
+    }
+    code, pre {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .glow-amber {
+      box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.3);
+    }
+    .glow-red {
+      box-shadow: 0 0 35px -5px rgba(239, 68, 68, 0.4);
+    }
+    .glow-green {
+      box-shadow: 0 0 35px -5px rgba(34, 197, 94, 0.35);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#0b0f17] text-gray-100 antialiased selection:bg-amber-500 selection:text-black">
+
+  <!-- AUTHENTICATION OVERLAY -->
+  <div id="authModal" class="fixed inset-0 z-50 bg-[#070a0f]/95 backdrop-blur-xl flex items-center justify-center p-4">
+    <div class="w-full max-w-md bg-[#131b26] border border-white/10 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-48 h-48 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="text-xl font-extrabold text-white">Master Access Gate</h2>
+          <p class="text-xs text-gray-400 font-medium">Site Lockdown & Killswitch Center</p>
+        </div>
+      </div>
+
+      <p class="text-sm text-gray-300 mb-6 leading-relaxed">
+        Enter your Secret Master Key to access and remotely control the deployment status of <span class="text-amber-400 font-bold">Jyothi Construction</span> across all domains.
+      </p>
+
+      <form id="authForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Master API Key</label>
+          <input 
+            id="authInput" 
+            type="password" 
+            placeholder="Enter master key..." 
+            value="jyothi_master_key_2026"
+            class="w-full px-4 py-3.5 bg-black/40 border border-white/15 rounded-xl text-white font-mono text-sm focus:outline-none focus:border-amber-400 transition"
+            required
+          />
+          <p class="text-[11px] text-gray-500 mt-1.5 font-mono">Default: jyothi_master_key_2026</p>
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-extrabold text-sm rounded-xl transition-all shadow-lg shadow-amber-500/20 active:scale-[0.99] flex items-center justify-center gap-2"
+        >
+          <span>Unlock Dashboard</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </button>
+
+        <p id="authError" class="text-xs text-red-400 font-medium text-center hidden">Invalid Master Key. Please try again.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- MAIN DASHBOARD CONTENT -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 md:py-12">
+    
+    <!-- Top Bar -->
+    <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 border-b border-white/10">
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <span class="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-widest bg-amber-500/10 text-amber-400 border border-amber-500/30">
+            Universal Remote Guard
+          </span>
+          <span class="flex items-center gap-1.5 text-xs text-gray-400 font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> API Online
+          </span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-black text-white tracking-tight">
+          Website Remote Lockdown & Killswitch
+        </h1>
+        <p class="text-sm text-gray-400 mt-1">
+          Manage live access, downtime notices, domain licensing, and emergency blocks from anywhere.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a 
+          href="/api/site-status" 
+          target="_blank" 
+          class="px-4 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 text-xs font-bold rounded-xl transition flex items-center gap-2"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          <span>Raw JSON API</span>
+        </a>
+        <button 
+          id="logoutBtn" 
+          class="px-4 py-2.5 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-400 text-xs font-bold rounded-xl transition"
+        >
+          Lock Console
+        </button>
+      </div>
+    </header>
+
+    <!-- STATUS BANNER / BIG SWITCH -->
+    <div class="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      <!-- Primary Status Card -->
+      <div id="statusCard" class="lg:col-span-2 bg-[#121824] border border-white/10 rounded-3xl p-6 md:p-8 relative overflow-hidden transition-all duration-500">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Current Website State</span>
+            <div class="flex items-center gap-3 mt-2">
+              <div id="statusDot" class="w-4 h-4 rounded-full bg-emerald-500 animate-ping"></div>
+              <h2 id="statusHeadline" class="text-2xl md:text-3xl font-black text-white uppercase tracking-wider">
+                WEBSITE LIVE & ACTIVE
+              </h2>
+            </div>
+            <p id="statusDescription" class="text-xs sm:text-sm text-gray-400 mt-2 max-w-lg leading-relaxed">
+              The website is publicly accessible on all domains. Visitors can browse, request quotes, and submit applications.
+            </p>
+          </div>
+
+          <!-- Big Toggle Button -->
+          <div class="flex flex-col items-center sm:items-end justify-center">
+            <button 
+              id="mainToggleBtn" 
+              class="px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest transition-all duration-300 transform active:scale-95 shadow-xl flex items-center gap-3 bg-red-600 hover:bg-red-500 text-white glow-red"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+              </svg>
+              <span>KILL / BLOCK WEBSITE</span>
+            </button>
+            <span id="toggleHint" class="text-[11px] text-gray-400 mt-2 font-medium">Click to instantly lockdown website</span>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-6 border-t border-white/5 flex flex-wrap items-center justify-between gap-4 text-xs text-gray-400 font-mono">
+          <div>Project: <span class="text-white font-bold">jyothi-construction</span></div>
+          <div>Last Synced: <span id="lastUpdated" class="text-amber-400 font-bold">Just now</span></div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics / Health -->
+      <div class="bg-[#121824] border border-white/10 rounded-3xl p-6 md:p-8 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Protection Status</h3>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 text-xs">
+              <span class="text-gray-300">CORS Cross-Domain</span>
+              <span class="text-emerald-400 font-bold flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                ANY Domain (*)
+              </span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 text-xs">
+              <span class="text-gray-300">Auto-Polling Guard</span>
+              <span class="text-amber-400 font-bold">Active (45s Interval)</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 text-xs">
+              <span class="text-gray-300">Developer Backdoor</span>
+              <span class="text-emerald-400 font-bold">Ctrl + Alt + K</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <button 
+            id="openApiSnippetBtn" 
+            class="w-full py-2.5 bg-white/5 hover:bg-white/10 border border-white/15 rounded-xl text-xs font-bold text-gray-200 transition flex items-center justify-center gap-2"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+            <span>View Integration Snippets</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LOCKDOWN CONFIGURATION FORM -->
+    <div class="mt-10 bg-[#121824] border border-white/10 rounded-3xl p-6 md:p-8">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/10">
+        <div>
+          <h2 class="text-lg font-black text-white">Lockdown & Notice Settings</h2>
+          <p class="text-xs text-gray-400">Configure what visitors see when you toggle the website into blocked or suspended mode.</p>
+        </div>
+        
+        <!-- Preset Profiles -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1">
+          <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider shrink-0">Presets:</span>
+          <button type="button" onclick="applyPreset('payment')" class="px-3 py-1.5 bg-white/5 hover:bg-amber-500/20 hover:text-amber-400 border border-white/10 rounded-lg text-xs font-bold text-gray-300 transition shrink-0">
+            💳 Payment Pending
+          </button>
+          <button type="button" onclick="applyPreset('maintenance')" class="px-3 py-1.5 bg-white/5 hover:bg-blue-500/20 hover:text-blue-400 border border-white/10 rounded-lg text-xs font-bold text-gray-300 transition shrink-0">
+            🛠️ Maintenance
+          </button>
+          <button type="button" onclick="applyPreset('license')" class="px-3 py-1.5 bg-white/5 hover:bg-red-500/20 hover:text-red-400 border border-white/10 rounded-lg text-xs font-bold text-gray-300 transition shrink-0">
+            🔒 Domain License
+          </button>
+        </div>
+      </div>
+
+      <form id="configForm" class="space-y-6">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
+              Lockdown Headline / Title
+            </label>
+            <input 
+              id="cfgTitle" 
+              type="text" 
+              class="w-full px-4 py-3 bg-black/40 border border-white/15 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition"
+              value="Website Temporarily Suspended"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
+              Status Tag Reason
+            </label>
+            <select 
+              id="cfgReason" 
+              class="w-full px-4 py-3 bg-[#0d131d] border border-white/15 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition"
+            >
+              <option value="payment_pending">Payment Pending / Contract Hold</option>
+              <option value="maintenance">Scheduled System Maintenance</option>
+              <option value="license_expired">Domain License Expired</option>
+              <option value="unauthorized_domain">Unauthorized Domain Copy</option>
+              <option value="custom">Custom Administrative Notice</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
+            Detailed Explanation Message
+          </label>
+          <textarea 
+            id="cfgMessage" 
+            rows="3" 
+            class="w-full px-4 py-3 bg-black/40 border border-white/15 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition leading-relaxed"
+          >Access to this website has been temporarily suspended by the administrator. Please reach out to the project developer to settle pending requirements and restore normal service.</textarea>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
+              Allowed Domains (Comma separated or * for all)
+            </label>
+            <input 
+              id="cfgDomains" 
+              type="text" 
+              placeholder="* or jyothiconstruction.com, localhost"
+              class="w-full px-4 py-3 bg-black/40 border border-white/15 rounded-xl text-white font-mono text-sm focus:outline-none focus:border-amber-400 transition"
+              value="*"
+            />
+            <p class="text-[11px] text-gray-400 mt-1">If client copies your code to another domain, it will automatically lock unless listed here.</p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">
+              Optional Auto-Redirect URL (Leave blank to keep on lock screen)
+            </label>
+            <input 
+              id="cfgRedirect" 
+              type="text" 
+              placeholder="e.g. https://wa.me/919008777742 or https://yourportfolio.com"
+              class="w-full px-4 py-3 bg-black/40 border border-white/15 rounded-xl text-white text-sm focus:outline-none focus:border-amber-400 transition"
+            />
+          </div>
+        </div>
+
+        <!-- Developer Contact Details on Block Screen -->
+        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-gray-200 uppercase tracking-wider">Show Developer Contact Badge</span>
+            <input id="cfgShowContact" type="checkbox" checked class="w-4 h-4 text-amber-500 rounded bg-black/40 border-white/20 focus:ring-0 cursor-pointer" />
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div>
+              <label class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1">Developer Name</label>
+              <input id="cfgDevName" type="text" value="Sahil Sheikh" class="w-full px-3 py-2 bg-black/40 border border-white/15 rounded-lg text-white text-xs" />
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1">Phone / WhatsApp</label>
+              <input id="cfgDevPhone" type="text" value="+91 9008 777 742" class="w-full px-3 py-2 bg-black/40 border border-white/15 rounded-lg text-white text-xs" />
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1">Instagram Link</label>
+              <input id="cfgDevInsta" type="text" value="https://www.instagram.com/sahil_sheikh78/" class="w-full px-3 py-2 bg-black/40 border border-white/15 rounded-lg text-white text-xs" />
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-end gap-4 pt-4">
+          <button 
+            type="submit" 
+            class="px-8 py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-extrabold text-sm rounded-xl transition shadow-lg shadow-amber-500/20 active:scale-95 flex items-center gap-2"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Save & Apply Settings</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- INTEGRATION CODE SNIPPET MODAL -->
+  <div id="snippetModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="w-full max-w-2xl bg-[#131b26] border border-white/15 rounded-3xl p-6 md:p-8 shadow-2xl relative">
+      <div class="flex items-center justify-between mb-4 pb-4 border-b border-white/10">
+        <div>
+          <h3 class="text-lg font-bold text-white">Custom Dashboard Integration API</h3>
+          <p class="text-xs text-gray-400">Use this API in your own external dashboard or admin panel</p>
+        </div>
+        <button id="closeSnippetBtn" class="p-2 text-gray-400 hover:text-white rounded-lg bg-white/5">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <div>
+          <span class="font-bold text-amber-400 block mb-1">1. Check Site Status (GET - Public)</span>
+          <pre class="bg-black/50 p-3 rounded-xl border border-white/10 text-gray-300 overflow-x-auto">curl -X GET "https://YOUR_API_DOMAIN/api/site-status?project=jyothi-construction"</pre>
+        </div>
+
+        <div>
+          <span class="font-bold text-red-400 block mb-1">2. Lock / Kill Website Remotely (POST - Protected)</span>
+          <pre class="bg-black/50 p-3 rounded-xl border border-white/10 text-gray-300 overflow-x-auto">curl -X POST "https://YOUR_API_DOMAIN/api/site-status" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: jyothi_master_key_2026" \
+  -d '{"isBlocked": true, "reason": "payment_pending", "title": "Site Suspended"}'</pre>
+        </div>
+
+        <div>
+          <span class="font-bold text-emerald-400 block mb-1">3. Unblock / Restore Website (POST - Protected)</span>
+          <pre class="bg-black/50 p-3 rounded-xl border border-white/10 text-gray-300 overflow-x-auto">curl -X POST "https://YOUR_API_DOMAIN/api/site-status" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: jyothi_master_key_2026" \
+  -d '{"isBlocked": false}'</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentApiKey = sessionStorage.getItem('jyothi_master_key') || '';
+    let currentConfig = null;
+
+    const authModal = document.getElementById('authModal');
+    const authForm = document.getElementById('authForm');
+    const authInput = document.getElementById('authInput');
+    const authError = document.getElementById('authError');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    const statusCard = document.getElementById('statusCard');
+    const statusHeadline = document.getElementById('statusHeadline');
+    const statusDescription = document.getElementById('statusDescription');
+    const statusDot = document.getElementById('statusDot');
+    const mainToggleBtn = document.getElementById('mainToggleBtn');
+    const toggleHint = document.getElementById('toggleHint');
+    const lastUpdated = document.getElementById('lastUpdated');
+
+    const configForm = document.getElementById('configForm');
+    const cfgTitle = document.getElementById('cfgTitle');
+    const cfgReason = document.getElementById('cfgReason');
+    const cfgMessage = document.getElementById('cfgMessage');
+    const cfgDomains = document.getElementById('cfgDomains');
+    const cfgRedirect = document.getElementById('cfgRedirect');
+    const cfgShowContact = document.getElementById('cfgShowContact');
+    const cfgDevName = document.getElementById('cfgDevName');
+    const cfgDevPhone = document.getElementById('cfgDevPhone');
+    const cfgDevInsta = document.getElementById('cfgDevInsta');
+
+    const snippetModal = document.getElementById('snippetModal');
+    const openApiSnippetBtn = document.getElementById('openApiSnippetBtn');
+    const closeSnippetBtn = document.getElementById('closeSnippetBtn');
+
+    // Check if previously logged in
+    if (currentApiKey) {
+      verifyAndLoad(currentApiKey);
+    }
+
+    authForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const key = authInput.value.trim();
+      verifyAndLoad(key);
+    });
+
+    logoutBtn.addEventListener('click', () => {
+      sessionStorage.removeItem('jyothi_master_key');
+      currentApiKey = '';
+      authModal.classList.remove('hidden');
+      authModal.classList.add('flex');
+    });
+
+    openApiSnippetBtn.addEventListener('click', () => {
+      snippetModal.classList.remove('hidden');
+      snippetModal.classList.add('flex');
+    });
+    closeSnippetBtn.addEventListener('click', () => {
+      snippetModal.classList.add('hidden');
+      snippetModal.classList.remove('flex');
+    });
+
+    async function verifyAndLoad(key) {
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ key })
+        });
+        const data = await res.json();
+        if (data.success) {
+          currentApiKey = key;
+          sessionStorage.setItem('jyothi_master_key', key);
+          authModal.classList.add('hidden');
+          authModal.classList.remove('flex');
+          fetchStatus();
+        } else {
+          authError.classList.remove('hidden');
+        }
+      } catch (err) {
+        console.error(err);
+        authError.innerText = 'Could not connect to API server.';
+        authError.classList.remove('hidden');
+      }
+    }
+
+    async function fetchStatus() {
+      try {
+        const res = await fetch('/api/site-status?t=' + Date.now());
+        const data = await res.json();
+        currentConfig = data;
+        renderState(data);
+      } catch (err) {
+        console.error('Failed to load status:', err);
+      }
+    }
+
+    function renderState(cfg) {
+      const isBlocked = cfg.isBlocked;
+      
+      cfgTitle.value = cfg.title || '';
+      cfgReason.value = cfg.reason || 'payment_pending';
+      cfgMessage.value = cfg.message || '';
+      cfgDomains.value = Array.isArray(cfg.allowedDomains) ? cfg.allowedDomains.join(', ') : '*';
+      cfgRedirect.value = cfg.redirectUrl || '';
+      cfgShowContact.checked = cfg.showContact ?? true;
+
+      if (cfg.developerContact) {
+        cfgDevName.value = cfg.developerContact.name || '';
+        cfgDevPhone.value = cfg.developerContact.phone || '';
+        cfgDevInsta.value = cfg.developerContact.instagram || '';
+      }
+
+      lastUpdated.innerText = new Date(cfg.updatedAt || Date.now()).toLocaleTimeString();
+
+      if (isBlocked) {
+        // BLOCKED STATE
+        statusCard.className = 'lg:col-span-2 bg-gradient-to-br from-red-950/40 via-[#181116] to-[#121824] border border-red-500/40 rounded-3xl p-6 md:p-8 relative overflow-hidden transition-all duration-500 glow-red';
+        statusHeadline.innerText = 'WEBSITE BLOCKED / SUSPENDED';
+        statusHeadline.className = 'text-2xl md:text-3xl font-black text-red-400 uppercase tracking-wider';
+        statusDescription.innerText = `Website is currently LOCKED for all visitors. Displaying: "${cfg.title}".`;
+        statusDot.className = 'w-4 h-4 rounded-full bg-red-500 animate-ping';
+        
+        mainToggleBtn.className = 'px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest transition-all duration-300 transform active:scale-95 shadow-xl flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white glow-green';
+        mainToggleBtn.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>UNBLOCK / RESTORE SITE</span>
+        `;
+        toggleHint.innerText = 'Click to instantly unblock and restore the site';
+      } else {
+        // ACTIVE STATE
+        statusCard.className = 'lg:col-span-2 bg-[#121824] border border-white/10 rounded-3xl p-6 md:p-8 relative overflow-hidden transition-all duration-500';
+        statusHeadline.innerText = 'WEBSITE LIVE & ACTIVE';
+        statusHeadline.className = 'text-2xl md:text-3xl font-black text-white uppercase tracking-wider';
+        statusDescription.innerText = 'The website is publicly accessible on all domains. Visitors can browse normally.';
+        statusDot.className = 'w-4 h-4 rounded-full bg-emerald-500 animate-ping';
+        
+        mainToggleBtn.className = 'px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest transition-all duration-300 transform active:scale-95 shadow-xl flex items-center gap-3 bg-red-600 hover:bg-red-500 text-white glow-red';
+        mainToggleBtn.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+          </svg>
+          <span>KILL / BLOCK WEBSITE</span>
+        `;
+        toggleHint.innerText = 'Click to instantly lockdown website';
+      }
+    }
+
+    // Main Toggle Button
+    mainToggleBtn.addEventListener('click', async () => {
+      if (!currentConfig) return;
+      const willBlock = !currentConfig.isBlocked;
+      const confirmAction = confirm(willBlock 
+        ? 'Are you sure you want to BLOCK / DOWN the website? Visitors across all domains will immediately see the suspension screen.'
+        : 'Restore website to LIVE active status?');
+      
+      if (!confirmAction) return;
+
+      await sendUpdate({ isBlocked: willBlock });
+    });
+
+    // Form Update
+    configForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const domainsArr = cfgDomains.value.split(',').map(s => s.trim()).filter(Boolean);
+      
+      const payload = {
+        title: cfgTitle.value.trim(),
+        reason: cfgReason.value,
+        message: cfgMessage.value.trim(),
+        allowedDomains: domainsArr.length ? domainsArr : ['*'],
+        redirectUrl: cfgRedirect.value.trim(),
+        showContact: cfgShowContact.checked,
+        developerContact: {
+          name: cfgDevName.value.trim(),
+          phone: cfgDevPhone.value.trim(),
+          instagram: cfgDevInsta.value.trim()
+        }
+      };
+
+      await sendUpdate(payload);
+      alert('Settings saved and broadcasted to all live website instances!');
+    });
+
+    async function sendUpdate(partial) {
+      try {
+        const res = await fetch('/api/site-status', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': currentApiKey
+          },
+          body: JSON.stringify({
+            apiKey: currentApiKey,
+            ...partial
+          })
+        });
+        const data = await res.json();
+        if (data.success) {
+          fetchStatus();
+        } else {
+          alert('Update error: ' + data.message);
+        }
+      } catch (err) {
+        alert('Network error connecting to API');
+      }
+    }
+
+    function applyPreset(type) {
+      if (type === 'payment') {
+        cfgTitle.value = 'Website Temporarily Suspended';
+        cfgReason.value = 'payment_pending';
+        cfgMessage.value = 'Notice: This website service has been temporarily placed on administrative hold pending contract fulfillment. Please contact the web developer to settle pending requirements.';
+      } else if (type === 'maintenance') {
+        cfgTitle.value = 'Under Scheduled Maintenance';
+        cfgReason.value = 'maintenance';
+        cfgMessage.value = 'We are currently performing scheduled technical improvements and security updates. The site will be back online shortly.';
+      } else if (type === 'license') {
+        cfgTitle.value = 'Domain License Verification Required';
+        cfgReason.value = 'license_expired';
+        cfgMessage.value = 'Unauthorized domain detected. The software license for this web installation has expired or requires renewal. Please contact the administrator.';
+      }
+    }
+  </script>
+</body>
+</html>

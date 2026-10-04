@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ChevronRight, FileText, Download, Phone, Mail, CheckCircle2, Factory, ShieldCheck, Zap, Truck, Microscope, ClipboardList } from 'lucide-react';
+import { ChevronRight, Phone, Mail, CheckCircle2, Factory, ShieldCheck, Zap, Truck, Microscope, ClipboardList } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Image from '../../components/Image';
 
@@ -15,61 +15,60 @@ const Construction = () => {
 
   const stages = [
     {
-      title: 'Structural Integrity First',
-      desc: 'Focusing on deep foundations and load-bearing strength using premium in-house materials.',
-      img: '/Jyothi/IMG_9715.JPG'
-    },
-    {
-      title: 'Precision Site Execution',
-      desc: 'Real-time project tracking and modular construction techniques for faster delivery.',
+      title: 'Structural Integrity & Site QA',
+      desc: 'Precision site inspections, rebar verification, and strict adherence to structural design parameters.',
       img: '/Jyothi/IMG_0369.JPG'
     },
     {
+      title: 'Integrated Project Planning',
+      desc: 'Multi-disciplinary project coordination meetings ensuring zero delays and seamless milestone execution.',
+      img: '/Jyothi/IMG_0271.JPG'
+    },
+    {
       title: 'Integrated Supply Chain',
-      desc: 'Reducing project delays through immediate access to our RMC and aggregate plants.',
+      desc: 'Immediate access to in-house RMC, aggregates, and block manufacturing ensuring unmatched build speed.',
       img: '/Jyothi/IMG_9528.JPG'
     }
   ];
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[48vh] md:h-[56vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/Jyothi/IMG_9644.JPG" 
-            alt="Active Construction Service Fleet - Jyothi Construction" 
-            className="w-full h-full object-cover object-center"
+            src="/Jyothi/IMG_0229.JPG" 
+            alt="The Full Jyothi Construction Engineering & Leadership Team" 
+            className="w-full h-full object-cover object-[center_30%] brightness-105 contrast-105"
           />
-          <div className="absolute inset-0 bg-jyothi-blue/75 backdrop-blur-[1px]"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-jyothi-blue via-transparent to-jyothi-blue/60"></div>
+          {/* Gentle edge contrast gradients ensuring full image visibility */}
+          <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-black/40 to-transparent pointer-events-none"></div>
+          <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
         </div>
         <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
+            className="inline-block bg-jyothi-blue/65 backdrop-blur-md px-6 py-5 sm:px-10 sm:py-6 rounded-2xl md:rounded-3xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.35)] max-w-2xl"
           >
-            <span className="text-jyothi-amber font-black uppercase tracking-[0.4em] text-xs mb-3 block">
+            <span className="text-jyothi-amber font-black uppercase tracking-[0.3em] text-[11px] sm:text-xs mb-2 block">
               Turnkey & Civil Engineering
             </span>
-            <h1 className="text-4xl md:text-6xl font-black text-white mb-4 font-heading tracking-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-2 font-heading tracking-tight drop-shadow-md">
               Construction <span className="text-jyothi-amber">Services</span>
             </h1>
-            <div className="w-24 h-1.5 bg-jyothi-amber mx-auto mb-6 rounded-full"></div>
-            <p className="text-lg md:text-2xl text-gray-200 max-w-2xl mx-auto font-sans font-medium">
+            <div className="w-16 h-1 bg-jyothi-amber mx-auto mb-3 rounded-full"></div>
+            <p className="text-xs sm:text-sm md:text-base text-gray-100 max-w-xl mx-auto font-sans font-normal leading-relaxed drop-shadow-sm">
               Controlled Excellence from foundation to final finish.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Main Content Area */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             
-            {/* Content Column (Left) */}
             <div className="lg:col-span-2">
               <div className="mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-jyothi-blue mb-6 font-heading">
@@ -83,7 +82,6 @@ const Construction = () => {
                 </p>
               </div>
 
-              {/* Service Offerings Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
                 {offerings.map((item, i) => (
                   <div key={i} className="flex gap-4 p-6 rounded-xl border border-gray-100 bg-gray-50/50 hover:border-jyothi-amber/30 transition-colors">
@@ -98,7 +96,6 @@ const Construction = () => {
                 ))}
               </div>
 
-              {/* Strategic Stages */}
               <div className="mb-16">
                 <h3 className="text-2xl font-bold text-jyothi-blue mb-8 font-heading">Execution Philosophy</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -116,7 +113,6 @@ const Construction = () => {
                 </div>
               </div>
 
-              {/* Exceptional Service Benefits */}
               <div className="bg-jyothi-blue rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div className="md:w-1/2">
                   <Image src="/Jyothi/IMG_0257.JPG" alt="Jyothi Corporate Leadership" className="w-full h-full object-cover min-h-[300px]" />
@@ -140,11 +136,9 @@ const Construction = () => {
               </div>
             </div>
 
-            {/* Sticky Sidebar (Right) */}
             <div className="lg:col-span-1">
               <div className="sticky top-32 space-y-8">
                 
-                {/* Categories Widget */}
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8">
                   <h4 className="text-xl font-bold text-jyothi-blue mb-6 font-heading">Focus Areas</h4>
                   <ul className="space-y-3">
@@ -159,24 +153,9 @@ const Construction = () => {
                   </ul>
                 </div>
 
-                {/* Download Brochure */}
-                <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8">
-                  <h4 className="text-xl font-bold text-jyothi-blue mb-6 font-heading">Our Portfolio</h4>
-                  <p className="text-sm text-gray-600 mb-6">Explore our iconic projects and engineering capability profile.</p>
-                  <div className="space-y-4">
-                    <button className="w-full py-4 bg-jyothi-amber text-jyothi-blue font-bold rounded-lg flex items-center justify-center gap-3 hover:bg-jyothi-orange hover:text-white transition-colors shadow-lg">
-                      <FileText size={20} /> Download PDF
-                    </button>
-                    <button className="w-full py-4 bg-white border-2 border-jyothi-amber text-jyothi-amber font-bold rounded-lg flex items-center justify-center gap-3 hover:bg-jyothi-amber hover:text-white transition-colors">
-                      <Download size={20} /> Corporate DOC
-                    </button>
-                  </div>
-                </div>
-
-                {/* Need Help Box */}
                 <div className="bg-jyothi-blue rounded-2xl p-8 relative overflow-hidden group/callback">
                   <div className="absolute inset-0 opacity-20 group-hover/callback:scale-110 transition-transform duration-700">
-                    <img src="/assets/images/callback.jpg" alt="Support" className="w-full h-full object-cover" />
+                    <img src="/Jyothi/IMG_0257.JPG" alt="Support" className="w-full h-full object-cover" />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-br from-jyothi-blue via-jyothi-blue/90 to-transparent"></div>
                   <div className="absolute top-0 right-0 w-32 h-32 bg-jyothi-amber/10 rounded-full -mr-16 -mt-16"></div>

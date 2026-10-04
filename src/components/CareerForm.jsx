@@ -9,7 +9,7 @@ const CareerForm = ({ job, onClose }) => {
   const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
-    // Prevent overlapping modals
+    // Close active quote modal to avoid UI collisions
     closeModal();
     
     document.body.style.overflow = 'hidden';
@@ -19,8 +19,7 @@ const CareerForm = ({ job, onClose }) => {
   }, []);
 
   const handleSubmit = async (e) => {
-    // ... rest of the submit logic remains same
-    e.preventDefault();
+        e.preventDefault();
     setIsSending(true);
 
     try {
@@ -44,7 +43,6 @@ const CareerForm = ({ job, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-6 overflow-y-auto">
-      {/* Backdrop */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -53,7 +51,6 @@ const CareerForm = ({ job, onClose }) => {
         className="fixed inset-0 bg-black/85 backdrop-blur-md"
       />
 
-      {/* Modal Container */}
       <motion.div
         initial={{ y: 60, opacity: 0, scale: 0.95 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -61,18 +58,16 @@ const CareerForm = ({ job, onClose }) => {
         transition={{ type: "spring", damping: 28, stiffness: 320 }}
         className="relative w-full max-w-2xl bg-jyothi-blue border border-white/15 rounded-[2rem] shadow-2xl overflow-hidden max-h-[88vh] overflow-y-auto my-auto z-10"
       >
-        {/* Glow Effect */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-jyothi-amber/10 rounded-full blur-[80px] -ml-32 -mt-32 pointer-events-none"></div>
 
         <div className="relative p-6 md:p-12">
-          {/* Header */}
           <div className="flex justify-between items-start mb-6 md:mb-8">
             <div>
               <div className="flex items-center gap-3 text-jyothi-amber mb-3">
                 <Briefcase size={18} />
                 <span className="text-[10px] font-black uppercase tracking-[0.4em]">Career Opportunities</span>
               </div>
-              <h2 className="text-2xl md:text-5xl font-black text-white font-heading leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white font-heading leading-tight">
                 Apply for <br />
                 <span className="text-jyothi-amber">{job.title}</span>
               </h2>

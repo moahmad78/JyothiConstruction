@@ -64,30 +64,27 @@ const DroneShowcase = () => {
 
   return (
     <section className="py-12 md:py-24 bg-gradient-to-b from-jyothi-blue via-[#06172d] to-jyothi-blue relative overflow-hidden border-t border-white/10">
-      {/* Glow effects */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-jyothi-amber/10 rounded-full blur-[140px] pointer-events-none"></div>
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-[140px] pointer-events-none"></div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8 md:mb-12">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-6 mb-8 md:mb-12 text-center md:text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-2xl"
+            className="max-w-2xl flex flex-col items-center md:items-start"
           >
-            <div className="flex items-center gap-2 text-jyothi-amber text-xs font-black uppercase tracking-[0.3em] mb-3">
+            <div className="flex items-center justify-center md:justify-start gap-2 text-jyothi-amber text-xs font-black uppercase tracking-[0.3em] mb-2 md:mb-3">
               <Sparkles size={16} /> Live Infrastructure Tour
             </div>
-            <h2 className="text-3xl md:text-6xl font-black text-white leading-tight font-heading">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight font-heading">
               Aerial Drone <span className="text-jyothi-amber">Site Tour</span>
             </h2>
           </motion.div>
 
-          {/* Video Switch Tabs */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 justify-center md:justify-start">
             {videos.map((vid, idx) => (
               <button
                 key={vid.id}
@@ -105,7 +102,6 @@ const DroneShowcase = () => {
           </div>
         </div>
 
-        {/* Video Player Card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -126,7 +122,6 @@ const DroneShowcase = () => {
               className="w-full h-full object-cover"
             />
 
-            {/* Dark overlay when not playing */}
             {!isPlaying && (
               <div 
                 onClick={handleTogglePlay}
@@ -144,7 +139,6 @@ const DroneShowcase = () => {
               </div>
             )}
 
-            {/* Controls Bar */}
             <div className="absolute bottom-0 inset-x-0 p-4 md:p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="flex items-center gap-4">
                 <button
@@ -182,7 +176,6 @@ const DroneShowcase = () => {
               </div>
             </div>
 
-            {/* Verified Badge */}
             <div className="absolute top-4 left-4 md:top-6 md:left-6 px-3 md:px-4 py-1.5 md:py-2 bg-jyothi-blue/80 backdrop-blur-md rounded-full border border-white/20 text-[10px] md:text-xs font-black uppercase tracking-widest text-jyothi-amber flex items-center gap-2">
               <ShieldCheck size={14} /> Official Site Footage
             </div>
