@@ -3,22 +3,33 @@
  * @project Jyothi Construction
  * @link https://www.instagram.com/sahil_sheikh78/
  */
+import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useModal } from '../../context/ModalContext';
 
 const Hero = () => {
   const { openModal } = useModal();
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {});
+    }
+  }, []);
 
   return (
     <section className="relative h-[62vh] min-h-[460px] md:h-screen w-full flex flex-col items-center justify-center overflow-hidden z-0">
       <div className="absolute inset-0 z-[-1] overflow-hidden bg-jyothi-blue">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           poster="/Jyothi/IMG_9715.JPG"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         >

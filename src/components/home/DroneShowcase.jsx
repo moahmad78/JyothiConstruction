@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Pause, Volume2, VolumeX, Maximize2, Video, Sparkles, ShieldCheck } from 'lucide-react';
 
@@ -23,30 +23,53 @@ const videos = [
 
 const DroneShowcase = () => {
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
 
   const currentVideo = videos[activeVideoIndex];
 
-  const handleTogglePlay = () => {
+  // Auto-play muted video smoothly on mount and when switching flyover tabs
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = isMuted;
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => setIsPlaying(true))
+          .catch(() => {
+            // Autoplay policy restricted: show play button overlay
+            setIsPlaying(false);
+          });
+      }
+    }
+  }, [activeVideoIndex]);
+
+  const handleTogglePlay = (e) => {
+    if (e) e.stopPropagation();
     if (!videoRef.current) return;
-    if (isPlaying) {
+    if (videoRef.current.paused) {
+      videoRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {});
+    } else {
       videoRef.current.pause();
       setIsPlaying(false);
-    } else {
-      videoRef.current.play();
-      setIsPlaying(true);
     }
   };
 
-  const handleToggleMute = () => {
+  const handleToggleMute = (e) => {
+    if (e) e.stopPropagation();
     if (!videoRef.current) return;
-    videoRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
+    const nextMuted = !isMuted;
+    videoRef.current.muted = nextMuted;
+    setIsMuted(nextMuted);
   };
 
-  const handleFullscreen = () => {
+  const handleFullscreen = (e) => {
+    if (e) e.stopPropagation();
     if (!videoRef.current) return;
     if (videoRef.current.requestFullscreen) {
       videoRef.current.requestFullscreen();
@@ -54,12 +77,8 @@ const DroneShowcase = () => {
   };
 
   const handleSwitchVideo = (index) => {
+    if (index === activeVideoIndex) return;
     setActiveVideoIndex(index);
-    setIsPlaying(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
   };
 
   return (
@@ -115,17 +134,21 @@ const DroneShowcase = () => {
               key={currentVideo.src}
               src={currentVideo.src}
               poster={currentVideo.poster}
-              playsInline
-              preload="metadata"
+              autoPlay
+              loop
               muted={isMuted}
-              onEnded={() => setIsPlaying(false)}
-              className="w-full h-full object-cover"
+              playsInline
+              preload="auto"
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+              onClick={handleTogglePlay}
+              className="w-full h-full object-cover cursor-pointer"
             />
 
             {!isPlaying && (
               <div 
                 onClick={handleTogglePlay}
-                className="absolute inset-0 bg-jyothi-blue/40 backdrop-blur-[2px] flex flex-col items-center justify-center cursor-pointer transition-all hover:bg-jyothi-blue/30 p-4"
+                className="absolute inset-0 bg-jyothi-blue/40 backdrop-blur-[2px] flex flex-col items-center justify-center cursor-pointer transition-all hover:bg-jyothi-blue/30 p-4 z-10"
               >
                 <div className="w-14 h-14 md:w-20 md:h-20 rounded-full bg-jyothi-amber text-jyothi-blue flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300 pl-1">
                   <Play size={26} className="md:w-8 md:h-8" fill="currentColor" />
@@ -139,7 +162,10 @@ const DroneShowcase = () => {
               </div>
             )}
 
-            <div className="absolute bottom-0 inset-x-0 p-4 md:p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div 
+              onClick={(e) => e.stopPropagation()}
+              className="absolute bottom-0 inset-x-0 p-4 md:p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
+            >
               <div className="flex items-center gap-4">
                 <button
                   onClick={handleTogglePlay}
@@ -176,7 +202,7 @@ const DroneShowcase = () => {
               </div>
             </div>
 
-            <div className="absolute top-4 left-4 md:top-6 md:left-6 px-3 md:px-4 py-1.5 md:py-2 bg-jyothi-blue/80 backdrop-blur-md rounded-full border border-white/20 text-[10px] md:text-xs font-black uppercase tracking-widest text-jyothi-amber flex items-center gap-2">
+            <div className="absolute top-4 left-4 md:top-6 md:left-6 px-3 md:px-4 py-1.5 md:py-2 bg-jyothi-blue/80 backdrop-blur-md rounded-full border border-white/20 text-[10px] md:text-xs font-black uppercase tracking-widest text-jyothi-amber flex items-center gap-2 z-10 pointer-events-none">
               <ShieldCheck size={14} /> Official Site Footage
             </div>
           </div>
