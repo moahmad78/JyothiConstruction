@@ -6,10 +6,8 @@ import KeyVerticals from '../components/home/KeyVerticals';
 import StatsSection from '../components/home/StatsSection';
 import WhyJyothi from '../components/home/WhyJyothi';
 import GroupLegacy from '../components/home/GroupLegacy';
-import ProjectsGrid from '../components/home/ProjectsGrid';
 import CTABanner from '../components/home/CTABanner';
 import Testimonials from '../components/home/Testimonials';
-import DroneShowcase from '../components/home/DroneShowcase';
 import SiteGallery from '../components/home/SiteGallery';
 
 const ClientsPartners = () => {
@@ -111,8 +109,6 @@ const Home = () => {
       <HighlightsStrip />
       <AboutSection />
       <WhatWeDo />
-      <ProjectsGrid />
-      <DroneShowcase />
       <SiteGallery />
       <WhyJyothi />
       <GroupLegacy />

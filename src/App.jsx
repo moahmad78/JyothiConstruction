@@ -13,11 +13,12 @@ import RMC from './pages/services/RMC';
 import Aggregates from './pages/services/Aggregates';
 import Blocks from './pages/services/Blocks';
 import Fabrication from './pages/services/Fabrication';
-import CareersPage from './pages/CareersPage';
 import CSRPage from './pages/CSRPage';
 import QSPage from './pages/QSPage';
+import NewsBlogPage from './pages/NewsBlogPage';
 import ServicesPage from './pages/ServicesPage';
 import ScrollToTop from './components/ScrollToTop';
+import { Navigate } from 'react-router-dom';
 
 const AppContent = () => {
   const { toast, hideToast } = useModal();
@@ -31,9 +32,11 @@ const AppContent = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/why-jyothi" element={<WhyJyothiPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/our-landmarks" element={<ProjectsPage />} />
+          <Route path="/news-blog" element={<NewsBlogPage />} />
           <Route path="/qs" element={<QSPage />} />
           <Route path="/csr" element={<CSRPage />} />
-          <Route path="/careers" element={<CareersPage />} />
+          <Route path="/careers" element={<Navigate to="/csr" replace />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services/construction" element={<Construction />} />

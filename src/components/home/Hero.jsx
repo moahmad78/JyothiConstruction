@@ -54,11 +54,6 @@ const Hero = () => {
           transition={{ duration: 0.35 }}
           className="max-w-2xl md:ml-auto mt-2 md:mt-8 text-center sm:text-left"
         >
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/40 border border-jyothi-amber/50 text-jyothi-amber text-xs font-bold tracking-widest uppercase mb-4 shadow-lg">
-            <span className="w-2 h-2 rounded-full bg-jyothi-amber animate-pulse"></span>
-            Established Legacy
-          </span>
-
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-3 md:mb-6 tracking-tight font-heading drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
             Building Landmarks. <br />
             <span className="text-jyothi-amber">Shaping Legacies.</span>

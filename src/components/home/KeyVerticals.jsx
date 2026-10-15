@@ -6,35 +6,43 @@ import Image from '../Image';
 const verticals = [
   {
     id: 1,
-    title: 'Ready Mix Concrete (RMC)',
-    description: 'Fully automated computerized batching plant delivering high-grade concrete with zero compromise.',
+    title: 'Jyothi Construction Services',
+    description: 'Comprehensive residential, commercial, industrial, and turnkey infrastructure execution built with structural excellence.',
+    icon: <Home className="w-10 h-10 text-jyothi-amber" />,
+    image: '/assets/Commercial/01.JPG',
+    link: '/services/construction'
+  },
+  {
+    id: 2,
+    title: 'Ready Mix Concrete (Jyothi ConMix)',
+    description: '100% computerized batching plants with 18 transit mixers and 5 concrete pumps delivering precision high-grade concrete.',
     icon: <Factory className="w-10 h-10 text-jyothi-amber" />,
     image: '/Jyothi/IMG_0038.JPG',
     link: '/services/rmc'
   },
   {
-    id: 2,
-    title: 'Solid Concrete Blocks',
-    description: 'Precision molded high-density cement blocks and pavers manufactured on high-capacity curing yards.',
+    id: 3,
+    title: 'Jyothi Concrete Blocks',
+    description: 'ISO 9001:2015 certified manufacturing of engineered solid blocks (4", 6", 8") with German curing technology and 10M+ annual capacity.',
     icon: <Building2 className="w-10 h-10 text-jyothi-amber" />,
     image: '/Jyothi/IMG_9734.JPG',
     link: '/services/blocks'
   },
   {
-    id: 3,
-    title: 'Aggregates & Crushing',
-    description: 'Heavy-duty crushing and screening plants producing graded aggregates, M-Sand, and P-Sand.',
+    id: 4,
+    title: 'Jyothi Stone Crushers',
+    description: 'Leader in aggregate manufacturing since 2000, 250 TPH combined capacity with 5-stage hydro cyclone washing across Dodderi & Madapatna.',
     icon: <Factory className="w-10 h-10 text-jyothi-amber" />,
     image: '/Jyothi/IMG_9641.JPG',
     link: '/services/aggregates'
   },
   {
-    id: 4,
-    title: 'Quarry & Logistics Fleet',
-    description: 'Direct quarry extraction and self-loading boom crane fleet for swift regional delivery.',
+    id: 5,
+    title: 'Sri Raghavendra Fabrication',
+    description: 'Custom & structural steel fabrication, PUF insulated panels, truss-less roofing systems and heavy PEB industrial frameworks.',
     icon: <ShieldCheck className="w-10 h-10 text-jyothi-amber" />,
-    image: '/Jyothi/IMG_9490.JPG',
-    link: '/why-jyothi'
+    image: '/Jyothi/fabrication_works_hero.jpg',
+    link: '/services/fabrication'
   }
 ];
 
@@ -65,7 +73,7 @@ const KeyVerticals = () => {
           </motion.p>
         </div>
 
-        <div className="flex overflow-x-auto pb-4 pt-1 gap-4 snap-x snap-mandatory no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 md:overflow-visible md:pb-0">
+        <div className="flex overflow-x-auto pb-4 pt-1 gap-4 snap-x snap-mandatory no-scrollbar -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 md:gap-6 md:overflow-visible md:pb-0">
           {verticals.map((vertical, index) => (
             <motion.div 
               key={vertical.id}

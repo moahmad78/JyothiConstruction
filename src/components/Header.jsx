@@ -4,7 +4,7 @@
  * @link https://www.instagram.com/sahil_sheikh78/
  */
 import { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, HardHat, Truck, Mountain, LayoutGrid, Wrench, PhoneCall } from 'lucide-react';
+import { Menu, X, ChevronDown, HardHat, Truck, Mountain, LayoutGrid, Wrench, PhoneCall, Building2, Newspaper } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { useModal } from '../context/ModalContext';
@@ -13,6 +13,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileAccordionOpen, setMobileAccordionOpen] = useState(false);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const location = useLocation();
   const { openModal } = useModal();
 
@@ -55,16 +56,16 @@ const Header = () => {
         <div className="flex items-center justify-between">
           
           <Link to="/" className="flex items-center cursor-pointer group">
-            <div className="bg-white px-3.5 py-1.5 md:px-4 md:py-2 rounded-xl shadow-md border border-white/20 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] group-hover:scale-105 flex items-center justify-center">
+            <div className="bg-white px-4 py-2 md:px-5 md:py-2.5 rounded-2xl shadow-xl border border-white/30 transition-all duration-300 group-hover:shadow-[0_0_25px_rgba(245,158,11,0.4)] group-hover:scale-105 flex items-center justify-center">
               <img 
                 src="/logo.png" 
                 alt="Jyothi Construction Logo" 
-                className="h-9 md:h-11 lg:h-12 w-auto object-contain transition-transform duration-300" 
+                className="h-10 md:h-12 lg:h-14 w-auto object-contain transition-transform duration-300 drop-shadow-sm" 
               />
             </div>
           </Link>
           
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-7">
             <Link to="/" className={`${getLinkClass('/')} relative py-1`}>
               Home
               {isActive('/') && (
@@ -78,6 +79,7 @@ const Header = () => {
               )}
             </Link>
             
+            {/* Services Dropdown */}
             <div className="group relative">
               <button className={`flex items-center gap-1.5 transition-colors text-sm font-bold uppercase tracking-wider py-2 relative ${
                 location.pathname.startsWith('/services') 
@@ -133,19 +135,58 @@ const Header = () => {
                       <div className="w-7 h-7 rounded-lg bg-jyothi-amber/15 group-hover/item:bg-jyothi-amber flex items-center justify-center text-jyothi-amber group-hover/item:text-jyothi-blue transition-colors shrink-0">
                         <Wrench size={15} />
                       </div>
-                      <span>Fabrication Works</span>
+                      <span>Sri Raghavendra Fabrication</span>
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
 
-            <Link to="/projects" className={`${getLinkClass('/projects')} relative py-1`}>
-              Projects
-              {isActive('/projects') && (
-                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-jyothi-amber rounded-full" />
-              )}
-            </Link>
+            {/* Resources Dropdown */}
+            <div className="group relative">
+              <button className={`flex items-center gap-1.5 transition-colors text-sm font-bold uppercase tracking-wider py-2 relative ${
+                location.pathname.startsWith('/our-landmarks') || location.pathname.startsWith('/projects') || location.pathname.startsWith('/news-blog')
+                  ? 'text-jyothi-amber' 
+                  : 'text-white hover:text-jyothi-amber'
+              }`}>
+                Resources <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />
+                {(location.pathname.startsWith('/our-landmarks') || location.pathname.startsWith('/projects') || location.pathname.startsWith('/news-blog')) && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-jyothi-amber rounded-full" />
+                )}
+              </button>
+              
+              <div className="absolute top-full left-0 mt-2 w-64 bg-[#121820] border border-white/15 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden z-50 before:absolute before:-top-3 before:left-0 before:right-0 before:h-3 before:content-['']">
+                <div className="px-4 py-2.5 border-b border-white/10 bg-white/[0.03] flex items-center justify-between">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-jyothi-amber">Knowledge & Projects</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-jyothi-amber animate-pulse"></span>
+                </div>
+                <ul className="flex flex-col py-1.5">
+                  <li>
+                    <Link to="/our-landmarks" className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/10 text-sm text-gray-100 hover:text-jyothi-amber font-medium transition-colors border-b border-white/5 group/item">
+                      <div className="w-7 h-7 rounded-lg bg-jyothi-amber/15 group-hover/item:bg-jyothi-amber flex items-center justify-center text-jyothi-amber group-hover/item:text-jyothi-blue transition-colors shrink-0">
+                        <Building2 size={15} />
+                      </div>
+                      <div>
+                        <span className="block font-bold">Our Landmarks</span>
+                        <span className="text-[11px] text-gray-400 block font-normal">Real projects portfolio</span>
+                      </div>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/news-blog" className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/10 text-sm text-gray-100 hover:text-jyothi-amber font-medium transition-colors group/item">
+                      <div className="w-7 h-7 rounded-lg bg-jyothi-amber/15 group-hover/item:bg-jyothi-amber flex items-center justify-center text-jyothi-amber group-hover/item:text-jyothi-blue transition-colors shrink-0">
+                        <Newspaper size={15} />
+                      </div>
+                      <div>
+                        <span className="block font-bold">News & Blogs</span>
+                        <span className="text-[11px] text-gray-400 block font-normal">Industry insights & updates</span>
+                      </div>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
             <Link to="/qs" className={`${getLinkClass('/qs')} relative py-1`}>
               Q&S
               {isActive('/qs') && (
@@ -215,8 +256,8 @@ const Header = () => {
           
               <div className="flex items-center justify-between p-6 border-b border-white/10">
                 <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
-                  <div className="bg-white px-3 py-1.5 rounded-xl shadow-md flex items-center justify-center">
-                    <img src="/logo.png" alt="Jyothi Construction Logo" className="h-8 w-auto object-contain" />
+                  <div className="bg-white px-4 py-2 rounded-2xl shadow-md border border-white/20 flex items-center justify-center">
+                    <img src="/logo.png" alt="Jyothi Construction Logo" className="h-10 w-auto object-contain" />
                   </div>
                 </Link>
                 <button onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-jyothi-amber bg-white/5 rounded-full p-2.5 transition-colors">
@@ -228,6 +269,7 @@ const Header = () => {
                 <Link to="/" className={`text-lg font-bold font-heading py-3 border-b border-white/5 ${isActive('/') ? 'text-jyothi-amber' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>Home</Link>
                 <Link to="/about" className={`text-lg font-bold font-heading py-3 border-b border-white/5 ${isActive('/about') ? 'text-jyothi-amber' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
                 
+                {/* Services Accordion */}
                 <div className="border-b border-white/5">
                   <button 
                     onClick={() => setMobileAccordionOpen(!mobileAccordionOpen)} 
@@ -249,14 +291,39 @@ const Header = () => {
                           <li><Link to="/services/rmc" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2.5 text-gray-300 hover:text-jyothi-amber text-sm font-medium border-b border-white/5 last:border-0"><Truck size={16} className="text-jyothi-amber"/> Ready Mix Concrete</Link></li>
                           <li><Link to="/services/aggregates" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2.5 text-gray-300 hover:text-jyothi-amber text-sm font-medium border-b border-white/5 last:border-0"><Mountain size={16} className="text-jyothi-amber"/> Aggregates & Crushing</Link></li>
                           <li><Link to="/services/blocks" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2.5 text-gray-300 hover:text-jyothi-amber text-sm font-medium border-b border-white/5 last:border-0"><LayoutGrid size={16} className="text-jyothi-amber"/> Concrete Blocks</Link></li>
-                          <li><Link to="/services/fabrication" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2.5 text-gray-300 hover:text-jyothi-amber text-sm font-medium border-b border-white/5 last:border-0"><Wrench size={16} className="text-jyothi-amber"/> Fabrication Works</Link></li>
+                          <li><Link to="/services/fabrication" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2.5 text-gray-300 hover:text-jyothi-amber text-sm font-medium border-b border-white/5 last:border-0"><Wrench size={16} className="text-jyothi-amber"/> Sri Raghavendra Fabrication</Link></li>
                         </ul>
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
 
-                <Link to="/projects" className={`text-lg font-bold font-heading py-3 border-b border-white/5 ${isActive('/projects') ? 'text-jyothi-amber' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>Projects</Link>
+                {/* Resources Accordion */}
+                <div className="border-b border-white/5">
+                  <button 
+                    onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)} 
+                    className="w-full flex items-center justify-between text-lg font-bold font-heading py-3 text-white"
+                  >
+                    Resources
+                    <ChevronDown size={18} className={`transform transition-transform duration-300 ${mobileResourcesOpen ? 'rotate-180 text-jyothi-amber' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {mobileResourcesOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden bg-white/5 rounded-xl mb-2"
+                      >
+                        <ul className="flex flex-col py-0.5 px-3">
+                          <li><Link to="/our-landmarks" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2.5 text-gray-300 hover:text-jyothi-amber text-sm font-medium border-b border-white/5 last:border-0"><Building2 size={16} className="text-jyothi-amber"/> Our Landmarks</Link></li>
+                          <li><Link to="/news-blog" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2.5 text-gray-300 hover:text-jyothi-amber text-sm font-medium border-b border-white/5 last:border-0"><Newspaper size={16} className="text-jyothi-amber"/> News & Blogs</Link></li>
+                        </ul>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
                 <Link to="/qs" className={`text-lg font-bold font-heading py-3 border-b border-white/5 ${isActive('/qs') ? 'text-jyothi-amber' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>Q&S</Link>
                 <Link to="/csr" className={`text-lg font-bold font-heading py-3 border-b border-white/5 ${isActive('/csr') ? 'text-jyothi-amber' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>CSR</Link>
                 <Link to="/contact" className={`text-lg font-bold font-heading py-3 ${isActive('/contact') ? 'text-jyothi-amber' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>Contact</Link>

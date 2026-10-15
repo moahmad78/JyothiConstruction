@@ -157,34 +157,43 @@ const ContactPage = () => {
                 </div>
               </motion.div>
 
-              <motion.a 
-                href="https://maps.google.com/?q=Jyothi+Construction+Bangalore"
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.div 
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "150px" }}
                 transition={{ duration: 0.3 }}
-                className="flex-grow min-h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl relative group block cursor-pointer"
+                className="rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl relative min-h-[300px] h-[320px]"
               >
-                <div className="absolute inset-0 z-0">
-                  <img 
-                    src="/Jyothi/IMG_0478.JPG" 
-                    alt="Jyothi Groups Headquarters & Facility" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" 
-                  />
-                  <div className="absolute inset-0 bg-jyothi-blue/50 group-hover:bg-jyothi-blue/30 transition-colors"></div>
-                </div>
-                <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center p-8">
-                  <div className="w-20 h-20 bg-jyothi-amber/20 backdrop-blur-md rounded-full flex items-center justify-center mb-4 border border-jyothi-amber/30 group-hover:scale-110 transition-transform">
-                    <MapPin size={40} className="text-jyothi-amber" />
+                <iframe 
+                  title="Jyothi Construction Corporate Headquarters Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0543669601445!2d77.6166185!3d13.0321946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae176395b058c1%3A0x6b107e324ef20f4c!2sVeeranna%20Palya%2C%20Nagavara%2C%20Bengaluru%2C%20Karnataka%20560045!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full filter invert-[0.9] hue-rotate-180 contrast-[1.1] opacity-85 hover:opacity-100 transition-opacity"
+                />
+              </motion.div>
+
+              <div className="bg-white/5 p-6 rounded-[2rem] border border-white/10">
+                <span className="text-jyothi-amber text-[10px] font-black uppercase tracking-widest block mb-3">Operational Plant Locations</span>
+                <div className="space-y-3 text-xs text-gray-300">
+                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
+                    <strong className="text-white block font-bold">Site 01 • Jyothi Stone Crushers</strong>
+                    <span className="text-gray-400">No.26/P-55, Donnenahalli Village, Bangalore South Taluk, Bangalore Urban</span>
                   </div>
-                  <h5 className="text-white font-black font-heading uppercase tracking-widest text-base mb-2">Locate Our Headquarters</h5>
-                  <p className="text-jyothi-amber text-xs font-bold uppercase tracking-[0.2em] flex items-center gap-1.5 bg-black/40 px-4 py-1.5 rounded-full border border-jyothi-amber/30">
-                    Open in Google Maps →
-                  </p>
+                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
+                    <strong className="text-white block font-bold">Site 02 • Jyothi Concrete Blocks</strong>
+                    <span className="text-gray-400">No. 107/1, 107/2 & Sy No 73, Koluru Village, Tavarekere Hobli, Bangalore South</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
+                    <strong className="text-white block font-bold">Site 03 • Jyothi ConMix (RMC Plant)</strong>
+                    <span className="text-gray-400">No.132, Kumbalgud Industrial Area, Mysore Road, Kengeri Hobli, Bangalore – 560074</span>
+                  </div>
                 </div>
-              </motion.a>
+              </div>
 
             </div>
 

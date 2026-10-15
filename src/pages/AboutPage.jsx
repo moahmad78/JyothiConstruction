@@ -49,13 +49,16 @@ const AboutPage = () => {
               transition={{ duration: 0.35 }}
             >
               <span className="text-jyothi-amber text-xs font-black uppercase tracking-[0.3em] mb-4 block">
-                Building the Future
+                Decades of Excellence
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white font-heading leading-tight mb-6">
-                Technical Excellence in Every <span className="text-jyothi-amber">Structural</span> Foundation
+                Precision as our Foundation. <span className="text-jyothi-amber">Legacy as our Blueprint.</span>
               </h2>
-              <p className="text-gray-300 text-base md:text-xl leading-relaxed font-medium max-w-3xl mx-auto mb-8">
-                Founded with a deep-rooted commitment to structural integrity, Jyothi Construction has evolved into a premier vertically integrated construction powerhouse. From raw granite extraction and high-capacity batching to turnkey execution, we ensure total quality control.
+              <p className="text-gray-200 text-base md:text-lg leading-relaxed font-medium max-w-3xl mx-auto mb-4">
+                For over five decades, <strong className="text-white">Jyothi Group of Companies</strong> has been building a legacy of trust, quality, and innovation. From humble beginnings as a small development firm, we have grown into a diversified construction group, proudly led by the third generation with the same vision and commitment.
+              </p>
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed font-medium max-w-3xl mx-auto mb-8">
+                With expertise spanning Ready Mix Concrete, stone crushers, concrete blocks, fabrication, and construction services, we deliver integrated solutions backed by in-house capabilities and uncompromising quality. Every project reflects our dedication to reliability, excellence, and building a stronger future for our communities.
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">

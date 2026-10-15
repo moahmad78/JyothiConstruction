@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ChevronRight, Phone, Mail, CheckCircle2, Factory, ShieldCheck, Zap, Truck, Microscope, ClipboardList } from 'lucide-react';
+import { ChevronRight, Phone, Mail, CheckCircle2, Factory, ShieldCheck, Zap, Truck, Microscope, ClipboardList, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Image from '../../components/Image';
 
@@ -32,8 +32,8 @@ const Construction = () => {
   ];
 
   return (
-    <div className="bg-white min-h-screen">
-      <section className="relative h-[48vh] md:h-[56vh] flex items-center justify-center overflow-hidden">
+    <div className="bg-white min-h-screen pt-24 md:pt-32">
+      <section className="relative min-h-[50vh] md:min-h-[56vh] w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/Jyothi/IMG_0229.JPG" 
@@ -41,25 +41,25 @@ const Construction = () => {
             className="w-full h-full object-cover object-[center_30%] brightness-105 contrast-105"
           />
           {/* Gentle edge contrast gradients ensuring full image visibility */}
-          <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-black/40 to-transparent pointer-events-none"></div>
-          <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+          <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-black/50 to-transparent pointer-events-none"></div>
+          <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
         </div>
-        <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center">
+        <div className="container relative z-10 px-6 max-w-5xl mx-auto text-center py-12 md:py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-block bg-jyothi-blue/65 backdrop-blur-md px-6 py-5 sm:px-10 sm:py-6 rounded-2xl md:rounded-3xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.35)] max-w-2xl"
+            className="inline-block w-full bg-jyothi-blue/75 backdrop-blur-md px-6 py-8 sm:px-12 sm:py-10 rounded-2xl md:rounded-3xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
           >
-            <span className="text-jyothi-amber font-black uppercase tracking-[0.3em] text-[11px] sm:text-xs mb-2 block">
-              Turnkey & Civil Engineering
+            <span className="text-jyothi-amber font-black uppercase tracking-[0.3em] text-xs sm:text-sm mb-3 block">
+              Turnkey & Civil Engineering Excellence
             </span>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-2 font-heading tracking-tight drop-shadow-md">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-3 font-heading tracking-tight drop-shadow-md">
               Construction <span className="text-jyothi-amber">Services</span>
             </h1>
-            <div className="w-16 h-1 bg-jyothi-amber mx-auto mb-3 rounded-full"></div>
-            <p className="text-xs sm:text-sm md:text-base text-gray-100 max-w-xl mx-auto font-sans font-normal leading-relaxed drop-shadow-sm">
-              Controlled Excellence from foundation to final finish.
+            <div className="w-20 h-1.5 bg-jyothi-amber mx-auto mb-4 rounded-full"></div>
+            <p className="text-sm sm:text-base md:text-lg text-gray-100 max-w-2xl mx-auto font-sans font-normal leading-relaxed drop-shadow-sm">
+              Controlled Excellence from foundation to final finish. Comprehensive residential, commercial, and industrial turnkey execution backed by our in-house supply chain.
             </p>
           </motion.div>
         </div>
@@ -115,20 +115,23 @@ const Construction = () => {
 
               <div className="bg-jyothi-blue rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
                 <div className="md:w-1/2">
-                  <Image src="/Jyothi/IMG_0257.JPG" alt="Jyothi Corporate Leadership" className="w-full h-full object-cover min-h-[300px]" />
+                  <Image src="/assets/images/conmix1.jpg" alt="Jyothi ConMix Concrete Transit Mixer" className="w-full h-full object-cover min-h-[300px]" />
                 </div>
                 <div className="md:w-1/2 p-8 md:p-12">
-                  <h3 className="text-2xl font-bold text-white mb-6 font-heading">Why Choose Jyothi?</h3>
+                  <h3 className="text-2xl font-bold text-white mb-6 font-heading">Integrated Supply Chain</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                    Our direct integration with Jyothi ConMix automated batching plants, heavy aggregate crushers, and concrete block manufacturing eliminates third-party dependencies, ensuring high-strength concrete delivered on time.
+                  </p>
                   <ul className="space-y-4">
                     {[
-                      'Generations of structural expertise.',
-                      'In-house material quality control.',
-                      'Strict adherence to global safety.',
-                      'On-time project delivery records.'
+                      'Computerized concrete batching (Jyothi ConMix).',
+                      '18 truck transit mixers & 5 high-pressure pumps.',
+                      'In-house NABL-aligned testing & quality verification.',
+                      'On-time pour scheduling for zero cold joints.'
                     ].map((text, i) => (
                       <li key={i} className="flex items-center gap-3 text-white/90">
                         <CheckCircle2 size={20} className="text-jyothi-amber shrink-0" />
-                        <span className="text-base">{text}</span>
+                        <span className="text-sm font-medium">{text}</span>
                       </li>
                     ))}
                   </ul>
@@ -142,12 +145,17 @@ const Construction = () => {
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8">
                   <h4 className="text-xl font-bold text-jyothi-blue mb-6 font-heading">Focus Areas</h4>
                   <ul className="space-y-3">
-                    {['Residential Construction', 'Commercial Infrastructure', 'Industrial Engineering', 'Infrastructure Projects'].map((cat, i) => (
+                    {[
+                      { name: 'Residential Construction', desc: 'Luxury homes, villas & gated communities' },
+                      { name: 'Commercial Infrastructure', desc: 'Corporate tech parks & retail hubs' },
+                      { name: 'Industrial Engineering', desc: 'Warehouses, PEB sheds & factories' },
+                      { name: 'Infrastructure & Turnkey', desc: 'End-to-end civil execution & foundations' }
+                    ].map((cat, i) => (
                       <li key={i}>
-                        <Link to="#" className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 hover:border-jyothi-amber hover:text-jyothi-blue transition-all group shadow-sm">
-                          <span className="font-semibold text-gray-800 group-hover:text-jyothi-blue">{cat}</span>
-                          <ChevronRight size={18} className="text-gray-400 group-hover:text-jyothi-amber" />
-                        </Link>
+                        <div className="p-4 bg-white rounded-lg border border-gray-100 shadow-sm">
+                          <span className="font-semibold text-gray-800 block text-sm">{cat.name}</span>
+                          <span className="text-gray-500 text-xs block mt-0.5">{cat.desc}</span>
+                        </div>
                       </li>
                     ))}
                   </ul>
@@ -155,36 +163,48 @@ const Construction = () => {
 
                 <div className="bg-jyothi-blue rounded-2xl p-8 relative overflow-hidden group/callback">
                   <div className="absolute inset-0 opacity-20 group-hover/callback:scale-110 transition-transform duration-700">
-                    <img src="/Jyothi/IMG_0257.JPG" alt="Support" className="w-full h-full object-cover" />
+                    <img src="/assets/images/conmix3.jpg" alt="Support" className="w-full h-full object-cover" />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-br from-jyothi-blue via-jyothi-blue/90 to-transparent"></div>
                   <div className="absolute top-0 right-0 w-32 h-32 bg-jyothi-amber/10 rounded-full -mr-16 -mt-16"></div>
-                  <h4 className="text-2xl font-bold text-white mb-4 relative z-10 font-heading">Start Your Project?</h4>
-                  <p className="text-gray-300 mb-8 relative z-10">Discuss your engineering vision with our senior project consultants.</p>
+                  <h4 className="text-2xl font-bold text-white mb-2 relative z-10 font-heading">Start Your Project?</h4>
+                  <p className="text-gray-300 text-xs sm:text-sm mb-6 relative z-10 leading-relaxed">Discuss your architectural and engineering vision with our senior project consultants.</p>
                   
-                  <div className="space-y-6 relative z-10">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-jyothi-amber/20 rounded-full flex items-center justify-center text-jyothi-amber shrink-0">
-                        <Phone size={24} />
+                  <div className="space-y-5 relative z-10">
+                    <div className="flex items-start gap-3.5">
+                      <div className="w-10 h-10 bg-jyothi-amber/20 rounded-xl flex items-center justify-center text-jyothi-amber shrink-0 mt-0.5">
+                        <MapPin size={20} />
                       </div>
                       <div>
-                        <p className="text-xs text-gray-400 uppercase tracking-widest">Connect Directly</p>
-                        <a href="tel:+919148578784" className="text-base font-bold text-white hover:text-jyothi-amber block">+91 91485 78784</a>
-                        <a href="tel:+919900900826" className="text-base font-bold text-white hover:text-jyothi-amber block">+91 99009 00826</a>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-jyothi-amber/20 rounded-full flex items-center justify-center text-jyothi-amber shrink-0">
-                        <Mail size={24} />
-                      </div>
-                      <div>
-                        <p className="text-xs text-gray-400 uppercase tracking-widest">Project Inquiry</p>
-                        <a href="mailto:constructions@jyothigroups.com" className="text-sm sm:text-base font-bold text-white hover:text-jyothi-amber block break-all">constructions@jyothigroups.com</a>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Corporate Office</p>
+                        <p className="text-xs text-white leading-relaxed mt-0.5 font-medium">
+                          #19, 1st Cross, Veerannapalya, Near SBI Bank, AC Post, Bangalore - 560045
+                        </p>
                       </div>
                     </div>
 
-                    <Link to="/contact" className="block w-full py-4 bg-jyothi-amber text-jyothi-blue font-bold rounded-lg text-center hover:bg-jyothi-orange hover:text-white transition-all shadow-xl mt-4">
+                    <div className="flex items-center gap-3.5">
+                      <div className="w-10 h-10 bg-jyothi-amber/20 rounded-xl flex items-center justify-center text-jyothi-amber shrink-0">
+                        <Phone size={20} />
+                      </div>
+                      <div>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Connect Directly</p>
+                        <a href="tel:+919148578784" className="text-xs sm:text-sm font-bold text-white hover:text-jyothi-amber block">+91 91485 78784</a>
+                        <a href="tel:+919900900826" className="text-xs sm:text-sm font-bold text-white hover:text-jyothi-amber block">+91 99009 00826</a>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-3.5">
+                      <div className="w-10 h-10 bg-jyothi-amber/20 rounded-xl flex items-center justify-center text-jyothi-amber shrink-0">
+                        <Mail size={20} />
+                      </div>
+                      <div>
+                        <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Project Inquiry</p>
+                        <a href="mailto:constructions@jyothigroups.com" className="text-xs font-bold text-white hover:text-jyothi-amber block break-all">constructions@jyothigroups.com</a>
+                      </div>
+                    </div>
+
+                    <Link to="/contact" className="block w-full py-3.5 bg-jyothi-amber text-jyothi-blue font-bold rounded-xl text-center hover:bg-white hover:text-jyothi-blue transition-all shadow-xl mt-3 text-xs sm:text-sm uppercase tracking-wider">
                       Request Consultation
                     </Link>
                   </div>

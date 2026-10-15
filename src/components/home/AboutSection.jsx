@@ -26,11 +26,11 @@ const AboutSection = () => {
             </div>
 
             <p className="text-sm md:text-base text-gray-300 leading-relaxed font-medium max-w-xl mx-auto md:mx-0">
-              At Jyothi Construction, we have been shaping skylines and building enduring structures for over five decades. With a strong foundation rooted in quality, innovation, and precision, we deliver projects that stand as benchmarks of excellence.
+              For over five decades, <strong className="text-white">Jyothi Group of Companies</strong> has been building a legacy of trust, quality, and innovation. From humble beginnings as a small development firm, we have grown into a diversified construction group, proudly led by the third generation with the same vision and commitment.
             </p>
 
             <p className="text-sm md:text-base text-gray-400 leading-relaxed font-medium max-w-xl mx-auto md:mx-0">
-              Every structure we create is designed to enhance comfort, efficiency, and long-term value — reflecting our commitment to building not just spaces, but experiences.
+              With expertise spanning Ready Mix Concrete, stone crushers, concrete blocks, fabrication, and construction services, we deliver integrated solutions backed by in-house capabilities and uncompromising quality. Every project reflects our dedication to reliability, excellence, and building a stronger future for our communities.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left w-full pt-1">
@@ -50,7 +50,7 @@ const AboutSection = () => {
 
             <div className="pt-2 flex justify-center md:justify-start w-full">
               <Link to="/about" className="inline-flex items-center gap-3 px-8 md:px-9 py-3.5 md:py-4 bg-white text-jyothi-blue font-black rounded-xl hover:bg-jyothi-amber transition-all hover:scale-105 active:scale-95 font-heading tracking-widest uppercase text-xs md:text-sm group shadow-lg">
-                Discover Our Story 
+                Know More 
                 <svg className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </Link>
             </div>

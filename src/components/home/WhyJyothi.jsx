@@ -5,32 +5,38 @@ import Image from './../../components/Image';
 const strengthsData = [
   {
     id: 1,
-    title: '50+ Years of Industry Legacy',
-    description: 'Over five decades of continuous operation, technical mastery, and trusted client partnerships.',
-    Icon: Users
+    title: 'Safety First',
+    description: '"Safety is a moral obligation." The stated goal across every plant, project, and site is zero harm — no exceptions.',
+    Icon: ShieldCheck
   },
   {
     id: 2,
-    title: 'Proven Track Record of Delivering Excellence',
-    description: 'Hundreds of landmark projects completed across residential, industrial, and infrastructure domains.',
+    title: 'Integrity & Transparency',
+    description: 'Every vertical is expected to act with honesty, fairness and accountability — with customers, regulators and each other.',
     Icon: Award
   },
   {
     id: 3,
-    title: 'Strong Design & Execution Capabilities',
-    description: 'Seamless integration of architectural foresight, structural engineering, and on-site precision.',
+    title: 'Passion for Innovation',
+    description: 'A standing mandate to keep improving existing standards, rather than settle for what already passes inspection.',
     Icon: CheckCircle2
   },
   {
     id: 4,
-    title: 'Focus on Durability and Precision',
-    description: 'Engineered with high-grade materials and rigorous standards to endure for generations.',
-    Icon: Clock
+    title: 'Customer Centricity',
+    description: 'Quality decisions are made from the site\'s point of view — materials and methods that make the customer\'s build easier and stronger.',
+    Icon: Users
   },
   {
     id: 5,
-    title: 'Commitment to Safety and Innovation',
-    description: 'Zero-compromise safety protocols combined with modern engineering and construction technologies.',
+    title: 'Teamwork',
+    description: 'The best results come from collaboration across staff, customers, partners, communities, subcontractors and suppliers.',
+    Icon: Users
+  },
+  {
+    id: 6,
+    title: 'People & Professionalism',
+    description: 'Jyothi Groups invests in employees as partners in success, within a respectful, diverse and healthy workplace.',
     Icon: ShieldCheck
   }
 ];

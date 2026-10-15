@@ -32,8 +32,8 @@ const Aggregates = () => {
   ];
 
   return (
-    <div className="bg-white min-h-screen">
-      <section className="relative h-[48vh] md:h-[56vh] flex items-center justify-center overflow-hidden">
+    <div className="bg-white min-h-screen pt-24 md:pt-32">
+      <section className="relative min-h-[50vh] md:min-h-[56vh] w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/Jyothi/IMG_9644.JPG" 
@@ -41,25 +41,25 @@ const Aggregates = () => {
             className="w-full h-full object-cover object-[center_35%] brightness-105 contrast-105"
           />
           {/* Gentle edge contrast gradients ensuring full image visibility */}
-          <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-black/40 to-transparent pointer-events-none"></div>
-          <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+          <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-black/50 to-transparent pointer-events-none"></div>
+          <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
         </div>
-        <div className="container relative z-10 px-6 max-w-7xl mx-auto text-center">
+        <div className="container relative z-10 px-6 max-w-5xl mx-auto text-center py-12 md:py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-block bg-jyothi-blue/65 backdrop-blur-md px-6 py-5 sm:px-10 sm:py-6 rounded-2xl md:rounded-3xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.35)] max-w-2xl"
+            className="inline-block w-full bg-jyothi-blue/75 backdrop-blur-md px-6 py-8 sm:px-12 sm:py-10 rounded-2xl md:rounded-3xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
           >
-            <span className="text-jyothi-amber font-black uppercase tracking-[0.3em] text-[11px] sm:text-xs mb-2 block">
-              High-Grade Stone Crushing & Screening
+            <span className="text-jyothi-amber font-black uppercase tracking-[0.3em] text-xs sm:text-sm mb-3 block">
+              Jyothi Stone Crushers • Since 2000
             </span>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-2 font-heading tracking-tight drop-shadow-md">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-3 font-heading tracking-tight drop-shadow-md">
               Aggregates & <span className="text-jyothi-amber">Crushing</span>
             </h1>
-            <div className="w-16 h-1 bg-jyothi-amber mx-auto mb-3 rounded-full"></div>
-            <p className="text-xs sm:text-sm md:text-base text-gray-100 max-w-xl mx-auto font-sans font-normal leading-relaxed drop-shadow-sm">
-              Controlled Excellence in foundational raw material manufacturing.
+            <div className="w-20 h-1.5 bg-jyothi-amber mx-auto mb-4 rounded-full"></div>
+            <p className="text-sm sm:text-base md:text-lg text-gray-100 max-w-2xl mx-auto font-sans font-normal leading-relaxed drop-shadow-sm">
+              "Mighty things grow from small beginnings." A leader in precision aggregate manufacturing since 2000, operating a 250 TPH five-stage processing system across Dodderi & Madapatna units with Spanish hydro-cyclone washing technology.
             </p>
           </motion.div>
         </div>
@@ -72,13 +72,13 @@ const Aggregates = () => {
             <div className="lg:col-span-2">
               <div className="mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-jyothi-blue mb-6 font-heading">
-                  Premium Wet Mix & Aggregates Production
+                  High-Grade Crushing & Hydro-Cyclone Washed Sand
                 </h2>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  With over <strong className="text-jyothi-amber">60+ Years of Legacy</strong>, Jyothi Construction has pioneered the production of high-grade construction aggregates. Our integrated approach ensures that we control the entire supply chain, from raw material extraction to final crushing and delivery.
+                  Operating since 2000, <strong className="text-jyothi-amber font-extrabold">Jyothi Stone Crushers</strong> has built a stellar reputation as Karnataka's premier aggregate producer. With a combined 250 TPH capacity across Dodderi and Madapatna, our five-stage crushing plants produce clean, cubical aggregates adhering to IS 383 specifications.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Our heavy-duty crushing plants are equipped with modern technology to process crushed stone into various sizes (20mm, 40mm, M-Sand, P-Sand) with absolute precision, meeting the most rigorous industry standards.
+                  Our advanced Spanish hydro-cyclone washing system thoroughly eliminates silt and micro-fines from Manufactured Sand (M-Sand) and Plastering Sand (P-Sand), delivering superior bonding strength and durability in structural concrete.
                 </p>
               </div>
 
@@ -140,14 +140,20 @@ const Aggregates = () => {
               <div className="sticky top-32 space-y-8">
                 
                 <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8">
-                  <h4 className="text-xl font-bold text-jyothi-blue mb-6 font-heading">Categories</h4>
+                  <h4 className="text-xl font-bold text-jyothi-blue mb-6 font-heading">Product Range</h4>
                   <ul className="space-y-3">
-                    {['M-Sand (Manufactured Sand)', 'P-Sand (Plastering Sand)', 'Robo Sand', 'Crushed Aggregates'].map((cat, i) => (
+                    {[
+                      '10mm & 20mm Blue Metal Aggregates',
+                      '40mm Graded Structural Aggregates',
+                      'Manufactured Sand (M-Sand - Concrete Grade)',
+                      'Plastering Sand (P-Sand - Hydro-Washed)',
+                      'Wet Mix Macadam (WMM) & GSB'
+                    ].map((cat, i) => (
                       <li key={i}>
-                        <Link to="#" className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 hover:border-jyothi-amber hover:text-jyothi-blue transition-all group shadow-sm">
-                          <span className="font-semibold text-gray-800 group-hover:text-jyothi-blue">{cat}</span>
-                          <ChevronRight size={18} className="text-gray-400 group-hover:text-jyothi-amber" />
-                        </Link>
+                        <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-100 shadow-sm">
+                          <span className="font-semibold text-gray-800 text-sm">{cat}</span>
+                          <CheckCircle2 size={16} className="text-jyothi-amber shrink-0" />
+                        </div>
                       </li>
                     ))}
                   </ul>

@@ -20,9 +20,19 @@ const CTABanner = () => {
               Crafting structures that stand strong <br className="hidden sm:inline" />
               <span className="text-jyothi-amber">for generations.</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl font-bold text-gray-200 tracking-wide font-heading">
-              Built on Trust. Driven by Excellence.
-            </p>
+            <div className="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t border-white/10 mt-6">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300">
+                <span className="text-jyothi-amber font-bold">Call:</span>
+                <a href="tel:+919148578784" className="text-white hover:text-jyothi-amber font-bold transition-colors">+91 91485 78784</a>
+                <span>/</span>
+                <a href="tel:+919900900826" className="text-white hover:text-jyothi-amber font-bold transition-colors">+91 99009 00826</a>
+              </div>
+              <span className="hidden sm:inline text-white/30">•</span>
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-300">
+                <span className="text-jyothi-amber font-bold">Email:</span>
+                <a href="mailto:constructions@jyothigroups.com" className="text-white hover:text-jyothi-amber font-bold transition-colors">constructions@jyothigroups.com</a>
+              </div>
+            </div>
           </div>
 
           <div className="flex flex-row flex-wrap items-center justify-center lg:justify-start gap-4 shrink-0 mt-6 lg:mt-0">

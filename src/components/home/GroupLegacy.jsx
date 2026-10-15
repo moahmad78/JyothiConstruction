@@ -24,9 +24,9 @@ const groupDivisions = [
     icon: ShieldCheck
   },
   {
-    name: 'Jyothi Heavy Logistics',
-    role: 'Boom Crane Fleets & Rapid Distribution',
-    icon: Truck
+    name: 'Sri Raghavendra Fabrication',
+    role: 'Structural Steel, PEB Frameworks & Roofing',
+    icon: Factory
   }
 ];
 

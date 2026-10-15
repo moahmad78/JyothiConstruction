@@ -43,8 +43,9 @@ const Footer = () => {
             <nav className="flex flex-col gap-4">
               <Link to="/" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Home</Link>
               <Link to="/about" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> About Us</Link>
-              <Link to="/projects" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Projects</Link>
-              <Link to="/qs" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Q&S</Link>
+              <Link to="/our-landmarks" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Our Landmarks</Link>
+              <Link to="/news-blog" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> News &amp; Blogs</Link>
+              <Link to="/qs" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Q&amp;S</Link>
               <Link to="/csr" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> CSR</Link>
               <Link to="/contact" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Contact Us</Link>
             </nav>
@@ -55,9 +56,9 @@ const Footer = () => {
             <nav className="flex flex-col gap-4">
               <Link to="/services/construction" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Construction Services</Link>
               <Link to="/services/rmc" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Ready Mix Concrete</Link>
-              <Link to="/services/aggregates" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Aggregates & Crushing</Link>
+              <Link to="/services/aggregates" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Aggregates &amp; Crushing</Link>
               <Link to="/services/blocks" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Concrete Blocks</Link>
-              <Link to="/services/fabrication" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Fabrication Works</Link>
+              <Link to="/services/fabrication" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Sri Raghavendra Fabrication</Link>
             </nav>
           </div>
 

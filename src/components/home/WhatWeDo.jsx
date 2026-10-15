@@ -6,43 +6,53 @@ import Image from '../Image';
 const expertiseAreas = [
   {
     id: 1,
-    title: 'Residential & Commercial Construction',
-    subtitle: 'From modern residences to state-of-the-art commercial complexes.',
-    description: 'We construct visionary high-rises, gated luxury communities, and premium corporate campuses built with structural integrity and sophisticated aesthetics.',
+    title: 'Jyothi Construction Services',
+    subtitle: 'Comprehensive Turnkey & Civil Engineering Execution',
+    description: 'Delivering visionary commercial complexes, residential landmarks, and turnkey infrastructure projects with unmatched structural precision and generational endurance.',
     icon: Building2,
     image: '/assets/Commercial/01.JPG',
     link: '/services/construction',
-    points: ['Luxury Residential Enclaves', 'Commercial & Retail Centers', 'High-Rise Towers']
+    points: ['Turnkey Civil Engineering', 'Commercial & Residential Landmarks', 'Integrated In-House Supply Chain']
   },
   {
     id: 2,
-    title: 'Industrial Infrastructure',
-    subtitle: 'Heavy-duty industrial hubs, warehouses, and specialized facilities.',
-    description: 'Engineered for high operational demands, precision fabrication, robust floorings, and long-term durability suited for manufacturing and logistics.',
+    title: 'Ready Mix Concrete (Jyothi ConMix)',
+    subtitle: '100% Computerized High-Performance Batching',
+    description: 'One of Bangalore’s fastest-growing RMC manufacturers since 2012, operating 18 transit mixers and 5 high-reach concrete pumps for uninterrupted site delivery.',
     icon: Factory,
-    image: '/assets/Industrial/02.JPG',
+    image: '/assets/images/conmix1.jpg',
     link: '/services/rmc',
-    points: ['Manufacturing Plants', 'Logistics & Warehousing Hubs', 'Heavy Engineering Facilities']
+    points: ['18 Transit Mixers & 5 Boom Pumps', 'Special & Self-Compacting Mixes', 'NABL-Aligned Laboratory Testing']
   },
   {
     id: 3,
-    title: 'Turnkey Project Execution',
-    subtitle: 'Comprehensive end-to-end delivery from concept to handover.',
-    description: 'We streamline the entire lifecycle — architecture, engineering, in-house material procurement, contracting, and final commissioning with zero friction.',
-    icon: Briefcase,
-    image: '/assets/Commercial/03.JPG',
-    link: '/services/fabrication',
-    points: ['Concept-to-Keys Delivery', 'Total Project Management', 'Integrated Supply Chain']
+    title: 'Jyothi Stone Crushers',
+    subtitle: '250 TPH Crushing & Hydro-Cyclone Washing',
+    description: 'Leader in aggregate manufacturing since 2000 across Dodderi & Madapatna units, equipped with Spanish hydro-cyclone washing for ultra-clean M-Sand and P-Sand.',
+    icon: Factory,
+    image: '/Jyothi/IMG_9641.JPG',
+    link: '/services/aggregates',
+    points: ['250 TPH Combined Plant Capacity', 'Hydro-Cyclone Washed M-Sand & P-Sand', '10mm, 20mm & Graded Aggregates']
   },
   {
     id: 4,
-    title: 'Structural & Civil Engineering',
-    subtitle: 'Precision civil works, reinforced foundations, and site engineering.',
-    description: 'Leveraging five decades of geotechnical and structural mastery to engineer foundation systems, earthworks, and concrete structures built for centuries.',
+    title: 'Jyothi Concrete Blocks',
+    subtitle: 'ISO 9001:2015 German Curing Technology',
+    description: 'High-density engineered solid concrete blocks (4", 6", 8") with an annual capacity exceeding 10 million units, ensuring high compressive strength and low absorption.',
     icon: Ruler,
-    image: '/assets/Others/02.JPG',
-    link: '/services/aggregates',
-    points: ['Foundation & Deep Piling', 'Reinforced Concrete Frameworks', 'Site Grade Engineering']
+    image: '/Jyothi/IMG_9734.JPG',
+    link: '/services/blocks',
+    points: ['Solid Concrete Blocks (4", 6", 8")', 'German Automated Curing System', '10 Million+ Annual Capacity']
+  },
+  {
+    id: 5,
+    title: 'Sri Raghavendra Fabrication',
+    subtitle: 'Structural Steel & Heavy Industrial Frameworks',
+    description: 'Turnkey fabrication excellence specializing in custom structural steel, industrial PEB frameworks, PUF insulated panels, and curved truss-less roofing systems.',
+    icon: Briefcase,
+    image: '/Jyothi/fabrication_works_hero.jpg',
+    link: '/services/fabrication',
+    points: ['Industrial PEB & Heavy Steel Trusses', 'PUF Insulated Roof & Wall Panels', 'Truss-Less Self-Supported Roofing']
   }
 ];
 
@@ -84,8 +94,8 @@ const WhatWeDo = () => {
           </motion.p>
         </div>
 
-        {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        {/* 5 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {expertiseAreas.map((item, index) => {
             const Icon = item.icon;
             return (
