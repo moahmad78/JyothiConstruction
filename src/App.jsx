@@ -33,7 +33,10 @@ const AppContent = () => {
           <Route path="/why-jyothi" element={<WhyJyothiPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/our-landmarks" element={<ProjectsPage />} />
+          <Route path="/our-landmark" element={<ProjectsPage />} />
           <Route path="/news-blog" element={<NewsBlogPage />} />
+          <Route path="/news" element={<NewsBlogPage />} />
+          <Route path="/blog" element={<NewsBlogPage />} />
           <Route path="/qs" element={<QSPage />} />
           <Route path="/csr" element={<CSRPage />} />
           <Route path="/careers" element={<Navigate to="/csr" replace />} />

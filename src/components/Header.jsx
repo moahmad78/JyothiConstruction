@@ -14,6 +14,8 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileAccordionOpen, setMobileAccordionOpen] = useState(false);
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
+  const [desktopResourcesOpen, setDesktopResourcesOpen] = useState(false);
   const location = useLocation();
   const { openModal } = useModal();
 
@@ -143,43 +145,60 @@ const Header = () => {
             </div>
 
             {/* Resources Dropdown */}
-            <div className="group relative">
-              <button className={`flex items-center gap-1.5 transition-colors text-sm font-bold uppercase tracking-wider py-2 relative ${
-                location.pathname.startsWith('/our-landmarks') || location.pathname.startsWith('/projects') || location.pathname.startsWith('/news-blog')
-                  ? 'text-jyothi-amber' 
-                  : 'text-white hover:text-jyothi-amber'
-              }`}>
-                Resources <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-200" />
-                {(location.pathname.startsWith('/our-landmarks') || location.pathname.startsWith('/projects') || location.pathname.startsWith('/news-blog')) && (
+            <div 
+              className="group relative"
+              onMouseEnter={() => setDesktopResourcesOpen(true)}
+              onMouseLeave={() => setDesktopResourcesOpen(false)}
+            >
+              <button 
+                onClick={() => setDesktopResourcesOpen(!desktopResourcesOpen)}
+                className={`flex items-center gap-1.5 transition-colors text-sm font-bold uppercase tracking-wider py-2 relative ${
+                  location.pathname.startsWith('/our-landmark') || location.pathname.startsWith('/projects') || location.pathname.startsWith('/news') || location.pathname.startsWith('/blog')
+                    ? 'text-jyothi-amber' 
+                    : 'text-white hover:text-jyothi-amber'
+                }`}
+              >
+                Resources <ChevronDown size={14} className={`transition-transform duration-200 group-hover:rotate-180 ${desktopResourcesOpen ? 'rotate-180 text-jyothi-amber' : ''}`} />
+                {(location.pathname.startsWith('/our-landmark') || location.pathname.startsWith('/projects') || location.pathname.startsWith('/news') || location.pathname.startsWith('/blog')) && (
                   <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-jyothi-amber rounded-full" />
                 )}
               </button>
               
-              <div className="absolute top-full left-0 mt-2 w-64 bg-[#121820] border border-white/15 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden z-50 before:absolute before:-top-3 before:left-0 before:right-0 before:h-3 before:content-['']">
+              <div className={`absolute top-full left-0 mt-2 w-64 bg-[#121820] border border-white/15 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300 overflow-hidden z-50 before:absolute before:-top-3 before:left-0 before:right-0 before:h-3 before:content-[''] group-hover:opacity-100 group-hover:visible ${
+                desktopResourcesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+              }`}>
                 <div className="px-4 py-2.5 border-b border-white/10 bg-white/[0.03] flex items-center justify-between">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-jyothi-amber">Knowledge & Projects</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-jyothi-amber">Resources</span>
                   <span className="w-1.5 h-1.5 rounded-full bg-jyothi-amber animate-pulse"></span>
                 </div>
                 <ul className="flex flex-col py-1.5">
                   <li>
-                    <Link to="/our-landmarks" className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/10 text-sm text-gray-100 hover:text-jyothi-amber font-medium transition-colors border-b border-white/5 group/item">
+                    <Link 
+                      to="/our-landmarks" 
+                      onClick={() => setDesktopResourcesOpen(false)}
+                      className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/10 text-sm text-gray-100 hover:text-jyothi-amber font-medium transition-colors border-b border-white/5 group/item"
+                    >
                       <div className="w-7 h-7 rounded-lg bg-jyothi-amber/15 group-hover/item:bg-jyothi-amber flex items-center justify-center text-jyothi-amber group-hover/item:text-jyothi-blue transition-colors shrink-0">
                         <Building2 size={15} />
                       </div>
                       <div>
-                        <span className="block font-bold">Our Landmarks</span>
-                        <span className="text-[11px] text-gray-400 block font-normal">Real projects portfolio</span>
+                        <span className="block font-bold">Our Landmark</span>
+                        <span className="text-[11px] text-gray-400 block font-normal">Our completed landmarks</span>
                       </div>
                     </Link>
                   </li>
                   <li>
-                    <Link to="/news-blog" className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/10 text-sm text-gray-100 hover:text-jyothi-amber font-medium transition-colors group/item">
+                    <Link 
+                      to="/news-blog" 
+                      onClick={() => setDesktopResourcesOpen(false)}
+                      className="flex items-center gap-3 px-4 py-2.5 hover:bg-white/10 text-sm text-gray-100 hover:text-jyothi-amber font-medium transition-colors group/item"
+                    >
                       <div className="w-7 h-7 rounded-lg bg-jyothi-amber/15 group-hover/item:bg-jyothi-amber flex items-center justify-center text-jyothi-amber group-hover/item:text-jyothi-blue transition-colors shrink-0">
                         <Newspaper size={15} />
                       </div>
                       <div>
-                        <span className="block font-bold">News & Blogs</span>
-                        <span className="text-[11px] text-gray-400 block font-normal">Industry insights & updates</span>
+                        <span className="block font-bold">News & Blog</span>
+                        <span className="text-[11px] text-gray-400 block font-normal">Latest articles & updates</span>
                       </div>
                     </Link>
                   </li>
@@ -316,8 +335,8 @@ const Header = () => {
                         className="overflow-hidden bg-white/5 rounded-xl mb-2"
                       >
                         <ul className="flex flex-col py-0.5 px-3">
-                          <li><Link to="/our-landmarks" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2.5 text-gray-300 hover:text-jyothi-amber text-sm font-medium border-b border-white/5 last:border-0"><Building2 size={16} className="text-jyothi-amber"/> Our Landmarks</Link></li>
-                          <li><Link to="/news-blog" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2.5 text-gray-300 hover:text-jyothi-amber text-sm font-medium border-b border-white/5 last:border-0"><Newspaper size={16} className="text-jyothi-amber"/> News & Blogs</Link></li>
+                          <li><Link to="/our-landmarks" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2.5 text-gray-300 hover:text-jyothi-amber text-sm font-medium border-b border-white/5 last:border-0"><Building2 size={16} className="text-jyothi-amber"/> Our Landmark</Link></li>
+                          <li><Link to="/news-blog" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 py-2.5 text-gray-300 hover:text-jyothi-amber text-sm font-medium border-b border-white/5 last:border-0"><Newspaper size={16} className="text-jyothi-amber"/> News & Blog</Link></li>
                         </ul>
                       </motion.div>
                     )}
