@@ -90,9 +90,10 @@ const DroneShowcase = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-5 mb-5 md:mb-8 text-center md:text-left">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "150px" }}
+            transition={{ duration: 0.3 }}
             className="max-w-2xl flex flex-col items-center md:items-start"
           >
             <div className="flex items-center justify-center md:justify-start gap-2 text-jyothi-amber text-xs font-black uppercase tracking-[0.3em] mb-1.5 md:mb-2">
@@ -122,10 +123,10 @@ const DroneShowcase = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "150px" }}
+          transition={{ duration: 0.3 }}
           className="relative rounded-2xl md:rounded-3xl overflow-hidden border border-white/15 bg-black/60 shadow-2xl group w-full"
         >
           <div className="relative aspect-[16/9] md:aspect-[21/9] max-h-[300px] md:max-h-[460px] w-full flex items-center justify-center overflow-hidden bg-black">
@@ -138,7 +139,7 @@ const DroneShowcase = () => {
               loop
               muted={isMuted}
               playsInline
-              preload="auto"
+              preload="metadata"
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
               onClick={handleTogglePlay}

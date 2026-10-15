@@ -44,7 +44,8 @@ const Footer = () => {
               <Link to="/" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Home</Link>
               <Link to="/about" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> About Us</Link>
               <Link to="/projects" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Projects</Link>
-              <Link to="/careers" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Careers</Link>
+              <Link to="/qs" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Q&S</Link>
+              <Link to="/csr" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> CSR</Link>
               <Link to="/contact" className="text-gray-400 hover:text-jyothi-amber transition-colors text-sm flex items-center gap-2 group"><span className="text-jyothi-amber opacity-0 group-hover:opacity-100 transition-opacity">→</span> Contact Us</Link>
             </nav>
           </div>
@@ -75,16 +76,17 @@ const Footer = () => {
                 <div className="w-10 h-10 bg-jyothi-amber/10 rounded-lg flex items-center justify-center text-jyothi-amber shrink-0 border border-jyothi-amber/20">
                   <Phone size={20} />
                 </div>
-                <div className="flex flex-col">
-                  <a href="tel:+919008777742" className="text-sm text-white font-bold hover:text-jyothi-amber transition-colors">+91 9008 777 742</a>
-                  <span className="text-[10px] text-jyothi-amber uppercase font-bold tracking-widest mt-1">24/7 Helpline</span>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+919148578784" className="text-sm text-white font-bold hover:text-jyothi-amber transition-colors">+91 91485 78784</a>
+                  <a href="tel:+919900900826" className="text-sm text-white font-bold hover:text-jyothi-amber transition-colors">+91 99009 00826</a>
+                  <span className="text-[10px] text-jyothi-amber uppercase font-bold tracking-widest mt-0.5">Contact Us</span>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-jyothi-amber/10 rounded-lg flex items-center justify-center text-jyothi-amber shrink-0 border border-jyothi-amber/20">
                   <Mail size={20} />
                 </div>
-                <a href="mailto:info@jyothiconstruction.com" className="text-sm text-white font-bold hover:text-jyothi-amber transition-colors pt-2">info@jyothiconstruction.com</a>
+                <a href="mailto:constructions@jyothigroups.com" className="text-sm text-white font-bold hover:text-jyothi-amber transition-colors pt-2">constructions@jyothigroups.com</a>
               </div>
             </div>
           </div>

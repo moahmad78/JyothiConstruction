@@ -43,10 +43,10 @@ const AboutPage = () => {
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              viewport={{ once: true, margin: "150px" }}
+              transition={{ duration: 0.35 }}
             >
               <span className="text-jyothi-amber text-xs font-black uppercase tracking-[0.3em] mb-4 block">
                 Building the Future
@@ -80,10 +80,10 @@ const AboutPage = () => {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "150px" }}
+            transition={{ duration: 0.35 }}
             className="relative w-full max-w-7xl mx-auto"
           >
             <div className="absolute -inset-2 md:-inset-4 border-2 border-jyothi-amber/25 rounded-3xl z-0 pointer-events-none"></div>

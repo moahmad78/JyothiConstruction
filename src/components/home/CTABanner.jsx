@@ -13,12 +13,15 @@ const CTABanner = () => {
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 shadow-2xl">
           <div className="max-w-xl lg:max-w-2xl text-center lg:text-left">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white font-heading leading-tight mb-4">
-              <span className="block sm:whitespace-nowrap">Ready to Start Your</span>
-              <span className="block sm:whitespace-nowrap text-jyothi-amber">Next Landmark?</span>
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-jyothi-amber/15 border border-jyothi-amber/30 text-jyothi-amber text-xs font-bold tracking-widest uppercase mb-3">
+              Jyothi Construction
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white font-heading leading-tight mb-4">
+              Crafting structures that stand strong <br className="hidden sm:inline" />
+              <span className="text-jyothi-amber">for generations.</span>
             </h2>
-            <p className="text-sm md:text-base text-gray-400 leading-relaxed font-medium">
-              Join hands with the industry leaders. Let's discuss your project and build something extraordinary together.
+            <p className="text-base sm:text-lg md:text-xl font-bold text-gray-200 tracking-wide font-heading">
+              Built on Trust. Driven by Excellence.
             </p>
           </div>
 

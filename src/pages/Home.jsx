@@ -1,12 +1,16 @@
 import Hero from '../components/home/Hero';
+import HighlightsStrip from '../components/home/HighlightsStrip';
 import AboutSection from '../components/home/AboutSection';
+import WhatWeDo from '../components/home/WhatWeDo';
 import KeyVerticals from '../components/home/KeyVerticals';
 import StatsSection from '../components/home/StatsSection';
 import WhyJyothi from '../components/home/WhyJyothi';
+import GroupLegacy from '../components/home/GroupLegacy';
 import ProjectsGrid from '../components/home/ProjectsGrid';
 import CTABanner from '../components/home/CTABanner';
 import Testimonials from '../components/home/Testimonials';
 import DroneShowcase from '../components/home/DroneShowcase';
+import SiteGallery from '../components/home/SiteGallery';
 
 const ClientsPartners = () => {
   const partners = [
@@ -68,6 +72,8 @@ const ClientsPartners = () => {
                 <img 
                   src={logo} 
                   alt={`Client row 1 - ${index}`} 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain filter-none opacity-100 transition-all duration-300 transform group-hover/item:scale-105"
                 />
               </div>
@@ -85,6 +91,8 @@ const ClientsPartners = () => {
                 <img 
                   src={logo} 
                   alt={`Client row 2 - ${index}`} 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-contain filter-none opacity-100 transition-all duration-300 transform group-hover/item:scale-105"
                 />
               </div>
@@ -100,11 +108,14 @@ const Home = () => {
   return (
     <div className="flex flex-col w-full bg-jyothi-blue">
       <Hero />
+      <HighlightsStrip />
       <AboutSection />
-      <KeyVerticals />
+      <WhatWeDo />
       <ProjectsGrid />
       <DroneShowcase />
+      <SiteGallery />
       <WhyJyothi />
+      <GroupLegacy />
       <StatsSection />
       <ClientsPartners />
       <Testimonials />

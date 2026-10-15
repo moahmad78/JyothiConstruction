@@ -7,31 +7,31 @@ import Image from '../Image';
 const projects = [
   {
     id: 1,
-    title: 'Jyothi Conmix RMC Hub',
-    location: 'Plant Operations, Karnataka',
-    type: 'Ready Mix',
-    image: '/Jyothi/IMG_0038.JPG'
+    title: 'Commercial Complex & Towers',
+    location: 'Bangalore Region, Karnataka',
+    type: 'Commercial',
+    image: '/assets/Commercial/01.JPG'
   },
   {
     id: 2,
-    title: 'Automated Blocks Facility',
-    location: 'Manufacturing Yard',
-    type: 'Concrete Blocks',
-    image: '/Jyothi/IMG_9734.JPG'
+    title: 'Residential Landmark Development',
+    location: 'Bangalore, Karnataka',
+    type: 'Residential',
+    image: '/assets/Residential/01.JPG'
   },
   {
     id: 3,
-    title: 'Granite Quarry & Mining',
-    location: 'Quarry Face',
-    type: 'Aggregates',
-    image: '/Jyothi/IMG_9528.JPG'
+    title: 'Heavy Industrial Facility',
+    location: 'Mysore Road, Karnataka',
+    type: 'Industrial',
+    image: '/assets/Industrial/02.JPG'
   },
   {
     id: 4,
-    title: 'Crane Fleet & Logistics',
-    location: 'Regional Distribution',
-    type: 'Fleet Supply',
-    image: '/Jyothi/IMG_0452.JPG'
+    title: 'Civil Infrastructure Works',
+    location: 'Karnataka',
+    type: 'Infrastructure',
+    image: '/assets/Others/02.JPG'
   }
 ];
 
@@ -51,9 +51,10 @@ const ProjectsGrid = () => {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-6 md:gap-10 mb-8 md:mb-16 text-center md:text-left">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "150px" }}
+            transition={{ duration: 0.3 }}
             className="max-w-2xl"
           >
             <span className="text-jyothi-amber font-black uppercase tracking-[0.3em] text-xs md:text-sm mb-2 md:mb-4 block">Our Portfolio</span>
@@ -63,10 +64,10 @@ const ProjectsGrid = () => {
             </h2>
           </motion.div>
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            viewport={{ once: true, margin: "150px" }}
+            transition={{ duration: 0.3 }}
             className="w-full md:w-auto flex justify-center md:justify-end"
           >
             <Link to="/projects" className="inline-flex items-center gap-3 text-white font-black uppercase tracking-widest text-xs md:text-sm hover:text-jyothi-amber transition-colors group">
@@ -83,10 +84,10 @@ const ProjectsGrid = () => {
             return (
               <motion.div 
                 key={project.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true, margin: "150px" }}
+                transition={{ duration: 0.3 }}
                 onMouseEnter={() => setHoveredId(project.id)}
                 onMouseLeave={() => setHoveredId(null)}
                 onClick={() => setHoveredId(isHovered ? null : project.id)}

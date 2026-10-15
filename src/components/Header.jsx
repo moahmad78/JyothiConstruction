@@ -46,29 +46,22 @@ const Header = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-black/15 ${
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-white/10 bg-[#121820]/95 backdrop-blur-xl ${
       isScrolled 
-        ? 'py-2.5 shadow-[0_12px_35px_rgba(0,0,0,0.6)]' 
-        : 'py-3 md:py-4 shadow-[0_4px_25px_rgba(0,0,0,0.4)]'
+        ? 'py-2 shadow-[0_12px_35px_rgba(0,0,0,0.7)]' 
+        : 'py-2.5 md:py-3.5 shadow-[0_4px_25px_rgba(0,0,0,0.5)]'
     }`}>
-      <div 
-        className="absolute inset-0 pointer-events-none -z-10 backdrop-blur-xl"
-        style={{
-          background: 'linear-gradient(90deg, #ffffff 0%, #ffffff 18%, #fcfdfd 20%, #eeeff0 22%, #daddde 24%, #b3b6bb 26%, #888c94 28%, #696f78 30%, #50565f 32%, #3c424a 34%, #30373f 36%, #282f38 38%, #202831 40%, #1b222b 42%, #151d25 44%, #131b24 46%, #121820 100%)'
-        }}
-      />
-
-      <div className="absolute top-0 inset-x-0 h-[1px] bg-black/10 pointer-events-none" />
-
       <div className="container mx-auto px-4 md:px-6 max-w-7xl relative">
         <div className="flex items-center justify-between">
           
-          <Link to="/" className="flex items-center gap-3 cursor-pointer group">
-            <img 
-              src="/logo.png" 
-              alt="Jyothi Construction Logo" 
-              className="h-10 md:h-14 lg:h-16 w-auto object-contain filter drop-shadow-sm transition-transform duration-300 group-hover:scale-105" 
-            />
+          <Link to="/" className="flex items-center cursor-pointer group">
+            <div className="bg-white px-3.5 py-1.5 md:px-4 md:py-2 rounded-xl shadow-md border border-white/20 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] group-hover:scale-105 flex items-center justify-center">
+              <img 
+                src="/logo.png" 
+                alt="Jyothi Construction Logo" 
+                className="h-9 md:h-11 lg:h-12 w-auto object-contain transition-transform duration-300" 
+              />
+            </div>
           </Link>
           
           <nav className="hidden lg:flex items-center gap-8">
@@ -153,9 +146,15 @@ const Header = () => {
                 <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-jyothi-amber rounded-full" />
               )}
             </Link>
-            <Link to="/careers" className={`${getLinkClass('/careers')} relative py-1`}>
-              Careers
-              {isActive('/careers') && (
+            <Link to="/qs" className={`${getLinkClass('/qs')} relative py-1`}>
+              Q&S
+              {isActive('/qs') && (
+                <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-jyothi-amber rounded-full" />
+              )}
+            </Link>
+            <Link to="/csr" className={`${getLinkClass('/csr')} relative py-1`}>
+              CSR
+              {isActive('/csr') && (
                 <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-jyothi-amber rounded-full" />
               )}
             </Link>
@@ -215,8 +214,10 @@ const Header = () => {
             >
           
               <div className="flex items-center justify-between p-6 border-b border-white/10">
-                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2">
-                  <img src="/logo.png" alt="Jyothi Construction Logo" className="h-10 w-auto object-contain" />
+                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
+                  <div className="bg-white px-3 py-1.5 rounded-xl shadow-md flex items-center justify-center">
+                    <img src="/logo.png" alt="Jyothi Construction Logo" className="h-8 w-auto object-contain" />
+                  </div>
                 </Link>
                 <button onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-jyothi-amber bg-white/5 rounded-full p-2.5 transition-colors">
                   <X size={24} />
@@ -256,7 +257,8 @@ const Header = () => {
                 </div>
 
                 <Link to="/projects" className={`text-lg font-bold font-heading py-3 border-b border-white/5 ${isActive('/projects') ? 'text-jyothi-amber' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>Projects</Link>
-                <Link to="/careers" className={`text-lg font-bold font-heading py-3 border-b border-white/5 ${isActive('/careers') ? 'text-jyothi-amber' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>Careers</Link>
+                <Link to="/qs" className={`text-lg font-bold font-heading py-3 border-b border-white/5 ${isActive('/qs') ? 'text-jyothi-amber' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>Q&S</Link>
+                <Link to="/csr" className={`text-lg font-bold font-heading py-3 border-b border-white/5 ${isActive('/csr') ? 'text-jyothi-amber' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>CSR</Link>
                 <Link to="/contact" className={`text-lg font-bold font-heading py-3 ${isActive('/contact') ? 'text-jyothi-amber' : 'text-white'}`} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
               </div>
 

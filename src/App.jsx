@@ -14,6 +14,8 @@ import Aggregates from './pages/services/Aggregates';
 import Blocks from './pages/services/Blocks';
 import Fabrication from './pages/services/Fabrication';
 import CareersPage from './pages/CareersPage';
+import CSRPage from './pages/CSRPage';
+import QSPage from './pages/QSPage';
 import ServicesPage from './pages/ServicesPage';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -29,6 +31,8 @@ const AppContent = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/why-jyothi" element={<WhyJyothiPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/qs" element={<QSPage />} />
+          <Route path="/csr" element={<CSRPage />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/services" element={<ServicesPage />} />

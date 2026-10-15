@@ -15,19 +15,19 @@ const Construction = () => {
 
   const stages = [
     {
-      title: 'Structural Integrity & Site QA',
+      title: 'Commercial & Corporate Execution',
       desc: 'Precision site inspections, rebar verification, and strict adherence to structural design parameters.',
-      img: '/Jyothi/IMG_0369.JPG'
+      img: '/assets/Commercial/01.JPG'
     },
     {
-      title: 'Integrated Project Planning',
-      desc: 'Multi-disciplinary project coordination meetings ensuring zero delays and seamless milestone execution.',
-      img: '/Jyothi/IMG_0271.JPG'
+      title: 'Residential Landmarks',
+      desc: 'Thoughtfully planned residential community developments built for enduring generational value.',
+      img: '/assets/Residential/01.JPG'
     },
     {
-      title: 'Integrated Supply Chain',
+      title: 'Industrial & Heavy Infrastructure',
       desc: 'Immediate access to in-house RMC, aggregates, and block manufacturing ensuring unmatched build speed.',
-      img: '/Jyothi/IMG_9528.JPG'
+      img: '/assets/Industrial/02.JPG'
     }
   ];
 
@@ -164,22 +164,23 @@ const Construction = () => {
                   
                   <div className="space-y-6 relative z-10">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-jyothi-amber/20 rounded-full flex items-center justify-center text-jyothi-amber">
+                      <div className="w-12 h-12 bg-jyothi-amber/20 rounded-full flex items-center justify-center text-jyothi-amber shrink-0">
                         <Phone size={24} />
                       </div>
                       <div>
                         <p className="text-xs text-gray-400 uppercase tracking-widest">Connect Directly</p>
-                        <p className="text-lg font-bold text-white">+91 9008 777 742</p>
+                        <a href="tel:+919148578784" className="text-base font-bold text-white hover:text-jyothi-amber block">+91 91485 78784</a>
+                        <a href="tel:+919900900826" className="text-base font-bold text-white hover:text-jyothi-amber block">+91 99009 00826</a>
                       </div>
                     </div>
                     
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-jyothi-amber/20 rounded-full flex items-center justify-center text-jyothi-amber">
+                      <div className="w-12 h-12 bg-jyothi-amber/20 rounded-full flex items-center justify-center text-jyothi-amber shrink-0">
                         <Mail size={24} />
                       </div>
                       <div>
                         <p className="text-xs text-gray-400 uppercase tracking-widest">Project Inquiry</p>
-                        <p className="text-lg font-bold text-white">build@jyothi.com</p>
+                        <a href="mailto:constructions@jyothigroups.com" className="text-sm sm:text-base font-bold text-white hover:text-jyothi-amber block break-all">constructions@jyothigroups.com</a>
                       </div>
                     </div>
 

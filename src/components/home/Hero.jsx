@@ -29,7 +29,7 @@ const Hero = () => {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           poster="/Jyothi/IMG_9715.JPG"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         >
@@ -40,25 +40,32 @@ const Hero = () => {
         {/* Subtle top edge gradient for navbar contrast */}
         <div className="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-jyothi-blue/80 via-jyothi-blue/40 to-transparent pointer-events-none z-[1]"></div>
 
+        {/* Gentle dark gradient across video for crisp text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/35 to-black/65 pointer-events-none"></div>
+
         {/* Subtle bottom edge gradient to blend smoothly */}
         <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-jyothi-blue to-transparent pointer-events-none"></div>
       </div>
 
       <div className="container relative z-10 px-4 sm:px-6 max-w-7xl mx-auto flex flex-col justify-center pt-16 sm:pt-24 md:pt-36 pb-6 md:pb-16">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-2xl md:ml-auto bg-jyothi-blue/35 backdrop-blur-md p-5 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.35)] mt-2 md:mt-8 text-center sm:text-left"
+          transition={{ duration: 0.35 }}
+          className="max-w-2xl md:ml-auto mt-2 md:mt-8 text-center sm:text-left"
         >
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-[1.15] mb-3 md:mb-6 tracking-tighter font-heading drop-shadow-md">
-            Building Strong <br />
-            <span className="text-jyothi-amber">Foundations</span> for <br />
-            Tomorrow
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/40 border border-jyothi-amber/50 text-jyothi-amber text-xs font-bold tracking-widest uppercase mb-4 shadow-lg">
+            <span className="w-2 h-2 rounded-full bg-jyothi-amber animate-pulse"></span>
+            Established Legacy
+          </span>
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-3 md:mb-6 tracking-tight font-heading drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+            Building Landmarks. <br />
+            <span className="text-jyothi-amber">Shaping Legacies.</span>
           </h1>
 
-          <p className="text-xs sm:text-base md:text-lg text-gray-100 mb-5 md:mb-8 leading-relaxed font-normal max-w-xl font-sans drop-shadow-sm mx-auto sm:mx-0">
-            Delivering technical excellence and structural integrity with a legacy of 60+ years in modern infrastructure.
+          <p className="text-sm sm:text-base md:text-lg text-gray-100 mb-6 md:mb-8 leading-relaxed font-normal max-w-xl font-sans drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] mx-auto sm:mx-0">
+            Over five decades of trusted construction excellence.
           </p>
 
           <div className="flex flex-row items-center justify-center sm:justify-start gap-3 sm:gap-4 w-full">
@@ -70,7 +77,7 @@ const Hero = () => {
             </button>
             <Link 
               to="/services" 
-              className="flex-1 sm:flex-initial px-3 sm:px-6 md:px-9 py-3 sm:py-3.5 md:py-4 bg-black/25 border border-white/25 text-white font-black rounded-xl hover:bg-white/20 hover:border-jyothi-amber hover:text-jyothi-amber transition-all hover:scale-105 active:scale-95 font-heading tracking-wider sm:tracking-widest backdrop-blur-md text-center whitespace-nowrap uppercase text-[11px] sm:text-xs md:text-sm shadow-sm"
+              className="flex-1 sm:flex-initial px-3 sm:px-6 md:px-9 py-3 sm:py-3.5 md:py-4 bg-black/50 border border-white/30 text-white font-black rounded-xl hover:bg-white/20 hover:border-jyothi-amber hover:text-jyothi-amber transition-all hover:scale-105 active:scale-95 font-heading tracking-wider sm:tracking-widest text-center whitespace-nowrap uppercase text-[11px] sm:text-xs md:text-sm shadow-lg"
             >
               Our Services
             </Link>

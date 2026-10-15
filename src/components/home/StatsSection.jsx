@@ -4,30 +4,34 @@ import { HardHat, Briefcase, Calendar, Award } from 'lucide-react';
 const stats = [
   {
     id: 1,
-    label: 'Projects Completed',
-    value: '500+',
-    icon: <Briefcase className="w-5 h-5 md:w-6 md:h-6" />,
-    color: 'bg-jyothi-amber'
-  },
-  {
-    id: 2,
-    label: 'Skilled Workforce',
-    value: '1200+',
-    icon: <HardHat className="w-5 h-5 md:w-6 md:h-6" />,
-    color: 'bg-jyothi-orange'
-  },
-  {
-    id: 3,
-    label: 'Years of Experience',
-    value: '60+',
+    value: '57+',
+    label: 'Years of Legacy',
+    detail: 'Over 5 decades of continuous excellence',
     icon: <Calendar className="w-5 h-5 md:w-6 md:h-6" />,
     color: 'bg-jyothi-amber'
   },
   {
-    id: 4,
-    label: 'Awards Won',
-    value: '25+',
+    id: 2,
+    value: '500+',
+    label: 'Multiple Completed Projects',
+    detail: 'Residential, industrial & commercial',
+    icon: <Briefcase className="w-5 h-5 md:w-6 md:h-6" />,
+    color: 'bg-jyothi-orange'
+  },
+  {
+    id: 3,
+    value: 'Diverse',
+    label: 'Construction Portfolio',
+    detail: 'End-to-end turnkey & civil engineering',
     icon: <Award className="w-5 h-5 md:w-6 md:h-6" />,
+    color: 'bg-jyothi-amber'
+  },
+  {
+    id: 4,
+    value: 'Trusted',
+    label: 'By Generations',
+    detail: 'Unshakable client relationships',
+    icon: <HardHat className="w-5 h-5 md:w-6 md:h-6" />,
     color: 'bg-jyothi-orange'
   }
 ];
@@ -44,21 +48,24 @@ const StatsSection = () => {
           {stats.map((stat, index) => (
             <motion.div 
               key={stat.id}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: "150px" }}
+              transition={{ duration: 0.25 }}
               className="flex flex-col items-center text-center group"
             >
               <div className={`${stat.color} w-12 h-12 md:w-14 md:h-14 rounded-2xl flex items-center justify-center text-jyothi-blue mb-3 md:mb-4 shadow-xl group-hover:rotate-6 transition-transform duration-500`}>
                 {stat.icon}
               </div>
-              <div className="flex flex-col gap-0.5">
+              <div className="flex flex-col gap-1 items-center">
                 <span className="text-2xl sm:text-3xl md:text-4xl font-black text-white font-heading tracking-tight">
                   {stat.value}
                 </span>
-                <span className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider">
+                <span className="text-xs sm:text-sm font-bold text-jyothi-amber font-heading">
                   {stat.label}
+                </span>
+                <span className="text-[10px] sm:text-xs text-gray-400 max-w-[180px] leading-tight">
+                  {stat.detail}
                 </span>
               </div>
             </motion.div>

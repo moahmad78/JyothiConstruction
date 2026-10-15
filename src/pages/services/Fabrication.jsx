@@ -164,22 +164,23 @@ const Fabrication = () => {
                   
                   <div className="space-y-6 relative z-10">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-jyothi-amber/20 rounded-full flex items-center justify-center text-jyothi-amber">
+                      <div className="w-12 h-12 bg-jyothi-amber/20 rounded-full flex items-center justify-center text-jyothi-amber shrink-0">
                         <Phone size={24} />
                       </div>
                       <div>
                         <p className="text-xs text-gray-400 uppercase tracking-widest">Tech Desk</p>
-                        <p className="text-lg font-bold text-white">+91 9008 777 742</p>
+                        <a href="tel:+919148578784" className="text-base font-bold text-white hover:text-jyothi-amber block">+91 91485 78784</a>
+                        <a href="tel:+919900900826" className="text-base font-bold text-white hover:text-jyothi-amber block">+91 99009 00826</a>
                       </div>
                     </div>
                     
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-jyothi-amber/20 rounded-full flex items-center justify-center text-jyothi-amber">
+                      <div className="w-12 h-12 bg-jyothi-amber/20 rounded-full flex items-center justify-center text-jyothi-amber shrink-0">
                         <Mail size={24} />
                       </div>
                       <div>
                         <p className="text-xs text-gray-400 uppercase tracking-widest">Technical Inquiry</p>
-                        <p className="text-lg font-bold text-white">fab@jyothi.com</p>
+                        <a href="mailto:constructions@jyothigroups.com" className="text-sm sm:text-base font-bold text-white hover:text-jyothi-amber block break-all">constructions@jyothigroups.com</a>
                       </div>
                     </div>
 

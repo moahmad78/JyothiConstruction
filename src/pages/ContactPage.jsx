@@ -51,10 +51,10 @@ const ContactPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -15 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, margin: "150px" }}
+              transition={{ duration: 0.3 }}
               className="bg-white/5 border border-white/10 p-10 md:p-14 rounded-[2.5rem] shadow-2xl relative overflow-hidden group hover:border-jyothi-amber/30 transition-all duration-500"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-jyothi-amber/5 rounded-full blur-[80px] -mr-32 -mt-32"></div>
@@ -120,10 +120,10 @@ const ContactPage = () => {
             <div className="flex flex-col gap-12">
               
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                viewport={{ once: true, margin: "150px" }}
+                transition={{ duration: 0.3 }}
                 className="grid grid-cols-1 md:grid-cols-2 gap-8"
               >
                 <div className="bg-white/5 p-8 rounded-[2rem] border border-white/10 group hover:border-jyothi-amber/30 transition-all">
@@ -142,11 +142,18 @@ const ContactPage = () => {
                   <div className="w-12 h-12 bg-jyothi-amber/10 rounded-xl flex items-center justify-center text-jyothi-amber mb-6 group-hover:bg-jyothi-amber group-hover:text-jyothi-blue transition-all">
                     <Phone size={24} />
                   </div>
-                  <h4 className="text-xl font-bold text-white font-heading mb-3 tracking-tight">Technical Support</h4>
-                  <p className="text-gray-400 text-sm leading-relaxed font-medium">
-                    +91 9008 777 742<br />
-                    info@jyothiconstruction.com
-                  </p>
+                  <h4 className="text-xl font-bold text-white font-heading mb-3 tracking-tight">Direct Inquiries</h4>
+                  <div className="text-sm leading-relaxed font-medium space-y-1">
+                    <a href="tel:+919148578784" className="text-white hover:text-jyothi-amber transition-colors font-bold block">
+                      +91 91485 78784
+                    </a>
+                    <a href="tel:+919900900826" className="text-white hover:text-jyothi-amber transition-colors font-bold block">
+                      +91 99009 00826
+                    </a>
+                    <a href="mailto:constructions@jyothigroups.com" className="text-gray-300 hover:text-jyothi-amber transition-colors block pt-1">
+                      constructions@jyothigroups.com
+                    </a>
+                  </div>
                 </div>
               </motion.div>
 
@@ -154,10 +161,10 @@ const ContactPage = () => {
                 href="https://maps.google.com/?q=Jyothi+Construction+Bangalore"
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true, margin: "150px" }}
+                transition={{ duration: 0.3 }}
                 className="flex-grow min-h-[400px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl relative group block cursor-pointer"
               >
                 <div className="absolute inset-0 z-0">

@@ -32,7 +32,7 @@ const QuoteModal = () => {
         'YOUR_PUBLIC_KEY'
       );
       
-      showToast("Consultation request sent to info@jyothiconstruction.com! We will contact you shortly.");
+      showToast("Consultation request sent to constructions@jyothigroups.com! We will contact you shortly.");
       closeModal();
     } catch (error) {
       console.error('EmailJS Error:', error);
