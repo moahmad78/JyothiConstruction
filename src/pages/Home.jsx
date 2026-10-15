@@ -2,13 +2,11 @@ import Hero from '../components/home/Hero';
 import HighlightsStrip from '../components/home/HighlightsStrip';
 import AboutSection from '../components/home/AboutSection';
 import WhatWeDo from '../components/home/WhatWeDo';
-import KeyVerticals from '../components/home/KeyVerticals';
 import StatsSection from '../components/home/StatsSection';
 import WhyJyothi from '../components/home/WhyJyothi';
 import GroupLegacy from '../components/home/GroupLegacy';
 import CTABanner from '../components/home/CTABanner';
 import Testimonials from '../components/home/Testimonials';
-import SiteGallery from '../components/home/SiteGallery';
 
 const ClientsPartners = () => {
   const partners = [
@@ -109,7 +107,6 @@ const Home = () => {
       <HighlightsStrip />
       <AboutSection />
       <WhatWeDo />
-      <SiteGallery />
       <WhyJyothi />
       <GroupLegacy />
       <StatsSection />

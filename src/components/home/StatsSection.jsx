@@ -21,7 +21,7 @@ const stats = [
   {
     id: 3,
     value: 'Diverse',
-    label: 'Construction Portfolio',
+    label: 'Engineering Verticals',
     detail: 'End-to-end turnkey & civil engineering',
     icon: <Award className="w-5 h-5 md:w-6 md:h-6" />,
     color: 'bg-jyothi-amber'
